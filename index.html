@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prateek Saxena — General Manager, Operator, Builder. Leading people, building systems, and scaling businesses across the UAE." />
+  <meta property="og:title" content="Prateek Saxena" />
+  <meta property="og:description" content="General Manager · Operator · Builder" />
+  <title>Prateek Saxena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Variables ─────────────────────────────────────────── */
+    :root {
+      --bg:         #0D0D0D;
+      --bg-card:    #141414;
+      --bg-card-2:  #1a1a1a;
+      --text:       #F2F0EB;
+      --muted:      #888888;
+      --gold:       #C9A84C;
+      --gold-dim:   rgba(201,168,76,0.15);
+      --border:     rgba(255,255,255,0.07);
+      --font:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max:        1100px;
+      --nav-h:      64px;
+    }
+
+    /* ─── Reset & Base ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─── Navbar ────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      background: rgba(13,13,13,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: calc(var(--nav-h) + 4rem) 5vw 6rem;
+      position: relative;
+    }
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-name {
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .hero-role {
+      font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .hero-tagline {
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    /* Scroll indicator */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.4;
+      animation: scrollBounce 2.2s ease-in-out infinite;
+    }
+    .scroll-cue span {
+      display: block;
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+    }
+    .scroll-cue svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1.5;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ─── Section Base ──────────────────────────────────────── */
+    section {
+      padding: 7rem 5vw;
+    }
+    .section-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 2.5rem;
+    }
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── Fade-in Animation ─────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+    .fade-up.delay-5 { transition-delay: 0.5s; }
+
+    /* ─── What I Do ─────────────────────────────────────────── */
+    #what {
+      border-top: 1px solid var(--border);
+    }
+    .what-intro {
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+    .what-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .what-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .what-list li::before {
+      content: '—';
+      color: var(--gold);
+      font-weight: 300;
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+
+    /* ─── Sectors Grid ──────────────────────────────────────── */
+    #sectors {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+    }
+    @media (max-width: 900px) {
+      .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .sectors-grid { grid-template-columns: 1fr; }
+    }
+    .sector-card {
+      padding: 2.25rem 2rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: border-color 0.25s, background 0.25s;
+      cursor: default;
+    }
+    .sector-card:hover {
+      border-color: var(--gold);
+      background: var(--gold-dim);
+    }
+    .sector-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .sector-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .sector-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── How I Think ───────────────────────────────────────── */
+    #think {
+      border-top: 1px solid var(--border);
+    }
+    .think-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .think-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .think-card {
+      padding: 2.5rem 2rem;
+      background: var(--bg-card-2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      transition: transform 0.25s;
+    }
+    .think-card:hover {
+      transform: translateY(-4px);
+    }
+    .think-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .think-body {
+      font-size: 0.925rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ─── Education ─────────────────────────────────────────── */
+    #education {
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .edu-item {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--text);
+    }
+    .edu-item span {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.3rem;
+    }
+
+    /* ─── Contact ───────────────────────────────────────────── */
+    #contact {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding-bottom: 8rem;
+    }
+    .contact-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 460px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2.25rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.22s, color 0.22s;
+    }
+    .btn:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+    .btn svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2rem 5vw;
+      border-top: 1px solid var(--border);
+    }
+    footer p {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
+  <nav>
+    <span class="nav-name">Prateek Saxena</span>
+    <div class="nav-links">
+      <a href="#what">What I Do</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#think">Thinking</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <header id="hero">
+    <div class="hero-inner">
+      <h1 class="hero-name fade-up">Prateek<br />Saxena</h1>
+      <p class="hero-role fade-up delay-1">General Manager · Operator · Builder</p>
+      <p class="hero-tagline fade-up delay-2">
+        Leading people, building systems, and scaling businesses across the UAE.
+      </p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <span></span>
+      <svg viewBox="0 0 16 16"><polyline points="2,5 8,11 14,5"/></svg>
+    </div>
+  </header>
+
+  <!-- ── What I Do ─────────────────────────────────────────── -->
+  <section id="what">
+    <div class="section-inner">
+      <span class="section-label fade-up">What I Do</span>
+      <div class="divider fade-up delay-1"></div>
+      <p class="what-intro fade-up delay-1">
+        I build and run high-performance operations across complex, multi-sector businesses.
+        My work sits at the intersection of strategy and execution — I don't just set direction,
+        I get into the details that make it happen.
+      </p>
+      <ul class="what-list">
+        <li class="fade-up delay-2">Scale B2B and retail distribution networks across UAE</li>
+        <li class="fade-up delay-3">Turn data into decisions — from daily sales ops to boardroom strategy</li>
+        <li class="fade-up delay-4">Build teams and systems that outlast my direct involvement</li>
+        <li class="fade-up delay-5">Lead P&amp;L across healthcare, automotive, building materials, and e-commerce</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Sectors ────────────────────────────────────────────── -->
+  <section id="sectors">
+    <div class="section-inner">
+      <span class="section-label fade-up">Sectors I've Operated In</span>
+      <div class="divider fade-up delay-1"></div>
+      <div class="sectors-grid">
+        <div class="sector-card fade-up delay-1">
+          <span class="sector-icon">🏥</span>
+          <p class="sector-name">Healthcare</p>
+          <p class="sector-desc">From clinic operations to medical trading — managing patient-facing services alongside complex supply chains and regulatory environments.</p>
+        </div>
+        <div class="sector-card fade-up delay-2">
+          <span class="sector-icon">🚗</span>
+          <p class="sector-name">Tyres &amp; Automotive</p>
+          <p class="sector-desc">Fleet accounts, tyre manufacturing, retreading, and fitment. A high-volume, margin-sensitive business that rewards operational precision.</p>
+        </div>
+        <div class="sector-card fade-up delay-3">
+          <span class="sector-icon">🏗️</span>
+          <p class="sector-name">Building Materials &amp; Distribution</p>
+          <p class="sector-desc">Multi-brand, multi-channel distribution at scale. Managing relationships with global principals while running 10+ retail outlets and contractor networks across UAE.</p>
+        </div>
+        <div class="sector-card fade-up delay-4">
+          <span class="sector-icon">🛒</span>
+          <p class="sector-name">E-Commerce</p>
+          <p class="sector-desc">Built and scaled Fepy.com — one of UAE's largest online platforms for building materials. Product catalog, logistics, and digital marketing combined.</p>
+        </div>
+        <div class="sector-card fade-up delay-5">
+          <span class="sector-icon">🚛</span>
+          <p class="sector-name">Transport &amp; Logistics</p>
+          <p class="sector-desc">Water, diesel, cement, crane, and waste management services. Asset-heavy, operationally demanding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How I Think ────────────────────────────────────────── -->
+  <section id="think">
+    <div class="section-inner">
+      <span class="section-label fade-up">How I Think</span>
+      <div class="divider fade-up delay-1"></div>
+      <div class="think-grid">
+        <div class="think-card fade-up delay-1">
+          <span class="think-label">On Data</span>
+          <p class="think-body">Most businesses have more data than they can use. The problem isn't access — it's the habit of looking. I've spent years building that habit into teams.</p>
+        </div>
+        <div class="think-card fade-up delay-2">
+          <span class="think-label">On Scale</span>
+          <p class="think-body">Growing from 10 to 100 people is easy. Growing from 100 to 1,000 without losing speed is the real challenge. It requires systems more than talent.</p>
+        </div>
+        <div class="think-card fade-up delay-3">
+          <span class="think-label">On the UAE Market</span>
+          <p class="think-body">The UAE rewards speed and relationships equally. The businesses that win are the ones that move fast AND build trust. Neither alone is enough.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Education ──────────────────────────────────────────── -->
+  <section id="education">
+    <div class="section-inner">
+      <span class="section-label fade-up" style="display:block;text-align:center;">Education</span>
+      <div class="divider fade-up delay-1" style="margin:0 auto 2.5rem;"></div>
+      <div class="edu-list">
+        <div class="edu-item fade-up delay-2">
+          Purdue University
+        </div>
+        <div class="edu-item fade-up delay-3">
+          INSEAD
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ────────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-inner">
+      <span class="section-label fade-up" style="display:block;text-align:center;">Contact</span>
+      <div class="divider fade-up delay-1" style="margin:0 auto 2rem;"></div>
+      <p class="contact-sub fade-up delay-2">
+        Open to conversations with leaders and builders across the region.
+      </p>
+      <div class="contact-buttons">
+        <a href="https://linkedin.com/in/prateeksaxena" target="_blank" rel="noopener" class="btn fade-up delay-3">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:prateek@example.com" class="btn fade-up delay-4">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer>
+    <p>© 2025 Prateek Saxena &nbsp;·&nbsp; Built with intent.</p>
+  </footer>
+
+  <!-- ── JS: Fade-in on scroll + hero fade ─────────────────── -->
+  <script>
+    // Hero elements fade in on load
+    document.querySelectorAll('#hero .fade-up').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 100 + i * 180);
+    });
+
+    // All other .fade-up elements via IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up:not(#hero .fade-up)').forEach(el => observer.observe(el));
+
+    // Scroll cue hides after first scroll
+    const scrollCue = document.querySelector('.scroll-cue');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) scrollCue.style.opacity = '0';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
