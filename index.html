@@ -1,39 +1,41 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Prateek Saxena â€” Group General Manager at Al Zaabi Group. 15+ years leading high-performance operations across healthcare, automotive, building materials, e-commerce, and logistics in the UAE." />
-  <meta property="og:title" content="Prateek Saxena â€” Group General Manager" />
+  <meta name="description" content="Prateek Saxena — Group General Manager at Al Zaabi Group. 16+ years leading high-performance operations across 42 companies in the UAE." />
+  <meta property="og:title" content="Prateek Saxena — Group General Manager" />
   <meta property="og:description" content="Leading people, building systems, and scaling businesses across the UAE." />
   <title>Prateek Saxena</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
   <style>
-    /* â”€â”€â”€ Design Tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─── Tokens ────────────────────────────────────────────── */
     :root {
-      --bg:          #0D0D0D;
-      --bg-card:     #111111;
-      --bg-card-2:   #161616;
-      --bg-stripe:   #0A0A0A;
-      --text:        #F2F0EB;
-      --muted:       #7A7A7A;
-      --muted-2:     #4A4A4A;
-      --gold:        #C9A84C;
-      --gold-light:  #E2C27A;
-      --gold-dim:    rgba(201,168,76,0.10);
-      --gold-border: rgba(201,168,76,0.25);
-      --border:      rgba(255,255,255,0.06);
-      --font:        'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --max:         1120px;
-      --nav-h:       64px;
-      --radius:      2px;
+      --bg:         #F7F3ED;
+      --bg-card:    #FFFFFF;
+      --bg-dark:    #111008;
+      --bg-dark2:   #1A1710;
+      --text:       #1A1410;
+      --text-light: #FFFFFF;
+      --muted:      #7A6E62;
+      --muted-2:    #B5A898;
+      --gold:       #C9A84C;
+      --gold-dark:  #A68630;
+      --gold-dim:   rgba(201,168,76,0.12);
+      --gold-border:rgba(201,168,76,0.30);
+      --border:     rgba(26,20,16,0.09);
+      --font:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max:        1120px;
+      --nav-h:      68px;
+      --radius:     3px;
+      --shadow:     0 2px 20px rgba(26,20,16,0.06);
     }
 
-    /* â”€â”€â”€ Reset â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─── Reset ─────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
       color: var(--text);
@@ -46,7 +48,7 @@
     ul { list-style: none; }
     img { display: block; max-width: 100%; }
 
-    /* â”€â”€â”€ Navbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─── Navbar ─────────────────────────────────────────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -56,54 +58,60 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 5vw;
-      background: rgba(13,13,13,0.9);
+      background: rgba(247,243,237,0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      transition: background 0.3s;
     }
     .nav-name {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text);
     }
     .nav-links {
       display: flex;
       gap: 2.5rem;
+      align-items: center;
     }
     .nav-links a {
       font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
       color: var(--muted);
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--gold-dark); }
     .nav-cta {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      border: 1px solid var(--gold-border);
-      color: var(--gold) !important;
-      font-size: 0.72rem !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.10em !important;
-      text-transform: uppercase;
-      transition: background 0.2s, border-color 0.2s !important;
+      padding: 0.5rem 1.4rem;
+      background: var(--text);
+      color: var(--bg) !important;
+      border-radius: var(--radius);
+      transition: opacity 0.2s !important;
     }
-    .nav-cta:hover { background: var(--gold-dim); border-color: var(--gold) !important; }
+    .nav-cta:hover { opacity: 0.82; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
+    /* ─── Fade-in ────────────────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
+    .d5 { transition-delay: 0.40s; }
 
-    /* â”€â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─── Hero ───────────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 400px;
       align-items: center;
       gap: 0;
       padding: calc(var(--nav-h) + 5rem) 5vw 5rem;
@@ -111,143 +119,120 @@
       margin: 0 auto;
       position: relative;
     }
-
-    .hero-content { padding-right: 4rem; }
-
+    .hero-content { padding-right: 5rem; }
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.20em;
+      gap: 0.65rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 2rem;
+      color: var(--gold-dark);
+      margin-bottom: 1.75rem;
     }
     .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 28px;
-      height: 1px;
+      width: 24px;
+      height: 1.5px;
       background: var(--gold);
     }
-
     .hero-name {
-      font-size: clamp(3.8rem, 7.5vw, 7.5rem);
+      font-size: clamp(3.5rem, 7vw, 7rem);
       font-weight: 900;
       line-height: 1.0;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
       color: var(--text);
       margin-bottom: 1.5rem;
     }
-    .hero-name em {
-      font-style: normal;
-      color: var(--gold-light);
-    }
-
     .hero-tagline {
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-size: clamp(0.95rem, 1.7vw, 1.15rem);
       font-weight: 300;
       color: var(--muted);
-      max-width: 500px;
-      line-height: 1.75;
+      max-width: 460px;
+      line-height: 1.8;
       margin-bottom: 3rem;
     }
-
     .hero-actions {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .btn-primary {
+    .btn-dark {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.9rem 2rem;
-      background: var(--gold);
+      padding: 0.9rem 2.25rem;
+      background: var(--text);
       color: var(--bg);
       font-family: var(--font);
       font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
+      border-radius: var(--radius);
       transition: opacity 0.2s;
     }
-    .btn-primary:hover { opacity: 0.88; }
-    .btn-secondary {
+    .btn-dark:hover { opacity: 0.82; }
+    .btn-outline {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.9rem 2rem;
-      border: 1px solid var(--border);
+      padding: 0.9rem 2.25rem;
+      border: 1.5px solid var(--border);
       color: var(--muted);
       font-family: var(--font);
       font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
+      border-radius: var(--radius);
       transition: border-color 0.2s, color 0.2s;
     }
-    .btn-secondary:hover { border-color: var(--gold-border); color: var(--gold); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-dark); }
 
-    /* â”€â”€ Hero Photo Placeholder â”€â”€â”€ */
+    /* Hero photo */
     .hero-photo {
-      position: relative;
       width: 100%;
       aspect-ratio: 3 / 4;
       background: var(--bg-card);
       border: 1px solid var(--border);
+      border-radius: var(--radius);
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: var(--shadow);
+      position: relative;
     }
-    .hero-photo::before {
-      content: '';
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .hero-photo-badge {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+      bottom: 1.25rem;
+      left: 1.25rem;
+      background: rgba(247,243,237,0.92);
+      backdrop-filter: blur(8px);
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
     }
-    .hero-photo-inner {
-      text-align: center;
-      padding: 2rem;
-      z-index: 1;
-    }
-    .hero-photo-inner svg {
-      width: 48px;
-      height: 48px;
-      stroke: var(--muted-2);
-      fill: none;
-      stroke-width: 1;
-      margin: 0 auto 1rem;
-    }
-    .hero-photo-inner p {
-      font-size: 0.75rem;
-      color: var(--muted-2);
-      letter-spacing: 0.06em;
-      line-height: 1.5;
-    }
-    .hero-photo-inner strong {
+    .hero-photo-badge span {
       display: block;
-      font-size: 0.7rem;
-      letter-spacing: 0.10em;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted-2);
-      margin-top: 0.4rem;
+      color: var(--gold-dark);
     }
-    /* When real photo is added: replace the .hero-photo-inner with <img src="photo.jpg" alt="Prateek Saxena" style="width:100%;height:100%;object-fit:cover;"> */
-
-    /* â”€â”€ Gold corner accent on photo â”€â”€â”€ */
-    .hero-photo::after {
-      content: '';
-      position: absolute;
-      bottom: 0; right: 0;
-      width: 64px; height: 64px;
-      background: linear-gradient(135deg, transparent 50%, rgba(201,168,76,0.3) 50%);
+    .hero-photo-badge strong {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
     }
 
-    /* Scroll cue */
     .scroll-cue {
       position: absolute;
       bottom: 2rem;
@@ -256,39 +241,54 @@
       align-items: center;
       gap: 0.75rem;
       opacity: 0.35;
-      animation: scrollBounce 2.5s ease-in-out infinite;
     }
-    .scroll-cue span {
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-    }
+    .scroll-cue span { display: block; width: 32px; height: 1px; background: var(--muted); }
     .scroll-cue p {
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--muted);
+      animation: scrollPulse 2.5s ease-in-out infinite;
     }
-    @keyframes scrollBounce {
-      0%, 100% { transform: translateX(0); }
-      50%       { transform: translateX(6px); }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
     }
 
     @media (max-width: 900px) {
-      #hero {
-        grid-template-columns: 1fr;
-        padding-top: calc(var(--nav-h) + 3rem);
-      }
+      #hero { grid-template-columns: 1fr; padding-top: calc(var(--nav-h) + 3rem); }
       .hero-content { padding-right: 0; margin-bottom: 3rem; }
       .hero-photo { max-width: 320px; }
     }
 
-    /* â”€â”€â”€ Metrics Strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─── Section Base ───────────────────────────────────────── */
+    section { padding: 7rem 5vw; }
+    .section-inner { max-width: var(--max); margin: 0 auto; }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+    }
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1.25rem 0 2.5rem;
+    }
+
+    /* ─── Metrics Strip ──────────────────────────────────────── */
     #metrics {
-      background: var(--bg-stripe);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: var(--text);
       padding: 0 5vw;
     }
     .metrics-inner {
@@ -298,126 +298,72 @@
       grid-template-columns: repeat(4, 1fr);
     }
     .metric-item {
-      padding: 2.25rem 2rem;
+      padding: 2.5rem 2rem;
       text-align: center;
-      border-right: 1px solid var(--border);
+      border-right: 1px solid rgba(255,255,255,0.08);
       transition: background 0.2s;
     }
     .metric-item:last-child { border-right: none; }
-    .metric-item:hover { background: var(--gold-dim); }
+    .metric-item:hover { background: rgba(255,255,255,0.03); }
     .metric-number {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
       font-weight: 900;
       color: var(--gold);
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
       line-height: 1;
       margin-bottom: 0.5rem;
     }
     .metric-label {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: rgba(255,255,255,0.45);
     }
-
     @media (max-width: 768px) {
       .metrics-inner { grid-template-columns: repeat(2, 1fr); }
       .metric-item:nth-child(2) { border-right: none; }
-      .metric-item:nth-child(3) { border-top: 1px solid var(--border); }
-      .metric-item:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+      .metric-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
+      .metric-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); border-right: none; }
     }
 
-    /* â”€â”€â”€ Section Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    section { padding: 7rem 5vw; }
-    .section-inner {
-      max-width: var(--max);
-      margin: 0 auto;
+    /* ─── Partners ───────────────────────────────────────────── */
+    #partners {
+      padding: 3rem 5vw;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    .section-label {
-      font-size: 0.68rem;
+    .partners-inner { max-width: var(--max); margin: 0 auto; }
+    .partners-label {
+      font-size: 0.64rem;
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .section-title {
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-    }
-    .divider {
-      width: 40px;
-      height: 2px;
-      background: var(--gold);
-      margin-bottom: 2.5rem;
-    }
-
-    /* â”€â”€â”€ Fade-in â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .fade-up.d1 { transition-delay: 0.08s; }
-    .fade-up.d2 { transition-delay: 0.16s; }
-    .fade-up.d3 { transition-delay: 0.24s; }
-    .fade-up.d4 { transition-delay: 0.32s; }
-    .fade-up.d5 { transition-delay: 0.40s; }
-
-    /* â”€â”€â”€ Partners Strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    #partners {
-      padding: 3.5rem 5vw;
-      border-bottom: 1px solid var(--border);
-    }
-    .partners-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
-    .partners-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.20em;
-      text-transform: uppercase;
       color: var(--muted-2);
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
     .partners-logos {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.5rem 3rem;
+      gap: 0.5rem 2.5rem;
     }
     .partner-name {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      color: var(--muted-2);
+      color: var(--muted);
       transition: color 0.2s;
       cursor: default;
-      white-space: nowrap;
     }
-    .partner-name:hover { color: var(--muted); }
-    .partner-sep {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--muted-2);
-      opacity: 0.3;
-    }
+    .partner-name:hover { color: var(--text); }
+    .partner-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-2); opacity: 0.4; }
 
-    /* â”€â”€â”€ What I Do â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    #what {
-      border-top: 1px solid var(--border);
-    }
+    /* ─── What I Do ──────────────────────────────────────────── */
+    #what { border-top: 1px solid var(--border); }
     .what-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -425,137 +371,90 @@
       align-items: start;
     }
     .what-intro {
-      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      font-size: clamp(1rem, 1.6vw, 1.1rem);
       color: var(--muted);
       line-height: 1.85;
     }
-    .what-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .what-item {
-      display: flex;
-      gap: 1.25rem;
-      align-items: flex-start;
-    }
+    .what-list { display: flex; flex-direction: column; gap: 1.4rem; }
+    .what-item { display: flex; gap: 1.25rem; align-items: flex-start; }
     .what-num {
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--gold-dark);
       letter-spacing: 0.1em;
       flex-shrink: 0;
-      margin-top: 0.15em;
-      min-width: 20px;
+      margin-top: 0.18em;
     }
-    .what-text {
-      font-size: 0.975rem;
-      color: var(--text);
-      line-height: 1.65;
-    }
+    .what-text { font-size: 0.95rem; color: var(--text); line-height: 1.65; }
+    @media (max-width: 768px) { .what-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
-    @media (max-width: 768px) {
-      .what-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
-
-    /* â”€â”€â”€ Pull Quote â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─── Pull Quote (dark island) ───────────────────────────── */
     #quote {
-      background: var(--bg-stripe);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: var(--bg-dark);
       padding: 6rem 5vw;
     }
-    .quote-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    .quote-inner { max-width: 860px; margin: 0 auto; text-align: center; }
     .quote-mark {
-      font-size: 5rem;
-      line-height: 0.5;
-      color: var(--gold);
-      font-weight: 900;
-      opacity: 0.25;
-      margin-bottom: 1.5rem;
-      display: block;
+      font-size: 5rem; line-height: 0.5;
+      color: var(--gold); font-weight: 900;
+      opacity: 0.22; margin-bottom: 1.5rem; display: block;
     }
     .quote-text {
       font-size: clamp(1.4rem, 3vw, 2.2rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.35;
-      color: var(--text);
+      color: var(--text-light);
       margin-bottom: 2rem;
     }
-    .quote-text em {
-      font-style: normal;
-      color: var(--gold);
-    }
+    .quote-text em { font-style: normal; color: var(--gold); }
     .quote-attr {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
     }
 
-    /* â”€â”€â”€ Sectors â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    #sectors {
-      border-top: 1px solid var(--border);
-    }
+    /* ─── Sectors ────────────────────────────────────────────── */
+    #sectors { border-top: 1px solid var(--border); }
     .sectors-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
+      gap: 1px;
       background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
     }
     @media (max-width: 900px) { .sectors-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .sectors-grid { grid-template-columns: 1fr; } }
-
     .sector-card {
-      background: var(--bg);
-      padding: 2.5rem 2rem;
-      border: none;
-      transition: background 0.25s;
+      background: var(--bg-card);
+      padding: 2.25rem 2rem;
+      transition: background 0.2s;
       cursor: default;
     }
-    .sector-card:hover { background: var(--bg-card-2); }
+    .sector-card:hover { background: var(--bg); }
     .sector-number {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      display: block;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.18em; color: var(--gold-dark);
+      margin-bottom: 1.25rem; display: block;
     }
     .sector-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.75rem;
-      color: var(--text);
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: -0.01em; margin-bottom: 0.65rem; color: var(--text);
     }
-    .sector-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
+    .sector-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.7; }
     .sector-tag {
-      display: inline-block;
-      margin-top: 1.25rem;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
+      display: inline-block; margin-top: 1.1rem;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold-dark);
       border-bottom: 1px solid var(--gold-border);
       padding-bottom: 2px;
     }
 
-    /* â”€â”€â”€ How I Think â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    #think {
-      border-top: 1px solid var(--border);
-    }
+    /* ─── How I Think ────────────────────────────────────────── */
+    #think { border-top: 1px solid var(--border); }
     .think-header {
       display: flex;
       align-items: flex-end;
@@ -563,18 +462,8 @@
       gap: 2rem;
       margin-bottom: 3rem;
     }
-    .think-sub {
-      font-size: 0.875rem;
-      color: var(--muted);
-      max-width: 340px;
-      line-height: 1.7;
-      text-align: right;
-    }
-    .think-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
+    .think-sub { font-size: 0.875rem; color: var(--muted); max-width: 320px; text-align: right; line-height: 1.7; }
+    .think-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     @media (max-width: 900px) {
       .think-grid { grid-template-columns: 1fr; }
       .think-header { flex-direction: column; align-items: flex-start; }
@@ -582,225 +471,250 @@
     }
     .think-card {
       background: var(--bg-card);
-      padding: 2.5rem 2rem;
+      padding: 2.25rem 2rem;
       border-left: 2px solid var(--gold);
-      transition: background 0.2s, transform 0.25s;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.25s, transform 0.25s;
     }
-    .think-card:hover {
-      background: var(--bg-card-2);
-      transform: translateY(-3px);
-    }
+    .think-card:hover { box-shadow: 0 6px 30px rgba(26,20,16,0.1); transform: translateY(-3px); }
     .think-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.20em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-      display: block;
+      font-size: 0.64rem; font-weight: 700; letter-spacing: 0.20em;
+      text-transform: uppercase; color: var(--gold-dark);
+      margin-bottom: 1rem; display: block;
     }
-    .think-body {
-      font-size: 0.925rem;
-      color: var(--muted);
-      line-height: 1.8;
-    }
+    .think-body { font-size: 0.92rem; color: var(--muted); line-height: 1.82; }
 
-    /* â”€â”€â”€ Career Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    #career {
-      background: var(--bg-stripe);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    /* ─── LinkedIn Posts ─────────────────────────────────────── */
+    #posts { border-top: 1px solid var(--border); }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
-    .timeline {
+    @media (max-width: 900px) { .posts-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .posts-grid { grid-template-columns: 1fr; } }
+    .post-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
       display: flex;
       flex-direction: column;
-      gap: 0;
-      margin-top: 1rem;
     }
+    .post-card:hover { box-shadow: 0 8px 32px rgba(26,20,16,0.10); transform: translateY(-4px); }
+    .post-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: var(--bg);
+      display: block;
+    }
+    .post-card-img-placeholder {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #F0EBE3 0%, #E8E0D5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+    .post-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .post-card-date {
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold-dark); margin-bottom: 0.75rem;
+    }
+    .post-card-text {
+      font-size: 0.85rem; color: var(--muted);
+      line-height: 1.72; flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .post-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .post-card-reactions {
+      font-size: 0.72rem; color: var(--muted-2);
+      font-weight: 500;
+    }
+    .post-card-link {
+      font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold-dark);
+      transition: opacity 0.2s;
+    }
+    .post-card-link:hover { opacity: 0.7; }
+
+    /* ─── Career ─────────────────────────────────────────────── */
+    #career {
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border);
+    }
+    #career .section-label { color: var(--gold); }
+    .timeline { display: flex; flex-direction: column; }
     .timeline-item {
       display: grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 180px 1fr;
       gap: 2.5rem;
       align-items: start;
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border);
+      padding: 2.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .timeline-item:last-child { border-bottom: none; }
     .timeline-period {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.10em;
-      color: var(--muted-2);
-      padding-top: 0.2rem;
-      text-transform: uppercase;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.10em; color: rgba(255,255,255,0.35);
+      padding-top: 0.2rem; text-transform: uppercase;
     }
-    .timeline-role {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
+    .timeline-role { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
     .timeline-company {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-      letter-spacing: 0.04em;
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--gold); margin-bottom: 0.6rem; letter-spacing: 0.04em;
     }
-    .timeline-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
+    .timeline-desc { font-size: 0.84rem; color: rgba(255,255,255,0.48); line-height: 1.7; }
     @media (max-width: 640px) {
       .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
-      .timeline-period { padding-top: 0; }
     }
 
-    /* â”€â”€â”€ Education â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    #education {
-      border-top: 1px solid var(--border);
-    }
-    .edu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
+    /* ─── Education ──────────────────────────────────────────── */
+    #education { border-top: 1px solid var(--border); }
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     @media (max-width: 640px) { .edu-grid { grid-template-columns: 1fr; } }
     .edu-card {
       background: var(--bg-card);
       padding: 2.5rem 2rem;
       border: 1px solid var(--border);
-      transition: border-color 0.2s;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s;
     }
-    .edu-card:hover { border-color: var(--gold-border); }
+    .edu-card:hover { box-shadow: 0 6px 24px rgba(26,20,16,0.08); }
     .edu-degree {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.75rem;
-      display: block;
+      font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-dark); margin-bottom: 0.75rem; display: block;
     }
-    .edu-school {
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-    .edu-detail {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+    .edu-school { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); margin-bottom: 0.4rem; }
+    .edu-detail { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
-    /* â”€â”€â”€ Contact â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─── Certifications ─────────────────────────────────────── */
+    #certifications { border-top: 1px solid var(--border); }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .cert-card {
+      background: var(--bg-card);
+      padding: 1.75rem 2rem;
+      border: 1px solid var(--border);
+      border-left: 2.5px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: var(--shadow);
+    }
+    .cert-issued {
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold-dark); margin-bottom: 0.6rem; display: block;
+    }
+    .cert-name { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+    .cert-issuer { font-size: 0.8rem; color: var(--muted); }
+
+    /* ─── Contact ────────────────────────────────────────────── */
     #contact {
-      border-top: 1px solid var(--border);
+      background: var(--bg-dark);
       text-align: center;
     }
+    #contact .section-label { color: var(--gold); display: block; text-align: center; }
     .contact-headline {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      margin-bottom: 1.25rem;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900; letter-spacing: -0.03em;
+      color: #fff; margin-bottom: 1.25rem;
     }
     .contact-sub {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
+      font-size: 1rem; color: rgba(255,255,255,0.45);
+      max-width: 480px; margin: 0 auto 3rem; line-height: 1.75;
     }
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
+    .contact-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.55rem;
       padding: 1rem 2.5rem;
-      border: 1px solid var(--gold-border);
-      color: var(--gold);
-      font-family: var(--font);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      background: var(--gold); color: var(--bg-dark);
+      font-family: var(--font); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: opacity 0.2s;
     }
-    .btn:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+    .btn-gold:hover { opacity: 0.88; }
+    .btn-ghost-light {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 1rem 2.5rem;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.55);
+      font-family: var(--font); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost-light:hover { border-color: var(--gold-border); color: var(--gold); }
     .btn svg { width: 15px; height: 15px; fill: currentColor; flex-shrink: 0; }
-    .btn-ghost {
-      border-color: var(--border);
-      color: var(--muted);
-    }
-    .btn-ghost:hover { background: var(--bg-card); color: var(--text); border-color: var(--muted); }
 
-    /* â”€â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─── Footer ─────────────────────────────────────────────── */
     footer {
-      padding: 2rem 5vw;
-      border-top: 1px solid var(--border);
+      background: var(--bg-dark2);
+      padding: 1.75rem 5vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
-    footer p, footer span {
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      color: var(--muted-2);
-    }
-    footer a { color: var(--muted-2); transition: color 0.2s; }
+    footer p, footer span, footer a { font-size: 0.68rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.25); }
     footer a:hover { color: var(--gold); }
   </style>
 </head>
 <body>
 
-  <!-- â”€â”€ Navbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
   <nav>
     <span class="nav-name">Prateek Saxena</span>
     <div class="nav-links">
       <a href="#what">What I Do</a>
       <a href="#sectors">Sectors</a>
-      <a href="#think">Thinking</a>
+      <a href="#posts">Posts</a>
       <a href="#career">Career</a>
       <a href="#contact" class="nav-cta">Get in Touch</a>
     </div>
   </nav>
 
-  <!-- â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Hero ──────────────────────────────────────────────── -->
   <header>
     <div id="hero">
       <div class="hero-content">
-        <span class="hero-eyebrow fade-up">Group General Manager Â· Al Zaabi Group Â· UAE</span>
-        <h1 class="hero-name fade-up d1">
-          Prateek<br /><em>Saxena</em>
-        </h1>
+        <span class="hero-eyebrow fade-up">Group General Manager · Al Zaabi Group · UAE</span>
+        <h1 class="hero-name fade-up d1">Prateek<br />Saxena</h1>
         <p class="hero-tagline fade-up d2">
           Leading people, building systems, and scaling businesses across the UAE.
         </p>
         <div class="hero-actions fade-up d3">
-          <a href="#contact" class="btn-primary">Get in Touch</a>
-          <a href="https://linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-secondary">View LinkedIn</a>
+          <a href="#contact" class="btn-dark">Get in Touch</a>
+          <a href="https://linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-outline">LinkedIn ↗</a>
         </div>
       </div>
-
-      <!-- Profile photo from LinkedIn -->
       <div class="hero-photo fade-up d2">
-        <img src="images/prateek-photo.jpg" alt="Prateek Saxena â€” Group General Manager, Al Zaabi Group" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+        <img src="images/prateek-photo.jpg" alt="Prateek Saxena" />
+        <div class="hero-photo-badge">
+          <span>Group General Manager</span>
+          <strong>Al Zaabi Group</strong>
+        </div>
       </div>
-
       <div class="scroll-cue">
         <span></span>
         <p>Scroll</p>
@@ -808,7 +722,7 @@
     </div>
   </header>
 
-  <!-- â”€â”€ Metrics Strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Metrics ─────────────────────────────────────────────── -->
   <section id="metrics">
     <div class="metrics-inner">
       <div class="metric-item fade-up">
@@ -825,32 +739,36 @@
       </div>
       <div class="metric-item fade-up d3">
         <div class="metric-number">10+</div>
-        <div class="metric-label">Yrs with Saint-Gobain</div>
+        <div class="metric-label">Yrs · Saint-Gobain</div>
       </div>
     </div>
   </section>
 
-  <!-- â”€â”€ Partners â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Partners ────────────────────────────────────────────── -->
   <div id="partners">
     <div class="partners-inner fade-up">
       <p class="partners-label">Partners &amp; Principal Brands</p>
       <div class="partners-logos">
         <span class="partner-name">Saint-Gobain</span>
         <span class="partner-sep"></span>
-        <span class="partner-name">DAMAC Properties</span>
+        <span class="partner-name">DAMAC</span>
         <span class="partner-sep"></span>
-        <span class="partner-name">Al Zaabi Group</span>
+        <span class="partner-name">Bosch</span>
+        <span class="partner-sep"></span>
+        <span class="partner-name">Henkel</span>
+        <span class="partner-sep"></span>
+        <span class="partner-name">Signify · Philips</span>
+        <span class="partner-sep"></span>
+        <span class="partner-name">CEAT</span>
+        <span class="partner-sep"></span>
+        <span class="partner-name">Jaquar</span>
         <span class="partner-sep"></span>
         <span class="partner-name">Fepy.com</span>
-        <span class="partner-sep"></span>
-        <span class="partner-name">Emirates Royal Holding</span>
-        <span class="partner-sep"></span>
-        <span class="partner-name">Delma Emirates</span>
       </div>
     </div>
   </div>
 
-  <!-- â”€â”€ What I Do â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── What I Do ───────────────────────────────────────────── -->
   <section id="what">
     <div class="section-inner">
       <span class="section-label fade-up">What I Do</span>
@@ -858,7 +776,7 @@
       <div class="what-grid">
         <div>
           <p class="what-intro fade-up d1">
-            At the helm of Al Zaabi Group, I lead the strategic direction and operational management of a portfolio of 42 companies across diverse sectors including Healthcare, Automotive, Building Materials, E-Commerce, Real Estate, F&amp;B, Education, Transport, and Manufacturing. My approach combines global perspective — shaped by Purdue University and INSEAD — with deep local expertise. I believe in collaborative leadership and data-driven decision-making to create sustainable business value.
+            At the helm of Al Zaabi Group, I lead the strategic direction and operational management of a portfolio of 42 companies across Healthcare, Automotive, Building Materials, E-Commerce, Real Estate, F&amp;B, Education, Transport, and Manufacturing. My approach combines global perspective — shaped by Purdue University and INSEAD — with deep local expertise. I believe in collaborative leadership and data-driven decision-making to create sustainable business value.
           </p>
         </div>
         <ul class="what-list">
@@ -868,7 +786,7 @@
           </li>
           <li class="what-item fade-up d2">
             <span class="what-num">02</span>
-            <span class="what-text">Turn data into decisions â€” from daily sales ops to boardroom strategy</span>
+            <span class="what-text">Turn data into decisions — from daily sales ops to boardroom strategy</span>
           </li>
           <li class="what-item fade-up d3">
             <span class="what-num">03</span>
@@ -883,19 +801,20 @@
     </div>
   </section>
 
-  <!-- â”€â”€ Pull Quote â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Pull Quote (dark island) ────────────────────────────── -->
   <section id="quote">
     <div class="quote-inner fade-up">
       <span class="quote-mark">"</span>
       <p class="quote-text">
-        The UAE rewards <em>speed and relationships</em> equally. The businesses that win
-        are the ones that move fast and build trust. Neither alone is enough.
+        The UAE rewards <em>speed and relationships</em> equally.
+        The businesses that win move fast and build trust.
+        Neither alone is enough.
       </p>
-      <span class="quote-attr">â€” Prateek Saxena</span>
+      <span class="quote-attr">— Prateek Saxena</span>
     </div>
   </section>
 
-  <!-- â”€â”€ Sectors â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Sectors ─────────────────────────────────────────────── -->
   <section id="sectors">
     <div class="section-inner">
       <span class="section-label fade-up">Sectors I've Operated In</span>
@@ -904,51 +823,57 @@
         <div class="sector-card fade-up d1">
           <span class="sector-number">01</span>
           <p class="sector-name">Healthcare</p>
-          <p class="sector-desc">From clinic operations to medical trading â€” managing patient-facing services alongside complex supply chains and regulatory environments.</p>
-          <span class="sector-tag">Clinical Â· Medical Trading</span>
+          <p class="sector-desc">From clinic operations to medical trading. Royal Medical Center — One Day Surgery launched in Shakhbout City with 20+ specialties and a 4.9-star Google rating from 1,000+ reviews.</p>
+          <span class="sector-tag">Clinical · Trading · RMC</span>
         </div>
         <div class="sector-card fade-up d2">
           <span class="sector-number">02</span>
           <p class="sector-name">Tyres &amp; Automotive</p>
-          <p class="sector-desc">Fleet accounts, tyre manufacturing, retreading, and fitment. A high-volume, margin-sensitive business that rewards operational precision.</p>
-          <span class="sector-tag">Fleet Â· Manufacturing Â· Fitment</span>
+          <p class="sector-desc">Fleet accounts, tyre manufacturing, retreading, and fitment. Strategic partnerships with CEAT Limited and AW Rostamani Group — all-time high revenue in 2024.</p>
+          <span class="sector-tag">Fleet · CEAT · Exotic Auto</span>
         </div>
         <div class="sector-card fade-up d3">
           <span class="sector-number">03</span>
           <p class="sector-name">Building Materials</p>
-          <p class="sector-desc">Multi-brand, multi-channel distribution at scale. Managing relationships with global principals â€” including 10+ years with Saint-Gobain â€” while running 10+ retail outlets across UAE.</p>
-          <span class="sector-tag">Distribution Â· Retail Â· Principals</span>
+          <p class="sector-desc">Multi-brand, multi-channel distribution at scale. 10+ year Saint-Gobain partnership. Leading Distributor Award — Gyproc Trophy 2024. Partnerships with Signify, Jaquar, and SATA.</p>
+          <span class="sector-tag">Saint-Gobain · Distribution · Retail</span>
         </div>
         <div class="sector-card fade-up d4">
           <span class="sector-number">04</span>
           <p class="sector-name">E-Commerce</p>
-          <p class="sector-desc">Built and scaled Fepy.com â€” one of UAE's largest online platforms for building materials. Combining product catalog, logistics, and digital marketing from the ground up.</p>
-          <span class="sector-tag">Fepy.com Â· D2C Â· Logistics</span>
+          <p class="sector-desc">Built and scaled Fepy.com — UAE's online platform for building materials. Launched Fepy PRO in 2024, an AI-powered solution with credit facilities and exclusive business pricing.</p>
+          <span class="sector-tag">Fepy.com · Fepy PRO · D2C</span>
         </div>
         <div class="sector-card fade-up d5">
           <span class="sector-number">05</span>
+          <p class="sector-name">F&amp;B &amp; Hospitality</p>
+          <p class="sector-desc">Launched NH47 — one of Abu Dhabi's largest premium dining destinations at Madinat Zayed. In five months: 4.3-star Google rating from 2,500+ reviews.</p>
+          <span class="sector-tag">NH47 · Abu Dhabi · Premium Dining</span>
+        </div>
+        <div class="sector-card fade-up d5">
+          <span class="sector-number">06</span>
           <p class="sector-name">Transport &amp; Logistics</p>
-          <p class="sector-desc">Water, diesel, cement, crane, and waste management services. Asset-heavy, operationally demanding â€” built for reliability at scale.</p>
-          <span class="sector-tag">Asset-Heavy Â· Multi-service</span>
+          <p class="sector-desc">Water, diesel, cement, crane, and waste management services. Asset-heavy, operationally demanding — built for reliability at scale.</p>
+          <span class="sector-tag">Asset-Heavy · Multi-service</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- â”€â”€ How I Think â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── How I Think ─────────────────────────────────────────── -->
   <section id="think">
     <div class="section-inner">
       <div class="think-header">
         <div>
           <span class="section-label fade-up">How I Think</span>
-          <div class="divider fade-up d1"></div>
+          <div class="divider fade-up d1" style="margin-bottom:0;"></div>
         </div>
-        <p class="think-sub fade-up d1">Three short takes on the ideas that shape how I build and lead.</p>
+        <p class="think-sub fade-up d1">Three short takes on the ideas that shape how I lead and build.</p>
       </div>
       <div class="think-grid">
         <div class="think-card fade-up d1">
           <span class="think-label">On Data</span>
-          <p class="think-body">Most businesses have more data than they can use. The problem isn't access â€” it's the habit of looking. I've spent years building that habit into teams.</p>
+          <p class="think-body">Most businesses have more data than they can use. The problem isn't access — it's the habit of looking. I've spent years building that habit into teams.</p>
         </div>
         <div class="think-card fade-up d2">
           <span class="think-label">On Scale</span>
@@ -962,160 +887,227 @@
     </div>
   </section>
 
-  <!-- â”€â”€ Career â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── LinkedIn Posts ──────────────────────────────────────── -->
+  <section id="posts" style="border-top:1px solid var(--border);">
+    <div class="section-inner">
+      <span class="section-label fade-up">From LinkedIn</span>
+      <div class="divider fade-up d1"></div>
+      <div class="posts-grid">
+
+        <div class="post-card fade-up d1">
+          <img src="images/posts/post-newyear2026.jpg" alt="New Year 2026" class="post-card-img" />
+          <div class="post-card-body">
+            <span class="post-card-date">January 2026</span>
+            <p class="post-card-text">As we step into 2026, I extend my heartfelt gratitude to the incredible teams across Al Zaabi Group. 2025 reminded us that resilience and collaboration drives real progress. New year. New goals. Same commitment to excellence.</p>
+            <div class="post-card-meta">
+              <span class="post-card-reactions">👍 40 reactions</span>
+              <a href="https://www.linkedin.com/in/prateeksaxena-uae/recent-activity/all/" target="_blank" class="post-card-link">View ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-card fade-up d2">
+          <img src="images/posts/post-saintgobain360.jpg" alt="Saint-Gobain 360 Years" class="post-card-img" />
+          <div class="post-card-body">
+            <span class="post-card-date">March 2025</span>
+            <p class="post-card-text">We celebrated 360 years of Saint-Gobain at our Abu Dhabi branch with the SG Demo Van — live product demonstrations, hands-on experiences, and a packed turnout. Our 10+ year partnership built on trust and excellence in building material solutions.</p>
+            <div class="post-card-meta">
+              <span class="post-card-reactions">👍 60 reactions · 6,343 impressions</span>
+              <a href="https://www.linkedin.com/posts/prateeksaxena-uae_saintgobain-weber-gyproc-activity-7306972020717436928-Ej3A" target="_blank" class="post-card-link">View ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-card fade-up d3">
+          <img src="images/posts/post-iftar2025.jpg" alt="Annual Iftar 2025" class="post-card-img" />
+          <div class="post-card-body">
+            <span class="post-card-date">April 2025</span>
+            <p class="post-card-text">Al Zaabi Group hosted our Annual Iftar at Sofitel Abu Dhabi Corniche — welcoming distinguished guests from the Royal Family, government leaders, business partners, and senior executives across industries during the holy month of Ramadan.</p>
+            <div class="post-card-meta">
+              <span class="post-card-reactions">👍 24 reactions</span>
+              <a href="https://www.linkedin.com/in/prateeksaxena-uae/recent-activity/all/" target="_blank" class="post-card-link">View ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-card fade-up d4">
+          <div class="post-card-img-placeholder">🏭</div>
+          <div class="post-card-body">
+            <span class="post-card-date">July 2025</span>
+            <p class="post-card-text">Highlights from our Henkel Polybit training event at NH47 Restaurant. As a strategic distributor, the session covered waterproofing solutions, tiling, flooring, and more — 65 reactions, 8,920 impressions. Knowledge that goes straight to site.</p>
+            <div class="post-card-meta">
+              <span class="post-card-reactions">👍 65 reactions · 8,920 impressions</span>
+              <a href="https://www.linkedin.com/in/prateeksaxena-uae/recent-activity/all/" target="_blank" class="post-card-link">View ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-card fade-up d5">
+          <img src="images/posts/post-bosch-award.jpg" alt="Bosch Leading Distributor Award" class="post-card-img" />
+          <div class="post-card-body">
+            <span class="post-card-date">January 2025</span>
+            <p class="post-card-text">Honored to be recognized as a Leading Distributor for 2024 by Bosch Middle East and ALFAHIM. A testament to the hard work and collaboration of our entire team and our commitment to delivering unparalleled value to customers.</p>
+            <div class="post-card-meta">
+              <span class="post-card-reactions">👍 54 reactions · 3,041 impressions</span>
+              <a href="https://www.linkedin.com/in/prateeksaxena-uae/recent-activity/all/" target="_blank" class="post-card-link">View ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-card fade-up d5">
+          <img src="images/posts/post-yearend2024.jpg" alt="Year End Review 2024" class="post-card-img" />
+          <div class="post-card-body">
+            <span class="post-card-date">December 2024</span>
+            <p class="post-card-text">2024 milestones: RMC One Day Surgery launch · Saint-Gobain Gyproc Trophy · Signify + Jaquar partnerships · Fepy PRO launch · NH47 opening · INSEAD Digital Transformation certification · Automotive all-time revenue high.</p>
+            <div class="post-card-meta">
+              <span class="post-card-reactions">👍 53 reactions · 3,620 impressions</span>
+              <a href="https://www.linkedin.com/in/prateeksaxena-uae/recent-activity/all/" target="_blank" class="post-card-link">View ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center; margin-top:3rem;" class="fade-up">
+        <a href="https://www.linkedin.com/in/prateeksaxena-uae/recent-activity/all/" target="_blank" rel="noopener" class="btn-outline">View All Posts on LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Career ─────────────────────────────────────────────── -->
   <section id="career">
     <div class="section-inner">
       <span class="section-label fade-up">Career</span>
-      <div class="divider fade-up d1"></div>
+      <div class="divider fade-up d1" style="background:rgba(255,255,255,0.15);"></div>
       <div class="timeline">
         <div class="timeline-item fade-up">
-          <div class="timeline-period">May 2021 â€“ Present</div>
+          <div class="timeline-period">May 2021 – Present</div>
           <div>
             <p class="timeline-role">Group General Manager</p>
-            <p class="timeline-company">Al Zaabi Group Â· Abu Dhabi, UAE</p>
-            <p class="timeline-desc">Leading the strategic direction and operational management of a portfolio of 42 companies across Healthcare, Automotive, Building Materials, E-Commerce, Real Estate, F&amp;B, Education, Transport, Trading, Manufacturing, and Contracting. 8+ years with the group across progressive leadership roles â€” Operations &amp; Strategy Manager â†’ Group Deputy GM â†’ Group GM.</p>
+            <p class="timeline-company">Al Zaabi Group · Abu Dhabi · 8+ yrs total</p>
+            <p class="timeline-desc">Leading strategic direction and operational management of 42 companies across 11 sectors. Progressed through Operations &amp; Strategy Manager (2017) → Group Deputy GM (2019) → Group GM (2021).</p>
           </div>
         </div>
         <div class="timeline-item fade-up d1">
-          <div class="timeline-period">Nov 2021 â€“ Present</div>
+          <div class="timeline-period">Nov 2021 – Present</div>
           <div>
             <p class="timeline-role">General Manager</p>
-            <p class="timeline-company">Emirates Royal Holding Â· Abu Dhabi, UAE</p>
-            <p class="timeline-desc">Senior general management role within a diversified UAE holding group, concurrent with Al Zaabi Group responsibilities.</p>
+            <p class="timeline-company">Emirates Royal Holding · Abu Dhabi</p>
+            <p class="timeline-desc">Senior general management role within a diversified UAE holding group, concurrent with Al Zaabi Group.</p>
           </div>
         </div>
         <div class="timeline-item fade-up d2">
-          <div class="timeline-period">Apr 2011 â€“ Jul 2017</div>
+          <div class="timeline-period">Apr 2011 – Jul 2017</div>
           <div>
             <p class="timeline-role">Corporate Strategy Officer</p>
-            <p class="timeline-company">Delma Emirates Group Â· UAE Â· 7 yrs</p>
-            <p class="timeline-desc">Managing overall strategic and financial operations of 5 group companies engaged in Infrastructure Construction, Capital Market Investments, Manufacturing, Venture Capitalism, Real Estate, and Trading.</p>
+            <p class="timeline-company">Delma Emirates Group · UAE · 7 yrs</p>
+            <p class="timeline-desc">Strategic and financial operations of 5 group companies across Infrastructure, Capital Markets, Manufacturing, Venture Capital, Real Estate, and Trading.</p>
           </div>
         </div>
         <div class="timeline-item fade-up d3">
-          <div class="timeline-period">2009 â€“ 2010</div>
+          <div class="timeline-period">2009 – 2010</div>
           <div>
-            <p class="timeline-role">Operations Analyst Â· Process Engineer</p>
-            <p class="timeline-company">Bose Corporation Â· John Deere Â· United States</p>
-            <p class="timeline-desc">Early career in industrial engineering and operations across two iconic American manufacturers. Foundation in lean systems, process design, and analytical operations management.</p>
+            <p class="timeline-role">Operations Analyst · Process Engineer</p>
+            <p class="timeline-company">Bose Corporation · John Deere · United States</p>
+            <p class="timeline-desc">Early career in industrial operations and process engineering. Foundation in lean systems, Six Sigma, and analytical operations management.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- â”€â”€ Education â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Education ────────────────────────────────────────────── -->
   <section id="education">
     <div class="section-inner">
       <span class="section-label fade-up">Education</span>
       <div class="divider fade-up d1"></div>
       <div class="edu-grid">
         <div class="edu-card fade-up d1">
-          <span class="edu-degree">B.Sc. Industrial Engineering Â· 2005â€“2009</span>
+          <span class="edu-degree">B.Sc. Industrial Engineering · 2005–2009</span>
           <p class="edu-school">Purdue University</p>
-          <p class="edu-detail">West Lafayette, Indiana Â· One of the world's leading engineering universities Â· Foundation in lean manufacturing, systems design, and Six Sigma</p>
+          <p class="edu-detail">West Lafayette, Indiana · Top-ranked engineering university · Foundation in lean manufacturing, systems design, and Six Sigma</p>
         </div>
         <div class="edu-card fade-up d2">
-          <span class="edu-degree">Certificate in Global Management Â· 2023â€“Present</span>
+          <span class="edu-degree">Certificate in Global Management · 2023–Present</span>
           <p class="edu-school">INSEAD</p>
-          <p class="edu-detail">One of the world's most prestigious business schools Â· Digital Transformation (2024) Â· Leading Organizations in Disruptive Times (2024)</p>
+          <p class="edu-detail">One of the world's most prestigious business schools · Digital Transformation (2024) · Leading Organizations in Disruptive Times (2024)</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- â”€â”€ Contact â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
-  
-  <!-- Certifications -->
-  <section style="border-top:1px solid var(--border); padding:5rem 5vw;">
+  <!-- ── Certifications ────────────────────────────────────────── -->
+  <section id="certifications" style="border-top:1px solid var(--border); padding-top:4rem; padding-bottom:5rem;">
     <div class="section-inner">
       <span class="section-label fade-up">Licenses &amp; Certifications</span>
       <div class="divider fade-up d1"></div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem;">
-        <div class="edu-card fade-up d1">
-          <span class="edu-degree">Issued Jul 2024</span>
-          <p class="edu-school" style="font-size:1.05rem;">Leading Organizations in Disruptive Times</p>
-          <p class="edu-detail">INSEAD Executive Education</p>
+      <div class="cert-grid">
+        <div class="cert-card fade-up d1">
+          <span class="cert-issued">Issued Jul 2024</span>
+          <p class="cert-name">Leading Organizations in Disruptive Times</p>
+          <p class="cert-issuer">INSEAD Executive Education</p>
         </div>
-        <div class="edu-card fade-up d2">
-          <span class="edu-degree">Issued Aug 2024</span>
-          <p class="edu-school" style="font-size:1.05rem;">Digital Transformation Certification</p>
-          <p class="edu-detail">INSEAD</p>
+        <div class="cert-card fade-up d2">
+          <span class="cert-issued">Issued Aug 2024</span>
+          <p class="cert-name">Digital Transformation Certification</p>
+          <p class="cert-issuer">INSEAD</p>
         </div>
-        <div class="edu-card fade-up d3">
-          <span class="edu-degree">Apr 2010 – Present</span>
-          <p class="edu-school" style="font-size:1.05rem;">Member</p>
-          <p class="edu-detail">Institute of Management Accountants</p>
+        <div class="cert-card fade-up d3">
+          <span class="cert-issued">Apr 2010 – Present</span>
+          <p class="cert-name">Member</p>
+          <p class="cert-issuer">Institute of Management Accountants</p>
         </div>
       </div>
     </div>
   </section>
-<section id="contact">
+
+  <!-- ── Contact ─────────────────────────────────────────────── -->
+  <section id="contact">
     <div class="section-inner">
+      <span class="section-label">Contact</span>
       <h2 class="contact-headline fade-up">Let's Talk.</h2>
-      <p class="contact-sub fade-up d1">
-        Open to conversations with senior business leaders, investors, and operators across the UAE and the region.
-      </p>
+      <p class="contact-sub fade-up d1">Open to conversations with senior business leaders, investors, and operators across the UAE and the region.</p>
       <div class="contact-buttons">
-        <a href="https://linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn fade-up d2">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <a href="https://linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-gold fade-up d2">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="mailto:prateek@alzaabigroup.com" class="btn fade-up d3">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <a href="mailto:prateek@alzaabigroup.com" class="btn-ghost-light fade-up d3">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           Email
         </a>
       </div>
     </div>
   </section>
 
-  <!-- â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer>
-    <p>Â© 2025 Prateek Saxena</p>
+    <p>© 2025 Prateek Saxena</p>
     <span>
       <a href="https://linkedin.com/in/prateeksaxena-uae" target="_blank">LinkedIn</a>
-      &nbsp;Â·&nbsp; prateeksaxena.me
+      &nbsp;·&nbsp; prateeksaxena.me
     </span>
   </footer>
 
-  <!-- â”€â”€ JS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <script>
-    // Hero fade-in on load
-    const heroEls = document.querySelectorAll('#hero .fade-up');
-    heroEls.forEach((el, i) => setTimeout(() => el.classList.add('visible'), 80 + i * 160));
+    // Hero + metrics immediate
+    document.querySelectorAll('#hero .fade-up').forEach((el,i) => setTimeout(() => el.classList.add('visible'), 80 + i*160));
+    document.querySelectorAll('#metrics .fade-up').forEach((el,i) => setTimeout(() => el.classList.add('visible'), 500 + i*100));
 
-    // Metrics fade-in (treated like hero since visible on load)
-    const metricEls = document.querySelectorAll('#metrics .fade-up');
-    metricEls.forEach((el, i) => setTimeout(() => el.classList.add('visible'), 500 + i * 100));
-
-    // All other sections via IntersectionObserver
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
+    // Scroll-triggered for rest
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-up:not(#hero .fade-up):not(#metrics .fade-up)').forEach(el => obs.observe(el));
 
-    document.querySelectorAll('.fade-up:not(#hero .fade-up):not(#metrics .fade-up)')
-      .forEach(el => observer.observe(el));
-
-    // Scroll cue hide
+    // Scroll cue
     const cue = document.querySelector('.scroll-cue');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) cue.style.opacity = '0';
-    }, { passive: true });
+    window.addEventListener('scroll', () => { if (window.scrollY > 60) cue.style.opacity = '0'; }, { passive: true });
 
-    // Nav background on scroll
+    // Nav subtle bg on scroll
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
-      nav.style.background = window.scrollY > 30
-        ? 'rgba(13,13,13,0.97)'
-        : 'rgba(13,13,13,0.9)';
+      nav.style.borderBottomColor = window.scrollY > 20 ? 'rgba(26,20,16,0.14)' : 'rgba(26,20,16,0.09)';
     }, { passive: true });
   </script>
 </body>
 </html>
-
-
