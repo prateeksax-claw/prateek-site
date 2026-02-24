@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Operator's Playbook | Prateek Saxena</title>
+  <meta name="description" content="Frameworks, techniques, and lessons learned from 16 years building and scaling businesses across the UAE. By Prateek Saxena, Group General Manager, Al Zaabi Group."/>
+  <meta name="keywords" content="Prateek Saxena insights, UAE business frameworks, operator playbook, Al Zaabi Group, UAE distribution, multi-sector management, Gulf business strategy"/>
+  <link rel="canonical" href="https://prateeksaxena.me/insights.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Prateek Saxena"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="The Operator's Playbook | Prateek Saxena"/>
+  <meta property="og:description" content="16 Years. 42 Companies. 11 Sectors. Frameworks and lessons from building businesses across the UAE."/>
+  <meta property="og:url" content="https://prateeksaxena.me/insights.html"/>
+  <meta property="og:image" content="https://prateeksaxena.me/images/prateek-photo.jpg"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="Prateek Saxena"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="The Operator's Playbook | Prateek Saxena"/>
+  <meta name="twitter:description" content="16 Years. 42 Companies. 11 Sectors. Frameworks and lessons from building businesses across the UAE."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0F1A;
+      --bg2: #0F1420;
+      --card: #131825;
+      --card2: #181E2E;
+      --text: #F0EEED;
+      --text2: #8A8A9A;
+      --muted: #4A4A5A;
+      --border: rgba(255,255,255,0.08);
+      --border2: rgba(255,255,255,0.14);
+      --gold: #C9A84C;
+      --gold2: #E8C96A;
+      --gold3: #A07830;
+      --font: 'Inter', system-ui, sans-serif;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --max: 1140px;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.3;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
+
+    /* ─── UTILS ─── */
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .gold-text { background: linear-gradient(135deg, var(--gold), var(--gold2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(11, 15, 26, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+      50% { opacity: 0.9; transform: scale(1.1); box-shadow: 0 0 0 6px rgba(201,168,76,0); }
+    }
+    .nav-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: small-caps;
+      color: var(--text);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--gold); }
+    .btn-connect {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #0B0F1A;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-connect:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    @media (max-width: 768px) {
+      .nav-links a:not(.btn-connect) { display: none; }
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 60vh;
+      padding-top: var(--nav-h);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .hero-ambient {
+      position: absolute;
+      width: 60%;
+      height: 70%;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: inline-block;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+    }
+    .hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--text) 60%, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text2);
+      line-height: 1.75;
+      max-width: 640px;
+      margin: 0 auto 20px;
+    }
+    .hero-byline {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .hero-byline span {
+      color: var(--gold);
+    }
+    .hero-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 28px auto;
+    }
+
+    /* ─── FILTER BAR ─── */
+    #filter-bar {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 90;
+    }
+    .filter-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      height: 52px;
+    }
+    .filter-inner::-webkit-scrollbar { display: none; }
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text2);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      font-family: var(--font);
+    }
+    .filter-btn:hover {
+      border-color: var(--border2);
+      color: var(--text);
+    }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      border-color: transparent;
+      color: #0B0F1A;
+    }
+    .filter-count {
+      font-size: 0.72rem;
+      font-weight: 700;
+      opacity: 0.7;
+    }
+
+    /* ─── CARDS SECTION ─── */
+    #frameworks {
+      padding: 72px 0 100px;
+    }
+    .frameworks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .frameworks-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 580px) {
+      .frameworks-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Framework Card */
+    .framework-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      cursor: default;
+      border-left: 3px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .framework-card:hover {
+      border-left-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,168,76,0.12);
+    }
+    .framework-card.hidden {
+      display: none;
+    }
+
+    /* Card glow on hover */
+    .framework-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .framework-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid;
+      white-space: nowrap;
+    }
+    /* Category color variants */
+    .cat-operations {
+      color: #7ED4C8;
+      background: rgba(126,212,200,0.08);
+      border-color: rgba(126,212,200,0.2);
+    }
+    .cat-growth {
+      color: #82C77A;
+      background: rgba(130,199,122,0.08);
+      border-color: rgba(130,199,122,0.2);
+    }
+    .cat-leadership {
+      color: #B89AE8;
+      background: rgba(184,154,232,0.08);
+      border-color: rgba(184,154,232,0.2);
+    }
+    .cat-digital {
+      color: #7AB8E8;
+      background: rgba(122,184,232,0.08);
+      border-color: rgba(122,184,232,0.2);
+    }
+    .cat-uae-market {
+      color: #E8A87A;
+      background: rgba(232,168,122,0.08);
+      border-color: rgba(232,168,122,0.2);
+    }
+
+    .card-read-time {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.35;
+    }
+    .card-preview {
+      font-size: 0.875rem;
+      color: var(--text2);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+    }
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 100px;
+      padding: 4px 10px;
+    }
+    .coming-soon-badge::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    .card-num {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--muted);
+      opacity: 0.5;
+    }
+
+    /* ─── EMPTY STATE ─── */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--text2);
+      font-size: 0.95rem;
+    }
+    .empty-state.visible { display: block; }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: var(--bg2);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+    }
+    .cta-separator {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 48px;
+    }
+    .cta-h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .cta-p {
+      font-size: 1rem;
+      color: var(--text2);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #0B0F1A;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .btn-gold:hover { transform: translateY(-2px); opacity: 0.92; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border2);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── EMAIL CAPTURE ─── */
+    #email-capture {
+      padding: 64px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .email-capture-inner {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .email-capture-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .email-capture-h3 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .email-capture-p {
+      font-size: 0.9rem;
+      color: var(--text2);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .email-form {
+      display: flex;
+      gap: 10px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .email-input {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-family: var(--font);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-input::placeholder { color: var(--muted); }
+    .email-input:focus { border-color: var(--gold); }
+    .email-submit {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #0B0F1A;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font);
+      white-space: nowrap;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .email-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+    .email-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    @media (max-width: 480px) {
+      .email-form { flex-direction: column; }
+      .email-submit { width: 100%; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      padding: 24px 0;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--text2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── SECTION HEADER ─── */
+    .section-header { margin-bottom: 48px; }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      color: var(--text2);
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">Prateek Saxena</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#sectors">Sectors</a>
+      <a href="insights.html" class="active">Insights</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#career">Career</a>
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-ambient"></div>
+  <div class="container">
+    <div class="hero-content fade-in">
+      <span class="hero-label">The Operator's Playbook</span>
+      <h1 class="hero-h1">16 Years. 42 Companies. 11 Sectors.</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-subtitle">Frameworks, techniques, and lessons learned from building and scaling businesses across the UAE. No theory — just what actually works.</p>
+      <p class="hero-byline">By <span>Prateek Saxena</span> &middot; Group General Manager, Al Zaabi Group</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FILTER BAR ─── -->
+<div id="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all">All <span class="filter-count">8</span></button>
+    <button class="filter-btn" data-filter="operations">Operations <span class="filter-count">2</span></button>
+    <button class="filter-btn" data-filter="growth">Growth <span class="filter-count">2</span></button>
+    <button class="filter-btn" data-filter="digital">Digital <span class="filter-count">1</span></button>
+    <button class="filter-btn" data-filter="leadership">Leadership <span class="filter-count">2</span></button>
+    <button class="filter-btn" data-filter="uae-market">UAE Market <span class="filter-count">1</span></button>
+  </div>
+</div>
+
+<!-- ─── FRAMEWORK CARDS ─── -->
+<section id="frameworks">
+  <div class="container">
+
+    <div class="frameworks-grid" id="cards-grid">
+
+      <!-- 01: The Multi-Sector Operating System -->
+      <div class="framework-card fade-in" data-category="operations">
+        <div class="card-top">
+          <span class="card-category cat-operations">Operations</span>
+          <span class="card-read-time">5 min read</span>
+        </div>
+        <div class="card-title">The Multi-Sector Operating System</div>
+        <div class="card-preview">How to manage 42 companies across 11 sectors without micromanaging — the actual rhythm, dashboards, and decision hierarchy.</div>
+        <div class="card-footer">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <span class="card-num">01</span>
+        </div>
+      </div>
+
+      <!-- 02: The 10-Year Partnership Model -->
+      <div class="framework-card fade-in" data-category="growth" style="transition-delay:0.05s">
+        <div class="card-top">
+          <span class="card-category cat-growth">Growth</span>
+          <span class="card-read-time">5 min read</span>
+        </div>
+        <div class="card-title">The 10-Year Partnership Model</div>
+        <div class="card-preview">What makes a principal relationship last a decade. Lessons from Saint-Gobain, Bosch, Henkel, and CEAT.</div>
+        <div class="card-footer">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <span class="card-num">02</span>
+        </div>
+      </div>
+
+      <!-- 03: From Engineer to Operator -->
+      <div class="framework-card fade-in" data-category="leadership" style="transition-delay:0.1s">
+        <div class="card-top">
+          <span class="card-category cat-leadership">Leadership</span>
+          <span class="card-read-time">5 min read</span>
+        </div>
+        <div class="card-title">From Engineer to Operator</div>
+        <div class="card-preview">How Purdue, Bose, and John Deere built the foundation for managing a multi-billion dirham group.</div>
+        <div class="card-footer">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <span class="card-num">03</span>
+        </div>
+      </div>
+
+      <!-- 04: Lean in the Gulf -->
+      <div class="framework-card fade-in" data-category="operations" style="transition-delay:0.15s">
+        <div class="card-top">
+          <span class="card-category cat-operations">Operations</span>
+          <span class="card-read-time">5 min read</span>
+        </div>
+        <div class="card-title">Lean in the Gulf</div>
+        <div class="card-preview">Applying Six Sigma and industrial engineering to UAE distribution. What transferred from American factories — and what didn't.</div>
+        <div class="card-footer">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <span class="card-num">04</span>
+        </div>
+      </div>
+
+      <!-- 05: NH47: Zero to 2,500 Reviews -->
+      <div class="framework-card fade-in" data-category="growth" style="transition-delay:0.2s">
+        <div class="card-top">
+          <span class="card-category cat-growth">Growth</span>
+          <span class="card-read-time">5 min read</span>
+        </div>
+        <div class="card-title">NH47: Zero to 2,500 Reviews</div>
+        <div class="card-preview">The playbook for launching Abu Dhabi's largest premium dining destination. Site selection, team, positioning, and early mistakes.</div>
+        <div class="card-footer">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <span class="card-num">05</span>
+        </div>
+      </div>
+
+      <!-- 06: AI in a Family Business -->
+      <div class="framework-card fade-in" data-category="digital" style="transition-delay:0.25s">
+        <div class="card-top">
+          <span class="card-category cat-digital">Digital</span>
+          <span class="card-read-time">5 min read</span>
+        </div>
+        <div class="card-title">AI in a Family Business</div>
+        <div class="card-preview">From INSEAD's AI certification to Fepy PRO. Where artificial intelligence works in traditional businesses — and where it fails.</div>
+        <div class="card-footer">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <span class="card-num">06</span>
+        </div>
+      </div>
+
+      <!-- 07: Building Teams That Outlast You -->
+      <div class="framework-card fade-in" data-category="leadership" style="transition-delay:0.3s">
+        <div class="card-top">
+          <span class="card-category cat-leadership">Leadership</span>
+          <span class="card-read-time">5 min read</span>
+        </div>
+        <div class="card-title">Building Teams That Outlast You</div>
+        <div class="card-preview">SOPs, delegation, and trust frameworks. How to make a business unit self-sufficient.</div>
+        <div class="card-footer">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <span class="card-num">07</span>
+        </div>
+      </div>
+
+      <!-- 08: The UAE Distribution Landscape -->
+      <div class="framework-card fade-in" data-category="uae-market" style="transition-delay:0.35s">
+        <div class="card-top">
+          <span class="card-category cat-uae-market">UAE Market</span>
+          <span class="card-read-time">5 min read</span>
+        </div>
+        <div class="card-title">The UAE Distribution Landscape</div>
+        <div class="card-preview">How distribution actually works here. Exclusive vs multi-brand, credit culture, contractor relationships, and what newcomers get wrong.</div>
+        <div class="card-footer">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <span class="card-num">08</span>
+        </div>
+      </div>
+
+    </div><!-- /frameworks-grid -->
+
+    <div class="empty-state" id="empty-state">
+      No frameworks in this category yet. Check back soon.
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CTA SECTION ─── -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-separator"></div>
+    <div class="fade-in">
+      <h2 class="cta-h2">Have a question about any of these frameworks?</h2>
+      <p class="cta-p">If you're building a business in the UAE or navigating a challenge I've written about, I'm open to the conversation.</p>
+      <div class="cta-btns">
+        <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-gold">Connect on LinkedIn</a>
+        <a href="mailto:prateek@alzaabigroup.com" class="btn-ghost">Send Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EMAIL CAPTURE ─── -->
+<section id="email-capture">
+  <div class="container">
+    <div class="email-capture-inner fade-in">
+      <div class="email-capture-label">Stay Updated</div>
+      <h3 class="email-capture-h3">Get notified when new frameworks are published</h3>
+      <p class="email-capture-p">No spam. Just signal — when a new framework drops, you'll be the first to know.</p>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input
+          type="email"
+          class="email-input"
+          placeholder="your@email.com"
+          required
+          aria-label="Email address"
+        />
+        <button type="submit" class="email-submit">Notify Me</button>
+      </form>
+      <p class="email-note">No commitment. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 Prateek Saxena</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="index.html">prateeksaxena.me</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ─── INTERSECTION OBSERVER: fade-in ───
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  fadeEls.forEach(el => io.observe(el));
+
+  // ─── CATEGORY FILTER ───
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.framework-card');
+  const emptyState = document.getElementById('empty-state');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Filter cards
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const cat = card.dataset.category;
+        if (filter === 'all' || cat === filter) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Show/hide empty state
+      if (visibleCount === 0) {
+        emptyState.classList.add('visible');
+      } else {
+        emptyState.classList.remove('visible');
+      }
+    });
+  });
+
+  // ─── EMAIL FORM (visual only) ───
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    const input = e.target.querySelector('.email-input');
+    const btn = e.target.querySelector('.email-submit');
+    btn.textContent = '✓ You\'re on the list';
+    btn.style.background = 'rgba(201,168,76,0.2)';
+    btn.style.color = 'var(--gold)';
+    btn.style.border = '1px solid rgba(201,168,76,0.3)';
+    input.disabled = true;
+    btn.disabled = true;
+  }
+
+  // ─── SMOOTH NAV (for same-page anchors) ───
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
