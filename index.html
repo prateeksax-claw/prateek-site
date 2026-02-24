@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Prateek Saxena | Group General Manager UAE | Al Zaabi Group</title>
-  <meta name="description" content="Prateek Saxena â€” Group General Manager at Al Zaabi Group, UAE. Leading 42 companies across 11 sectors including healthcare, automotive, building materials, and e-commerce. Purdue &amp; INSEAD alumnus. Abu Dhabi, UAE."/>
+  <meta name="description" content="Prateek Saxena  -  Group General Manager at Al Zaabi Group, UAE. Leading 42 companies across 11 sectors including healthcare, automotive, building materials, and e-commerce. Purdue &amp; INSEAD alumnus. Abu Dhabi, UAE."/>
   <meta name="keywords" content="Prateek Saxena, Prateek Saxena UAE, Prateek Saxena Al Zaabi Group, Prateek Saxena Abu Dhabi, Prateek Saxena LinkedIn, Group General Manager UAE, Al Zaabi Group GM, UAE business leader, building materials UAE, healthcare UAE, INSEAD UAE, Purdue UAE, Fepy.com, Saint-Gobain UAE distributor, NH47 Abu Dhabi"/>
   <link rel="canonical" href="https://prateeksaxena.me"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
@@ -26,7 +26,7 @@
   <meta name="twitter:image" content="https://prateeksaxena.me/images/prateek-photo.jpg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --bg: #0B0F1A;
@@ -403,7 +403,7 @@
     }
 
     /* â”€â”€â”€ LOGOS â”€â”€â”€ */
-    #partners { padding: 80px 0; }
+    #partners { padding: 48px 0; }
     .section-title {
       font-family: var(--serif);
       font-size: 2.4rem;
@@ -437,13 +437,28 @@
     .logo-cell:hover { background: var(--card2); }
     .logo-cell img {
       max-width: 110px;
-      max-height: 40px;
+      max-height: 36px;
       object-fit: contain;
-      filter: grayscale(1) brightness(2);
-      opacity: 0.75;
+      filter: grayscale(1) brightness(0) invert(1);
+      opacity: 0.55;
       transition: filter 0.3s, opacity 0.3s;
     }
-    .logo-cell:hover img { filter: none; opacity: 1; }
+    .logo-cell:hover img { filter: grayscale(0) brightness(1) invert(0); opacity: 1; }
+    /* Special: SVG logos with white fill need different filter */
+    .logo-cell img[src*="saint-gobain"],
+    .logo-cell img[src*="henkel"],
+    .logo-cell img[src*="purdue"],
+    .logo-cell img[src*="signify"] {
+      filter: grayscale(1) brightness(10);
+      opacity: 0.55;
+    }
+    .logo-cell:hover img[src*="saint-gobain"],
+    .logo-cell:hover img[src*="henkel"],
+    .logo-cell:hover img[src*="purdue"],
+    .logo-cell:hover img[src*="signify"] {
+      filter: none;
+      opacity: 1;
+    }
     .logo-text {
       font-size: 0.78rem;
       font-weight: 700;
@@ -631,7 +646,7 @@
       overflow: hidden;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .post-card:hover { border-color: var(--border2); transform: translateY(-4px); }
+    .post-card:hover { border-color: rgba(201,168,76,0.35); transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.15); }
     .post-img {
       width: 100%;
       aspect-ratio: 16/9;
@@ -1000,7 +1015,7 @@
         </h1>
         <div class="hero-divider"></div>
         <p class="hero-role">Operator &middot; Builder &middot; Strategist</p>
-        <p class="hero-tagline">I lead 42 companies across 11 sectors in the UAE â€” building systems, scaling businesses, and turning strategy into measurable results.</p>
+        <p class="hero-tagline">I lead 42 companies across 11 sectors in the UAE  -  building systems, scaling businesses, and turning strategy into measurable results.</p>
         <div class="hero-btns">
           <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-gold">Connect on LinkedIn</a>
           <a href="#work" class="btn-ghost">View Work</a>
@@ -1011,7 +1026,7 @@
       <div class="hero-photo-wrap fade-in" style="transition-delay:0.15s">
         <div class="hero-photo-ambient"></div>
         <div class="hero-photo-container">
-          <img src="images/prateek-photo.jpg" alt="Prateek Saxena â€” Group General Manager, Al Zaabi Group" loading="eager"/>
+          <img src="images/prateek-photo.jpg" alt="Prateek Saxena  -  Group General Manager, Al Zaabi Group" loading="eager"/>
           <div class="hero-photo-overlay"></div>
           <div class="hero-float-card">
             <div class="fc-title">Group General Manager</div>
@@ -1058,37 +1073,37 @@
       <p class="section-subtitle">A portfolio built on long-term partnerships across multiple industries.</p>
     </div>
     <div class="logos-grid fade-in">
-      <!-- Saint-Gobain â€” real SVG from saint-gobain.com -->
+      <!-- Saint-Gobain  -  real SVG from saint-gobain.com -->
       <div class="logo-cell">
         <img src="images/logos/saint-gobain.svg" alt="Saint-Gobain" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">Saint-Gobain</span>
       </div>
-      <!-- Henkel â€” real SVG from henkel.com -->
+      <!-- Henkel  -  real SVG from henkel.com -->
       <div class="logo-cell">
         <img src="images/logos/henkel.svg" alt="Henkel" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">Henkel</span>
       </div>
-      <!-- Signify / Philips â€” real SVG from signify.com -->
+      <!-- Signify / Philips  -  real SVG from signify.com -->
       <div class="logo-cell">
         <img src="images/logos/signify.svg" alt="Signify (Philips)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">Signify</span>
       </div>
-      <!-- SATA â€” real SVG decoded from sata.com -->
+      <!-- SATA  -  real SVG decoded from sata.com -->
       <div class="logo-cell">
         <img src="images/logos/sata.svg" alt="SATA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">SATA</span>
       </div>
-      <!-- Jaquar â€” real PNG from jaquargroup.com -->
+      <!-- Jaquar  -  real PNG from jaquargroup.com -->
       <div class="logo-cell">
         <img src="images/logos/jaquar.png" alt="Jaquar" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">Jaquar</span>
       </div>
-      <!-- Bosch â€” real SVG from bosch.com -->
+      <!-- Bosch  -  real SVG from bosch.com -->
       <div class="logo-cell">
         <img src="images/logos/bosch.svg" alt="Bosch" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">Bosch</span>
       </div>
-      <!-- CEAT â€” real PNG from ceat.com -->
+      <!-- CEAT  -  real PNG from ceat.com -->
       <div class="logo-cell">
         <img src="images/logos/ceat.png" alt="CEAT" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">CEAT</span>
@@ -1109,7 +1124,7 @@
       <div class="logo-cell">
         <span class="logo-text">Emirates<br/>Royal Holding</span>
       </div>
-      <!-- John Deere â€” text (logo blocked) -->
+      <!-- John Deere  -  text (logo blocked) -->
       <div class="logo-cell">
         <span class="logo-text">John Deere</span>
       </div>
@@ -1117,12 +1132,12 @@
       <div class="logo-cell">
         <span class="logo-text">Bose</span>
       </div>
-      <!-- Purdue â€” real SVG from purdue.edu -->
+      <!-- Purdue  -  real SVG from purdue.edu -->
       <div class="logo-cell">
         <img src="images/logos/purdue.svg" alt="Purdue University" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">Purdue</span>
       </div>
-      <!-- INSEAD â€” real PNG from insead.edu -->
+      <!-- INSEAD  -  real PNG from insead.edu -->
       <div class="logo-cell">
         <img src="images/logos/insead.png" alt="INSEAD" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
         <span class="logo-text" style="display:none">INSEAD</span>
@@ -1140,7 +1155,7 @@
     </div>
     <div class="about-grid">
       <div class="about-left fade-in">
-        <p>At the helm of <strong>Al Zaabi Group</strong>, I lead the strategic direction and operational management of <strong>42 companies</strong> across diverse sectors. My work sits at the intersection of strategy and execution â€” I don't just set direction, I get into the details that make it happen.<br/><br/>A proud alumnus of <strong>Purdue University</strong> (BSc Industrial Engineering) and <strong>INSEAD</strong>, I bring a global mindset with deep local expertise built over <strong>16+ years in the UAE</strong>.</p>
+        <p>At the helm of <strong>Al Zaabi Group</strong>, I lead the strategic direction and operational management of <strong>42 companies</strong> across diverse sectors. My work sits at the intersection of strategy and execution  -  I don't just set direction, I get into the details that make it happen.<br/><br/>A proud alumnus of <strong>Purdue University</strong> (BSc Industrial Engineering) and <strong>INSEAD</strong>, I bring a global mindset with deep local expertise built over <strong>16+ years in the UAE</strong>.</p>
       </div>
       <div class="about-right fade-in" style="transition-delay:0.15s">
         <div class="about-card">
@@ -1149,7 +1164,7 @@
         </div>
         <div class="about-card">
           <div class="about-card-num">2</div>
-          <div class="about-card-text"><strong>Turn data into decisions</strong> â€” from daily sales ops to boardroom strategy</div>
+          <div class="about-card-text"><strong>Turn data into decisions</strong>  -  from daily sales ops to boardroom strategy</div>
         </div>
         <div class="about-card">
           <div class="about-card-num">3</div>
@@ -1169,8 +1184,8 @@
   <div class="quote-deco">&ldquo;</div>
   <div class="container">
     <div class="fade-in">
-      <blockquote class="quote-text">"The UAE rewards speed and relationships equally. Move fast, build trust â€” neither alone is enough."</blockquote>
-      <p class="quote-attr">â€” Prateek Saxena, Group General Manager &middot; Al Zaabi Group</p>
+      <blockquote class="quote-text">"The UAE rewards speed and relationships equally. Move fast, build trust  -  neither alone is enough."</blockquote>
+      <p class="quote-attr"> -  Prateek Saxena, Group General Manager &middot; Al Zaabi Group</p>
     </div>
   </div>
 </section>
@@ -1181,7 +1196,7 @@
     <div class="section-header fade-in">
       <div class="section-label">Portfolio</div>
       <h2 class="section-title">Industry Sectors</h2>
-      <p class="section-subtitle">Eleven sectors, one integrated group â€” each business built to lead its market.</p>
+      <p class="section-subtitle">Eleven sectors, one integrated group  -  each business built to lead its market.</p>
     </div>
     <div class="bento-grid">
       <!-- Healthcare - wide -->
@@ -1224,7 +1239,7 @@
       <div class="sector-card fade-in" style="transition-delay:0.15s">
         <div class="sector-num">04</div>
         <div class="sector-name">E-Commerce</div>
-        <div class="sector-desc">Fepy.com UAE platform &middot; Fepy PRO 2024 â€” AI-powered sourcing with credit facilities &middot; B2B + D2C digital commerce.</div>
+        <div class="sector-desc">Fepy.com UAE platform &middot; Fepy PRO 2024  -  AI-powered sourcing with credit facilities &middot; B2B + D2C digital commerce.</div>
         <div class="sector-tags">
           <span class="tag">Fepy.com</span>
           <span class="tag">Fepy PRO</span>
@@ -1272,13 +1287,13 @@
 
       <!-- Post 1 -->
       <div class="post-card fade-in">
-        <img class="post-img" src="images/post-newyear2026.jpg" alt="Stepping into 2026 with Gratitude"
+        <img class="post-img" src="images/posts/post-newyear2026.jpg" alt="Stepping into 2026 with Gratitude"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="post-img-placeholder" style="display:none"><span>New Year 2026</span></div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-date">Jan 2026</span>
-            <span class="post-reactions">â¤ 40 reactions</span>
+            <span class="post-reactions">40 reactions</span>
           </div>
           <div class="post-title">Stepping into 2026 with Gratitude</div>
           <div class="post-excerpt">As we step into 2026, I extend heartfelt gratitude to the incredible teams across Al Zaabi Group. 2025 reminded us that resilience and collaboration drive real progress.</div>
@@ -1287,54 +1302,54 @@
 
       <!-- Post 2 -->
       <div class="post-card fade-in" style="transition-delay:0.05s">
-        <img class="post-img" src="images/post-saintgobain360.jpg" alt="360 Years of Saint-Gobain"
+        <img class="post-img" src="images/posts/post-saintgobain360.jpg" alt="360 Years of Saint-Gobain"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="post-img-placeholder" style="display:none"><span>Saint-Gobain 360</span></div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-date">Mar 2025</span>
-            <span class="post-reactions">â¤ 60 reactions</span>
+            <span class="post-reactions">60 reactions</span>
             <span class="post-impressions">6,343 impressions</span>
           </div>
           <div class="post-title">360 Years of Saint-Gobain</div>
-          <div class="post-excerpt">Celebrating 360 years of Saint-Gobain at our Abu Dhabi branch with the SG Demo Van â€” live product demonstrations showcasing our 10+ year partnership.</div>
+          <div class="post-excerpt">Celebrating 360 years of Saint-Gobain at our Abu Dhabi branch with the SG Demo Van  -  live product demonstrations showcasing our 10+ year partnership.</div>
         </div>
       </div>
 
       <!-- Post 3 -->
       <div class="post-card fade-in" style="transition-delay:0.1s">
-        <img class="post-img" src="images/post-iftar2025.jpg" alt="Annual Iftar â€” Sofitel Abu Dhabi"
+        <img class="post-img" src="images/posts/post-iftar2025.jpg" alt="Annual Iftar  -  Sofitel Abu Dhabi"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="post-img-placeholder" style="display:none"><span>Iftar 2025</span></div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-date">Apr 2025</span>
-            <span class="post-reactions">â¤ 24 reactions</span>
+            <span class="post-reactions">24 reactions</span>
           </div>
-          <div class="post-title">Annual Iftar â€” Sofitel Abu Dhabi</div>
-          <div class="post-excerpt">Al Zaabi Group hosted our Annual Iftar at Sofitel Abu Dhabi Corniche â€” welcoming guests from the Royal Family, government leaders, and senior executives during Ramadan.</div>
+          <div class="post-title">Annual Iftar  -  Sofitel Abu Dhabi</div>
+          <div class="post-excerpt">Al Zaabi Group hosted our Annual Iftar at Sofitel Abu Dhabi Corniche  -  welcoming guests from the Royal Family, government leaders, and senior executives during Ramadan.</div>
         </div>
       </div>
 
       <!-- Post 4 -->
       <div class="post-card fade-in" style="transition-delay:0.15s">
-        <img class="post-img" src="images/post-bosch-award.jpg" alt="Leading Distributor â€” Bosch & ALFAHIM"
+        <img class="post-img" src="images/posts/post-bosch-award.jpg" alt="Leading Distributor  -  Bosch & ALFAHIM"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="post-img-placeholder" style="display:none"><span>Bosch Award</span></div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-date">Jan 2025</span>
-            <span class="post-reactions">â¤ 54 reactions</span>
+            <span class="post-reactions">54 reactions</span>
             <span class="post-impressions">3,041 impressions</span>
           </div>
-          <div class="post-title">Leading Distributor â€” Bosch &amp; ALFAHIM</div>
-          <div class="post-excerpt">Honored to receive the Leading Distributor recognition for 2024 from Bosch Middle East and ALFAHIM â€” a testament to the hard work of our entire team.</div>
+          <div class="post-title">Leading Distributor  -  Bosch &amp; ALFAHIM</div>
+          <div class="post-excerpt">Honored to receive the Leading Distributor recognition for 2024 from Bosch Middle East and ALFAHIM  -  a testament to the hard work of our entire team.</div>
         </div>
       </div>
 
       <!-- Post 5 -->
       <div class="post-card fade-in" style="transition-delay:0.2s">
-        <img class="post-img" src="images/post-saintgobain-gyproc-trophy.jpg" alt="Saint-Gobain Gyproc Trophy 2024"
+        <img class="post-img" src="images/posts/post-saintgobain-gyproc-trophy.jpg" alt="Saint-Gobain Gyproc Trophy 2024"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="post-img-placeholder" style="display:none"><span>Gyproc Trophy</span></div>
         <div class="post-body">
@@ -1342,22 +1357,22 @@
             <span class="post-date">Nov 2024</span>
           </div>
           <div class="post-title">Saint-Gobain Gyproc Trophy 2024</div>
-          <div class="post-excerpt">Al Zaabi Group awarded Leading Distributor for Saint-Gobain Gyproc at the 4th Saint-Gobain Gypsum Trophy Awards â€” recognition of our commitment to building material excellence.</div>
+          <div class="post-excerpt">Al Zaabi Group awarded Leading Distributor for Saint-Gobain Gyproc at the 4th Saint-Gobain Gypsum Trophy Awards  -  recognition of our commitment to building material excellence.</div>
         </div>
       </div>
 
       <!-- Post 6 -->
       <div class="post-card fade-in" style="transition-delay:0.25s">
-        <img class="post-img" src="images/post-yearend2024.jpg" alt="2024 â€” A Year of Milestones"
+        <img class="post-img" src="images/posts/post-yearend2024.jpg" alt="2024  -  A Year of Milestones"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="post-img-placeholder" style="display:none"><span>Year End 2024</span></div>
         <div class="post-body">
           <div class="post-meta">
             <span class="post-date">Dec 2024</span>
-            <span class="post-reactions">â¤ 53 reactions</span>
+            <span class="post-reactions">53 reactions</span>
             <span class="post-impressions">3,620 impressions</span>
           </div>
-          <div class="post-title">2024 â€” A Year of Milestones</div>
+          <div class="post-title">2024  -  A Year of Milestones</div>
           <div class="post-excerpt">2024 highlights: RMC One Day Surgery Â· Gyproc Trophy Â· SATA exclusive distributor Â· Fepy PRO AI launch Â· NH47 opening Â· Henkel &amp; Jaquar partnerships Â· INSEAD certifications Â· Automotive all-time high.</div>
         </div>
       </div>
@@ -1377,7 +1392,7 @@
 
       <div class="timeline-entry">
         <div class="timeline-dot"></div>
-        <div class="timeline-period">May 2021 â€“ Present</div>
+        <div class="timeline-period">May 2021 " Present</div>
         <div class="timeline-role">Group General Manager</div>
         <div class="timeline-company">Al Zaabi Group Â· Abu Dhabi, UAE</div>
         <div class="timeline-desc">Leading 42 companies across 11 sectors. Full P&amp;L responsibility, principal brand relationships, digital ventures, and F&amp;B expansion.</div>
@@ -1385,7 +1400,7 @@
 
       <div class="timeline-entry">
         <div class="timeline-dot"></div>
-        <div class="timeline-period">Nov 2021 â€“ Present</div>
+        <div class="timeline-period">Nov 2021 " Present</div>
         <div class="timeline-role">General Manager</div>
         <div class="timeline-company">Emirates Royal Holding Â· Abu Dhabi, UAE</div>
         <div class="timeline-desc">Senior leadership role concurrent with Al Zaabi Group, overseeing strategic operations and investments.</div>
@@ -1393,7 +1408,7 @@
 
       <div class="timeline-entry">
         <div class="timeline-dot"></div>
-        <div class="timeline-period">2019 â€“ 2021</div>
+        <div class="timeline-period">2019 " 2021</div>
         <div class="timeline-role">Group Deputy General Manager</div>
         <div class="timeline-company">Al Zaabi Group Â· Abu Dhabi, UAE</div>
         <div class="timeline-desc">Progressed from Operations &amp; Strategy Manager (2017) through Deputy GM to Group GM. Built the operational framework for multi-sector group management.</div>
@@ -1401,7 +1416,7 @@
 
       <div class="timeline-entry">
         <div class="timeline-dot"></div>
-        <div class="timeline-period">Apr 2011 â€“ Jul 2017</div>
+        <div class="timeline-period">Apr 2011 " Jul 2017</div>
         <div class="timeline-role">Corporate Strategy Officer / Business Analyst</div>
         <div class="timeline-company">Delma Emirates Group Â· UAE</div>
         <div class="timeline-desc">Strategic and financial operations across 5 group companies: Infrastructure, Capital Markets, Manufacturing, VC, Real Estate, and Trading.</div>
@@ -1409,7 +1424,7 @@
 
       <div class="timeline-entry">
         <div class="timeline-dot"></div>
-        <div class="timeline-period">2009 â€“ 2011</div>
+        <div class="timeline-period">2009 " 2011</div>
         <div class="timeline-role">Operations Analyst / Process Engineer</div>
         <div class="timeline-company">Bose Corporation Â· John Deere Â· USA</div>
         <div class="timeline-desc">Foundation in lean manufacturing, Six Sigma, and industrial operations. Built the analytical rigour that underpins group-level management today.</div>
@@ -1439,7 +1454,7 @@
           </div>
         </div>
         <div class="edu-degree">B.Sc. Industrial Engineering</div>
-        <div class="edu-years">2005 â€“ 2009</div>
+        <div class="edu-years">2005 " 2009</div>
         <div class="edu-location">West Lafayette, Indiana, USA</div>
       </div>
 
@@ -1450,8 +1465,8 @@
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
           <div class="edu-logo-text-insead" style="display:none">INSEAD</div>
         </div>
-        <div class="edu-degree">Executive Education â€” Certificate in Global Management</div>
-        <div class="edu-years">2023 â€“ Present</div>
+        <div class="edu-degree">Executive Education  -  Certificate in Global Management</div>
+        <div class="edu-years">2023 " Present</div>
         <div class="edu-location">Executive Education Programme</div>
         <div class="edu-courses">Digital Transformation &middot; Leadership &middot; AI in Business</div>
       </div>
@@ -1488,7 +1503,7 @@
       </div>
 
       <div class="cert-card">
-        <div class="cert-date">Apr 2010 â€“ Present</div>
+        <div class="cert-date">Apr 2010 " Present</div>
         <div class="cert-name">Member</div>
         <div class="cert-inst">Institute of Management Accountants (IMA)</div>
       </div>
