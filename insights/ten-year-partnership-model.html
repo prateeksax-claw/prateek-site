@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The 10-Year Partnership Model | Prateek Saxena</title>
+  <meta name="description" content="What makes a principal relationship last a decade. Lessons from Saint-Gobain, Bosch, Henkel, and CEAT on building distributor-principal partnerships that survive market cycles, team changes, and hard conversations."/>
+  <link rel="canonical" href="https://prateeksaxena.me/insights/ten-year-partnership-model.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Prateek Saxena"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="The 10-Year Partnership Model | Prateek Saxena"/>
+  <meta property="og:description" content="What makes a principal relationship last a decade. Lessons from Saint-Gobain, Bosch, Henkel, and CEAT."/>
+  <meta property="og:url" content="https://prateeksaxena.me/insights/ten-year-partnership-model.html"/>
+  <meta property="og:image" content="https://prateeksaxena.me/images/prateek-photo.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0F1A;
+      --bg2: #0F1420;
+      --card: #131825;
+      --text: #F0EEED;
+      --text2: #8A8A9A;
+      --muted: #4A4A5A;
+      --border: rgba(255,255,255,0.08);
+      --border2: rgba(255,255,255,0.14);
+      --gold: #C9A84C;
+      --gold2: #E8C96A;
+      --font: 'Inter', system-ui, sans-serif;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --max: 780px;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.3;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+    }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(11, 15, 26, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .nav-name { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: small-caps; color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--gold); }
+    .btn-connect { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #0B0F1A; padding: 8px 20px; border-radius: 6px; font-size: 0.875rem; font-weight: 700; text-decoration: none; }
+    @media (max-width: 768px) { .nav-links a:not(.btn-connect) { display: none; } }
+
+    .article-wrap { padding-top: calc(var(--nav-h) + 60px); padding-bottom: 100px; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text2); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 40px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+    .back-link svg { width: 16px; height: 16px; }
+
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-category { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; color: #82C77A; background: rgba(130,199,122,0.08); border: 1px solid rgba(130,199,122,0.2); }
+    .article-read-time, .article-date { font-size: 0.8rem; color: var(--muted); }
+
+    h1.article-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--text); margin-bottom: 20px; }
+
+    .article-deck { font-size: 1.15rem; color: var(--text2); line-height: 1.75; margin-bottom: 36px; border-left: 3px solid var(--gold); padding-left: 20px; }
+
+    .article-byline { display: flex; align-items: center; gap: 14px; padding: 16px 0 36px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+    .byline-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+    .byline-text { display: flex; flex-direction: column; gap: 2px; }
+    .byline-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .byline-role { font-size: 0.8rem; color: var(--muted); }
+
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: var(--text); }
+    .article-body h2 { font-family: var(--serif); font-size: 1.6rem; color: var(--text); margin: 52px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 0.8rem; font-weight: 700; color: var(--gold2); margin: 36px 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .article-body p { margin-bottom: 24px; color: rgba(240,238,237,0.9); }
+    .article-body strong { color: var(--text); font-weight: 700; }
+    .article-body ul, .article-body ol { margin: 0 0 28px 0; padding-left: 0; list-style: none; }
+    .article-body ul li, .article-body ol li { padding: 10px 0 10px 28px; position: relative; color: rgba(240,238,237,0.9); border-bottom: 1px solid var(--border); font-size: 1rem; }
+    .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: none; }
+    .article-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .article-body ol { counter-reset: item; }
+    .article-body ol li::before { content: counter(item); counter-increment: item; position: absolute; left: 0; color: var(--gold); font-weight: 800; font-size: 0.85rem; }
+
+    .callout { background: var(--card); border: 1px solid var(--border2); border-left: 3px solid var(--gold); border-radius: 12px; padding: 24px 28px; margin: 40px 0; }
+    .callout-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .callout p { margin: 0 !important; font-size: 1rem; color: var(--text2); line-height: 1.7; }
+
+    .article-divider { width: 40px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 56px auto; }
+
+    .article-footer-nav { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .footer-nav-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .footer-nav-link { font-family: var(--serif); font-size: 1.15rem; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .footer-nav-link:hover { color: var(--gold); }
+
+    footer { border-top: 1px solid var(--border); background: var(--bg); padding: 24px 0; margin-top: 80px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.82rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">Prateek Saxena</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#sectors">Sectors</a>
+      <a href="../insights.html" class="active">Insights</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#career">Career</a>
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <div class="container">
+
+    <a href="../insights.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      The Operator's Playbook
+    </a>
+
+    <div class="article-meta">
+      <span class="article-category">Growth & Partnerships</span>
+      <span class="article-read-time">6 min read</span>
+      <span class="article-date">February 2026</span>
+    </div>
+
+    <h1 class="article-title">The 10-Year Partnership Model</h1>
+
+    <p class="article-deck">Most distributor-principal relationships last 2-3 years. Ours with Saint-Gobain is over a decade. Here's what actually keeps a partnership alive through market cycles, leadership changes, and the hard conversations that neither side wants to have.</p>
+
+    <div class="article-byline">
+      <img src="../images/prateek-photo.jpg" alt="Prateek Saxena" class="byline-avatar"/>
+      <div class="byline-text">
+        <span class="byline-name">Prateek Saxena</span>
+        <span class="byline-role">Group General Manager, Al Zaabi Group</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>The UAE distribution landscape is littered with short-term principal relationships. Brand comes in, appoints a distributor, hits friction, switches. It's so common that many distributors have stopped investing meaningfully in any single principal — why dedicate a team, build a showroom, develop technical expertise, if the arrangement might dissolve in three years?</p>
+
+      <p>This creates a self-fulfilling cycle. Underinvestment leads to underperformance. Underperformance triggers principal dissatisfaction. The relationship ends. Neither party wins.</p>
+
+      <p>Our relationship with Saint-Gobain is different. It has lasted over a decade, it keeps growing, and we've just jointly celebrated 360 years of Saint-Gobain's existence with a live demo event at our branch. That doesn't happen by accident. It's the result of a very specific philosophy about what distributor-principal relationships are actually for.</p>
+
+      <h2>The Fundamental Mistake</h2>
+
+      <p>Most distributors think their job is to move product. The principal is the brand, the distributor is the sales channel. You take the product, you sell it, you settle accounts, you do it again.</p>
+
+      <p>That transactional frame works fine until something breaks. And something always breaks eventually — a price adjustment that doesn't work for the local market, a product launch that goes slower than projected, a competitor that undercuts the segment. When the relationship is purely transactional, those moments become crisis points. Each side starts protecting their position. Trust evaporates fast.</p>
+
+      <p>The frame that actually works is different: <strong>the distributor is the principal's UAE operation.</strong> Not a middleman. Not just a sales channel. The entity responsible for building the brand, understanding the local customer, training the market, and creating the pull that makes the push worthwhile.</p>
+
+      <p>When you operate from that position — and when the principal treats you as a genuine market partner rather than a revenue line — the dynamic changes entirely.</p>
+
+      <h2>What Actually Keeps a Partnership Together</h2>
+
+      <h3>1. Invest ahead of revenue</h3>
+
+      <p>The clearest signal that differentiates short-term distributors from long-term partners is where they invest, and when. Short-term distributors invest proportionally to current revenue. Long-term partners invest ahead of revenue — in technical teams, in training, in physical infrastructure — because they're building market position, not just moving stock.</p>
+
+      <p>This is counterintuitive from a pure finance perspective. But it sends a signal to the principal that cannot be faked: skin in the game. A distributor who has trained five technical specialists on your product system is not walking away from the relationship lightly. A distributor who has built a dedicated showroom is committed to making the brand work. That investment changes the power dynamic — in a healthy way.</p>
+
+      <h3>2. Manage data, not opinions</h3>
+
+      <p>The most destructive thing in a distributor-principal relationship is information asymmetry weaponised. The principal wonders if the distributor is working hard enough. The distributor wonders if the product is actually competitive. Both sides fill the gaps with assumptions and politics.</p>
+
+      <p>The solution is radical transparency on market data. We share genuine sell-through data with our principals — not just purchases from them, but actual sales into the market, by channel, by segment, by geography. We share why deals are being won and lost. We bring competitor intelligence proactively, not just when we need it as negotiation leverage.</p>
+
+      <p>This takes discipline, because the instinct is always to share only the data that makes you look good. But principals work in many markets. They have benchmarks. If your numbers look too clean, they stop trusting them. Real data — including the difficult data — builds real trust.</p>
+
+      <h3>3. Have the hard conversation first</h3>
+
+      <p>Every long-term partnership goes through moments where one side is unhappy with the other. Performance below target. A pricing change that creates channel conflict. A product quality issue that hits the market. The question isn't whether these moments arrive — they will. The question is who initiates the conversation.</p>
+
+      <p>We have a rule: we raise the hard issue before the principal does. If we know we're behind on a target, we call with the analysis before they ask for it. If there's a product issue in the field, we document it and bring it to them with proposed solutions before it becomes a complaint. If a market condition is making the current commercial structure unworkable, we open the conversation even though it's uncomfortable.</p>
+
+      <p>This sounds obvious. Most distributors do the opposite — they wait, hope the problem resolves, and end up having the conversation from a defensive position. Raising the issue first signals two things: that you're watching closely enough to catch it, and that you're invested enough in the partnership to fix it.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Hard Truth</div>
+        <p>A principal that trusts you doesn't need to audit you. A principal that doesn't trust you will find reasons to audit you regardless. Trust is earned by the conversations you initiate, not the ones you respond to.</p>
+      </div>
+
+      <h2>The People Problem</h2>
+
+      <p>Principal relationships are ultimately relationships between people, and people change. The country manager who championed you gets promoted to Singapore. The regional director who understood the UAE market is replaced by someone who wants to standardise everything. The sales lead who knew your team joins a competitor.</p>
+
+      <p>If your partnership exists only in the people who built it, it will not survive these transitions — and they will happen.</p>
+
+      <p>What survives is documented market knowledge, track records, and institutional reputation. We invest heavily in ensuring that our history with any major principal is visible and accessible — not just in the memories of the individuals involved, but in data, case studies, and documented performance. When a new regional lead comes in, they should be able to look at a decade of data and understand why this relationship has worked.</p>
+
+      <p>We also invest in relationships at multiple levels, not just at the top. Technical team to technical team. Sales team to sales team. Operations to operations. When leadership changes, the relationship network doesn't collapse to zero.</p>
+
+      <h2>The Commercial Structure Matters Too</h2>
+
+      <p>All of this is necessary but not sufficient. The commercial terms of the partnership also have to be structured for the long term, and this is where many distributor-principal arrangements break down even when the goodwill is present on both sides.</p>
+
+      <p>A few principles that have served us well:</p>
+
+      <ul>
+        <li><strong>Avoid exclusivity arrangements that aren't defended by genuine investment.</strong> If you have exclusivity on a territory, you need to be able to demonstrate that you're actually serving it — that exclusivity earns itself every year. Principals who feel a distributor is sitting on exclusivity without investing in the market will eventually work around it, formally or informally.</li>
+        <li><strong>Decouple pricing reviews from performance reviews.</strong> When commercial renegotiations and performance discussions happen in the same conversation, everything becomes adversarial. Keep them separate. Price structure is about market conditions. Performance is about execution. They inform each other but they're not the same conversation.</li>
+        <li><strong>Protect the principal's brand more carefully than your margin.</strong> In the short run, cutting corners on positioning, on customer experience, on after-sales — these things can protect margin. In the long run, they erode the brand value that makes the product worth distributing at all. We've consistently taken the position that we'll protect the Saint-Gobain brand positioning in the UAE market even when it costs us short-term. That's why they stay.</li>
+      </ul>
+
+      <div class="article-divider"></div>
+
+      <p>Ten years is not a trophy. It's evidence that the model works. The next ten years will require the same things the last ten did: investment ahead of revenue, transparency on data, honesty in hard moments, and genuine commitment to the principal's brand — not just their product.</p>
+
+      <p>The distributors who will win in the next decade of UAE building materials and consumer goods are not the ones with the best salespeople or the best margins. They're the ones who have made themselves genuinely irreplaceable to the brands they carry.</p>
+
+    </div>
+
+    <div class="article-footer-nav">
+      <div>
+        <div class="footer-nav-label">← Previous</div>
+        <a href="multi-sector-operating-system.html" class="footer-nav-link">The Multi-Sector Operating System</a>
+      </div>
+      <div style="text-align:right">
+        <div class="footer-nav-label">Next →</div>
+        <a href="lean-in-the-gulf.html" class="footer-nav-link">Lean in the Gulf</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Prateek Saxena</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../index.html">prateeksaxena.me</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

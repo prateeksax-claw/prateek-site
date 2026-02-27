@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Multi-Sector Operating System | Prateek Saxena</title>
+  <meta name="description" content="How to manage 42 companies across 11 sectors without micromanaging — the actual rhythm, dashboards, and decision hierarchy. By Prateek Saxena."/>
+  <link rel="canonical" href="https://prateeksaxena.me/insights/multi-sector-operating-system.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Prateek Saxena"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="The Multi-Sector Operating System | Prateek Saxena"/>
+  <meta property="og:description" content="How to manage 42 companies across 11 sectors without micromanaging."/>
+  <meta property="og:url" content="https://prateeksaxena.me/insights/multi-sector-operating-system.html"/>
+  <meta property="og:image" content="https://prateeksaxena.me/images/prateek-photo.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0F1A;
+      --bg2: #0F1420;
+      --card: #131825;
+      --text: #F0EEED;
+      --text2: #8A8A9A;
+      --muted: #4A4A5A;
+      --border: rgba(255,255,255,0.08);
+      --border2: rgba(255,255,255,0.14);
+      --gold: #C9A84C;
+      --gold2: #E8C96A;
+      --font: 'Inter', system-ui, sans-serif;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --max: 780px;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.3;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+    }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(11, 15, 26, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .nav-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: small-caps;
+      color: var(--text);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--gold); }
+    .btn-connect {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #0B0F1A;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .nav-links a:not(.btn-connect) { display: none; }
+    }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap {
+      padding-top: calc(var(--nav-h) + 60px);
+      padding-bottom: 100px;
+    }
+
+    /* BACK LINK */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 40px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gold); }
+    .back-link svg { width: 16px; height: 16px; }
+
+    /* ARTICLE HEADER */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .article-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      color: #7ED4C8;
+      background: rgba(126,212,200,0.08);
+      border: 1px solid rgba(126,212,200,0.2);
+    }
+    .article-read-time {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .article-date {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    h1.article-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .article-deck {
+      font-size: 1.15rem;
+      color: var(--text2);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+    }
+
+    .article-byline {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0 36px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .byline-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+    }
+    .byline-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .byline-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .byline-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ARTICLE BODY */
+    .article-body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text);
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--text);
+      margin: 52px 0 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .article-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold2);
+      margin: 36px 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.8rem;
+    }
+
+    .article-body p {
+      margin-bottom: 24px;
+      color: rgba(240,238,237,0.9);
+    }
+
+    .article-body strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 28px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .article-body ul li, .article-body ol li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      color: rgba(240,238,237,0.9);
+      border-bottom: 1px solid var(--border);
+      font-size: 1rem;
+    }
+    .article-body ul li:last-child, .article-body ol li:last-child {
+      border-bottom: none;
+    }
+    .article-body ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .article-body ol {
+      counter-reset: item;
+    }
+    .article-body ol li::before {
+      content: counter(item);
+      counter-increment: item;
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-left: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 40px 0;
+    }
+    .callout-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .callout p {
+      margin: 0 !important;
+      font-size: 1rem;
+      color: var(--text2);
+      line-height: 1.7;
+    }
+
+    /* DIVIDER */
+    .article-divider {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 56px auto;
+    }
+
+    /* FOOTER NAV */
+    .article-footer-nav {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-nav-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .footer-nav-link {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav-link:hover { color: var(--gold); }
+
+    /* PAGE FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      padding: 24px 0;
+      margin-top: 80px;
+    }
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.82rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">Prateek Saxena</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#sectors">Sectors</a>
+      <a href="../insights.html" class="active">Insights</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#career">Career</a>
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <div class="container">
+
+    <a href="../insights.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      The Operator's Playbook
+    </a>
+
+    <div class="article-meta">
+      <span class="article-category">Operations</span>
+      <span class="article-read-time">6 min read</span>
+      <span class="article-date">February 2026</span>
+    </div>
+
+    <h1 class="article-title">The Multi-Sector Operating System</h1>
+
+    <p class="article-deck">42 companies. 11 sectors. One person coordinating all of it. Here's the actual rhythm, the dashboards, and the decision hierarchy that makes it work — without burning out or becoming a bottleneck.</p>
+
+    <div class="article-byline">
+      <img src="../images/prateek-photo.jpg" alt="Prateek Saxena" class="byline-avatar"/>
+      <div class="byline-text">
+        <span class="byline-name">Prateek Saxena</span>
+        <span class="byline-role">Group General Manager, Al Zaabi Group</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>People hear "42 companies across 11 sectors" and assume one of two things: either there's a massive corporate infrastructure holding it together, or it's controlled chaos kept running by sheer force of personality.</p>
+
+      <p>Neither is quite right. What actually works is a system — a specific operating rhythm with clear rules about what information flows up, what decisions get made where, and how you move between sectors without losing the plot entirely.</p>
+
+      <p>I've refined this over eight years at Al Zaabi Group. It's not elegant in theory. It works in practice.</p>
+
+      <h2>The First Problem: Attention Is Not Scalable</h2>
+
+      <p>When I stepped into the Group General Manager role, the instinct — and the expectation from the businesses — was that I would be deeply involved everywhere. Every P&L, every major vendor meeting, every strategic call. That model works for two or three companies. At 42, it doesn't just become difficult. It becomes the single biggest risk to the business.</p>
+
+      <p>The moment you become the bottleneck, decisions stop being made. Deals sit waiting. Good managers leave because they can't get approvals and can't move fast enough. So the first design principle I built around was this: <strong>my involvement should be the exception, not the default.</strong></p>
+
+      <p>This sounds obvious. It's actually very hard to execute. Because the gravitational pull in any organisation is always toward centralisation. Problems come up. People escalate. And if you answer every escalation, you've just trained the organisation to escalate everything.</p>
+
+      <h2>The Operating Rhythm</h2>
+
+      <p>The system I run on has three layers:</p>
+
+      <h3>Layer 1 — Weekly Pulse</h3>
+      <p>Every Monday, I get a single-page snapshot from each business unit — revenue vs. target, key operational flag, and one decision needed from me this week if any. That's it. No narrative, no justification. Numbers and one flag. This takes me about an hour to process 15-20 of these, and it immediately tells me where attention is needed and where I can safely stay hands-off.</p>
+
+      <h3>Layer 2 — Monthly Deep Dives</h3>
+      <p>Each month I do proper reviews on a rotating basis. Not every company every month — that's impossible. Instead, every company gets a deep review quarterly, with more frequent attention for any unit in a growth phase or showing distress signals. The monthly review has a fixed format: prior month performance, top three problems, top three priorities, resource asks. Thirty minutes per business, focused.</p>
+
+      <h3>Layer 3 — Exception Handling</h3>
+      <p>This is where most of my real operational time goes. Issues that exceed a certain threshold — financial, legal, partnership-critical — get flagged immediately and get my full attention. Everything below the threshold, the business handles. The threshold is explicit and written down so there's no ambiguity about when to escalate.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Key Principle</div>
+        <p>You don't manage 42 companies by being everywhere. You manage them by designing a system where 39 of them are running well enough that you can focus on the three that actually need you.</p>
+      </div>
+
+      <h2>Sector Grouping — The Mental Model</h2>
+
+      <p>Running 11 sectors doesn't mean you need 11 different management approaches. The sectors at Al Zaabi Group map quite naturally into three operational clusters, and I think about them differently.</p>
+
+      <ul>
+        <li><strong>Distribution & trading businesses</strong> — Building materials, automotive parts, retail. These are process-heavy, margin-thin, and win on operational discipline. The metric I care about most is inventory turn and DSO (days sales outstanding).</li>
+        <li><strong>Project-based businesses</strong> — Contracting, fit-out, technical services. These are milestone-driven. I track project completion percentages and gross margin per project, not monthly revenue — monthly revenue is a lagging and misleading indicator in project businesses.</li>
+        <li><strong>Hospitality & consumer businesses</strong> — F&B, retail concepts. These are brand and experience-driven. The metrics are footfall, average spend, and review velocity. Operationally, these need the most people attention because the product is the team.</li>
+      </ul>
+
+      <p>When you group by operating model rather than by industry, you realise that your distribution businesses in building materials and automotive parts have more in common operationally than building materials and contracting do — even though both are "construction adjacent." This shapes everything: which GMs you move between units, what systems you standardise, where you benchmark against industry averages.</p>
+
+      <h2>The Decision Hierarchy</h2>
+
+      <p>One of the most useful things I've done is make the decision hierarchy explicit and train people on it. This is how it works in practice:</p>
+
+      <ol>
+        <li><strong>Business unit manager decides independently:</strong> anything within their approved budget and within established policy. No escalation required. Speed matters more than alignment here.</li>
+        <li><strong>Business unit manager decides with notification to me:</strong> anything above a certain financial threshold but within approved strategy. I get told after, not asked before. This protects speed while keeping me informed.</li>
+        <li><strong>My decision with business unit input:</strong> significant capital allocation, new partnerships above a certain value, senior hire decisions. I decide, but I want the business's recommendation first.</li>
+        <li><strong>My decision with board notification:</strong> acquisitions, new sector entry, major partnership terminations.</li>
+      </ol>
+
+      <p>The reason this matters isn't just efficiency. It's that it forces managers to think clearly about the category of decision they're making. A surprising number of escalations happen not because a decision genuinely requires senior involvement, but because the manager isn't sure which category it falls into. The hierarchy eliminates that uncertainty.</p>
+
+      <h2>What This Doesn't Solve</h2>
+
+      <p>I'll be honest about the limitations of this system, because every framework has them.</p>
+
+      <p>It doesn't work without the right people at the business unit level. The system assumes that your GMs and unit heads are genuinely competent and that they'll exercise good judgment at Layers 1 and 2. If that layer is weak, the whole thing breaks down. Investing in people is what makes operating systems work — not the systems themselves.</p>
+
+      <p>It also takes time to build organisational trust in the hierarchy. When you first roll something like this out, managers who are used to escalating everything feel uncertain. They worry that making decisions without sign-off will get them in trouble. You have to be consistent about reinforcing the hierarchy — rewarding people who make good decisions without escalating, and gently redirecting the ones who escalate everything.</p>
+
+      <p>And it requires that you, as the person at the top, genuinely stay in your lane. If you undermine the hierarchy by jumping into decisions that belong at Level 1, you destroy the system from within. The discipline has to go both ways.</p>
+
+      <div class="article-divider"></div>
+
+      <p>If I had to distil this into one idea for someone starting to manage multiple businesses: <strong>design for the exception, not the routine.</strong> Build systems that handle the routine automatically, so your attention is free for the things that genuinely require a human decision at the top. That's what makes scale possible without losing your mind — or losing your best people.</p>
+
+    </div><!-- /article-body -->
+
+    <div class="article-footer-nav">
+      <div>
+        <div class="footer-nav-label">← Previous</div>
+        <a href="../insights.html" class="footer-nav-link">Back to The Operator's Playbook</a>
+      </div>
+      <div style="text-align:right">
+        <div class="footer-nav-label">Next →</div>
+        <a href="ten-year-partnership-model.html" class="footer-nav-link">The 10-Year Partnership Model</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Prateek Saxena</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../index.html">prateeksaxena.me</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

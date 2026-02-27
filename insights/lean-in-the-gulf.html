@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lean in the Gulf | Prateek Saxena</title>
+  <meta name="description" content="Applying Six Sigma and industrial engineering to UAE distribution. What transferred from American factories to Abu Dhabi trading companies — and what completely didn't."/>
+  <link rel="canonical" href="https://prateeksaxena.me/insights/lean-in-the-gulf.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Prateek Saxena"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Lean in the Gulf | Prateek Saxena"/>
+  <meta property="og:description" content="Applying Six Sigma and industrial engineering to UAE distribution. What transferred — and what didn't."/>
+  <meta property="og:url" content="https://prateeksaxena.me/insights/lean-in-the-gulf.html"/>
+  <meta property="og:image" content="https://prateeksaxena.me/images/prateek-photo.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0F1A;
+      --bg2: #0F1420;
+      --card: #131825;
+      --text: #F0EEED;
+      --text2: #8A8A9A;
+      --muted: #4A4A5A;
+      --border: rgba(255,255,255,0.08);
+      --border2: rgba(255,255,255,0.14);
+      --gold: #C9A84C;
+      --gold2: #E8C96A;
+      --font: 'Inter', system-ui, sans-serif;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --max: 780px;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.3;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+    }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(11, 15, 26, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .nav-name { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: small-caps; color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--gold); }
+    .btn-connect { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #0B0F1A; padding: 8px 20px; border-radius: 6px; font-size: 0.875rem; font-weight: 700; text-decoration: none; }
+    @media (max-width: 768px) { .nav-links a:not(.btn-connect) { display: none; } }
+
+    .article-wrap { padding-top: calc(var(--nav-h) + 60px); padding-bottom: 100px; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text2); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 40px; transition: color 0.2s; }
+    .back-link:hover { color: var(--gold); }
+    .back-link svg { width: 16px; height: 16px; }
+
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-category { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; color: #7ED4C8; background: rgba(126,212,200,0.08); border: 1px solid rgba(126,212,200,0.2); }
+    .article-read-time, .article-date { font-size: 0.8rem; color: var(--muted); }
+
+    h1.article-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--text); margin-bottom: 20px; }
+
+    .article-deck { font-size: 1.15rem; color: var(--text2); line-height: 1.75; margin-bottom: 36px; border-left: 3px solid var(--gold); padding-left: 20px; }
+
+    .article-byline { display: flex; align-items: center; gap: 14px; padding: 16px 0 36px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+    .byline-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+    .byline-text { display: flex; flex-direction: column; gap: 2px; }
+    .byline-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .byline-role { font-size: 0.8rem; color: var(--muted); }
+
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: var(--text); }
+    .article-body h2 { font-family: var(--serif); font-size: 1.6rem; color: var(--text); margin: 52px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 0.8rem; font-weight: 700; color: var(--gold2); margin: 36px 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .article-body p { margin-bottom: 24px; color: rgba(240,238,237,0.9); }
+    .article-body strong { color: var(--text); font-weight: 700; }
+    .article-body ul, .article-body ol { margin: 0 0 28px 0; padding-left: 0; list-style: none; }
+    .article-body ul li, .article-body ol li { padding: 10px 0 10px 28px; position: relative; color: rgba(240,238,237,0.9); border-bottom: 1px solid var(--border); font-size: 1rem; }
+    .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: none; }
+    .article-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .article-body ol { counter-reset: item; }
+    .article-body ol li::before { content: counter(item); counter-increment: item; position: absolute; left: 0; color: var(--gold); font-weight: 800; font-size: 0.85rem; }
+
+    .callout { background: var(--card); border: 1px solid var(--border2); border-left: 3px solid var(--gold); border-radius: 12px; padding: 24px 28px; margin: 40px 0; }
+    .callout-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .callout p { margin: 0 !important; font-size: 1rem; color: var(--text2); line-height: 1.7; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0 40px; }
+    @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+    .two-col-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+    .two-col-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+    .two-col-label.transferred { color: #82C77A; }
+    .two-col-label.adapted { color: #E8A87A; }
+    .two-col-card ul { margin: 0; }
+    .two-col-card ul li { font-size: 0.9rem; padding: 6px 0 6px 22px; border-bottom: 1px solid var(--border); }
+    .two-col-card ul li:last-child { border-bottom: none; }
+    .two-col-card ul li::before { content: '✓'; position: absolute; left: 0; font-size: 0.8rem; }
+    .two-col-card.adapted ul li::before { content: '↻'; }
+
+    .article-divider { width: 40px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 56px auto; }
+
+    .article-footer-nav { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .footer-nav-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .footer-nav-link { font-family: var(--serif); font-size: 1.15rem; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .footer-nav-link:hover { color: var(--gold); }
+
+    footer { border-top: 1px solid var(--border); background: var(--bg); padding: 24px 0; margin-top: 80px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.82rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">Prateek Saxena</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#sectors">Sectors</a>
+      <a href="../insights.html" class="active">Insights</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#career">Career</a>
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <div class="container">
+
+    <a href="../insights.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      The Operator's Playbook
+    </a>
+
+    <div class="article-meta">
+      <span class="article-category">Operations</span>
+      <span class="article-read-time">6 min read</span>
+      <span class="article-date">February 2026</span>
+    </div>
+
+    <h1 class="article-title">Lean in the Gulf</h1>
+
+    <p class="article-deck">I came to the UAE with an Industrial Engineering degree from Purdue, time in US factories, and a head full of Six Sigma methodology. Here's what transferred directly to UAE distribution — and what required a complete rethink before it could work.</p>
+
+    <div class="article-byline">
+      <img src="../images/prateek-photo.jpg" alt="Prateek Saxena" class="byline-avatar"/>
+      <div class="byline-text">
+        <span class="byline-name">Prateek Saxena</span>
+        <span class="byline-role">Group General Manager, Al Zaabi Group</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>Industrial engineering in an American manufacturing context is, at its core, about removing waste. Waste in motion, waste in inventory, waste in waiting. You map processes, you measure variation, you find the constraint, you eliminate it. Repeat.</p>
+
+      <p>When I came to the UAE after Purdue, a stint at John Deere, and time at Bose, I assumed this framework would translate cleanly. Manufacturing is manufacturing. Distribution is logistics. Same principles, different product.</p>
+
+      <p>That assumption was mostly right, and occasionally spectacularly wrong. The "mostly right" part — understanding which tools transfer and which need to be rebuilt from scratch — is what this article is about.</p>
+
+      <h2>What Transferred Directly</h2>
+
+      <p>The core analytical framework of industrial engineering is universal. Define the process, measure it, understand the sources of variation, make structured decisions about improvement. This works in a building materials warehouse in Abu Dhabi exactly as well as it works in a factory in Indiana.</p>
+
+      <p>The specific tools that translated without significant adaptation:</p>
+
+      <ul>
+        <li><strong>Inventory analysis.</strong> ABC classification of stock, dead stock identification, reorder point calculations, safety stock modelling. The formulas are the same. The discipline of reviewing them regularly is the same.</li>
+        <li><strong>Process mapping.</strong> Writing down what actually happens — not what's supposed to happen — in a customer order, from receipt to delivery. Every business I've worked with has been surprised by what this surfaces. The gaps between the written procedure and reality are where margin leaks.</li>
+        <li><strong>Demand forecasting discipline.</strong> Working backwards from historical sell-through to inform purchase quantities, rather than buying based on gut or principal pressure. Obvious in theory. Almost never actually implemented rigorously in trading businesses.</li>
+        <li><strong>Root cause analysis.</strong> When something goes wrong — a delivery failure, a quality complaint, a major stock variance — the 5 Whys discipline produces different answers than "someone made a mistake." It reveals system failures, not individual ones.</li>
+      </ul>
+
+      <h2>What Required Significant Adaptation</h2>
+
+      <p>Here is where it gets more interesting — and more useful, if you're trying to apply operational frameworks in the UAE market.</p>
+
+      <h3>Relationship as a process variable</h3>
+
+      <p>In classical lean manufacturing, the focus is on process variables that can be measured and controlled. Temperature, cycle time, defect rate. Relationship quality doesn't show up in the process map.</p>
+
+      <p>In UAE distribution, the relationship with a contractor or consultant is often the variable that matters most. A process-optimised company with weak relationships will lose deals to a less efficient competitor with strong ones. I had to learn to think about relationship investment as a legitimate operational cost — not a soft, optional extra, but a quantifiable input that drives revenue outcomes.</p>
+
+      <p>This means rethinking how you measure "waste." In a factory, time spent socialising is waste. In UAE trading, the majlis, the site visit, the relationship touchpoint — these are not waste. They are product.</p>
+
+      <h3>The informal information network</h3>
+
+      <p>In manufacturing, you get data from machines, from measurement systems, from quality control checkpoints. The information architecture is deliberate and structured.</p>
+
+      <p>In UAE markets, some of the most important information moves through informal networks: which projects are coming, which contractors are winning tenders, which competing brand is gaining share in a particular segment. This intelligence is real and it's actionable, but it requires being embedded in the market — in majlises, at industry events, in conversations with architects and engineers and project managers who trust you enough to talk candidly.</p>
+
+      <p>Building that information network takes years. But once you have it, it's a genuine competitive advantage that no amount of data system investment can replicate. The lesson: operational efficiency is necessary but not sufficient. You also need the informal intelligence layer, and that layer requires relationship investment to access.</p>
+
+      <h3>Credit culture and cash flow management</h3>
+
+      <p>US manufacturing taught me that credit terms are a business decision to be optimised. Extended terms cost money. Tight terms improve cash conversion. You model it, you set policy, you enforce it.</p>
+
+      <p>The UAE construction sector doesn't work this way. Extended credit is a structural feature of how business gets done with contractors. The question isn't whether to extend credit — in many segments, refusing to do so simply means losing the business. The question is how to manage the concentration risk and cash conversion cycle within that reality.</p>
+
+      <p>What I've learned is that credit management in this market requires much more granular customer-level analysis than is standard in most trading businesses. Not just "what is our average DSO" but "who are our twenty largest debtors, what is the trend on each, and what specific action are we taking on each one." The aggregate metric hides what matters.</p>
+
+      <div class="two-col">
+        <div class="two-col-card">
+          <div class="two-col-label transferred">Transferred Directly</div>
+          <ul>
+            <li>ABC inventory classification</li>
+            <li>Process mapping & gap analysis</li>
+            <li>5 Whys root cause analysis</li>
+            <li>Demand-led purchasing</li>
+            <li>Cycle count methodology</li>
+          </ul>
+        </div>
+        <div class="two-col-card adapted">
+          <div class="two-col-label adapted">Required Adaptation</div>
+          <ul>
+            <li>Relationship as process variable</li>
+            <li>Informal market intelligence</li>
+            <li>Customer-level credit management</li>
+            <li>Approvals culture & lead times</li>
+            <li>Seasonality (Ramadan, summer)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>The Approvals Bottleneck</h2>
+
+      <p>In lean manufacturing, you identify the constraint and subordinate everything else to it. The constraint sets the pace of the entire system. You don't push more material into a bottleneck — you solve the bottleneck.</p>
+
+      <p>In UAE project business, the constraint is often approvals — from a consultant, from a government authority, from a client's procurement committee. And unlike a machine bottleneck, you can't throw engineering resources at it to increase its throughput. Approvals move at the pace of relationships and institutional processes.</p>
+
+      <p>What you can do is manage your queue intelligently. Understand the approval pathway early in each project. Front-load the submittals. Build relationships with the people in the approval chain. And design your business so that you always have a pipeline of projects at different stages — so that approval delays in one don't create idle capacity everywhere else.</p>
+
+      <p>This is pipeline management, and it's a skill that takes time to develop. But it's the closest thing to constraint management that works in a UAE project context.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Adaptation Principle</div>
+        <p>Lean manufacturing assumes you control the process. UAE distribution requires you to influence processes that are largely outside your control — approvals, relationships, market timing. The discipline shifts from control to positioning.</p>
+      </div>
+
+      <h2>Practical Starting Points</h2>
+
+      <p>If you're trying to bring operational rigour to a UAE trading or distribution business, here's where I'd start:</p>
+
+      <ol>
+        <li><strong>Inventory first.</strong> Almost every trading company I've seen has inventory problems that are directly costing margin. Start here because the wins are quick and visible, and quick wins build credibility for the broader programme.</li>
+        <li><strong>Map one process end to end.</strong> Pick the order-to-cash process. Write down what actually happens. Find the steps where things wait, get stuck, require rework, or get escalated. You will find at least two or three changes that are immediately obvious and cost nothing to implement.</li>
+        <li><strong>Build a customer-level debtor view.</strong> Get off the aggregate DSO metric and get to customer-level data. Who owes what, since when, and what is the trend. This alone changes your collections conversation.</li>
+        <li><strong>Define your escalation threshold.</strong> What decisions can your managers make independently? What requires your involvement? If this isn't explicit, everything escalates by default. Write it down.</li>
+      </ol>
+
+      <div class="article-divider"></div>
+
+      <p>The degree from Purdue gave me frameworks. The factories at John Deere and Bose gave me discipline. But the UAE taught me that operational excellence in a relationship-driven, approval-intensive, credit-extended market requires something the textbooks don't cover: knowing when to let the process flex and when to hold the line.</p>
+
+      <p>That judgment is built through years in the market. I'm still building mine.</p>
+
+    </div>
+
+    <div class="article-footer-nav">
+      <div>
+        <div class="footer-nav-label">← Previous</div>
+        <a href="ten-year-partnership-model.html" class="footer-nav-link">The 10-Year Partnership Model</a>
+      </div>
+      <div style="text-align:right">
+        <div class="footer-nav-label">Back to</div>
+        <a href="../insights.html" class="footer-nav-link">The Operator's Playbook</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Prateek Saxena</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../index.html">prateeksaxena.me</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
