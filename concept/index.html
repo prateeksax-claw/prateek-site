@@ -126,7 +126,7 @@
   .principle p{color:var(--mut);font-size:14px;margin-top:4px;line-height:1.5}
   /* experience / education rows */
   .rows{margin-top:46px}
-  .row{display:grid;grid-template-columns:160px 1fr;gap:34px;padding:28px 0;border-bottom:1px solid var(--line2)}
+  .row{display:grid;grid-template-columns:148px 52px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line2)}
   .row:first-child{border-top:1px solid var(--line2)}
   .row .when{font-family:'Space';font-size:13px;color:var(--soft);letter-spacing:.02em;padding-top:7px}
   .row .role{font-family:'Fraunces',serif;font-variation-settings:'opsz' 60;font-weight:500;font-size:clamp(21px,2.4vw,30px);letter-spacing:-.01em;line-height:1.05}
@@ -150,6 +150,8 @@
   .art h3{font-family:'Fraunces',serif;font-variation-settings:'opsz' 60;font-weight:500;font-size:22px;line-height:1.1;letter-spacing:-.01em}
   .art p{color:var(--mut);font-size:14px;line-height:1.55}
   .art .more{font-family:'Space';font-size:12.5px;font-weight:600;color:var(--accent-ink);margin-top:auto}
+  .art .thumb{aspect-ratio:16/10;border-radius:12px;background-size:cover;background-position:center;background-color:#e9e6dd;margin-bottom:4px}
+  .logo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-variation-settings:'opsz' 40;font-weight:600;font-size:16px;color:var(--accent-ink);background:linear-gradient(160deg,#E7F0EB,#F3F1EA);border:1px solid var(--line);margin-top:2px}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0;margin-top:46px}
   .stat .v{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144;font-weight:430;font-size:clamp(40px,4.6vw,62px);letter-spacing:-.02em;color:var(--ink);line-height:1}
   .stat .v em{color:var(--accent);font-style:normal}
@@ -172,7 +174,7 @@
   @media(max-width:820px){
     .two{grid-template-columns:1fr;gap:36px}.bento{grid-template-columns:repeat(2,1fr)}.feature{grid-column:span 2;grid-row:span 1}
     .arts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr);gap:26px}
-    .shead{grid-template-columns:1fr;gap:10px}.row{grid-template-columns:1fr;gap:6px}.nlinks{display:none}
+    .shead{grid-template-columns:1fr;gap:10px}.row{grid-template-columns:48px 1fr;gap:6px 16px}.row .when{grid-column:1/-1}.nlinks{display:none}
   }
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.scrollcue .ln::after{animation:none}}
 </style>
@@ -224,12 +226,12 @@
       <div><div class="kicker rv">Experience</div><h2 class="disp rv">Sixteen years, <em>floor to boardroom.</em></h2></div>
     </div>
     <div class="rows">
-      <div class="row rv"><div class="when">May 2021 – Present</div><div><div class="role">Group General Manager</div><div class="org">Al Zaabi Group · Abu Dhabi</div><p class="desc">Lead the strategy and operations of 42 companies across 11 sectors — driving growth, operating discipline, and digital/AI transformation across the group.</p></div></div>
-      <div class="row rv"><div class="when">Nov 2021 – Present</div><div><div class="role">General Manager</div><div class="org">Emirates Royal Holding · Abu Dhabi</div><p class="desc">Concurrent group-leadership mandate across the holding’s portfolio.</p></div></div>
-      <div class="row rv"><div class="when">2017 – 2021</div><div><div class="role">Dy. General Manager → Operations &amp; Strategy Manager</div><div class="org">Al Zaabi Group</div><p class="desc">Rose through the group — from running operations of 17 companies and group-wide strategy to Deputy GM.</p></div></div>
-      <div class="row rv"><div class="when">2010 – 2017</div><div><div class="role">Corporate Strategy Officer</div><div class="org">Delma Emirates Group</div><p class="desc">Strategic and financial operation of five companies spanning infrastructure construction, capital-market investments, manufacturing, venture capital, real estate and trading.</p></div></div>
-      <div class="row rv"><div class="when">2009 – 2010</div><div><div class="role">Operations Analyst</div><div class="org">Bose Corporation · USA</div><p class="desc">Operations analysis at one of the world’s most respected engineering brands.</p></div></div>
-      <div class="row rv"><div class="when">2009</div><div><div class="role">Process Engineer</div><div class="org">John Deere · USA</div><p class="desc">Where it started — on the manufacturing floor as an industrial engineer.</p></div></div>
+      <div class="row rv"><div class="when">May 2021 – Present</div><div class="logo" aria-hidden="true">AZ</div><div><div class="role">Group General Manager</div><div class="org">Al Zaabi Group · Abu Dhabi</div><p class="desc">Lead the strategy and operations of 42 companies across 11 sectors — driving growth, operating discipline, and digital/AI transformation across the group.</p></div></div>
+      <div class="row rv"><div class="when">Nov 2021 – Present</div><div class="logo" aria-hidden="true">ER</div><div><div class="role">General Manager</div><div class="org">Emirates Royal Holding · Abu Dhabi</div><p class="desc">Concurrent group-leadership mandate across the holding’s portfolio.</p></div></div>
+      <div class="row rv"><div class="when">2017 – 2021</div><div class="logo" aria-hidden="true">AZ</div><div><div class="role">Dy. General Manager → Operations &amp; Strategy Manager</div><div class="org">Al Zaabi Group</div><p class="desc">Rose through the group — from running operations of 17 companies and group-wide strategy to Deputy GM.</p></div></div>
+      <div class="row rv"><div class="when">2010 – 2017</div><div class="logo" aria-hidden="true">DE</div><div><div class="role">Corporate Strategy Officer</div><div class="org">Delma Emirates Group</div><p class="desc">Strategic and financial operation of five companies spanning infrastructure construction, capital-market investments, manufacturing, venture capital, real estate and trading.</p></div></div>
+      <div class="row rv"><div class="when">2009 – 2010</div><div class="logo" aria-hidden="true">B</div><div><div class="role">Operations Analyst</div><div class="org">Bose Corporation · USA</div><p class="desc">Operations analysis at one of the world’s most respected engineering brands.</p></div></div>
+      <div class="row rv"><div class="when">2009</div><div class="logo" aria-hidden="true">JD</div><div><div class="role">Process Engineer</div><div class="org">John Deere · USA</div><p class="desc">Where it started — on the manufacturing floor as an industrial engineer.</p></div></div>
     </div>
   </div>
 </section>
@@ -241,10 +243,10 @@
       <div><div class="kicker rv">Education</div><h2 class="disp rv">Engineering mind, <em>business craft.</em></h2></div>
     </div>
     <div class="rows">
-      <div class="row rv"><div class="when">2023 – Present</div><div><div class="role">Certificate in Global Management</div><div class="org">INSEAD</div><p class="desc">Executive study at one of the world’s leading business schools.</p></div></div>
-      <div class="row rv"><div class="when">2005 – 2009</div><div><div class="role">B.Sc., Industrial Engineering</div><div class="org">Purdue University</div><p class="desc">The engineering lens — systems, operations and process — behind how I run businesses.</p></div></div>
-      <div class="row rv"><div class="when">2015</div><div><div class="role">Certified Management Accountant (CMA)</div><div class="org">Institute of Management Accountants</div><p class="desc">Financial rigour to match the operating discipline.</p></div></div>
-      <div class="row rv"><div class="when">2024</div><div><div class="role">INSEAD Executive Education — AI &amp; Digital Transformation</div><div class="org">incl. “Transforming Your Business with AI”, “Digital Transformation”, “Strategy in the Age of Digital Disruption”</div><p class="desc">The formal grounding behind the writing on enterprise AI.</p></div></div>
+      <div class="row rv"><div class="when">2023 – Present</div><div class="logo" aria-hidden="true">I</div><div><div class="role">Certificate in Global Management</div><div class="org">INSEAD</div><p class="desc">Executive study at one of the world’s leading business schools.</p></div></div>
+      <div class="row rv"><div class="when">2005 – 2009</div><div class="logo" aria-hidden="true">P</div><div><div class="role">B.Sc., Industrial Engineering</div><div class="org">Purdue University</div><p class="desc">The engineering lens — systems, operations and process — behind how I run businesses.</p></div></div>
+      <div class="row rv"><div class="when">2015</div><div class="logo" aria-hidden="true">MA</div><div><div class="role">Certified Management Accountant (CMA)</div><div class="org">Institute of Management Accountants</div><p class="desc">Financial rigour to match the operating discipline.</p></div></div>
+      <div class="row rv"><div class="when">2024</div><div class="logo" aria-hidden="true">AI</div><div><div class="role">INSEAD Executive Education — AI &amp; Digital Transformation</div><div class="org">incl. “Transforming Your Business with AI”, “Digital Transformation”, “Strategy in the Age of Digital Disruption”</div><p class="desc">The formal grounding behind the writing on enterprise AI.</p></div></div>
     </div>
   </div>
 </section>
@@ -282,14 +284,35 @@
     <div class="shead"><span class="snum rv">05</span>
       <div><div class="kicker rv">Journal &amp; News</div><h2 class="disp rv">Writing on AI, business <em>&amp; the UAE economy.</em></h2></div>
     </div>
-    <p class="lead rv" style="margin-top:26px">No-hype perspective on enterprise AI, operations, and the businesses powering the region — plus sharp notes on the news that actually matters, locally and globally.</p>
+    <p class="lead rv" style="margin-top:26px">A record of milestones, partnerships and recognition across Al Zaabi Group and the UAE economy — alongside a growing body of writing on putting AI to work on the ground.</p>
     <div class="arts">
-      <a class="art rv" href="#"><span class="tag">AI · Cost</span><h3>Where AI actually saves money</h3><p>The seven cost lines AI moves first — and the ones it quietly doesn’t.</p><span class="more">Read →</span></a>
-      <a class="art rv" href="#"><span class="tag">AI · Playbook</span><h3>The enterprise AI adoption playbook</h3><p>From “interesting demo” to “used every day” across a 40-company group.</p><span class="more">Read →</span></a>
-      <a class="art rv" href="#"><span class="tag">UAE · Economy</span><h3>Building in the UAE’s real economy</h3><p>What it actually takes to scale operating businesses in the Gulf today.</p><span class="more">Read →</span></a>
+      <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7457357722779303937/" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url('journal-media/p098.jpg')"></div>
+        <span class="tag">May 2026</span><h3>Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakum</h3>
+        <p>Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakumar and Vimal Vijayakumar. In today’s global and regional environment, industrial r…</p><span class="more">View on LinkedIn →</span></a>
+      <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7300060563294855169/" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url('journal-media/p086.jpg')"></div>
+        <span class="tag">Feb 2025</span><h3>Yesterday, we celebrated 360 years of Saint-Gobain with a successful event held at one o</h3>
+        <p>Yesterday, we celebrated 360 years of Saint-Gobain with a successful event held at one our branches in Abu Dhabi with the SG Demo Van, showcasing the innovation of Saint-…</p><span class="more">View on LinkedIn →</span></a>
+      <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7294014775443783683/" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url('journal-media/p085.jpg')"></div>
+        <span class="tag">Feb 2025</span><h3>It was an absolute pleasure to host the Festival of Children 2025 at the Embassy of Indi</h3>
+        <p>It was an absolute pleasure to host the Festival of Children 2025 at the Embassy of India, Abu Dhabi. The event was inaugurated by the Press Secretary of the Indian Embas…</p><span class="more">View on LinkedIn →</span></a>
+      <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7287019316825255936/" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url('journal-media/p084.jpg')"></div>
+        <span class="tag">Jan 2025</span><h3>We are honored to have been recognized as one of the Leading Distributors for 2024 by Bo</h3>
+        <p>We are honored to have been recognized as one of the Leading Distributors for 2024 by Bosch Middle East and Central Motors &amp; Equipment, part of ALFAHIM, at their recent e…</p><span class="more">View on LinkedIn →</span></a>
+      <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7279799719889883137/" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url('journal-media/p083.jpg')"></div>
+        <span class="tag">Dec 2024</span><h3>As 2024 comes to a close, I’m filled with gratitude and pride for what has been a transf</h3>
+        <p>As 2024 comes to a close, I’m filled with gratitude and pride for what has been a transformative year both personally and professionally. At Al Zaabi Group, we achieved r…</p><span class="more">View on LinkedIn →</span></a>
+      <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7268225820366680064/" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url('journal-media/p080.jpg')"></div>
+        <span class="tag">Nov 2024</span><h3>It is an incredible honor for Al Zaabi Group to be awarded as one of the Leading Distrib</h3>
+        <p>It is an incredible honor for Al Zaabi Group to be awarded as one of the Leading Distributor for Saint-Gobain Gyproc at the 4th Saint-Gobain Gypsum Trophy Awards 2024! Th…</p><span class="more">View on LinkedIn →</span></a>
     </div>
     <div class="rv" style="margin-top:24px;display:flex;gap:18px;flex-wrap:wrap;align-items:center">
-      <a class="btn btn2" href="#">All articles &amp; news →</a>
+      <a class="btn btn2" href="journal.html">View the full Journal →</a>
       <span style="font-family:'Space';font-size:13px;color:var(--soft)">New writing most weeks · also on <a href="https://www.linkedin.com/in/prateeksaxena-uae" style="color:var(--accent-ink);font-weight:600">LinkedIn</a></span>
     </div>
   </div>
