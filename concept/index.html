@@ -123,6 +123,14 @@
 
 <script type="module">
 import * as THREE from './three.module.min.js';
+window.__three = (typeof THREE!=='undefined' && !!THREE.Scene);
+
+// ── content reveal: runs independently of WebGL so the page is never blank ──
+const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }),{threshold:0.12});
+document.querySelectorAll('.panel').forEach(p=>io.observe(p));
+window.__ioReady = true;
+// failsafe: if anything goes wrong, still show all content
+setTimeout(()=>document.querySelectorAll('.panel').forEach(p=>p.classList.add('in')), 3000);
 
 const canvas = document.getElementById('scene');
 let renderer;
@@ -206,10 +214,6 @@ if(renderer){
   }
   tick();
 }
-
-// reveal panels
-const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }),{threshold:0.25});
-document.querySelectorAll('.panel').forEach(p=>io.observe(p));
 </script>
 </body>
 </html>
