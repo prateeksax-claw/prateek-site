@@ -1,0 +1,36 @@
+name: Deploy to Cloudflare Pages
+
+# Auto-deploys the static site to the Cloudflare Pages project "prateeksaxena".
+# - push to master -> production (prateeksaxena.pages.dev / prateeksaxena.me)
+# - push to dev     -> preview   (dev.prateeksaxena.pages.dev)
+# Requires repo secret CLOUDFLARE_API_TOKEN (Account > Cloudflare Pages > Edit).
+
+on:
+  push:
+    branches: [master, dev]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 89f078613042c984a12a174f10b2611f
+          command: >-
+            pages deploy .
+            --project-name=prateeksaxena
+            --branch=${{ github.ref_name }}
+            --commit-hash=${{ github.sha }}
