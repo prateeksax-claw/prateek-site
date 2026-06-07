@@ -8,27 +8,27 @@
   @font-face{font-family:'Space';src:url('fonts/space-grotesk.woff2') format('woff2');font-weight:300 700;font-display:swap}
   @font-face{font-family:'Hanken';src:url('fonts/hanken.woff2') format('woff2');font-weight:300 800;font-display:swap}
   *{margin:0;padding:0;box-sizing:border-box}
-  :root{--ink:#1B2440;--mut:#5C6789;--glass:rgba(255,255,255,.72);--line:rgba(120,140,200,.25)}
+  :root{--ink:#16203A;--mut:#5A6680;--accent1:#2D6BFF;--accent2:#6E5BF0;--bg:linear-gradient(180deg,#F6F8FC 0%,#EEF1FA 55%,#F3F1FB 100%);--scrim-rgb:246,248,252;--bloom1:#BBD3FF;--bloom2:#CFC6FF;--bloom3:#DCE4FF;--glass:rgba(255,255,255,.74);--line:rgba(120,140,200,.25)}
   html{scroll-behavior:auto}
   body{font-family:'Hanken',system-ui,sans-serif;color:var(--ink);
-    background:linear-gradient(180deg,#F4F9FF 0%,#EDF0FF 38%,#F6EEFF 64%,#FFF1EC 100%);
+    background:var(--bg);
     overflow-x:hidden;-webkit-font-smoothing:antialiased}
   /* fixed 3D layer */
   #scene{position:fixed;inset:0;z-index:1;pointer-events:none}
   /* soft scrim keeps the 3D in the background so text stays the focus */
   .scrim{position:fixed;inset:0;z-index:1;pointer-events:none;
-    background:radial-gradient(120% 80% at 50% 50%,rgba(247,250,255,.62) 0%,rgba(247,250,255,.32) 42%,rgba(247,250,255,0) 78%)}
+    background:radial-gradient(120% 80% at 50% 50%,rgba(var(--scrim-rgb),.62) 0%,rgba(var(--scrim-rgb),.32) 42%,rgba(var(--scrim-rgb),0) 78%)}
   /* ambient light blooms over the canvas */
   .bloom{position:fixed;z-index:0;border-radius:50%;filter:blur(80px);opacity:.26;pointer-events:none}
-  .b1{width:46vw;height:46vw;left:-8vw;top:-6vw;background:radial-gradient(circle,#A9D7FF,transparent 68%)}
-  .b2{width:40vw;height:40vw;right:-6vw;top:30vh;background:radial-gradient(circle,#D7C6FF,transparent 68%)}
-  .b3{width:50vw;height:50vw;left:18vw;bottom:-12vw;background:radial-gradient(circle,#FFD3BE,transparent 68%)}
+  .b1{width:46vw;height:46vw;left:-8vw;top:-6vw;background:radial-gradient(circle,var(--bloom1),transparent 68%)}
+  .b2{width:40vw;height:40vw;right:-6vw;top:30vh;background:radial-gradient(circle,var(--bloom2),transparent 68%)}
+  .b3{width:50vw;height:50vw;left:18vw;bottom:-12vw;background:radial-gradient(circle,var(--bloom3),transparent 68%)}
   /* content */
   main{position:relative;z-index:2}
   section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0 6vw;position:relative}
   .panel{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
   .panel.in{opacity:1;transform:none}
-  .kicker{font-family:'Space';font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:#6E5BD0;font-weight:600}
+  .kicker{font-family:'Space';font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent2);font-weight:600}
   /* glass card */
   .glass{background:var(--glass);backdrop-filter:blur(26px) saturate(135%);-webkit-backdrop-filter:blur(26px) saturate(135%);
     border:1px solid rgba(255,255,255,.75);border-radius:28px;box-shadow:0 30px 80px rgba(70,90,160,.16),inset 0 1px 0 rgba(255,255,255,.85)}
@@ -36,12 +36,12 @@
   .nav{position:fixed;z-index:5;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
     padding:20px 6vw;font-family:'Space'}
   .brand{font-weight:600;font-size:18px;letter-spacing:-.01em;display:flex;gap:9px;align-items:center}
-  .orb{width:11px;height:11px;border-radius:50%;background:conic-gradient(from 0deg,#8FD0FF,#C3B5FF,#FFC6A8,#8FD0FF);box-shadow:0 0 14px rgba(150,170,255,.9)}
+  .orb{width:11px;height:11px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent1),var(--accent2),var(--accent1));box-shadow:0 0 14px rgba(150,170,255,.7)}
   .nlinks{display:flex;gap:26px}.nlinks a{font-size:13px;color:var(--mut);text-decoration:none;font-weight:500}
   /* hero */
   .hero-c{text-align:center;max-width:1000px}
   h1{font-family:'Space';font-weight:500;font-size:clamp(40px,7.4vw,108px);line-height:.98;letter-spacing:-.03em;margin:22px 0 0}
-  h1 .grad{background:linear-gradient(100deg,#3FA0F6,#8B6DF0 55%,#FF8A66);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1 .grad{background:linear-gradient(100deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
   .hero-sub{font-size:clamp(16px,1.5vw,20px);color:var(--mut);max-width:54ch;margin:26px auto 0;line-height:1.6}
   .scroll-hint{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:5;font-family:'Space';font-size:11px;letter-spacing:.2em;color:var(--mut);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
   .scroll-hint .line{width:1px;height:34px;background:linear-gradient(var(--mut),transparent);animation:sd 1.8s infinite}
@@ -53,15 +53,15 @@
   .lead{color:var(--mut);font-size:18px;line-height:1.6;max-width:60ch;margin-top:18px}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
   .tile{background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.7);border-radius:18px;padding:22px;backdrop-filter:blur(8px)}
-  .tile .n{font-family:'Space';font-size:13px;color:#6E5BD0;font-weight:600}
+  .tile .n{font-family:'Space';font-size:13px;color:var(--accent2);font-weight:600}
   .tile h3{font-family:'Space';font-weight:500;font-size:21px;margin-top:10px;letter-spacing:-.01em}
   .tile p{color:var(--mut);font-size:14px;line-height:1.5;margin-top:8px}
   .stats{display:flex;gap:42px;margin-top:34px;flex-wrap:wrap}
-  .stat .v{font-family:'Space';font-weight:500;font-size:46px;letter-spacing:-.02em;background:linear-gradient(120deg,#3FA0F6,#8B6DF0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .v{font-family:'Space';font-weight:500;font-size:46px;letter-spacing:-.02em;background:linear-gradient(120deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
   .stat .l{font-size:13px;color:var(--mut);letter-spacing:.03em}
   .cta{display:inline-flex;gap:12px;margin-top:32px}
   .btn{font-family:'Space';font-weight:600;font-size:14px;padding:15px 26px;border-radius:40px;text-decoration:none}
-  .btn1{background:linear-gradient(120deg,#3FA0F6,#8B6DF0);color:#fff;box-shadow:0 14px 30px rgba(110,91,208,.35)}
+  .btn1{background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;box-shadow:0 14px 30px rgba(45,80,180,.28)}
   .btn2{background:rgba(255,255,255,.6);color:var(--ink);border:1px solid var(--line)}
   .center{text-align:center}
   @media(max-width:760px){.grid{grid-template-columns:1fr}.pad{padding:30px}.nlinks{display:none}.stats{gap:26px}}
@@ -157,7 +157,7 @@ if(renderer){
   const d1 = new THREE.DirectionalLight(0xBFE0FF, 1.1); d1.position.set(4,6,8); scene.add(d1);
   const d2 = new THREE.DirectionalLight(0xFFD0BE, 0.8); d2.position.set(-6,-3,4); scene.add(d2);
 
-  const palette = [0x3FA0F6,0x8B6DF0,0xFF8A66,0x18C29C,0xFF5D9E];
+  const palette = (window.CFG&&window.CFG.pal)||[0x2D6BFF,0x6E5BF0,0x4F8DFF,0x9B8CFF];
 
   // ── "gates": rings the camera flies through ──
   const gates = new THREE.Group(); scene.add(gates);
@@ -188,7 +188,7 @@ if(renderer){
   const PN = 900, pos = new Float32Array(PN*3);
   for(let i=0;i<PN;i++){ pos[i*3]=(Math.random()-0.5)*40; pos[i*3+1]=(Math.random()-0.5)*30; pos[i*3+2]=-Math.random()*150; }
   const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pos,3));
-  const pm = new THREE.PointsMaterial({color:0x8C95CC, size:0.045, transparent:true, opacity:0.32, depthWrite:false});
+  const pm = new THREE.PointsMaterial({color:(window.CFG&&window.CFG.particle)||0x8C95CC, size:0.045, transparent:true, opacity:0.32, depthWrite:false});
   scene.add(new THREE.Points(pg, pm));
 
   // scroll + pointer
