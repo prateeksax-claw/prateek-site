@@ -1,0 +1,20 @@
+name: CF Info (diagnostic)
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: 89f078613042c984a12a174f10b2611f
+    steps:
+      - name: List Pages projects (shows domains)
+        run: npx --yes wrangler@3 pages project list
+
+      - name: List deployments (shows production branch / environment)
+        run: npx --yes wrangler@3 pages deployment list --project-name=prateeksaxena | head -n 25
