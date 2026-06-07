@@ -131,8 +131,25 @@
       transition: opacity 0.2s, transform 0.2s;
     }
     .btn-connect:hover { opacity: 0.9; transform: translateY(-1px); }
+    .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 42px; height: 38px; padding: 0 9px; background: transparent; border: 1px solid var(--border2); border-radius: 8px; cursor: pointer; }
+    .nav-toggle span { display: block; height: 2px; width: 100%; background: var(--text); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     @media (max-width: 768px) {
-      .nav-links a:not(.btn-connect) { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed; top: var(--nav-h); left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: rgba(11,15,26,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border); padding: 6px 0 16px;
+        transform: translateY(-12px); opacity: 0; pointer-events: none;
+        transition: opacity 0.22s, transform 0.22s;
+      }
+      .nav-links.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+      .nav-links a { display: block; padding: 15px 24px; font-size: 1.02rem; color: var(--text); border-bottom: 1px solid var(--border); }
+      .nav-links a.active { color: var(--ai); }
+      .btn-connect { margin: 14px 24px 0; text-align: center; }
     }
 
     /* ─── HERO ─── */
@@ -583,7 +600,10 @@
       <div class="nav-dot"></div>
       <span class="nav-name">Prateek Saxena</span>
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
       <a href="index.html#about">About</a>
       <a href="index.html#sectors">Sectors</a>
       <a href="ai.html" class="active">AI</a>
@@ -593,6 +613,20 @@
     </div>
   </div>
 </nav>
+<script>
+  (function () {
+    var t = document.getElementById('navToggle'), l = document.getElementById('navLinks');
+    if (!t || !l) return;
+    t.addEventListener('click', function () {
+      var open = l.classList.toggle('open');
+      t.classList.toggle('open', open);
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    l.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { l.classList.remove('open'); t.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+    });
+  })();
+</script>
 
 <!-- ─── HERO ─── -->
 <section id="hero">
