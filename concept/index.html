@@ -8,15 +8,18 @@
   @font-face{font-family:'Space';src:url('fonts/space-grotesk.woff2') format('woff2');font-weight:300 700;font-display:swap}
   @font-face{font-family:'Hanken';src:url('fonts/hanken.woff2') format('woff2');font-weight:300 800;font-display:swap}
   *{margin:0;padding:0;box-sizing:border-box}
-  :root{--ink:#1B2440;--mut:#5C6789;--glass:rgba(255,255,255,.55);--line:rgba(120,140,200,.25)}
+  :root{--ink:#1B2440;--mut:#5C6789;--glass:rgba(255,255,255,.72);--line:rgba(120,140,200,.25)}
   html{scroll-behavior:auto}
   body{font-family:'Hanken',system-ui,sans-serif;color:var(--ink);
     background:linear-gradient(180deg,#F4F9FF 0%,#EDF0FF 38%,#F6EEFF 64%,#FFF1EC 100%);
     overflow-x:hidden;-webkit-font-smoothing:antialiased}
   /* fixed 3D layer */
   #scene{position:fixed;inset:0;z-index:1;pointer-events:none}
+  /* soft scrim keeps the 3D in the background so text stays the focus */
+  .scrim{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 50%,rgba(247,250,255,.62) 0%,rgba(247,250,255,.32) 42%,rgba(247,250,255,0) 78%)}
   /* ambient light blooms over the canvas */
-  .bloom{position:fixed;z-index:0;border-radius:50%;filter:blur(70px);opacity:.4;pointer-events:none}
+  .bloom{position:fixed;z-index:0;border-radius:50%;filter:blur(80px);opacity:.26;pointer-events:none}
   .b1{width:46vw;height:46vw;left:-8vw;top:-6vw;background:radial-gradient(circle,#A9D7FF,transparent 68%)}
   .b2{width:40vw;height:40vw;right:-6vw;top:30vh;background:radial-gradient(circle,#D7C6FF,transparent 68%)}
   .b3{width:50vw;height:50vw;left:18vw;bottom:-12vw;background:radial-gradient(circle,#FFD3BE,transparent 68%)}
@@ -27,8 +30,8 @@
   .panel.in{opacity:1;transform:none}
   .kicker{font-family:'Space';font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:#6E5BD0;font-weight:600}
   /* glass card */
-  .glass{background:var(--glass);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);
-    border:1px solid rgba(255,255,255,.7);border-radius:28px;box-shadow:0 30px 80px rgba(70,90,160,.18),inset 0 1px 0 rgba(255,255,255,.8)}
+  .glass{background:var(--glass);backdrop-filter:blur(26px) saturate(135%);-webkit-backdrop-filter:blur(26px) saturate(135%);
+    border:1px solid rgba(255,255,255,.75);border-radius:28px;box-shadow:0 30px 80px rgba(70,90,160,.16),inset 0 1px 0 rgba(255,255,255,.85)}
   /* nav */
   .nav{position:fixed;z-index:5;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
     padding:20px 6vw;font-family:'Space'}
@@ -67,6 +70,7 @@
 <body>
 <canvas id="scene"></canvas>
 <div class="bloom b1"></div><div class="bloom b2"></div><div class="bloom b3"></div>
+<div class="scrim"></div>
 
 <div class="nav">
   <div class="brand"><span class="orb"></span>Prateek Saxena</div>
@@ -143,7 +147,7 @@ if(renderer){
   renderer.setSize(innerWidth, innerHeight);
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xF2F5FF, 16, 78);
+  scene.fog = new THREE.Fog(0xF2F5FF, 12, 58);
 
   const camera = new THREE.PerspectiveCamera(62, innerWidth/innerHeight, 0.1, 200);
   camera.position.set(0,0,8);
@@ -157,36 +161,34 @@ if(renderer){
 
   // ── "gates": rings the camera flies through ──
   const gates = new THREE.Group(); scene.add(gates);
-  const GN = 44;
+  const GN = 14;
   for(let i=0;i<GN;i++){
-    const r = 2.7 + Math.random()*1.3;
-    const geo = new THREE.TorusGeometry(r, 0.06 + Math.random()*0.06, 18, 90);
+    const r = 3.4 + Math.random()*1.8;
+    const geo = new THREE.TorusGeometry(r, 0.035 + Math.random()*0.03, 16, 80);
     const col = palette[i % palette.length];
-    const mat = new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:0.7});
+    const mat = new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:0.26});
     const m = new THREE.Mesh(geo, mat);
-    m.position.set((Math.random()-0.5)*3.2, (Math.random()-0.5)*3.0, -5 - i*3.6);
+    m.position.set((Math.random()-0.5)*4.5, (Math.random()-0.5)*3.6, -14 - i*8.0);
     m.rotation.z = Math.random()*Math.PI;
-    m.userData.spin = (Math.random()-0.5)*0.005;
     gates.add(m);
   }
 
   // ── floating glass blobs ──
   const blobs = new THREE.Group(); scene.add(blobs);
-  for(let i=0;i<46;i++){
-    const g = new THREE.IcosahedronGeometry(0.18 + Math.random()*0.5, 1);
+  for(let i=0;i<12;i++){
+    const g = new THREE.IcosahedronGeometry(0.16 + Math.random()*0.34, 1);
     const col = palette[(Math.random()*palette.length)|0];
-    const mat = new THREE.MeshStandardMaterial({color:col, emissive:col, emissiveIntensity:0.3, metalness:0.1, roughness:0.2, transparent:true, opacity:0.7});
+    const mat = new THREE.MeshStandardMaterial({color:col, emissive:col, emissiveIntensity:0.25, metalness:0.1, roughness:0.25, transparent:true, opacity:0.34});
     const m = new THREE.Mesh(g, mat);
-    m.position.set((Math.random()-0.5)*16,(Math.random()-0.5)*12,-Math.random()*130);
-    m.userData.f = Math.random()*6.28;
+    m.position.set((Math.random()-0.5)*18,(Math.random()-0.5)*13,-Math.random()*120);
     blobs.add(m);
   }
 
   // ── particle dust ──
-  const PN = 2600, pos = new Float32Array(PN*3);
+  const PN = 900, pos = new Float32Array(PN*3);
   for(let i=0;i<PN;i++){ pos[i*3]=(Math.random()-0.5)*40; pos[i*3+1]=(Math.random()-0.5)*30; pos[i*3+2]=-Math.random()*150; }
   const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pos,3));
-  const pm = new THREE.PointsMaterial({color:0x7C86C8, size:0.055, transparent:true, opacity:0.6, depthWrite:false});
+  const pm = new THREE.PointsMaterial({color:0x8C95CC, size:0.045, transparent:true, opacity:0.32, depthWrite:false});
   scene.add(new THREE.Points(pg, pm));
 
   // scroll + pointer
@@ -196,18 +198,14 @@ if(renderer){
   addEventListener('pointermove',e=>{ tpx=(e.clientX/innerWidth-0.5); tpy=(e.clientY/innerHeight-0.5); });
   addEventListener('resize',()=>{ camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); });
 
-  const clock = new THREE.Clock();
   function tick(){
-    const t = clock.getElapsedTime();
-    progress += (target-progress)*0.06;
-    px += (tpx-px)*0.05; py += (tpy-py)*0.05;
-    // fly forward
-    camera.position.z = 8 - progress*118;
-    camera.position.x = px*2.4;
-    camera.position.y = -py*1.8;
-    camera.lookAt(px*1.2, -py*0.8, camera.position.z - 10);
-    gates.children.forEach(m=>{ m.rotation.z += m.userData.spin; });
-    blobs.children.forEach(m=>{ m.position.y += Math.sin(t+m.userData.f)*0.0025; m.rotation.x+=0.002; m.rotation.y+=0.0017; });
+    progress += (target-progress)*0.045;
+    px += (tpx-px)*0.035; py += (tpy-py)*0.035;
+    // fly forward — motion is driven by scroll; the scene rests when you stop
+    camera.position.z = 8 - progress*112;
+    camera.position.x = px*1.1;
+    camera.position.y = -py*0.8;
+    camera.lookAt(px*0.5, -py*0.4, camera.position.z - 10);
     renderer.render(scene,camera);
     window.__cz=camera.position.z; window.__p=progress; window.__g=gates.children.length;
     requestAnimationFrame(tick);
