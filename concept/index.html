@@ -126,7 +126,7 @@
   .principle p{color:var(--mut);font-size:14px;margin-top:4px;line-height:1.5}
   /* experience / education rows */
   .rows{margin-top:46px}
-  .row{display:grid;grid-template-columns:148px 52px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line2)}
+  .row{display:grid;grid-template-columns:160px 1fr;gap:34px;padding:28px 0;border-bottom:1px solid var(--line2)}
   .row:first-child{border-top:1px solid var(--line2)}
   .row .when{font-family:'Space';font-size:13px;color:var(--soft);letter-spacing:.02em;padding-top:7px}
   .row .role{font-family:'Fraunces',serif;font-variation-settings:'opsz' 60;font-weight:500;font-size:clamp(21px,2.4vw,30px);letter-spacing:-.01em;line-height:1.05}
@@ -151,7 +151,9 @@
   .art p{color:var(--mut);font-size:14px;line-height:1.55}
   .art .more{font-family:'Space';font-size:12.5px;font-weight:600;color:var(--accent-ink);margin-top:auto}
   .art .thumb{aspect-ratio:4/3;border-radius:12px;background-size:cover;background-position:center 18%;background-color:#e9e6dd;margin-bottom:4px}
-  .logo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-variation-settings:'opsz' 40;font-weight:600;font-size:16px;color:var(--accent-ink);background:linear-gradient(160deg,#E7F0EB,#F3F1EA);border:1px solid var(--line);margin-top:2px}
+  .orgline{margin-top:9px}
+  .logochip{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line2);border-radius:9px;padding:6px 11px;box-shadow:0 1px 2px rgba(20,40,38,.05)}
+  .logochip img{height:22px;width:auto;max-width:148px;object-fit:contain;display:block}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0;margin-top:46px}
   .stat .v{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144;font-weight:430;font-size:clamp(40px,4.6vw,62px);letter-spacing:-.02em;color:var(--ink);line-height:1}
   .stat .v em{color:var(--accent);font-style:normal}
@@ -174,7 +176,7 @@
   @media(max-width:820px){
     .two{grid-template-columns:1fr;gap:36px}.bento{grid-template-columns:repeat(2,1fr)}.feature{grid-column:span 2;grid-row:span 1}
     .arts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr);gap:26px}
-    .shead{grid-template-columns:1fr;gap:10px}.row{grid-template-columns:48px 1fr;gap:6px 16px}.row .when{grid-column:1/-1}.nlinks{display:none}
+    .shead{grid-template-columns:1fr;gap:10px}.row{grid-template-columns:1fr;gap:6px}.nlinks{display:none}
   }
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.scrollcue .ln::after{animation:none}}
 </style>
@@ -226,12 +228,12 @@
       <div><div class="kicker rv">Experience</div><h2 class="disp rv">Sixteen years, <em>floor to boardroom.</em></h2></div>
     </div>
     <div class="rows">
-      <div class="row rv"><div class="when">May 2021 – Present</div><div class="logo" aria-hidden="true">AZ</div><div><div class="role">Group General Manager</div><div class="org">Al Zaabi Group · Abu Dhabi</div><p class="desc">Lead the strategy and operations of 42 companies across 11 sectors — driving growth, operating discipline, and digital/AI transformation across the group.</p></div></div>
-      <div class="row rv"><div class="when">Nov 2021 – Present</div><div class="logo" aria-hidden="true">ER</div><div><div class="role">General Manager</div><div class="org">Emirates Royal Holding · Abu Dhabi</div><p class="desc">Concurrent group-leadership mandate across the holding’s portfolio.</p></div></div>
-      <div class="row rv"><div class="when">2017 – 2021</div><div class="logo" aria-hidden="true">AZ</div><div><div class="role">Dy. General Manager → Operations &amp; Strategy Manager</div><div class="org">Al Zaabi Group</div><p class="desc">Rose through the group — from running operations of 17 companies and group-wide strategy to Deputy GM.</p></div></div>
-      <div class="row rv"><div class="when">2010 – 2017</div><div class="logo" aria-hidden="true">DE</div><div><div class="role">Corporate Strategy Officer</div><div class="org">Delma Emirates Group</div><p class="desc">Strategic and financial operation of five companies spanning infrastructure construction, capital-market investments, manufacturing, venture capital, real estate and trading.</p></div></div>
-      <div class="row rv"><div class="when">2009 – 2010</div><div class="logo" aria-hidden="true">B</div><div><div class="role">Operations Analyst</div><div class="org">Bose Corporation · USA</div><p class="desc">Operations analysis at one of the world’s most respected engineering brands.</p></div></div>
-      <div class="row rv"><div class="when">2009</div><div class="logo" aria-hidden="true">JD</div><div><div class="role">Process Engineer</div><div class="org">John Deere · USA</div><p class="desc">Where it started — on the manufacturing floor as an industrial engineer.</p></div></div>
+      <div class="row rv"><div class="when">May 2021 – Present</div><div><div class="role">Group General Manager</div><div class="orgline"><span class="logochip"><img src="logos/al-zaabi.png" alt="Al Zaabi Group" loading="lazy"></span></div><p class="desc">Lead the strategy and operations of 42 companies across 11 sectors — driving growth, operating discipline, and digital/AI transformation across the group.</p></div></div>
+      <div class="row rv"><div class="when">Nov 2021 – Present</div><div><div class="role">General Manager</div><div class="orgline"><span class="logochip"><img src="logos/emirates-royal.jpg" alt="Emirates Royal Holding" loading="lazy"></span></div><p class="desc">Concurrent group-leadership mandate across the holding’s portfolio.</p></div></div>
+      <div class="row rv"><div class="when">2017 – 2021</div><div><div class="role">Dy. General Manager → Operations &amp; Strategy Manager</div><div class="orgline"><span class="logochip"><img src="logos/al-zaabi.png" alt="Al Zaabi Group" loading="lazy"></span></div><p class="desc">Rose through the group — from running operations of 17 companies and group-wide strategy to Deputy GM.</p></div></div>
+      <div class="row rv"><div class="when">2010 – 2017</div><div><div class="role">Corporate Strategy Officer</div><div class="org">Delma Emirates Group</div><p class="desc">Strategic and financial operation of five companies spanning infrastructure construction, capital-market investments, manufacturing, venture capital, real estate and trading.</p></div></div>
+      <div class="row rv"><div class="when">2009 – 2010</div><div><div class="role">Operations Analyst</div><div class="orgline"><span class="logochip"><img src="logos/bose.svg" alt="Bose Corporation" loading="lazy"></span></div><p class="desc">Operations analysis at one of the world’s most respected engineering brands.</p></div></div>
+      <div class="row rv"><div class="when">2009</div><div><div class="role">Process Engineer</div><div class="orgline"><span class="logochip"><img src="logos/john-deere.png" alt="John Deere" loading="lazy"></span></div><p class="desc">Where it started — on the manufacturing floor as an industrial engineer.</p></div></div>
     </div>
   </div>
 </section>
@@ -243,10 +245,10 @@
       <div><div class="kicker rv">Education</div><h2 class="disp rv">Engineering mind, <em>business craft.</em></h2></div>
     </div>
     <div class="rows">
-      <div class="row rv"><div class="when">2023 – Present</div><div class="logo" aria-hidden="true">I</div><div><div class="role">Certificate in Global Management</div><div class="org">INSEAD</div><p class="desc">Executive study at one of the world’s leading business schools.</p></div></div>
-      <div class="row rv"><div class="when">2005 – 2009</div><div class="logo" aria-hidden="true">P</div><div><div class="role">B.Sc., Industrial Engineering</div><div class="org">Purdue University</div><p class="desc">The engineering lens — systems, operations and process — behind how I run businesses.</p></div></div>
-      <div class="row rv"><div class="when">2015</div><div class="logo" aria-hidden="true">MA</div><div><div class="role">Certified Management Accountant (CMA)</div><div class="org">Institute of Management Accountants</div><p class="desc">Financial rigour to match the operating discipline.</p></div></div>
-      <div class="row rv"><div class="when">2024</div><div class="logo" aria-hidden="true">AI</div><div><div class="role">INSEAD Executive Education — AI &amp; Digital Transformation</div><div class="org">incl. “Transforming Your Business with AI”, “Digital Transformation”, “Strategy in the Age of Digital Disruption”</div><p class="desc">The formal grounding behind the writing on enterprise AI.</p></div></div>
+      <div class="row rv"><div class="when">2023 – Present</div><div><div class="role">Certificate in Global Management</div><div class="orgline"><span class="logochip"><img src="logos/insead.jpg" alt="INSEAD" loading="lazy"></span></div><p class="desc">Executive study at one of the world’s leading business schools.</p></div></div>
+      <div class="row rv"><div class="when">2005 – 2009</div><div><div class="role">B.Sc., Industrial Engineering</div><div class="orgline"><span class="logochip"><img src="logos/purdue.svg" alt="Purdue University" loading="lazy"></span></div><p class="desc">The engineering lens — systems, operations and process — behind how I run businesses.</p></div></div>
+      <div class="row rv"><div class="when">2015</div><div><div class="role">Certified Management Accountant (CMA)</div><div class="org">Institute of Management Accountants</div><p class="desc">Financial rigour to match the operating discipline.</p></div></div>
+      <div class="row rv"><div class="when">2024</div><div><div class="role">INSEAD Executive Education — AI &amp; Digital Transformation</div><div class="org">incl. “Transforming Your Business with AI”, “Digital Transformation”, “Strategy in the Age of Digital Disruption”</div><p class="desc">The formal grounding behind the writing on enterprise AI.</p></div></div>
     </div>
   </div>
 </section>
