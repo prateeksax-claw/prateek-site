@@ -10,6 +10,7 @@
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23177A6B'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prateek Saxena">
@@ -183,7 +184,7 @@
   .art h3{font-family:'Fraunces',serif;font-variation-settings:'opsz' 60;font-weight:500;font-size:22px;line-height:1.1;letter-spacing:-.01em}
   .art p{color:var(--mut);font-size:14px;line-height:1.55}
   .art .more{font-family:'Space';font-size:12.5px;font-weight:600;color:var(--accent-ink);margin-top:auto}
-  .art .thumb{aspect-ratio:4/3;border-radius:12px;background-size:cover;background-position:center 18%;background-color:#e9e6dd;margin-bottom:4px}
+  .art .thumb{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 18%;border-radius:12px;background:#e9e6dd;margin-bottom:4px}
   .art .plogo{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line2);border-radius:9px;padding:9px 13px;align-self:flex-start;margin-bottom:2px}
   .art .plogo.logodark{background:var(--ink);border-color:var(--ink)}
   .art .plogo img{height:36px;width:auto;max-width:160px;object-fit:contain;display:block}
@@ -220,7 +221,7 @@
 <body>
 <div class="grain"></div>
 
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" aria-label="Primary">
   <div class="brand"><span class="dot"></span>Prateek Saxena</div>
   <div class="nlinks"><a href="#about">About</a><a href="#experience">Experience</a><a href="#group">The Group</a><a href="#journal">Journal</a><a href="#engage">Engage</a></div>
   <a class="nbtn" href="#engage">Get in touch</a>
@@ -236,6 +237,7 @@
     <h1 class="disp rv in">I build and scale businesses across the UAE’s <em>real economy.</em></h1>
     <p class="hero-sub rv in">I’m Prateek Saxena — Group General Manager at Al Zaabi Group, leading 42 companies across 11 sectors. An industrial engineer (Purdue) and INSEAD-educated operator who blends engineering discipline, financial rigour and technology — and writes on business, leadership, tech, finance and the trends shaping them.</p>
     <div class="hero-meta rv in"><span><b>Abu Dhabi</b>, UAE</span><span><b>Purdue</b> · <b>INSEAD</b></span><span><b>16+</b> years operating</span></div>
+    <div class="cta-row rv in" style="justify-content:flex-start;margin-top:34px"><a class="btn btn1" href="#engage">Advisory · Speaking · Board</a><a class="btn btn2" href="/journal">Read the Journal</a></div>
   </div></div>
   <div class="scrollcue"><span class="ln"></span>Scroll</div>
 </section>
@@ -327,32 +329,32 @@
     <p class="lead rv" style="margin-top:26px">A record of milestones and partnerships across Al Zaabi Group and the UAE economy — and writing on business, leadership, technology, finance and the trends shaping our region and the world.</p>
     <div class="arts">
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7457357722779303937/" target="_blank" rel="noopener">
-        <div class="thumb" style="background-image:url('journal-media/p098.jpg')"></div>
-        <span class="plogo"><img src="logos/partners/adnec-group.png" alt="ADNEC" loading="lazy" width="57" height="57"></span><span class="tag">Industry · May 2026</span><h3>Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakum</h3>
+        <img class="thumb" src="journal-media/p098.jpg" alt="Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakum" loading="lazy">
+        <span class="plogo"><img src="logos/partners/adnec-group.png" alt="ADNEC" loading="lazy"></span><span class="tag">Industry · May 2026</span><h3>Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakum</h3>
         <p>Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakumar and Vimal Vijayakumar. In today’s global and regional environment, industrial r…</p><span class="more">View on LinkedIn →</span></a>
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7454808868980764672/" target="_blank" rel="noopener">
-        <div class="thumb" style="background-image:url('journal-media/ev-isc2026.jpg')"></div>
-        <span class="plogo"><img src="logos/partners/india-social-cultural-centre-abu-dhabi.png" alt="India Social Centre" loading="lazy" width="320" height="110"></span><span class="tag">Community · Apr 2026</span><h3>Welcoming the India Social &amp; Cultural Centre’s 2026 leadership</h3>
+        <img class="thumb" src="journal-media/ev-isc2026.jpg" alt="Welcoming the India Social &amp; Cultural Centre’s 2026 leadership" loading="lazy">
+        <span class="plogo"><img src="logos/partners/india-social-cultural-centre-abu-dhabi.png" alt="India Social Centre" loading="lazy"></span><span class="tag">Community · Apr 2026</span><h3>Welcoming the India Social &amp; Cultural Centre’s 2026 leadership</h3>
         <p>Al Zaabi Group welcomed ISC Abu Dhabi’s newly elected 2026 leadership for a conversation on community partnership, cultural harmony and the UAE’s spirit of unity in diversity.</p><span class="more">View on LinkedIn →</span></a>
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7407111817073762304/" target="_blank" rel="noopener">
-        <div class="thumb" style="background-image:url('journal-media/ev-indiafest.jpg')"></div>
-        <span class="plogo"><img src="logos/partners/india-social-cultural-centre-abu-dhabi.png" alt="India Social Centre" loading="lazy" width="320" height="110"></span><span class="tag">Community · Dec 2025</span><h3>Honoured at the India Fest 2025 launch, India Social Centre</h3>
+        <img class="thumb" src="journal-media/ev-indiafest.jpg" alt="Honoured at the India Fest 2025 launch, India Social Centre" loading="lazy">
+        <span class="plogo"><img src="logos/partners/india-social-cultural-centre-abu-dhabi.png" alt="India Social Centre" loading="lazy"></span><span class="tag">Community · Dec 2025</span><h3>Honoured at the India Fest 2025 launch, India Social Centre</h3>
         <p>Al Zaabi Group was honoured at the launch of India Fest 2025 at the India Social Centre, Abu Dhabi — a successful three-day festival and a celebration of community engagement.</p><span class="more">View on LinkedIn →</span></a>
       <div class="art rv">
-        <div class="thumb" style="background-image:url('journal-media/birla-white-uae.jpeg')"></div>
-        <span class="plogo"><img src="logos/partners/aditya-birla.png" alt="Aditya Birla Group" loading="lazy" width="320" height="179"></span><span class="tag">Strategic Partnership · Jul 2025</span><h3>Exclusive UAE distribution partnership with Birla White</h3>
+        <img class="thumb" src="journal-media/birla-white-uae.jpeg" alt="Exclusive UAE distribution partnership with Birla White" loading="lazy">
+        <span class="plogo"><img src="logos/partners/aditya-birla.png" alt="Aditya Birla Group" loading="lazy"></span><span class="tag">Strategic Partnership · Jul 2025</span><h3>Exclusive UAE distribution partnership with Birla White</h3>
         <p>Al Zaabi Group enters an exclusive agreement to bring Birla White — the white-cement &amp; wall-care brand of Grasim Industries (Aditya Birla Group) — to the UAE, hosting MD Himanshu Kapania.</p></div>
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7350536073636204545/" target="_blank" rel="noopener">
-        <div class="thumb" style="background-image:url('journal-media/ev-henkel.jpg')"></div>
-        <span class="plogo"><img src="logos/partners/henkel.svg" alt="Henkel" loading="lazy" width="76" height="57"></span><span class="tag">Partnership · Jul 2025</span><h3>Henkel Polybit training at NH47</h3>
+        <img class="thumb" src="journal-media/ev-henkel.jpg" alt="Henkel Polybit training at NH47" loading="lazy">
+        <span class="plogo"><img src="logos/partners/henkel.svg" alt="Henkel" loading="lazy"></span><span class="tag">Partnership · Jul 2025</span><h3>Henkel Polybit training at NH47</h3>
         <p>As a strategic distributor for Henkel, our team went deep on their waterproofing, tiling and flooring range in a hands-on session — practical knowledge for construction and building projects.</p><span class="more">View on LinkedIn →</span></a>
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7336681739898998784/" target="_blank" rel="noopener">
-        <div class="thumb" style="background-image:url('journal-media/ev-azpl.jpg')"></div>
+        <img class="thumb" src="journal-media/ev-azpl.jpg" alt="Al Zaabi Premier League 2025 — the finals" loading="lazy">
         <span class="tag">Culture · Jun 2025</span><h3>Al Zaabi Premier League 2025 — the finals</h3>
         <p>The semi-finals and grand final of the Al Zaabi Premier League — our group cricket tournament celebrating team spirit, energy and a bit of healthy competition across the companies.</p><span class="more">View on LinkedIn →</span></a>
     </div>
     <div class="rv" style="margin-top:24px;display:flex;gap:18px;flex-wrap:wrap;align-items:center">
-      <a class="btn btn2" href="journal.html">View the full Journal →</a>
+      <a class="btn btn2" href="/journal">View the full Journal →</a>
       <span style="font-family:'Space';font-size:13px;color:var(--soft)">New writing most weeks · also on <a href="https://www.linkedin.com/in/prateeksaxena-uae" style="color:var(--accent-ink);font-weight:600">LinkedIn</a></span>
     </div>
   </div>
