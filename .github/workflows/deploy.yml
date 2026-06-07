@@ -1,7 +1,9 @@
 name: Deploy to Cloudflare Pages
 
 # Auto-deploys the static site to the Cloudflare Pages project "prateeksaxena".
-# - push to master -> production (prateeksaxena.pages.dev / prateeksaxena.me)
+# The project's PRODUCTION branch is "main", so a push to master is deployed
+# with --branch=main to publish to production.
+# - push to master -> production (prateeksaxena.pages.dev)
 # - push to dev     -> preview   (dev.prateeksaxena.pages.dev)
 # Requires repo secret CLOUDFLARE_API_TOKEN (Account > Cloudflare Pages > Edit).
 
@@ -32,5 +34,5 @@ jobs:
           command: >-
             pages deploy .
             --project-name=prateeksaxena
-            --branch=${{ github.ref_name }}
+            --branch=${{ github.ref_name == 'master' && 'main' || github.ref_name }}
             --commit-hash=${{ github.sha }}
