@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The AI Adoption Playbook for Traditional Businesses | Prateek Saxena</title>
+  <meta name="description" content="A step-by-step operating model for taking AI from 'interesting' to 'used every day' in a non-tech company — without a data-science army. By Prateek Saxena."/>
+  <link rel="canonical" href="https://prateeksaxena.me/insights/ai/ai-adoption-playbook.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Prateek Saxena"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="The AI Adoption Playbook for Traditional Businesses | Prateek Saxena"/>
+  <meta property="og:description" content="How to take AI from 'interesting' to 'used every day' in a non-tech company."/>
+  <meta property="og:url" content="https://prateeksaxena.me/insights/ai/ai-adoption-playbook.html"/>
+  <meta property="og:image" content="https://prateeksaxena.me/images/prateek-photo.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0F1A; --bg2: #0F1420; --card: #131825;
+      --text: #F0EEED; --text2: #8A8A9A; --muted: #4A4A5A;
+      --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+      --gold: #C9A84C; --gold2: #E8C96A; --ai: #7AB8E8; --ai2: #A6D3F5;
+      --font: 'Inter', system-ui, sans-serif; --serif: 'DM Serif Display', Georgia, serif;
+      --max: 780px; --nav-h: 64px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    body::after { content: ''; position: fixed; inset: 0; z-index: 999; pointer-events: none; opacity: 0.3; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E"); }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 100; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(11, 15, 26, 0.85); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .nav-name { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: small-caps; color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--ai); }
+    .btn-connect { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #0B0F1A; padding: 8px 20px; border-radius: 6px; font-size: 0.875rem; font-weight: 700; text-decoration: none; }
+    @media (max-width: 768px) { .nav-links a:not(.btn-connect) { display: none; } }
+    .article-wrap { padding-top: calc(var(--nav-h) + 60px); padding-bottom: 100px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text2); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 40px; transition: color 0.2s; }
+    .back-link:hover { color: var(--ai); }
+    .back-link svg { width: 16px; height: 16px; }
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-category { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; color: var(--ai); background: rgba(122,184,232,0.08); border: 1px solid rgba(122,184,232,0.22); }
+    .article-read-time, .article-date { font-size: 0.8rem; color: var(--muted); }
+    h1.article-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--text); margin-bottom: 20px; }
+    .article-deck { font-size: 1.15rem; color: var(--text2); line-height: 1.75; margin-bottom: 36px; border-left: 3px solid var(--ai); padding-left: 20px; }
+    .article-byline { display: flex; align-items: center; gap: 14px; padding: 16px 0 36px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+    .byline-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ai); }
+    .byline-text { display: flex; flex-direction: column; gap: 2px; }
+    .byline-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .byline-role { font-size: 0.8rem; color: var(--muted); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: var(--text); }
+    .article-body h2 { font-family: var(--serif); font-size: 1.6rem; color: var(--text); margin: 52px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-weight: 700; color: var(--ai2); margin: 36px 0 12px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; }
+    .article-body p { margin-bottom: 24px; color: rgba(240,238,237,0.9); }
+    .article-body strong { color: var(--text); font-weight: 700; }
+    .article-body ul, .article-body ol { margin: 0 0 28px 0; padding-left: 0; list-style: none; }
+    .article-body ul li, .article-body ol li { padding: 10px 0 10px 28px; position: relative; color: rgba(240,238,237,0.9); border-bottom: 1px solid var(--border); font-size: 1rem; }
+    .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: none; }
+    .article-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--ai); font-weight: 700; }
+    .article-body ol { counter-reset: item; }
+    .article-body ol li::before { content: counter(item); counter-increment: item; position: absolute; left: 0; color: var(--ai); font-weight: 800; font-size: 0.85rem; }
+    .callout { background: var(--card); border: 1px solid var(--border2); border-left: 3px solid var(--ai); border-radius: 12px; padding: 24px 28px; margin: 40px 0; }
+    .callout-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ai); margin-bottom: 10px; }
+    .callout p { margin: 0 !important; font-size: 1rem; color: var(--text2); line-height: 1.7; }
+    .article-divider { width: 40px; height: 2px; background: linear-gradient(90deg, transparent, var(--ai), transparent); margin: 56px auto; }
+    .disclaimer { font-size: 0.8rem; color: var(--muted); font-style: italic; line-height: 1.6; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .article-footer-nav { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .footer-nav-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .footer-nav-link { font-family: var(--serif); font-size: 1.15rem; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .footer-nav-link:hover { color: var(--ai); }
+    footer { border-top: 1px solid var(--border); background: var(--bg); padding: 24px 0; margin-top: 80px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.82rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ai); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">Prateek Saxena</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#sectors">Sectors</a>
+      <a href="../../ai.html" class="active">AI</a>
+      <a href="../../insights.html">Insights</a>
+      <a href="../../index.html#career">Career</a>
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <div class="container">
+
+    <a href="../../ai.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      AI on the Ground
+    </a>
+
+    <div class="article-meta">
+      <span class="article-category">Playbook</span>
+      <span class="article-read-time">9 min read</span>
+      <span class="article-date">June 2026</span>
+    </div>
+
+    <h1 class="article-title">The AI Adoption Playbook for Traditional Businesses</h1>
+
+    <p class="article-deck">Every leader I talk to has "done something with AI." Almost none of them have it used every day by the people who'd actually benefit. Here is the operating model I use to close that gap — no data-science army required.</p>
+
+    <div class="article-byline">
+      <img src="../../images/prateek-photo.jpg" alt="Prateek Saxena" class="byline-avatar"/>
+      <div class="byline-text">
+        <span class="byline-name">Prateek Saxena</span>
+        <span class="byline-role">Group General Manager, Al Zaabi Group · INSEAD Certified in Digital Transformation</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>Most writing about enterprise AI is written by people who sell it. I'm on the other side of that table. I run a group of companies in building materials, automotive, healthcare, contracting, e-commerce, and hospitality — businesses where the average employee has never heard the word "token" and doesn't care to. My job isn't to be impressed by a demo. It's to get a tool into a real workflow, keep it there, and see it on the P&amp;L.</p>
+
+      <p>That turns out to be a very different problem than the one the AI industry talks about. The model is rarely the bottleneck anymore. The bottleneck is adoption — the unglamorous work of getting a busy team to change how they do something they already know how to do. Here is the playbook I've converged on.</p>
+
+      <h2>Start with a painful, boring problem</h2>
+
+      <p>The instinct is to start with the most exciting use case. That's almost always a mistake. Exciting use cases are visible, political, and hard to measure. Boring ones are where AI quietly prints money.</p>
+
+      <p>I look for tasks with three properties: <strong>high-volume, repetitive, and currently done by an expensive or scarce person.</strong> Reconciling supplier invoices. Drafting first-pass quotations. Triaging customer enquiries that come in through five different channels. Summarising a contract for a non-lawyer. These are unglamorous, and that's the point — the value is large because the volume is large, and the risk is low because there's a human checking the output anyway.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Filter</div>
+        <p>If a use case can't be described as "we do X hundreds of times a month, it takes Y minutes each, and a smart person could check the output in a fraction of that time" — it's probably not your first project.</p>
+      </div>
+
+      <h2>Pick the workflow, not the tool</h2>
+
+      <p>Leaders often start by choosing a platform. Wrong order. Start by choosing one specific workflow and mapping it as it actually happens today — not the official SOP, the real one, with all its copy-pasting and "let me just ask Ahmed" steps. Only then do you ask which tool fits.</p>
+
+      <p>This matters because the win is almost never "AI does the whole job." It's "AI does the 70% that's mechanical, and your person does the 30% that needs judgment." If you don't understand the workflow at that granularity, you'll buy a tool that automates the wrong 70%.</p>
+
+      <h2>Find the one person who wants it to work</h2>
+
+      <p>Every successful rollout I've had came down to a single internal champion — usually not the most senior person, but the one who feels the pain most and is curious enough to push through the awkward early phase. The failed ones were "rolled out" to a whole department by decree.</p>
+
+      <p>So I deliberately under-scope the first deployment: one workflow, one champion, one team. I'd rather have one team that genuinely depends on the tool than ten teams that "have access." Dependence is the only adoption metric that matters.</p>
+
+      <h2>The 70% rule, and designing for the human-in-the-loop</h2>
+
+      <p>Here's a hard truth: in a real business, an AI output that's right 95% of the time but fails silently is often worse than one that's right 80% of the time and tells you when it's unsure. A wrong invoice amount that flows through unchecked costs you real money and real trust.</p>
+
+      <p>So I design every workflow around a human checkpoint from day one, and I'm explicit about it:</p>
+
+      <ul>
+        <li><strong>AI drafts, human approves.</strong> The tool produces a first version; a person clicks to accept, edit, or reject. The person stays accountable, which keeps them engaged — and keeps you out of trouble.</li>
+        <li><strong>Make uncertainty visible.</strong> The best deployments flag low-confidence outputs for closer review instead of burying them in a stream of confident-looking answers.</li>
+        <li><strong>Capture the edits.</strong> Every correction a human makes is data. Over time it tells you exactly where the tool is weak and whether it's getting better.</li>
+      </ul>
+
+      <h2>Measure the baseline before you start</h2>
+
+      <p>This is the step everyone skips, and it's the one that determines whether you can ever prove value. Before the tool goes live, write down the current state in numbers: how long the task takes, how many people touch it, the error rate, the cost. If you don't have a baseline, you'll end up "feeling" that AI helped, and feelings don't survive a budget review.</p>
+
+      <p>It doesn't need to be a precise study. A two-week tally is enough. "We process roughly 400 of these a month, it takes about 25 minutes each, and about 1 in 12 has an error we catch downstream." That sentence is worth more than any vendor's ROI calculator.</p>
+
+      <h2>The 90-day cadence</h2>
+
+      <p>I run adoption on a fixed three-month rhythm, because open-ended "exploration" never converges.</p>
+
+      <h3>Weeks 1–2 — Map &amp; baseline</h3>
+      <p>Pick the workflow, document how it really works, record the baseline numbers, and name the champion. No tools yet.</p>
+
+      <h3>Weeks 3–6 — Narrow pilot</h3>
+      <p>One team, real work, human-in-the-loop. The goal isn't perfection — it's to learn where the tool breaks and whether the team actually reaches for it without being told to.</p>
+
+      <h3>Weeks 7–10 — Harden</h3>
+      <p>Fix the integration friction. Most of the value leaks here: the tool works, but it lives in a separate window nobody opens. Get it into the system people already use, or it dies of inconvenience.</p>
+
+      <h3>Weeks 11–13 — Decide</h3>
+      <p>Compare against the baseline and make an honest call: scale it, kill it, or reshape it. Killing a project that didn't work is a success, not a failure — it cost you one quarter instead of a year.</p>
+
+      <div class="callout">
+        <div class="callout-label">Why 90 Days</div>
+        <p>Long enough to get past the novelty and see real usage; short enough that a dead end is cheap. The discipline of a forced decision date is what separates a portfolio of experiments from a graveyard of pilots.</p>
+      </div>
+
+      <h2>Budget for the part that isn't the subscription</h2>
+
+      <p>The licence fee is the smallest number in the equation. The real costs are integration, training, the time of the human checkers, and change management. I plan for the tool to be a fraction of the total and the "getting people to use it well" to be the majority. Leaders who only budget for the software are the ones whose projects stall — not because the AI failed, but because nobody funded the adoption.</p>
+
+      <h2>Governance you'll actually follow</h2>
+
+      <p>You need guardrails, but a 40-page policy nobody reads is theatre. For a mid-market group, three rules cover most of the risk: be clear about what data is allowed near which tools; keep a human accountable for any output that touches money, health, or legal exposure; and keep a simple register of what's deployed where. Lightweight, real, and enforced beats comprehensive and ignored.</p>
+
+      <div class="article-divider"></div>
+
+      <p>If I had to compress this into one idea: <strong>treat AI as an operations problem, not a technology problem.</strong> The companies winning with AI right now aren't the ones with the best models. They're the ones who got disciplined about choosing boring high-volume workflows, kept a human in the loop, measured the baseline, and forced a decision in 90 days. None of that requires you to be a technologist. It requires you to be a good operator — which, if you're reading this, you probably already are.</p>
+
+      <p class="disclaimer">The frameworks here reflect my own approach and experience leading transformation across a multi-sector group. Specific figures used elsewhere on this site for illustration are directional, not disclosures of any company's confidential data.</p>
+
+    </div><!-- /article-body -->
+
+    <div class="article-footer-nav">
+      <div>
+        <div class="footer-nav-label">← Back</div>
+        <a href="../../ai.html" class="footer-nav-link">AI on the Ground</a>
+      </div>
+      <div style="text-align:right">
+        <div class="footer-nav-label">Next →</div>
+        <a href="where-ai-saves-money.html" class="footer-nav-link">Where AI Actually Saves Money</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Prateek Saxena</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../../ai.html">AI Hub</a>
+      <a href="../../index.html">prateeksaxena.me</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

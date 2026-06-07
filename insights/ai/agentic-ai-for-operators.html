@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agentic AI, Translated for Operators | Prateek Saxena</title>
+  <meta name="description" content="'Agents' are the 2026 buzzword. Here's what they really change for a procurement team or a clinic front desk — and what's still hype. By Prateek Saxena."/>
+  <link rel="canonical" href="https://prateeksaxena.me/insights/ai/agentic-ai-for-operators.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Prateek Saxena"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Agentic AI, Translated for Operators | Prateek Saxena"/>
+  <meta property="og:description" content="What AI agents really change on the ground — and what's still hype."/>
+  <meta property="og:url" content="https://prateeksaxena.me/insights/ai/agentic-ai-for-operators.html"/>
+  <meta property="og:image" content="https://prateeksaxena.me/images/prateek-photo.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0F1A; --bg2: #0F1420; --card: #131825;
+      --text: #F0EEED; --text2: #8A8A9A; --muted: #4A4A5A;
+      --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+      --gold: #C9A84C; --gold2: #E8C96A; --ai: #7AB8E8; --ai2: #A6D3F5;
+      --accent: #B89AE8; --accent-soft: rgba(184,154,232,0.08); --accent-line: rgba(184,154,232,0.22);
+      --font: 'Inter', system-ui, sans-serif; --serif: 'DM Serif Display', Georgia, serif;
+      --max: 780px; --nav-h: 64px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    body::after { content: ''; position: fixed; inset: 0; z-index: 999; pointer-events: none; opacity: 0.3; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E"); }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 100; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(11, 15, 26, 0.85); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .nav-name { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: small-caps; color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--ai); }
+    .btn-connect { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #0B0F1A; padding: 8px 20px; border-radius: 6px; font-size: 0.875rem; font-weight: 700; text-decoration: none; }
+    @media (max-width: 768px) { .nav-links a:not(.btn-connect) { display: none; } }
+    .article-wrap { padding-top: calc(var(--nav-h) + 60px); padding-bottom: 100px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text2); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 40px; transition: color 0.2s; }
+    .back-link:hover { color: var(--ai); }
+    .back-link svg { width: 16px; height: 16px; }
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-category { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); }
+    .article-read-time, .article-date { font-size: 0.8rem; color: var(--muted); }
+    h1.article-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--text); margin-bottom: 20px; }
+    .article-deck { font-size: 1.15rem; color: var(--text2); line-height: 1.75; margin-bottom: 36px; border-left: 3px solid var(--accent); padding-left: 20px; }
+    .article-byline { display: flex; align-items: center; gap: 14px; padding: 16px 0 36px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+    .byline-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+    .byline-text { display: flex; flex-direction: column; gap: 2px; }
+    .byline-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .byline-role { font-size: 0.8rem; color: var(--muted); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: var(--text); }
+    .article-body h2 { font-family: var(--serif); font-size: 1.6rem; color: var(--text); margin: 52px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-weight: 700; color: var(--accent); margin: 36px 0 12px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; }
+    .article-body p { margin-bottom: 24px; color: rgba(240,238,237,0.9); }
+    .article-body strong { color: var(--text); font-weight: 700; }
+    .article-body ul, .article-body ol { margin: 0 0 28px 0; padding-left: 0; list-style: none; }
+    .article-body ul li, .article-body ol li { padding: 10px 0 10px 28px; position: relative; color: rgba(240,238,237,0.9); border-bottom: 1px solid var(--border); font-size: 1rem; }
+    .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: none; }
+    .article-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .article-body ol { counter-reset: item; }
+    .article-body ol li::before { content: counter(item); counter-increment: item; position: absolute; left: 0; color: var(--accent); font-weight: 800; font-size: 0.85rem; }
+    .callout { background: var(--card); border: 1px solid var(--border2); border-left: 3px solid var(--accent); border-radius: 12px; padding: 24px 28px; margin: 40px 0; }
+    .callout-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .callout p { margin: 0 !important; font-size: 1rem; color: var(--text2); line-height: 1.7; }
+    .article-divider { width: 40px; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); margin: 56px auto; }
+    .disclaimer { font-size: 0.8rem; color: var(--muted); font-style: italic; line-height: 1.6; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .article-footer-nav { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .footer-nav-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .footer-nav-link { font-family: var(--serif); font-size: 1.15rem; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .footer-nav-link:hover { color: var(--accent); }
+    footer { border-top: 1px solid var(--border); background: var(--bg); padding: 24px 0; margin-top: 80px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.82rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">Prateek Saxena</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#sectors">Sectors</a>
+      <a href="../../ai.html" class="active">AI</a>
+      <a href="../../insights.html">Insights</a>
+      <a href="../../index.html#career">Career</a>
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <div class="container">
+
+    <a href="../../ai.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      AI on the Ground
+    </a>
+
+    <div class="article-meta">
+      <span class="article-category">Advances</span>
+      <span class="article-read-time">7 min read</span>
+      <span class="article-date">June 2026</span>
+    </div>
+
+    <h1 class="article-title">Agentic AI, Translated for Operators</h1>
+
+    <p class="article-deck">"Agents" is the word of the year. Strip away the jargon and the question for anyone who runs a business is simple: what does this actually change for my procurement team or my clinic front desk — and what's still a slide that hasn't met reality?</p>
+
+    <div class="article-byline">
+      <img src="../../images/prateek-photo.jpg" alt="Prateek Saxena" class="byline-avatar"/>
+      <div class="byline-text">
+        <span class="byline-name">Prateek Saxena</span>
+        <span class="byline-role">Group General Manager, Al Zaabi Group · INSEAD Certified in Digital Transformation</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>Until recently, most business AI was a smart assistant: you asked, it answered, you acted. An "agent" is the next step — software you give a goal rather than a single instruction, and which can take a sequence of actions to reach it: look something up, fill in a form, call another system, check the result, try again. The shift is from <em>"answer my question"</em> to <em>"go do this multi-step task and come back when it's done."</em></p>
+
+      <p>That's genuinely a bigger deal than a better chatbot. It's also where the gap between the marketing and the warehouse floor is widest right now. The honest 2026 picture: a large majority of enterprises say they've "adopted agents," but only a small fraction actually run them in production. The distance between those two numbers is the entire story — and it's where an operator's eye matters more than a researcher's.</p>
+
+      <h2>What it changes — concretely</h2>
+
+      <p>Forget the abstractions. Here's what agentic AI looks like in two of my businesses.</p>
+
+      <h3>A procurement team</h3>
+      <p>The old version: a buyer asks the AI to compare three supplier quotes, gets a tidy summary, and does the rest by hand. The agentic version: you tell it "source this part at the best landed price for delivery by month-end," and it checks your approved supplier list, pulls current prices, flags one that's 15% above its usual, drafts the PO, and routes it to a human for the final click. The human went from doing the task to <strong>approving</strong> it.</p>
+
+      <h3>A clinic front desk</h3>
+      <p>The old version: AI answers a patient's question about availability. The agentic version: it handles the whole booking conversation across WhatsApp — checks the doctor's calendar, offers slots, books it, sends the confirmation and reminder, and only pulls in a human when something is unusual or sensitive. The receptionist stops being a switchboard and starts handling the cases that actually need a person.</p>
+
+      <p>In both, the pattern is identical and it's the only one that works today: <strong>the agent does the multi-step legwork; the human keeps the judgment and the accountability.</strong> Anyone selling you a fully autonomous agent for a process that touches money, health, or legal exposure is selling you a liability.</p>
+
+      <h2>Why "multi-agent" is the real 2026 shift</h2>
+
+      <p>The more interesting development isn't smarter single agents — it's <strong>teams</strong> of specialized agents that coordinate. One agent retrieves data, another drafts, another checks the work against your rules, and a coordinator stitches it together. This matters because complex real-world tasks are too big for any single agent to hold in its head at once; splitting the job across specialists is how you get reliability instead of an impressive-but-fragile one-shot.</p>
+
+      <p>For an operator, the practical read is this: the architecture is starting to mirror how you'd actually staff a process — a doer, a checker, a supervisor. That's a good sign. It means the technology is bending toward how work really gets done, rather than asking your work to bend around a chatbot.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Operator's Translation</div>
+        <p>A single agent is a capable junior who occasionally makes confident mistakes. A multi-agent system is that junior with a checker and a supervisor built in. You'd never let the first one touch your cash unsupervised — and you shouldn't let the software version either, yet.</p>
+      </div>
+
+      <h2>What's still hype</h2>
+
+      <p>Three claims deserve a raised eyebrow:</p>
+
+      <ul>
+        <li><strong>"Set it and forget it."</strong> Production agents need monitoring, guardrails, and a clear stop button. The industry has noticed — governance, security, and cost-control for agents are now their own fast-growing categories, which tells you the autonomy got ahead of the controls.</li>
+        <li><strong>"It'll replace the department."</strong> In year one it replaces <em>tasks</em>, not teams. The human-in-the-loop is a feature, not a temporary limitation, anywhere the cost of a silent error is high.</li>
+        <li><strong>"The cost is the subscription."</strong> Agents that take many steps and call many systems can run up real and variable usage costs. "FinOps for agents" exists as a discipline now for a reason — the bill can surprise you if nobody's watching it.</li>
+      </ul>
+
+      <h2>What an operator should actually do about it</h2>
+
+      <ol>
+        <li><strong>Look for bounded, multi-step, rules-heavy workflows.</strong> The sweet spot for agents is a task with several mechanical steps and clear rules — booking, sourcing, reconciliation, triage. Not open-ended judgment.</li>
+        <li><strong>Insist on the human checkpoint.</strong> Anything touching money, health, or legal risk gets a person on the final action. Non-negotiable.</li>
+        <li><strong>Watch the running cost from day one.</strong> Track usage like you'd track any variable cost. A genuinely useful agent that quietly costs more than the person it helped is not a win.</li>
+        <li><strong>Start where the proven ROI is.</strong> Customer service, e-commerce operations, finance/back-office, and internal support are where agentic deployments are actually paying off in 2026. Begin there, earn the credibility, then expand.</li>
+      </ol>
+
+      <div class="article-divider"></div>
+
+      <p>Agentic AI is real, and it's the most important shift since the chatbot. But the winners this year won't be the companies with the most autonomous agents — they'll be the ones who picked bounded workflows, kept a human on the consequential decisions, and watched the cost line while everyone else was watching the demo. Same lesson as every wave of technology before it: the advance is exciting, but the discipline is what pays.</p>
+
+      <p class="disclaimer">Examples are illustrative of how agentic AI applies to common operating workflows and are not descriptions of specific live deployments. Landscape statistics referenced here are compiled from public 2025–2026 industry research (including Gartner and McKinsey) and are directional.</p>
+
+    </div><!-- /article-body -->
+
+    <div class="article-footer-nav">
+      <div>
+        <div class="footer-nav-label">← Previous</div>
+        <a href="where-ai-saves-money.html" class="footer-nav-link">Where AI Actually Saves Money</a>
+      </div>
+      <div style="text-align:right">
+        <div class="footer-nav-label">More →</div>
+        <a href="../../ai.html" class="footer-nav-link">Back to AI on the Ground</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Prateek Saxena</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../../ai.html">AI Hub</a>
+      <a href="../../index.html">prateeksaxena.me</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

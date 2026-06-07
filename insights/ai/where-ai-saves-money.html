@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Where AI Actually Saves Money | Prateek Saxena</title>
+  <meta name="description" content="The cost lines AI moves first in a distribution-and-services group — with an honest, illustrative model of where the savings come from. By Prateek Saxena."/>
+  <link rel="canonical" href="https://prateeksaxena.me/insights/ai/where-ai-saves-money.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Prateek Saxena"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Where AI Actually Saves Money | Prateek Saxena"/>
+  <meta property="og:description" content="An operator's honest model of where AI cost savings really come from."/>
+  <meta property="og:url" content="https://prateeksaxena.me/insights/ai/where-ai-saves-money.html"/>
+  <meta property="og:image" content="https://prateeksaxena.me/images/prateek-photo.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0F1A; --bg2: #0F1420; --card: #131825;
+      --text: #F0EEED; --text2: #8A8A9A; --muted: #4A4A5A;
+      --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+      --gold: #C9A84C; --gold2: #E8C96A; --ai: #7AB8E8; --ai2: #A6D3F5;
+      --accent: #E8C96A; --accent-soft: rgba(232,201,106,0.08); --accent-line: rgba(232,201,106,0.22);
+      --font: 'Inter', system-ui, sans-serif; --serif: 'DM Serif Display', Georgia, serif;
+      --max: 780px; --nav-h: 64px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    body::after { content: ''; position: fixed; inset: 0; z-index: 999; pointer-events: none; opacity: 0.3; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E"); }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 100; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(11, 15, 26, 0.85); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .nav-name { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: small-caps; color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--ai); }
+    .btn-connect { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #0B0F1A; padding: 8px 20px; border-radius: 6px; font-size: 0.875rem; font-weight: 700; text-decoration: none; }
+    @media (max-width: 768px) { .nav-links a:not(.btn-connect) { display: none; } }
+    .article-wrap { padding-top: calc(var(--nav-h) + 60px); padding-bottom: 100px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text2); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 40px; transition: color 0.2s; }
+    .back-link:hover { color: var(--ai); }
+    .back-link svg { width: 16px; height: 16px; }
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-category { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); }
+    .article-read-time, .article-date { font-size: 0.8rem; color: var(--muted); }
+    h1.article-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--text); margin-bottom: 20px; }
+    .article-deck { font-size: 1.15rem; color: var(--text2); line-height: 1.75; margin-bottom: 36px; border-left: 3px solid var(--accent); padding-left: 20px; }
+    .article-byline { display: flex; align-items: center; gap: 14px; padding: 16px 0 36px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+    .byline-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+    .byline-text { display: flex; flex-direction: column; gap: 2px; }
+    .byline-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .byline-role { font-size: 0.8rem; color: var(--muted); }
+    .article-body { font-size: 1.05rem; line-height: 1.85; color: var(--text); }
+    .article-body h2 { font-family: var(--serif); font-size: 1.6rem; color: var(--text); margin: 52px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-weight: 700; color: var(--accent); margin: 36px 0 12px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; }
+    .article-body p { margin-bottom: 24px; color: rgba(240,238,237,0.9); }
+    .article-body strong { color: var(--text); font-weight: 700; }
+    .article-body ul, .article-body ol { margin: 0 0 28px 0; padding-left: 0; list-style: none; }
+    .article-body ul li, .article-body ol li { padding: 10px 0 10px 28px; position: relative; color: rgba(240,238,237,0.9); border-bottom: 1px solid var(--border); font-size: 1rem; }
+    .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: none; }
+    .article-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .article-body ol { counter-reset: item; }
+    .article-body ol li::before { content: counter(item); counter-increment: item; position: absolute; left: 0; color: var(--accent); font-weight: 800; font-size: 0.85rem; }
+    .callout { background: var(--card); border: 1px solid var(--border2); border-left: 3px solid var(--accent); border-radius: 12px; padding: 24px 28px; margin: 40px 0; }
+    .callout-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .callout p { margin: 0 !important; font-size: 1rem; color: var(--text2); line-height: 1.7; }
+    /* TABLE */
+    .model-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 0.92rem; }
+    .model-table th, .model-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+    .model-table th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
+    .model-table td { color: rgba(240,238,237,0.9); }
+    .model-table td:last-child, .model-table th:last-child { text-align: right; white-space: nowrap; }
+    .model-table tr.total td { border-top: 2px solid var(--accent-line); border-bottom: none; font-weight: 700; color: var(--text); padding-top: 16px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .article-divider { width: 40px; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); margin: 56px auto; }
+    .disclaimer { font-size: 0.8rem; color: var(--muted); font-style: italic; line-height: 1.6; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .article-footer-nav { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .footer-nav-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .footer-nav-link { font-family: var(--serif); font-size: 1.15rem; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .footer-nav-link:hover { color: var(--accent); }
+    footer { border-top: 1px solid var(--border); background: var(--bg); padding: 24px 0; margin-top: 80px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.82rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">Prateek Saxena</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#sectors">Sectors</a>
+      <a href="../../ai.html" class="active">AI</a>
+      <a href="../../insights.html">Insights</a>
+      <a href="../../index.html#career">Career</a>
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener" class="btn-connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <div class="container">
+
+    <a href="../../ai.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      AI on the Ground
+    </a>
+
+    <div class="article-meta">
+      <span class="article-category">Cost &amp; ROI</span>
+      <span class="article-read-time">8 min read</span>
+      <span class="article-date">June 2026</span>
+    </div>
+
+    <h1 class="article-title">Where AI Actually Saves Money</h1>
+
+    <p class="article-deck">Industry surveys love to quote a "5× ROI." Useful as a headline, useless as a plan. Here's the operator's version: the specific cost lines AI moves first in a distribution-and-services group, and an honest, illustrative model of where the dirhams come from.</p>
+
+    <div class="article-byline">
+      <img src="../../images/prateek-photo.jpg" alt="Prateek Saxena" class="byline-avatar"/>
+      <div class="byline-text">
+        <span class="byline-name">Prateek Saxena</span>
+        <span class="byline-role">Group General Manager, Al Zaabi Group · INSEAD Certified in Digital Transformation</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>When a vendor tells you AI delivers a 5× return, the right response isn't excitement — it's "on what, exactly?" Aggregate ROI numbers are an average of a few spectacular wins and a long tail of zeros. The wins are concentrated in a handful of cost lines. If you know which ones, you can plan; if you don't, you're gambling.</p>
+
+      <p>Across a multi-sector group, the savings reliably show up in the same places. None of them are exotic. All of them are about taking expensive human minutes off repetitive work, reducing costly errors, and freeing up cash that was sitting idle.</p>
+
+      <h2>The seven lines AI moves first</h2>
+
+      <ul>
+        <li><strong>Back-office processing</strong> — invoice matching, data entry, reconciliation, report generation. The biggest, dullest, most reliable win. This is pure labour-minutes returned.</li>
+        <li><strong>Customer enquiry handling</strong> — first-response and triage across phone, WhatsApp, email, and web. AI handles the routine 60–70%; people handle the exceptions and the relationships.</li>
+        <li><strong>Sales support &amp; quotations</strong> — drafting first-pass quotes, pulling product specs, answering "do you have X in stock at what price." Faster quotes win more deals, so this one shows up on revenue too.</li>
+        <li><strong>Procurement &amp; sourcing</strong> — comparing supplier options, flagging price anomalies, drafting POs. This is exactly the territory of AI-assisted sourcing platforms.</li>
+        <li><strong>Document &amp; contract review</strong> — summarising long documents for non-specialists, extracting key terms, catching missing clauses before they cost you.</li>
+        <li><strong>Inventory &amp; demand signals</strong> — better forecasting reduces both stockouts (lost sales) and overstock (trapped working capital). The cash impact here is often larger than the labour impact.</li>
+        <li><strong>Marketing &amp; content production</strong> — a smaller line, but real: producing listings, descriptions, and campaign drafts at a fraction of the previous cost and time.</li>
+      </ul>
+
+      <p>Notice what's <em>not</em> on the list: anything requiring deep, accountable judgment, anything where a confident-but-wrong answer is dangerous, and anything you do only a handful of times a year. Those are where AI either fails or simply isn't worth the integration cost yet.</p>
+
+      <h2>An illustrative model: back-office processing</h2>
+
+      <p>Let me make this concrete with the most dependable line. The numbers below are <strong>illustrative</strong> — round figures to show the <em>shape</em> of the saving, not a disclosure of any company's actuals. Plug in your own.</p>
+
+      <p>Imagine one back-office process — say, supplier invoice processing — handled by a small team:</p>
+
+      <div class="table-scroll">
+      <table class="model-table">
+        <thead>
+          <tr><th>Driver</th><th>Before AI</th><th>After AI</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Invoices / month</td><td>2,000</td><td>2,000</td></tr>
+          <tr><td>Minutes of human time each</td><td>12</td><td>4</td></tr>
+          <tr><td>Human hours / month</td><td>400</td><td>133</td></tr>
+          <tr><td>Error rate caught downstream</td><td>~8%</td><td>~3%</td></tr>
+          <tr class="total"><td>Human hours returned / month</td><td colspan="2">~267 (≈ 2 FTE of capacity)</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>The point isn't the exact figures — it's the <strong>structure of the win</strong>. AI doesn't eliminate the function; it compresses the time-per-item and cuts the error rate. The savings are the freed capacity (which you redeploy to higher-value work, not necessarily headcount cuts) plus the avoided cost of errors. Against that you net the tool cost, integration, and the time of the human checker. In a process at this volume, that math is comfortably positive — and it compounds as you apply the same pattern to the next process.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Honest Caveat</div>
+        <p>"Capacity freed" only becomes "money saved" if you actually do something with it — redeploy it, absorb growth without hiring, or genuinely reduce overtime. Capacity that's freed and then wasted is a slide, not a saving. Decide upfront which it will be.</p>
+      </div>
+
+      <h2>The savings nobody puts in the model</h2>
+
+      <p>Two of the largest effects are the ones that don't fit neatly in a spreadsheet, so people leave them out — and then undercount the value of AI.</p>
+
+      <p><strong>Error and rework avoidance.</strong> A wrong price on a quote, a missed clause in a contract, a duplicate payment — each of these has a real cost that's diffuse and hard to attribute, which is exactly why it's chronically underinvested in. Cutting the error rate is often worth more than the labour saving, but it never shows up in the demo.</p>
+
+      <p><strong>Speed as revenue.</strong> Quoting in an hour instead of a day wins business you'd otherwise lose. Answering a customer at 11pm keeps them from going to a competitor. These are technically revenue effects, not cost savings, but they come from the same deployment — and they're frequently the larger number.</p>
+
+      <h2>The costs you must net against it</h2>
+
+      <p>An honest model subtracts the full cost, not just the licence:</p>
+
+      <ol>
+        <li><strong>The tool itself</strong> — subscription or usage/token cost. Usually the smallest line, and the only one most people count.</li>
+        <li><strong>Integration</strong> — getting it into the systems people already use. Often the largest one-time cost, and the one that quietly kills ROI when underfunded.</li>
+        <li><strong>The human-in-the-loop</strong> — someone still checks the output. Real, ongoing, and the reason "AI replaces the team" is usually wrong in year one.</li>
+        <li><strong>Change management</strong> — training, the productivity dip while people adjust, and the cost of the pilots that don't pan out.</li>
+      </ol>
+
+      <p>When leaders say AI "didn't deliver ROI," it's rarely because the savings weren't there. It's because they counted only line 1 of the cost and none of lines 2–4, set expectations against a fantasy, and then judged the project against it.</p>
+
+      <h2>How to sequence for fastest payback</h2>
+
+      <p>Go where volume is high, the task is rules-heavy, and a human already checks the output. That's back-office and enquiry handling for most groups — fast payback, low risk, and they build the organisational muscle and credibility you'll need for the harder, higher-value projects later. Save forecasting and anything judgment-heavy for once you've earned trust with the easy wins.</p>
+
+      <div class="article-divider"></div>
+
+      <p>The "5× ROI" headline is real in aggregate and meaningless in particular. The operator's version is less exciting and far more useful: pick a high-volume cost line, model the before-and-after honestly including all four cost lines, decide in advance whether freed capacity becomes redeployment or reduction, and stack the wins one process at a time. Do that, and the returns take care of themselves — no headline required.</p>
+
+      <p class="disclaimer">All figures in this article are illustrative and rounded to demonstrate the structure of AI cost savings. They are not disclosures of any company's confidential financial data. Landscape statistics referenced elsewhere on this site are compiled from public 2025–2026 industry research and are directional.</p>
+
+    </div><!-- /article-body -->
+
+    <div class="article-footer-nav">
+      <div>
+        <div class="footer-nav-label">← Previous</div>
+        <a href="ai-adoption-playbook.html" class="footer-nav-link">The AI Adoption Playbook</a>
+      </div>
+      <div style="text-align:right">
+        <div class="footer-nav-label">Next →</div>
+        <a href="agentic-ai-for-operators.html" class="footer-nav-link">Agentic AI, Translated for Operators</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Prateek Saxena</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/prateeksaxena-uae" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../../ai.html">AI Hub</a>
+      <a href="../../index.html">prateeksaxena.me</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
