@@ -3,214 +3,320 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Prateek Saxena — immersive concept</title>
+<title>Prateek Saxena — Operator · Builder · Strategist</title>
 <style>
   @font-face{font-family:'Space';src:url('fonts/space-grotesk.woff2') format('woff2');font-weight:300 700;font-display:swap}
   @font-face{font-family:'Hanken';src:url('fonts/hanken.woff2') format('woff2');font-weight:300 800;font-display:swap}
   *{margin:0;padding:0;box-sizing:border-box}
-  :root{--ink:#13201F;--mut:#566461;--accent1:#1F6B72;--accent2:#177A6B;--bg:linear-gradient(180deg,#F4F2EC 0%,#ECEFEA 55%,#EAF0EE 100%);--scrim-rgb:244,242,236;--bloom1:#BFE0DB;--bloom2:#CFE6D6;--bloom3:#DCEAE3;--glass:rgba(255,255,255,.76);--line:rgba(90,130,125,.25)}
-  html{scroll-behavior:auto}
-  body{font-family:'Hanken',system-ui,sans-serif;color:var(--ink);
-    background:var(--bg);
-    overflow-x:hidden;-webkit-font-smoothing:antialiased}
-  /* fixed 3D layer */
-  #scene{position:fixed;inset:0;z-index:1;pointer-events:none}
-  /* soft scrim keeps the 3D in the background so text stays the focus */
-  .scrim{position:fixed;inset:0;z-index:1;pointer-events:none;
-    background:radial-gradient(120% 80% at 50% 50%,rgba(var(--scrim-rgb),.62) 0%,rgba(var(--scrim-rgb),.32) 42%,rgba(var(--scrim-rgb),0) 78%)}
-  /* ambient light blooms over the canvas */
-  .bloom{position:fixed;z-index:0;border-radius:50%;filter:blur(80px);opacity:.26;pointer-events:none}
-  .b1{width:46vw;height:46vw;left:-8vw;top:-6vw;background:radial-gradient(circle,var(--bloom1),transparent 68%)}
-  .b2{width:40vw;height:40vw;right:-6vw;top:30vh;background:radial-gradient(circle,var(--bloom2),transparent 68%)}
-  .b3{width:50vw;height:50vw;left:18vw;bottom:-12vw;background:radial-gradient(circle,var(--bloom3),transparent 68%)}
-  /* content */
-  main{position:relative;z-index:2}
-  section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0 6vw;position:relative}
-  .panel{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
-  .panel.in{opacity:1;transform:none}
-  .kicker{font-family:'Space';font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent2);font-weight:600}
-  /* glass card */
-  .glass{background:var(--glass);backdrop-filter:blur(26px) saturate(135%);-webkit-backdrop-filter:blur(26px) saturate(135%);
-    border:1px solid rgba(255,255,255,.75);border-radius:28px;box-shadow:0 30px 80px rgba(70,90,160,.16),inset 0 1px 0 rgba(255,255,255,.85)}
+  :root{
+    --ink:#13201F;--mut:#5A6663;--soft:#8A9591;
+    --accent:#177A6B;--accent2:#1F6B72;--accent-ink:#0E5A50;
+    --bg:#F4F2EC;--card:#FFFFFF;--line:rgba(20,40,38,.10);--line2:rgba(20,40,38,.07);
+    --scrim-rgb:244,242,236;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Hanken',system-ui,sans-serif;color:var(--ink);background:var(--bg);
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.5}
+  ::selection{background:#177A6B;color:#fff}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .kicker{font-family:'Space';font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent-ink);font-weight:600;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:22px;height:1.5px;background:var(--accent)}
+  h1,h2,h3{font-family:'Space';font-weight:500;letter-spacing:-.025em;line-height:1.0}
+  .grad{color:var(--accent)}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
   /* nav */
-  .nav{position:fixed;z-index:5;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
-    padding:20px 6vw;font-family:'Space'}
-  .brand{font-weight:600;font-size:18px;letter-spacing:-.01em;display:flex;gap:9px;align-items:center}
-  .orb{width:11px;height:11px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent1),var(--accent2),var(--accent1));box-shadow:0 0 14px rgba(150,170,255,.7)}
-  .nlinks{display:flex;gap:26px}.nlinks a{font-size:13px;color:var(--mut);text-decoration:none;font-weight:500}
-  /* hero */
-  .hero-c{text-align:center;max-width:1000px}
-  h1{font-family:'Space';font-weight:500;font-size:clamp(40px,7.4vw,108px);line-height:.98;letter-spacing:-.03em;margin:22px 0 0}
-  h1 .grad{background:linear-gradient(100deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero-sub{font-size:clamp(16px,1.5vw,20px);color:var(--mut);max-width:54ch;margin:26px auto 0;line-height:1.6}
-  .scroll-hint{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:5;font-family:'Space';font-size:11px;letter-spacing:.2em;color:var(--mut);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
-  .scroll-hint .line{width:1px;height:34px;background:linear-gradient(var(--mut),transparent);animation:sd 1.8s infinite}
-  @keyframes sd{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}50.1%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-  /* generic content blocks */
-  .wide{width:100%;max-width:1080px}
-  .pad{padding:48px}
-  h2{font-family:'Space';font-weight:500;font-size:clamp(30px,4.4vw,56px);letter-spacing:-.02em;line-height:1.02}
-  .lead{color:var(--mut);font-size:18px;line-height:1.6;max-width:60ch;margin-top:18px}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
-  .tile{background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.7);border-radius:18px;padding:22px;backdrop-filter:blur(8px)}
-  .tile .n{font-family:'Space';font-size:13px;color:var(--accent2);font-weight:600}
-  .tile h3{font-family:'Space';font-weight:500;font-size:21px;margin-top:10px;letter-spacing:-.01em}
-  .tile p{color:var(--mut);font-size:14px;line-height:1.5;margin-top:8px}
-  .stats{display:flex;gap:42px;margin-top:34px;flex-wrap:wrap}
-  .stat .v{font-family:'Space';font-weight:500;font-size:46px;letter-spacing:-.02em;background:linear-gradient(120deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .stat .l{font-size:13px;color:var(--mut);letter-spacing:.03em}
-  .cta{display:inline-flex;gap:12px;margin-top:32px}
-  .btn{font-family:'Space';font-weight:600;font-size:14px;padding:15px 26px;border-radius:40px;text-decoration:none}
-  .btn1{background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;box-shadow:0 14px 30px rgba(45,80,180,.28)}
-  .btn2{background:rgba(255,255,255,.6);color:var(--ink);border:1px solid var(--line)}
-  .center{text-align:center}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}.pad{padding:30px}.nlinks{display:none}.stats{gap:26px}}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:16px 28px;font-family:'Space';transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+  .nav.solid{background:rgba(244,242,236,.78);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+  .brand{font-weight:600;font-size:17px;display:flex;gap:9px;align-items:center}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(23,122,107,.14)}
+  .nlinks{display:flex;gap:28px}.nlinks a{font-size:13.5px;color:var(--mut);text-decoration:none;font-weight:500;transition:color .2s}
+  .nlinks a:hover{color:var(--accent-ink)}
+  .nbtn{font-size:13px;font-weight:600;padding:9px 16px;border-radius:30px;background:var(--ink);color:#fff !important;text-decoration:none}
+  /* HERO */
+  .hero{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:center}
+  #scene{position:absolute;inset:0;z-index:0}
+  .hero .heroglow{position:absolute;z-index:0;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none}
+  .hg1{width:42vw;height:42vw;left:-6vw;top:-8vw;background:radial-gradient(circle,#BFE0DB,transparent 70%)}
+  .hg2{width:38vw;height:38vw;right:-6vw;bottom:-10vw;background:radial-gradient(circle,#CFE6D6,transparent 70%)}
+  .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 75% at 50% 48%,rgba(var(--scrim-rgb),.55) 0%,rgba(var(--scrim-rgb),.22) 45%,rgba(var(--scrim-rgb),0) 80%)}
+  .hero-c{position:relative;z-index:2;width:100%}
+  h1{font-size:clamp(42px,7.6vw,112px);margin:20px 0 0;max-width:14ch}
+  .hero-sub{font-size:clamp(16px,1.55vw,20px);color:var(--mut);max-width:52ch;margin:26px 0 0;line-height:1.62}
+  .hero-meta{display:flex;gap:26px;margin-top:34px;font-family:'Space';font-size:13px;color:var(--soft);flex-wrap:wrap;align-items:center}
+  .hero-meta b{color:var(--ink);font-weight:600}
+  .scrollcue{position:absolute;left:28px;bottom:24px;z-index:2;font-family:'Space';font-size:11px;letter-spacing:.2em;color:var(--soft);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .scrollcue .ln{width:30px;height:1px;background:var(--soft);position:relative;overflow:hidden}
+  .scrollcue .ln::after{content:"";position:absolute;inset:0;background:var(--accent);animation:slide 2s infinite}
+  @keyframes slide{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+  /* SECTIONS */
+  section.block{padding:clamp(80px,12vh,150px) 0}
+  .lead{color:var(--mut);font-size:clamp(17px,1.5vw,20px);line-height:1.65;max-width:62ch}
+  h2{font-size:clamp(30px,4.6vw,58px);margin-top:18px;max-width:18ch}
+  .two{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end}
+  .principles{display:flex;flex-direction:column;gap:22px}
+  .principle{display:flex;gap:16px}
+  .principle .pn{font-family:'Space';font-size:13px;color:var(--accent);font-weight:600;padding-top:3px}
+  .principle h4{font-family:'Space';font-weight:500;font-size:18px;letter-spacing:-.01em}
+  .principle p{color:var(--mut);font-size:14.5px;margin-top:5px;line-height:1.55}
+  /* BENTO */
+  .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+  .tile{background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:24px;
+    display:flex;flex-direction:column;justify-content:space-between;min-height:150px;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,50,46,.10);border-color:rgba(23,122,107,.3)}
+  .tile .tlabel{font-family:'Space';font-size:12px;letter-spacing:.05em;color:var(--soft);text-transform:uppercase}
+  .tile h3{font-size:20px;margin-top:auto}
+  .tile .meta{font-size:13px;color:var(--mut);margin-top:6px}
+  .feature{grid-column:span 2;grid-row:span 2;background:linear-gradient(150deg,#15403A,#0E2E2A);color:#EAF3F0;border:none;justify-content:space-between}
+  .feature .big{font-family:'Space';font-weight:500;font-size:clamp(40px,5vw,72px);letter-spacing:-.03em;line-height:.95}
+  .feature .big span{color:#5FD0B9}
+  .feature p{color:#A9C7BF;font-size:14.5px;max-width:30ch;line-height:1.55}
+  .feature .ft{font-family:'Space';font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6FB8A8}
+  .tile.span2{grid-column:span 2}
+  /* article cards */
+  .arts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+  .art{background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s;text-decoration:none}
+  .art:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,50,46,.10);border-color:rgba(23,122,107,.3)}
+  .art .tag{font-family:'Space';font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em}
+  .art h3{font-size:21px;line-height:1.12}
+  .art p{color:var(--mut);font-size:14.5px;line-height:1.55}
+  .art .more{font-family:'Space';font-size:13px;font-weight:600;color:var(--accent-ink);margin-top:auto}
+  /* proof / stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;margin-top:8px}
+  .stat .v{font-family:'Space';font-weight:500;font-size:clamp(38px,4.5vw,58px);letter-spacing:-.02em;color:var(--ink)}
+  .stat .v em{color:var(--accent);font-style:normal}
+  .stat .l{font-size:13.5px;color:var(--mut);margin-top:6px}
+  .quote{margin-top:60px;max-width:30ch}
+  blockquote{font-family:'Space';font-weight:500;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.02em;line-height:1.25}
+  .qby{font-size:14px;color:var(--mut);margin-top:18px}
+  /* CTA */
+  .cta-block{text-align:center;padding:clamp(90px,14vh,170px) 0}
+  .cta-block h2{margin:18px auto 0;max-width:20ch}
+  .cta-row{display:inline-flex;gap:14px;margin-top:34px;flex-wrap:wrap;justify-content:center}
+  .btn{font-family:'Space';font-weight:600;font-size:14.5px;padding:16px 30px;border-radius:40px;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
+  .btn1{background:var(--accent);color:#fff;box-shadow:0 14px 30px rgba(23,122,107,.28)}
+  .btn1:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(23,122,107,.34)}
+  .btn2{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn2:hover{border-color:var(--accent);color:var(--accent-ink)}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--soft);font-size:13.5px}
+  .frow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:'Space'}
+  .frow a{color:var(--mut);text-decoration:none;margin-left:22px}
+  .frow a:hover{color:var(--accent-ink)}
+  @media(max-width:820px){
+    .two{grid-template-columns:1fr;gap:36px}
+    .bento{grid-template-columns:repeat(2,1fr)}
+    .feature{grid-column:span 2;grid-row:span 1}
+    .arts{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr);gap:24px}
+    .nlinks{display:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .rv{opacity:1;transform:none;transition:none}
+    .scrollcue .ln::after{animation:none}
+  }
 </style>
 </head>
 <body>
-<canvas id="scene"></canvas>
-<div class="bloom b1"></div><div class="bloom b2"></div><div class="bloom b3"></div>
-<div class="scrim"></div>
 
-<div class="nav">
-  <div class="brand"><span class="orb"></span>Prateek Saxena</div>
-  <div class="nlinks"><a href="#">Sectors</a><a href="#">AI</a><a href="#">Journal</a><a href="#">Engage</a></div>
-</div>
+<nav class="nav" id="nav">
+  <div class="brand"><span class="dot"></span>Prateek Saxena</div>
+  <div class="nlinks">
+    <a href="#group">The Group</a><a href="#ai">AI</a><a href="#proof">Proof</a><a href="#engage">Engage</a>
+  </div>
+  <a class="nbtn" href="#engage">Get in touch</a>
+</nav>
 
-<main>
-  <section>
-    <div class="hero-c panel in">
-      <div class="kicker">Operator · Builder · Strategist</div>
-      <h1>A group of <span class="grad">42 companies</span>,<br>built to move forward.</h1>
-      <p class="hero-sub">Group General Manager at Al Zaabi Group — scaling 11 sectors of the UAE’s real economy, and steering how it adopts AI on the ground. Scroll to travel through it.</p>
+<!-- HERO (only section with motion) -->
+<section class="hero">
+  <canvas id="scene"></canvas>
+  <div class="heroglow hg1"></div><div class="heroglow hg2"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-c">
+    <div class="wrap">
+      <div class="kicker rv in">Operator · Builder · Strategist</div>
+      <h1 class="rv in">A group of <span class="grad">42 companies</span>, built to move forward.</h1>
+      <p class="hero-sub rv in">Group General Manager at Al Zaabi Group — scaling 11 sectors of the UAE’s real economy, and steering how it adopts AI where it actually counts: on the ground.</p>
+      <div class="hero-meta rv in"><span><b>Abu Dhabi</b>, UAE</span><span><b>11</b> sectors</span><span><b>16+</b> years operating</span></div>
     </div>
-  </section>
+  </div>
+  <div class="scrollcue"><span class="ln"></span>Scroll</div>
+</section>
 
-  <section>
-    <div class="wide glass pad panel">
-      <div class="kicker">The Group</div>
-      <h2>Eleven sectors, one operating discipline.</h2>
-      <p class="lead">Each business runs on the same idea: systems that scale, margins that hold, and technology adopted where it actually counts — the floor, not the deck.</p>
-      <div class="stats">
-        <div class="stat"><div class="v">42</div><div class="l">Companies</div></div>
-        <div class="stat"><div class="v">11</div><div class="l">Sectors</div></div>
-        <div class="stat"><div class="v">16+</div><div class="l">Years</div></div>
-        <div class="stat"><div class="v">3.9k</div><div class="l">Following</div></div>
+<!-- POSITIONING -->
+<section class="block" id="about">
+  <div class="wrap two">
+    <div>
+      <div class="kicker rv">The mandate</div>
+      <h2 class="rv">One operating discipline, across the real economy.</h2>
+    </div>
+    <div class="principles">
+      <div class="principle rv"><div class="pn">01</div><div><h4>Systems that scale</h4><p>Repeatable operating models, not heroics — so 42 businesses can grow without breaking.</p></div></div>
+      <div class="principle rv"><div class="pn">02</div><div><h4>Margins that hold</h4><p>Disciplined economics over vanity growth. Technology adopted where it pays back.</p></div></div>
+      <div class="principle rv"><div class="pn">03</div><div><h4>AI on the floor</h4><p>Not on the slide deck — in the warehouse, the branch, and the back office.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE GROUP — bento -->
+<section class="block" id="group">
+  <div class="wrap">
+    <div class="kicker rv">The Group</div>
+    <h2 class="rv">Where the work actually happens.</h2>
+    <div class="bento">
+      <div class="tile feature rv">
+        <div class="ft">Al Zaabi Group</div>
+        <div class="big"><span>42</span> companies<br>across <span>11</span> sectors</div>
+        <p>A diversified group spanning the tangible parts of the economy — operated as one portfolio with shared standards.</p>
       </div>
+      <div class="tile rv"><div class="tlabel">Sector</div><h3>Real Estate</h3><div class="meta">Development &amp; asset management</div></div>
+      <div class="tile rv"><div class="tlabel">Sector</div><h3>Construction</h3><div class="meta">Contracting &amp; materials</div></div>
+      <div class="tile rv"><div class="tlabel">Sector</div><h3>Retail</h3><div class="meta">Brands &amp; distribution</div></div>
+      <div class="tile rv"><div class="tlabel">Sector</div><h3>Hospitality</h3><div class="meta">Hotels &amp; F&amp;B</div></div>
+      <div class="tile rv"><div class="tlabel">Sector</div><h3>Logistics</h3><div class="meta">Transport &amp; supply chain</div></div>
+      <div class="tile rv"><div class="tlabel">Sector</div><h3>Automotive</h3><div class="meta">Sales &amp; service</div></div>
+      <div class="tile rv span2"><div class="tlabel">+ more</div><h3>Energy · Facilities · Technology · Investments</h3><div class="meta">Eleven sectors in total — each run to the same operating bar.</div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="wide glass pad panel">
-      <div class="kicker">AI on the Ground</div>
-      <h2>Translating AI into things that ship.</h2>
-      <p class="lead">No hype — practical playbooks on enterprise AI, honest economics, and what the latest advances really change once they hit the warehouse floor.</p>
-      <div class="grid">
-        <div class="tile"><div class="n">Cost</div><h3>Where AI actually saves money</h3><p>The seven cost lines AI moves first.</p></div>
-        <div class="tile"><div class="n">Playbook</div><h3>The AI adoption playbook</h3><p>From “interesting” to “used every day”.</p></div>
-        <div class="tile"><div class="n">Field note</div><h3>Agentic AI, for operators</h3><p>What “agents” really change — and what’s hype.</p></div>
-      </div>
+<!-- AI -->
+<section class="block" id="ai">
+  <div class="wrap">
+    <div class="kicker rv">AI on the Ground</div>
+    <h2 class="rv">Translating AI into things that ship.</h2>
+    <p class="lead rv" style="margin-top:18px">No hype — practical playbooks on enterprise AI, honest economics, and what the latest advances really change once they hit the floor.</p>
+    <div class="arts">
+      <a class="art rv" href="#"><span class="tag">Cost</span><h3>Where AI actually saves money</h3><p>The seven cost lines AI moves first — and the ones it quietly doesn’t.</p><span class="more">Read →</span></a>
+      <a class="art rv" href="#"><span class="tag">Playbook</span><h3>The AI adoption playbook</h3><p>From “interesting demo” to “used every day” across a 42-company group.</p><span class="more">Read →</span></a>
+      <a class="art rv" href="#"><span class="tag">Field note</span><h3>Agentic AI, for operators</h3><p>What “agents” really change on the ground — and what’s still hype.</p><span class="more">Read →</span></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="hero-c panel">
-      <div class="kicker center">Engage</div>
-      <h2 style="margin-top:14px">Let’s build what’s next.</h2>
-      <p class="hero-sub">Advisory · Speaking · Board conversations.</p>
-      <div class="cta"><a class="btn btn1" href="#">Start a conversation</a><a class="btn btn2" href="#">Read the Journal</a></div>
+<!-- PROOF -->
+<section class="block" id="proof">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat rv"><div class="v"><em>42</em></div><div class="l">Companies operated</div></div>
+      <div class="stat rv"><div class="v"><em>11</em></div><div class="l">Sectors</div></div>
+      <div class="stat rv"><div class="v"><em>16</em>+</div><div class="l">Years operating</div></div>
+      <div class="stat rv"><div class="v"><em>3.9</em>k</div><div class="l">Following the work</div></div>
     </div>
-  </section>
-</main>
+    <div class="quote rv">
+      <blockquote>“Adopt AI where it pays back — on the floor, not the deck.”</blockquote>
+      <div class="qby">— the operating principle behind the writing</div>
+    </div>
+  </div>
+</section>
 
-<div class="scroll-hint"><span>Scroll</span><span class="line"></span></div>
+<!-- ENGAGE -->
+<section class="cta-block" id="engage">
+  <div class="wrap">
+    <div class="kicker rv" style="justify-content:center">Engage</div>
+    <h2 class="rv">Let’s build what’s next.</h2>
+    <p class="lead rv" style="margin:18px auto 0;text-align:center">Advisory · Speaking · Board conversations.</p>
+    <div class="cta-row rv"><a class="btn btn1" href="mailto:prateeksax@gmail.com">Start a conversation</a><a class="btn btn2" href="#ai">Read the Journal</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap frow">
+    <div>© 2026 Prateek Saxena</div>
+    <div><a href="#">LinkedIn</a><a href="#">X</a><a href="mailto:prateeksax@gmail.com">Email</a></div>
+  </div>
+</footer>
 
 <script type="module">
 import * as THREE from './three.module.min.js';
-window.__three = (typeof THREE!=='undefined' && !!THREE.Scene);
 
-// ── content reveal: runs independently of WebGL so the page is never blank ──
-const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }),{threshold:0.12});
-document.querySelectorAll('.panel').forEach(p=>io.observe(p));
-window.__ioReady = true;
-// failsafe: if anything goes wrong, still show all content
-setTimeout(()=>document.querySelectorAll('.panel').forEach(p=>p.classList.add('in')), 3000);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const canvas = document.getElementById('scene');
-let renderer;
-try{
-  renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true, powerPreference:'high-performance'});
-}catch(e){ console.warn('WebGL unavailable', e); }
+// ── content reveal (independent of WebGL) ──
+if(reduce){
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+}else{
+  const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }),{threshold:.18,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')),3500); // failsafe
+}
+
+// ── nav solid-on-scroll ──
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{ nav.classList.toggle('solid', scrollY>40); },{passive:true});
+
+// ── HERO-ONLY ambient 3D ──
+const hero=document.querySelector('.hero');
+const canvas=document.getElementById('scene');
+let renderer; try{ renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'}); }catch(e){ console.warn('WebGL off',e); }
 
 if(renderer){
-  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-  renderer.setSize(innerWidth, innerHeight);
-
-  const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xF2F5FF, 12, 58);
-
-  const camera = new THREE.PerspectiveCamera(62, innerWidth/innerHeight, 0.1, 200);
+  const scene=new THREE.Scene();
+  scene.fog=new THREE.Fog(0xF4F2EC, 12, 56);
+  const camera=new THREE.PerspectiveCamera(60, 1, 0.1, 200);
   camera.position.set(0,0,8);
+  scene.add(new THREE.AmbientLight(0xffffff,.9));
+  const d1=new THREE.DirectionalLight(0xCFEAE2,1.0); d1.position.set(4,6,8); scene.add(d1);
 
-  // lights
-  scene.add(new THREE.AmbientLight(0xffffff, 0.85));
-  const d1 = new THREE.DirectionalLight(0xBFE0FF, 1.1); d1.position.set(4,6,8); scene.add(d1);
-  const d2 = new THREE.DirectionalLight(0xFFD0BE, 0.8); d2.position.set(-6,-3,4); scene.add(d2);
+  const world=new THREE.Group(); scene.add(world);
+  const palette=[0x1F6B72,0x177A6B,0x3FA89C,0x6FC2B0];
 
-  const palette = (window.CFG&&window.CFG.pal)||[0x1F6B72,0x177A6B,0x3FA89C,0x6FC2B0];
-
-  // ── "gates": rings the camera flies through ──
-  const gates = new THREE.Group(); scene.add(gates);
-  const GN = 14;
-  for(let i=0;i<GN;i++){
-    const r = 3.4 + Math.random()*1.8;
-    const geo = new THREE.TorusGeometry(r, 0.035 + Math.random()*0.03, 16, 80);
-    const col = palette[i % palette.length];
-    const mat = new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:0.26});
-    const m = new THREE.Mesh(geo, mat);
-    m.position.set((Math.random()-0.5)*4.5, (Math.random()-0.5)*3.6, -14 - i*8.0);
-    m.rotation.z = Math.random()*Math.PI;
-    gates.add(m);
-  }
-
-  // ── floating glass blobs ──
-  const blobs = new THREE.Group(); scene.add(blobs);
+  // faint rings (a quiet field, not a tunnel)
   for(let i=0;i<12;i++){
-    const g = new THREE.IcosahedronGeometry(0.16 + Math.random()*0.34, 1);
-    const col = palette[(Math.random()*palette.length)|0];
-    const mat = new THREE.MeshStandardMaterial({color:col, emissive:col, emissiveIntensity:0.25, metalness:0.1, roughness:0.25, transparent:true, opacity:0.34});
-    const m = new THREE.Mesh(g, mat);
-    m.position.set((Math.random()-0.5)*18,(Math.random()-0.5)*13,-Math.random()*120);
-    blobs.add(m);
+    const r=3.2+Math.random()*1.8;
+    const m=new THREE.Mesh(new THREE.TorusGeometry(r,0.03+Math.random()*0.025,16,80),
+      new THREE.MeshBasicMaterial({color:palette[i%palette.length],transparent:true,opacity:0.22}));
+    m.position.set((Math.random()-0.5)*5,(Math.random()-0.5)*4,-12-i*7);
+    m.rotation.z=Math.random()*Math.PI;
+    world.add(m);
   }
+  for(let i=0;i<10;i++){
+    const col=palette[(Math.random()*palette.length)|0];
+    const m=new THREE.Mesh(new THREE.IcosahedronGeometry(0.16+Math.random()*0.3,1),
+      new THREE.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:0.22,roughness:0.3,transparent:true,opacity:0.32}));
+    m.position.set((Math.random()-0.5)*16,(Math.random()-0.5)*11,-Math.random()*90);
+    world.add(m);
+  }
+  const PN=700,pos=new Float32Array(PN*3);
+  for(let i=0;i<PN;i++){ pos[i*3]=(Math.random()-0.5)*36; pos[i*3+1]=(Math.random()-0.5)*24; pos[i*3+2]=-Math.random()*110; }
+  const pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  world.add(new THREE.Points(pg,new THREE.PointsMaterial({color:0x86ABA4,size:0.04,transparent:true,opacity:0.3,depthWrite:false})));
 
-  // ── particle dust ──
-  const PN = 900, pos = new Float32Array(PN*3);
-  for(let i=0;i<PN;i++){ pos[i*3]=(Math.random()-0.5)*40; pos[i*3+1]=(Math.random()-0.5)*30; pos[i*3+2]=-Math.random()*150; }
-  const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pos,3));
-  const pm = new THREE.PointsMaterial({color:(window.CFG&&window.CFG.particle)||0x86ABA4, size:0.045, transparent:true, opacity:0.32, depthWrite:false});
-  scene.add(new THREE.Points(pg, pm));
+  function size(){ const w=hero.clientWidth,h=hero.clientHeight; renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(w,h); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+  size(); addEventListener('resize',size);
 
-  // scroll + pointer
-  let progress=0, target=0, px=0, py=0, tpx=0, tpy=0;
-  const maxScroll = ()=> document.body.scrollHeight - innerHeight;
-  addEventListener('scroll',()=>{ const m=maxScroll(); target = m>0 ? scrollY/m : 0; }, {passive:true});
-  addEventListener('pointermove',e=>{ tpx=(e.clientX/innerWidth-0.5); tpy=(e.clientY/innerHeight-0.5); });
-  addEventListener('resize',()=>{ camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); });
+  let px=0,py=0,tpx=0,tpy=0;
+  if(!reduce) addEventListener('pointermove',e=>{ tpx=(e.clientX/innerWidth-0.5); tpy=(e.clientY/innerHeight-0.5); });
 
-  function tick(){
-    progress += (target-progress)*0.045;
-    px += (tpx-px)*0.035; py += (tpy-py)*0.035;
-    // fly forward — motion is driven by scroll; the scene rests when you stop
-    camera.position.z = 8 - progress*112;
-    camera.position.x = px*1.1;
-    camera.position.y = -py*0.8;
-    camera.lookAt(px*0.5, -py*0.4, camera.position.z - 10);
+  function render(){
+    if(!reduce){
+      const prog=Math.min(1,Math.max(0,scrollY/Math.max(1,hero.clientHeight)));
+      px+=(tpx-px)*0.04; py+=(tpy-py)*0.04;
+      camera.position.x=px*1.1; camera.position.y=-py*0.7;
+      camera.position.z=8-prog*4;            // whisper of dolly as the hero leaves
+      world.rotation.y=px*0.05;
+    }
+    camera.lookAt(0,0,camera.position.z-10);
     renderer.render(scene,camera);
-    window.__cz=camera.position.z; window.__p=progress; window.__g=gates.children.length;
-    requestAnimationFrame(tick);
   }
-  tick();
+
+  if(reduce){ render(); }   // single static frame, no loop
+  else{
+    let raf=null;
+    const loop=()=>{ render(); raf=requestAnimationFrame(loop); };
+    // run only while the hero is on screen (perf + battery)
+    new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting){ if(!raf) loop(); }
+      else if(raf){ cancelAnimationFrame(raf); raf=null; }
+    }),{threshold:0}).observe(hero);
+  }
 }
 </script>
 </body>
