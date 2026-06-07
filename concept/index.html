@@ -8,7 +8,7 @@
   @font-face{font-family:'Space';src:url('fonts/space-grotesk.woff2') format('woff2');font-weight:300 700;font-display:swap}
   @font-face{font-family:'Hanken';src:url('fonts/hanken.woff2') format('woff2');font-weight:300 800;font-display:swap}
   *{margin:0;padding:0;box-sizing:border-box}
-  :root{--ink:#16203A;--mut:#5A6680;--accent1:#2D6BFF;--accent2:#6E5BF0;--bg:linear-gradient(180deg,#F6F8FC 0%,#EEF1FA 55%,#F3F1FB 100%);--scrim-rgb:246,248,252;--bloom1:#BBD3FF;--bloom2:#CFC6FF;--bloom3:#DCE4FF;--glass:rgba(255,255,255,.74);--line:rgba(120,140,200,.25)}
+  :root{--ink:#13201F;--mut:#566461;--accent1:#1F6B72;--accent2:#177A6B;--bg:linear-gradient(180deg,#F4F2EC 0%,#ECEFEA 55%,#EAF0EE 100%);--scrim-rgb:244,242,236;--bloom1:#BFE0DB;--bloom2:#CFE6D6;--bloom3:#DCEAE3;--glass:rgba(255,255,255,.76);--line:rgba(90,130,125,.25)}
   html{scroll-behavior:auto}
   body{font-family:'Hanken',system-ui,sans-serif;color:var(--ink);
     background:var(--bg);
@@ -157,7 +157,7 @@ if(renderer){
   const d1 = new THREE.DirectionalLight(0xBFE0FF, 1.1); d1.position.set(4,6,8); scene.add(d1);
   const d2 = new THREE.DirectionalLight(0xFFD0BE, 0.8); d2.position.set(-6,-3,4); scene.add(d2);
 
-  const palette = (window.CFG&&window.CFG.pal)||[0x2D6BFF,0x6E5BF0,0x4F8DFF,0x9B8CFF];
+  const palette = (window.CFG&&window.CFG.pal)||[0x1F6B72,0x177A6B,0x3FA89C,0x6FC2B0];
 
   // ── "gates": rings the camera flies through ──
   const gates = new THREE.Group(); scene.add(gates);
@@ -188,7 +188,7 @@ if(renderer){
   const PN = 900, pos = new Float32Array(PN*3);
   for(let i=0;i<PN;i++){ pos[i*3]=(Math.random()-0.5)*40; pos[i*3+1]=(Math.random()-0.5)*30; pos[i*3+2]=-Math.random()*150; }
   const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pos,3));
-  const pm = new THREE.PointsMaterial({color:(window.CFG&&window.CFG.particle)||0x8C95CC, size:0.045, transparent:true, opacity:0.32, depthWrite:false});
+  const pm = new THREE.PointsMaterial({color:(window.CFG&&window.CFG.particle)||0x86ABA4, size:0.045, transparent:true, opacity:0.32, depthWrite:false});
   scene.add(new THREE.Points(pg, pm));
 
   // scroll + pointer
