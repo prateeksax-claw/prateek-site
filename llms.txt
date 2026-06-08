@@ -20,3 +20,7 @@ Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla G
 - Website: https://prateeksaxena.me/
 - Journal: https://prateeksaxena.me/journal.html
 - LinkedIn: https://www.linkedin.com/in/prateeksaxena-uae
+
+## Articles
+- After the Prompt: The Operator's Harness — https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai
+  Essay by Prateek Saxena on harness engineering for real businesses, the operator's lens, and the Self-Improvement Protocol (SIP) for making AI agents improve safely.
