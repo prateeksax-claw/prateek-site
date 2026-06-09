@@ -48,7 +48,7 @@ body{font-family:'Hanken',system-ui,sans-serif;color:var(--ink);background:var(-
 .nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:16px 30px;background:rgba(243,241,234,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .brand{font-family:'Fraunces',serif;font-variation-settings:'opsz' 40;font-weight:500;font-size:18px;display:flex;gap:9px;align-items:center;text-decoration:none;color:var(--ink)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.back{font-family:'Space';font-size:13px;color:var(--mut);text-decoration:none;font-weight:500}.back:hover{color:var(--accent-ink)}
+.back{font-family:'Space';font-size:13px;color:var(--mut);text-decoration:none;font-weight:500;padding-bottom:3px;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%}.back:hover{color:var(--accent-ink);background-size:100% 1.5px}
 .wrap{max-width:720px;margin:0 auto;padding:0 24px}
 header.h{padding:64px 0 30px}
 .k{font-family:'Space';font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);font-weight:600}
@@ -66,7 +66,7 @@ h1{font-size:clamp(36px,5.4vw,60px);margin:18px 0 0}
 .article-body a{color:var(--accent-ink);text-underline-offset:2px}
 .src{font-size:14.5px}.src li{font-size:14.5px;color:var(--mut);margin-bottom:12px}.src a{word-break:break-word}
 footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-size:13px;font-family:'Space';margin-top:30px}
-.frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}.frow a{color:var(--mut);text-decoration:none;margin-left:22px}
+.frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}.frow a{color:var(--mut);text-decoration:none;margin-left:22px;padding-bottom:2px;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%}.frow a:hover{color:var(--accent-ink);background-size:100% 1.5px}
 .disc{margin-top:14px;font-size:11px;line-height:1.55;max-width:80ch}
 </style></head>
 <body>
@@ -198,4 +198,6 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-si
 </article></main>
 <footer><div class="wrap"><div class="frow"><div>© 2026 Prateek Saxena</div><div><a href="/journal">Journal</a><a href="/">Home</a><a href="https://www.linkedin.com/in/prateeksaxena-uae">LinkedIn</a></div></div>
 <div class="disc">Third-party names and logos are trademarks of their respective owners. External research is cited in the source notes; this essay is the author’s original synthesis and views.</div></div></footer>
+<script src="/lenis.min.js" defer></script>
+<script src="/ux.js" defer></script>
 </body></html>

@@ -123,9 +123,10 @@
   .nav.solid{background:rgba(243,241,234,.8);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
   .brand{font-family:'Fraunces',serif;font-variation-settings:'opsz' 40;font-weight:500;font-size:19px;display:flex;gap:10px;align-items:center;letter-spacing:-.01em}
   .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(23,122,107,.14)}
-  .nlinks{display:flex;gap:26px}.nlinks a{font-family:'Space';font-size:13px;color:var(--mut);text-decoration:none;font-weight:500;transition:color .2s}
-  .nlinks a:hover{color:var(--accent-ink)}
-  .nbtn{font-family:'Space';font-size:12.5px;font-weight:600;padding:9px 17px;border-radius:30px;background:var(--ink);color:#fff !important;text-decoration:none}
+  .nlinks{display:flex;gap:26px}.nlinks a{font-family:'Space';font-size:13px;color:var(--mut);text-decoration:none;font-weight:500;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:3px}
+  .nlinks a:hover{color:var(--accent-ink);background-size:100% 1.5px}
+  .nbtn{font-family:'Space';font-size:12.5px;font-weight:600;padding:9px 17px;border-radius:30px;background:var(--ink);color:#fff !important;text-decoration:none;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;will-change:transform}
+  .nbtn:hover{box-shadow:0 10px 22px rgba(20,40,38,.22)}
   .hero{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:center}
   #scene{position:absolute;inset:0;z-index:0}
   .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(110% 70% at 38% 50%,rgba(var(--scrim-rgb),.66) 0%,rgba(var(--scrim-rgb),.25) 48%,rgba(var(--scrim-rgb),0) 80%)}
@@ -140,6 +141,8 @@
   .scrollcue .ln{width:30px;height:1px;background:var(--soft);position:relative;overflow:hidden}
   .scrollcue .ln::after{content:"";position:absolute;inset:0;background:var(--accent);animation:slide 2.2s infinite}
   @keyframes slide{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+  .sector-tip{position:absolute;z-index:3;pointer-events:none;font-family:'Space';font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);background:rgba(251,250,245,.88);backdrop-filter:blur(6px);border:1px solid rgba(23,122,107,.28);padding:8px 14px;border-radius:22px;white-space:nowrap;opacity:0;transform:translate(-50%,calc(-100% - 16px)) scale(.92);transition:opacity .25s,transform .25s cubic-bezier(.2,.7,.2,1)}
+  .sector-tip.on{opacity:1;transform:translate(-50%,calc(-100% - 16px)) scale(1)}
   section.block{padding:clamp(78px,11vh,134px) 0;border-top:1px solid var(--line)}
   .shead{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start}
   .snum{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144;font-weight:380;font-size:clamp(34px,4.4vw,72px);color:var(--ink);opacity:.3;line-height:.8;letter-spacing:-.02em}
@@ -183,8 +186,12 @@
   .art .tag{font-family:'Space';font-size:11.5px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
   .art h3{font-family:'Fraunces',serif;font-variation-settings:'opsz' 60;font-weight:500;font-size:22px;line-height:1.1;letter-spacing:-.01em}
   .art p{color:var(--mut);font-size:14px;line-height:1.55}
-  .art .more{font-family:'Space';font-size:12.5px;font-weight:600;color:var(--accent-ink);margin-top:auto}
+  .art .more{font-family:'Space';font-size:12.5px;font-weight:600;color:var(--accent-ink);margin-top:auto;display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1),color .25s}
+  .art:hover .more{transform:translateX(5px);color:var(--accent)}
   .art .thumb{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 18%;border-radius:12px;background:#e9e6dd;margin-bottom:4px}
+  .art .thumbwrap{display:block;overflow:hidden;border-radius:12px;margin-bottom:4px;background:#e9e6dd}
+  .art .thumbwrap .thumb{border-radius:0;margin-bottom:0;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+  .art:hover .thumbwrap .thumb{transform:scale(1.05)}
   .art .plogo{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line2);border-radius:9px;padding:9px 13px;align-self:flex-start;margin-bottom:2px}
   .art .plogo.logodark{background:var(--ink);border-color:var(--ink)}
   .art .plogo img{height:36px;width:auto;max-width:160px;object-fit:contain;display:block}
@@ -209,13 +216,13 @@
   .btn2:hover{border-color:var(--accent);color:var(--accent-ink)}
   footer{border-top:1px solid var(--line);padding:40px 0;color:var(--soft);font-size:13px;font-family:'Space'}
   .frow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-  .frow a{color:var(--mut);text-decoration:none;margin-left:24px}.frow a:hover{color:var(--accent-ink)}
+  .frow a{color:var(--mut);text-decoration:none;margin-left:24px;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:2px}.frow a:hover{color:var(--accent-ink);background-size:100% 1.5px}
   @media(max-width:820px){
     .two{grid-template-columns:1fr;gap:36px}.bento{grid-template-columns:repeat(2,1fr)}.feature{grid-column:span 2;grid-row:span 1}
     .arts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr);gap:26px}
     .shead{grid-template-columns:1fr;gap:10px}.row{grid-template-columns:1fr;gap:6px}.nlinks{display:none}
   }
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.scrollcue .ln::after{animation:none}}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.scrollcue .ln::after{animation:none}.art .thumbwrap .thumb,.art .more,.tile,.art{transition:none}.sector-tip{display:none}}
 </style>
 </head>
 <body>
@@ -232,6 +239,7 @@
 <section class="hero">
   <canvas id="scene" aria-hidden="true"></canvas>
   <div class="hero-scrim"></div>
+  <div class="sector-tip" id="stip" aria-hidden="true"></div>
   <div class="hero-c"><div class="wrap">
     <div class="heyebrow rv in"><span class="rule"></span><span class="kicker">Operator · Builder · Strategist</span></div>
     <h1 class="disp rv in">I build and scale businesses across the UAE’s <em>real economy.</em></h1>
@@ -329,27 +337,27 @@
     <p class="lead rv" style="margin-top:26px">A record of milestones and partnerships across Al Zaabi Group and the UAE economy — and writing on business, leadership, technology, finance and the trends shaping our region and the world.</p>
     <div class="arts">
       <a class="art rv" href="/journal/after-the-prompt-operator-harness-ai">
-        <img class="thumb" src="journal-media/after-the-prompt-thumb.jpg" alt="After the Prompt: The Operator’s Harness" loading="lazy">
+        <span class="thumbwrap"><img class="thumb" src="journal-media/after-the-prompt-thumb.jpg" alt="After the Prompt: The Operator’s Harness" loading="lazy"></span>
         <span class="tag">Operator Notes · Jun 2026</span><h3>After the Prompt: The Operator’s Harness</h3>
         <p>Prompt engineering helped us talk to AI. Harness engineering is how we make AI work — and why every serious AI agent needs a Self-Improvement Protocol.</p><span class="more">Read the essay →</span></a>
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7457357722779303937/" target="_blank" rel="noopener">
-        <img class="thumb" src="journal-media/p098.jpg" alt="Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakum" loading="lazy">
+        <span class="thumbwrap"><img class="thumb" src="journal-media/p098.jpg" alt="Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakum" loading="lazy"></span>
         <span class="plogo"><img src="logos/partners/adnec-group.png" alt="ADNEC" loading="lazy"></span><span class="tag">Industry · May 2026</span><h3>Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakum</h3>
         <p>Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakumar and Vimal Vijayakumar. In today’s global and regional environment, industrial r…</p><span class="more">View on LinkedIn →</span></a>
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7454808868980764672/" target="_blank" rel="noopener">
-        <img class="thumb" src="journal-media/ev-isc2026.jpg" alt="Welcoming the India Social &amp; Cultural Centre’s 2026 leadership" loading="lazy">
+        <span class="thumbwrap"><img class="thumb" src="journal-media/ev-isc2026.jpg" alt="Welcoming the India Social &amp; Cultural Centre’s 2026 leadership" loading="lazy"></span>
         <span class="plogo"><img src="logos/partners/india-social-cultural-centre-abu-dhabi.png" alt="India Social Centre" loading="lazy"></span><span class="tag">Community · Apr 2026</span><h3>Welcoming the India Social &amp; Cultural Centre’s 2026 leadership</h3>
         <p>Al Zaabi Group welcomed ISC Abu Dhabi’s newly elected 2026 leadership for a conversation on community partnership, cultural harmony and the UAE’s spirit of unity in diversity.</p><span class="more">View on LinkedIn →</span></a>
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7407111817073762304/" target="_blank" rel="noopener">
-        <img class="thumb" src="journal-media/ev-indiafest.jpg" alt="Honoured at the India Fest 2025 launch, India Social Centre" loading="lazy">
+        <span class="thumbwrap"><img class="thumb" src="journal-media/ev-indiafest.jpg" alt="Honoured at the India Fest 2025 launch, India Social Centre" loading="lazy"></span>
         <span class="plogo"><img src="logos/partners/india-social-cultural-centre-abu-dhabi.png" alt="India Social Centre" loading="lazy"></span><span class="tag">Community · Dec 2025</span><h3>Honoured at the India Fest 2025 launch, India Social Centre</h3>
         <p>Al Zaabi Group was honoured at the launch of India Fest 2025 at the India Social Centre, Abu Dhabi — a successful three-day festival and a celebration of community engagement.</p><span class="more">View on LinkedIn →</span></a>
       <div class="art rv">
-        <img class="thumb" src="journal-media/birla-white-uae.jpeg" alt="Exclusive UAE distribution partnership with Birla White" loading="lazy">
+        <span class="thumbwrap"><img class="thumb" src="journal-media/birla-white-uae.jpeg" alt="Exclusive UAE distribution partnership with Birla White" loading="lazy"></span>
         <span class="plogo"><img src="logos/partners/aditya-birla.png" alt="Aditya Birla Group" loading="lazy"></span><span class="tag">Strategic Partnership · Jul 2025</span><h3>Exclusive UAE distribution partnership with Birla White</h3>
         <p>Al Zaabi Group enters an exclusive agreement to bring Birla White — the white-cement &amp; wall-care brand of Grasim Industries (Aditya Birla Group) — to the UAE, hosting MD Himanshu Kapania.</p></div>
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7350536073636204545/" target="_blank" rel="noopener">
-        <img class="thumb" src="journal-media/ev-henkel.jpg" alt="Henkel Polybit training at NH47" loading="lazy">
+        <span class="thumbwrap"><img class="thumb" src="journal-media/ev-henkel.jpg" alt="Henkel Polybit training at NH47" loading="lazy"></span>
         <span class="plogo"><img src="logos/partners/henkel.svg" alt="Henkel" loading="lazy"></span><span class="tag">Partnership · Jul 2025</span><h3>Henkel Polybit training at NH47</h3>
         <p>As a strategic distributor for Henkel, our team went deep on their waterproofing, tiling and flooring range in a hands-on session — practical knowledge for construction and building projects.</p><span class="more">View on LinkedIn →</span></a>
     </div>
@@ -367,10 +375,10 @@
       <div><div class="kicker rv">Proof</div><h2 class="disp rv">The numbers behind <em>the words.</em></h2></div>
     </div>
     <div class="stats">
-      <div class="stat rv"><div class="v"><em>42</em></div><div class="l">Companies operated</div></div>
-      <div class="stat rv"><div class="v"><em>11</em></div><div class="l">Sectors</div></div>
-      <div class="stat rv"><div class="v"><em>16</em>+</div><div class="l">Years operating</div></div>
-      <div class="stat rv"><div class="v"><em>4.1</em>k</div><div class="l">Following the work</div></div>
+      <div class="stat rv"><div class="v"><em data-cnt="42">42</em></div><div class="l">Companies operated</div></div>
+      <div class="stat rv"><div class="v"><em data-cnt="11">11</em></div><div class="l">Sectors</div></div>
+      <div class="stat rv"><div class="v"><em data-cnt="16">16</em>+</div><div class="l">Years operating</div></div>
+      <div class="stat rv"><div class="v"><em data-cnt="4.1">4.1</em>k</div><div class="l">Following the work</div></div>
     </div>
     <div class="quote rv">
       <blockquote>Strategy is nothing <em>without operations.</em></blockquote>
@@ -407,17 +415,39 @@
 
 <footer><div class="wrap"><div class="frow"><div>© 2026 Prateek Saxena</div><div><a href="https://www.linkedin.com/in/prateeksaxena-uae">LinkedIn</a><a href="mailto:prateeksax@gmail.com">Email</a></div></div><div style="margin-top:14px;font-size:11px;color:var(--soft);line-height:1.55;max-width:80ch">Third-party names and logos are trademarks of their respective owners, shown to indicate genuine professional associations, education and partnerships.</div></div></footer>
 
+<script src="lenis.min.js" defer></script>
+<script src="ux.js" defer></script>
 <script type="module">
 import * as THREE from './three.module.min.js';
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(pointer:fine)').matches;
+function revealNow(el){ el.classList.add('in'); const d=parseFloat(el.style.transitionDelay)||0; if(d) setTimeout(()=>{el.style.transitionDelay='';}, d+950); }
 if(reduce){ document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')); }
 else{
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+  // staggered, directional reveals: siblings inside grids/lists cascade in
+  ['.arts','.bento','.stats','.principles','.rows','.faq'].forEach(sel=>{
+    document.querySelectorAll(sel).forEach(g=>{
+      [...g.children].filter(c=>c.classList.contains('rv')).forEach((el,i)=>{ el.style.transitionDelay=Math.min(i*70,420)+'ms'; });
+    });
+  });
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){revealNow(e.target);io.unobserve(e.target);}}),{threshold:.16,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-  setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')),3500);
+  setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(revealNow),3500);
 }
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40),{passive:true});
+
+// stat count-up
+const cntEls=document.querySelectorAll('.stat .v em[data-cnt]');
+if(cntEls.length && !reduce){
+  const easeOut=t=>1-Math.pow(1-t,3);
+  const run=el=>{
+    const end=parseFloat(el.dataset.cnt), dec=String(el.dataset.cnt).includes('.')?1:0, t0=performance.now(), D=1500;
+    const step=now=>{ const p=Math.min((now-t0)/D,1); el.textContent=(end*easeOut(p)).toFixed(dec); if(p<1)requestAnimationFrame(step); else el.textContent=el.dataset.cnt; };
+    requestAnimationFrame(step);
+  };
+  new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ cntEls.forEach(run); o.disconnect(); } }),{threshold:.35}).observe(document.querySelector('.stats'));
+}
 
 const hero=document.querySelector('.hero'), canvas=document.getElementById('scene');
 let renderer; try{ renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'}); }catch(e){ console.warn('WebGL off',e); }
@@ -435,11 +465,23 @@ if(renderer){
     const o=new THREE.Mesh(new THREE.TorusGeometry(r,0.012,12,120),new THREE.MeshBasicMaterial({color:i===1?teal2:teal,transparent:true,opacity:0.42}));
     o.rotation.x=ax; o.rotation.z=az; world.add(o); orbits.push(o);
   });
-  const nodes=[];
-  for(let i=0;i<7;i++){
-    const n=new THREE.Mesh(new THREE.SphereGeometry(0.07+Math.random()*0.05,16,16),new THREE.MeshStandardMaterial({color:teal2,emissive:teal2,emissiveIntensity:0.4,roughness:0.3}));
-    n.userData={rad:3.6+Math.random()*1.5,a:Math.random()*6.28,tilt:(Math.random()-0.5)*1.4,sp:0.0016+Math.random()*0.0018};
+  // the signature: one node per sector Prateek operates — hover to surface them
+  const SECTORS=['Healthcare','Automotive','Real Estate','Building Materials','Contracting','Manufacturing','Trading','Retail','E-commerce','Food & Beverage','Education'];
+  const nodes=[],hits=[];
+  const hitMat=new THREE.MeshBasicMaterial({visible:false});
+  SECTORS.forEach((name,i)=>{
+    const n=new THREE.Mesh(new THREE.SphereGeometry(0.08+(i%3)*0.02,16,16),new THREE.MeshStandardMaterial({color:teal2,emissive:teal2,emissiveIntensity:0.45,roughness:0.3}));
+    n.userData={name,rad:3.5+((i*0.47)%1.6),a:(i/SECTORS.length)*Math.PI*2,tilt:-0.7+((i*0.83)%1.4),sp:0.0014+((i*0.31)%0.002)};
+    const h=new THREE.Mesh(new THREE.SphereGeometry(0.46,8,8),hitMat); h.userData.node=n; n.add(h); hits.push(h);
     world.add(n); nodes.push(n);
+  });
+  const tip=document.getElementById('stip');
+  const ray=new THREE.Raycaster(), ptr=new THREE.Vector2(-2,-2);
+  const tmpV=new THREE.Vector3(), cpV=new THREE.Vector3();
+  let hovered=null;
+  if(fine&&!reduce){
+    hero.addEventListener('pointermove',e=>{ const b=canvas.getBoundingClientRect(); ptr.set(((e.clientX-b.left)/b.width)*2-1, -((e.clientY-b.top)/b.height)*2+1); });
+    hero.addEventListener('pointerleave',()=>ptr.set(-2,-2));
   }
   const PN=420,pos=new Float32Array(PN*3);
   for(let i=0;i<PN;i++){pos[i*3]=(Math.random()-0.5)*34;pos[i*3+1]=(Math.random()-0.5)*22;pos[i*3+2]=-Math.random()*80;}
@@ -455,9 +497,38 @@ if(renderer){
       camera.position.x=px*1.0; camera.position.y=-py*0.6;
       sphere.rotation.y+=0.0011; sphere.rotation.x=0.12;
       orbits.forEach((o,i)=>o.rotation.z+=0.0006*(i%2?-1:1));
-      nodes.forEach(n=>{ n.userData.a+=n.userData.sp; const {rad,a,tilt}=n.userData; n.position.set(Math.cos(a)*rad,Math.sin(a)*Math.sin(tilt)*rad*0.5,Math.sin(a)*Math.cos(tilt)*rad); });
-    } else { nodes.forEach(n=>{const {rad,a,tilt}=n.userData;n.position.set(Math.cos(a)*rad,Math.sin(a)*Math.sin(tilt)*rad*0.5,Math.sin(a)*Math.cos(tilt)*rad);}); sphere.rotation.x=0.12; }
+    } else { sphere.rotation.x=0.12; }
     camera.lookAt(world.position.x*0.5,0,0);
+    const tracking = fine && !reduce && ptr.x>-1.5;
+    if(tracking){
+      ray.setFromCamera(ptr,camera);
+      const hit=ray.intersectObjects(hits,false)[0];
+      const nh=hit?hit.object.userData.node:null;
+      if(nh!==hovered){
+        hovered=nh;
+        if(hovered){ tip.textContent=hovered.userData.name; tip.classList.add('on'); }
+        else tip.classList.remove('on');
+      }
+    } else if(hovered){ hovered=null; tip.classList.remove('on'); }
+    nodes.forEach(n=>{
+      const u=n.userData;
+      if(!reduce && n!==hovered) u.a+=u.sp;
+      let x=Math.cos(u.a)*u.rad, y=Math.sin(u.a)*Math.sin(u.tilt)*u.rad*0.5, z=Math.sin(u.a)*Math.cos(u.tilt)*u.rad;
+      if(tracking){ // nodes lean gently toward the cursor's line of sight
+        tmpV.set(x,y,z).add(world.position);
+        ray.ray.closestPointToPoint(tmpV,cpV);
+        const d=cpV.distanceTo(tmpV);
+        if(d<1.5){ const f=(1-d/1.5)*0.3; x+=(cpV.x-tmpV.x)*f; y+=(cpV.y-tmpV.y)*f; z+=(cpV.z-tmpV.z)*f; }
+      }
+      n.position.set(x,y,z);
+      const s=(n===hovered)?1.9:1;
+      n.scale.x+=(s-n.scale.x)*0.15; n.scale.y=n.scale.z=n.scale.x;
+    });
+    if(hovered){
+      tmpV.copy(hovered.position).add(world.position).project(camera);
+      tip.style.left=((tmpV.x+1)/2*hero.clientWidth)+'px';
+      tip.style.top=((1-tmpV.y)/2*hero.clientHeight)+'px';
+    }
     renderer.render(scene,camera);
   }
   if(reduce){ render(); }
