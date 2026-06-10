@@ -38,6 +38,8 @@
 @font-face{font-family:'Space';src:url('/fonts/space-grotesk.woff2') format('woff2');font-weight:300 700;font-display:swap}
 @font-face{font-family:'Hanken';src:url('/fonts/hanken.woff2') format('woff2');font-weight:300 800;font-display:swap}
 *{margin:0;padding:0;box-sizing:border-box}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
 :root{--ink:#14211F;--mut:#586461;--soft:#69736E;--accent:#177A6B;--accent-ink:#0E5A50;--bg:#F3F1EA;--line:rgba(20,40,38,.12);--line2:rgba(20,40,38,.08)}
 html{scroll-behavior:smooth}
 body{font-family:'Hanken',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5}
@@ -68,7 +70,8 @@ h1{font-size:clamp(36px,5.4vw,60px);margin:18px 0 0}
 footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-size:13px;font-family:'Space';margin-top:30px}
 .frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}.frow a{color:var(--mut);text-decoration:none;margin-left:22px;padding-bottom:2px;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%}.frow a:hover{color:var(--accent-ink);background-size:100% 1.5px}
 .disc{margin-top:14px;font-size:11px;line-height:1.55;max-width:80ch}
-</style></head>
+</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://prateeksaxena.me/"},{"@type":"ListItem","position":2,"name":"Journal","item":"https://prateeksaxena.me/journal"},{"@type":"ListItem","position":3,"name":"After the Prompt: The Operator's Harness","item":"https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai"}]}</script>
+</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <nav class="nav" aria-label="Primary"><a class="brand" href="/"><span class="dot"></span>Prateek Saxena</a><a class="back" href="/journal">← Journal</a></nav>
