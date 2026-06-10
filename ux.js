@@ -50,6 +50,35 @@
     })();
   }
 
+  /* mobile menu */
+  var mb = document.getElementById('menuBtn'), mm = document.getElementById('mmenu');
+  if (mb && mm) {
+    var setOpen = function (o) {
+      mb.classList.toggle('open', o); mm.classList.toggle('open', o);
+      mb.setAttribute('aria-expanded', o); mb.setAttribute('aria-label', o ? 'Close menu' : 'Open menu');
+      mm.setAttribute('aria-hidden', !o);
+      document.documentElement.classList.toggle('menulock', o);
+    };
+    mb.addEventListener('click', function () { setOpen(!mm.classList.contains('open')); });
+    mm.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+    addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  }
+
+  /* active-section indicator in the nav */
+  var navLinks = [].slice.call(document.querySelectorAll('.nlinks a[href^="#"]'));
+  if (navLinks.length) {
+    var navMap = navLinks.map(function (a) { return { a: a, el: document.querySelector(a.getAttribute('href')) }; })
+      .filter(function (x) { return x.el; });
+    var updActive = function () {
+      var y = scrollY + innerHeight * 0.38, cur = null;
+      navMap.forEach(function (x) { if (x.el.offsetTop <= y) cur = x; });
+      var inHero = scrollY < innerHeight * 0.45;
+      navMap.forEach(function (x) { x.a.classList.toggle('act', !inHero && x === cur); });
+    };
+    addEventListener('scroll', updActive, { passive: true });
+    updActive();
+  }
+
   /* magnetic buttons */
   if (fine && !reduce) {
     document.querySelectorAll('.btn,.nbtn').forEach(function (b) {
