@@ -1,0 +1,26 @@
+# Prateek Saxena
+
+> Group General Manager at Al Zaabi Group (Abu Dhabi, UAE). Operator, builder and strategist leading 42 companies across 11 sectors of the UAE's real economy. Industrial engineer (Purdue University), INSEAD-educated, Certified Management Accountant (in progress). Writes on business, leadership, operations, finance, technology and the UAE economy.
+
+## About
+Prateek Saxena leads the strategy and operations of Al Zaabi Group, a diversified Abu Dhabi group of 42 companies. Career path: Process Engineer at John Deere and Operations Analyst at Bose Corporation (USA), then Corporate Strategy Officer at Delma Emirates Group, then Al Zaabi Group (Operations & Strategy Manager - Deputy General Manager - Group General Manager since May 2021).
+
+## Sectors
+Healthcare, Automotive, Real Estate, Building Materials, Contracting, Manufacturing, Trading, Retail, E-commerce, Food & Beverage, Education.
+
+## Selected partnerships
+Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla Group / Grasim Industries), Asian Paints Berger.
+
+## Education
+- Purdue University - B.Sc., Industrial Engineering (2005-2009)
+- INSEAD - Certificate in Global Management; Executive Education incl. "Transforming Your Business with AI" (2024)
+- Institute of Management Accountants - CMA (in progress)
+
+## Links
+- Website: https://prateeksaxena.me/
+- Journal: https://prateeksaxena.me/journal
+- LinkedIn: https://www.linkedin.com/in/prateeksaxena-uae
+
+## Articles
+- After the Prompt: The Operator's Harness — https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai
+  Essay by Prateek Saxena on harness engineering for real businesses, the operator's lens, and the Self-Improvement Protocol (SIP) for making AI agents improve safely.

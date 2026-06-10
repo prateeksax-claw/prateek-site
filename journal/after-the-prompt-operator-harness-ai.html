@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>After the Prompt: Harness Engineering for Real Businesses</title>
+<meta name="description" content="Prompt engineering helped us talk to AI. Harness engineering is how we make AI work — and why every serious AI agent needs a Self-Improvement Protocol.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Prateek Saxena">
+<meta name="theme-color" content="#F3F1EA">
+<link rel="canonical" href="https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23177A6B'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Prateek Saxena">
+<meta property="og:locale" content="en_AE">
+<meta property="og:title" content="After the Prompt: The Operator’s Harness">
+<meta property="og:description" content="Prompt engineering helped us talk to AI. Harness engineering is how we make AI work — and why every serious AI agent needs a Self-Improvement Protocol.">
+<meta property="og:url" content="https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai">
+<meta property="og:image" content="https://prateeksaxena.me/journal-media/after-the-prompt.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="After the Prompt: The Operator's Harness — by Prateek Saxena">
+<meta property="article:published_time" content="2026-06-08">
+<meta property="article:author" content="Prateek Saxena">
+<meta property="article:section" content="AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="After the Prompt: The Operator’s Harness">
+<meta name="twitter:description" content="Prompt engineering helped us talk to AI. Harness engineering is how we make AI work — and why every serious AI agent needs a Self-Improvement Protocol.">
+<meta name="twitter:image" content="https://prateeksaxena.me/journal-media/after-the-prompt.jpg">
+<meta name="twitter:image:alt" content="After the Prompt: The Operator's Harness">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "After the Prompt: The Operator's Harness", "description": "Prompt engineering helped us talk to AI. Harness engineering is how we make AI work — and why every serious AI agent needs a Self-Improvement Protocol.", "image": "https://prateeksaxena.me/journal-media/after-the-prompt.jpg", "inLanguage": "en", "author": {"@type": "Person", "@id": "https://prateeksaxena.me/#person", "name": "Prateek Saxena", "url": "https://prateeksaxena.me/", "jobTitle": "Group General Manager", "worksFor": {"@type": "Organization", "name": "Al Zaabi Group"}}, "publisher": {"@type": "Organization", "name": "Prateek Saxena", "logo": {"@type": "ImageObject", "url": "https://prateeksaxena.me/icon-512.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai"}, "url": "https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai", "datePublished": "2026-06-08", "dateModified": "2026-06-08", "about": ["Harness Engineering", "Prompt Engineering", "Context Engineering", "AI Agents", "Agentic AI", "Retrospective Harness Optimization", "Self-Improvement Protocol", "AI Governance", "Business Operations"], "keywords": "harness engineering, prompt engineering, context engineering, AI agents, agentic AI, RHO, SIP, Self-Improvement Protocol, AI governance, business operations"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is harness engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Harness engineering is the discipline of designing the operating system around an AI model: the tools it can use, the context it can see, the memory it can trust, the permissions it must respect, the checks it must pass, and the feedback loops that help it improve."}}, {"@type": "Question", "name": "How is harness engineering different from prompt engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Prompt engineering improves a single interaction with a model. Harness engineering improves the operating environment that lets the model work across real processes, systems and decisions."}}, {"@type": "Question", "name": "What is a Self-Improvement Protocol?", "acceptedAnswer": {"@type": "Answer", "text": "A Self-Improvement Protocol, or SIP, is a practical operating discipline for AI agents. It captures mistakes, classifies failures, verifies outcomes, promotes repeated lessons into durable controls, governs risk, reviews hard tasks and cleans entropy over time."}}, {"@type": "Question", "name": "What is RHO?", "acceptedAnswer": {"@type": "Answer", "text": "RHO stands for Retrospective Harness Optimization. It is a method for improving an AI agent's harness by reviewing past trajectories, comparing attempts, identifying failure patterns and updating the system around the model."}}]}</script>
+<style>
+@font-face{font-family:'Fraunces';src:url('/fonts/fraunces.woff2') format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Fraunces';src:url('/fonts/fraunces-italic.woff2') format('woff2');font-weight:300 700;font-style:italic;font-display:swap}
+@font-face{font-family:'Space';src:url('/fonts/space-grotesk.woff2') format('woff2');font-weight:300 700;font-display:swap}
+@font-face{font-family:'Hanken';src:url('/fonts/hanken.woff2') format('woff2');font-weight:300 800;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+:root{--ink:#14211F;--mut:#586461;--soft:#69736E;--accent:#177A6B;--accent-ink:#0E5A50;--bg:#F3F1EA;--line:rgba(20,40,38,.12);--line2:rgba(20,40,38,.08)}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5}
+::selection{background:#177A6B;color:#fff}
+.disp,h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-.015em;line-height:1.08}
+.disp em,em{font-style:italic;color:var(--accent)}
+.skip{position:absolute;left:-9999px;top:0;z-index:50;background:var(--ink);color:#fff;padding:10px 16px;font-family:'Space';font-size:13px}.skip:focus{left:0}
+.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:16px 30px;background:rgba(243,241,234,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{font-family:'Fraunces',serif;font-variation-settings:'opsz' 40;font-weight:500;font-size:18px;display:flex;gap:9px;align-items:center;text-decoration:none;color:var(--ink)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.back{font-family:'Space';font-size:13px;color:var(--mut);text-decoration:none;font-weight:500;padding-bottom:3px;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%}.back:hover{color:var(--accent-ink);background-size:100% 1.5px}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+header.h{padding:64px 0 30px}
+.k{font-family:'Space';font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);font-weight:600}
+h1{font-size:clamp(36px,5.4vw,60px);margin:18px 0 0}
+.deck{font-size:clamp(18px,2vw,22px);color:var(--mut);line-height:1.5;margin-top:20px;font-family:'Fraunces',serif;font-weight:400;font-style:italic}
+.ameta{font-family:'Space';font-size:13.5px;color:var(--soft);margin-top:24px;border-top:1px solid var(--line2);padding-top:18px}
+.ameta b{color:var(--ink);font-weight:600}
+.article-body{padding:14px 0 40px}
+.article-body p{font-size:18px;line-height:1.72;color:#28332f;margin:0 0 20px}
+.article-body h2{font-size:clamp(25px,3vw,33px);margin:46px 0 14px}
+.article-body h3{font-size:21px;margin:28px 0 8px;font-variation-settings:'opsz' 40}
+.article-body ul,.article-body ol{margin:0 0 22px 22px}
+.article-body li{font-size:18px;line-height:1.6;color:#28332f;margin:0 0 9px}
+.article-body strong{color:var(--ink)}
+.article-body a{color:var(--accent-ink);text-underline-offset:2px}
+.src{font-size:14.5px}.src li{font-size:14.5px;color:var(--mut);margin-bottom:12px}.src a{word-break:break-word}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-size:13px;font-family:'Space';margin-top:30px}
+.frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}.frow a{color:var(--mut);text-decoration:none;margin-left:22px;padding-bottom:2px;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%}.frow a:hover{color:var(--accent-ink);background-size:100% 1.5px}
+.disc{margin-top:14px;font-size:11px;line-height:1.55;max-width:80ch}
+</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://prateeksaxena.me/"},{"@type":"ListItem","position":2,"name":"Journal","item":"https://prateeksaxena.me/journal"},{"@type":"ListItem","position":3,"name":"After the Prompt: The Operator's Harness","item":"https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Primary"><a class="brand" href="/"><span class="dot"></span>Prateek Saxena</a><a class="back" href="/journal">← Journal</a></nav>
+<main id="main"><article>
+<header class="h"><div class="wrap">
+<div class="k">AI · Operator Notes</div>
+<h1>After the Prompt: The Operator’s Harness</h1>
+<p class="deck">How real businesses turn AI from smart answers into reliable work, and why every serious AI agent needs a Self-Improvement Protocol.</p>
+<div class="ameta">By <b>Prateek Saxena</b> · 8 June 2026 · 12 min read · Originally published at prateeksaxena.me</div>
+</div></header>
+<div class="wrap article-body">
+<h2 class="disp">The simple version</h2>
+<p>Prompt engineering helped us talk to AI. Harness engineering is how we make AI work.</p>
+<p>The model is the brain. The harness is the body around it: tools, memory, permissions, verification, workflows, audit trails and feedback loops. But if that body is going to operate inside a real business, it needs discipline. That is where I think every serious AI agent needs something like a Self-Improvement Protocol, or SIP.</p>
+<h2 class="disp">Why prompts were only the first layer</h2>
+<p>For the last two years, most business conversations about AI have been about prompts.</p>
+<p>What should we ask the model? How should we phrase the instruction? Which prompt gives the cleanest answer?</p>
+<p>That was a useful phase. It taught people that language itself could become an interface. It made non-technical leaders feel, for the first time, that they could direct a machine through intent rather than code.</p>
+<p>But it was also the surface layer.</p>
+<p>The deeper question is not only how to ask better questions. It is how to build AI systems that can act, verify, learn from mistakes and stay inside human judgment. That is where harness engineering begins. And in my own operating vocabulary, that is where a Self-Improvement Protocol, or SIP, becomes necessary.</p>
+<p>A prompt improves one interaction. A harness improves the operating environment around the model. A Self-Improvement Protocol improves the system after the interaction is over.</p>
+<p>OpenAI captured the shift neatly in its own writing on harness engineering: “Humans steer. Agents execute.”</p>
+<p>That line matters because it moves the discussion away from chatbots and toward operations. A company does not need an AI that sounds impressive in a demo. It needs AI that can act safely inside real work, with the right context, the right tools, the right supervision and the right discipline.</p>
+<p>A chatbot can impress in a meeting. An operator has to survive Monday morning.</p>
+<h2 class="disp">A real operator example</h2>
+<p>In my own AI operating setup, one lesson came from something small but important: file delivery.</p>
+<p>A document could appear prepared on the assistant side while the actual WhatsApp group did not receive a visible attachment. To a chatbot, the task looked done. To an operator, it was not done, because the file had not reached the working channel.</p>
+<p>The fix was not a better sentence. It was a harness rule: any WhatsApp file must be sent through the native WhatsApp send path, with a message ID recorded as proof. If that path fails, the system retries through a fallback route. SIP then promoted the lesson into a standing rule, so future file tasks cannot be marked complete based only on an internal attachment hint.</p>
+<p>This is exactly the business point. In an ERP follow-up, a CRM update, a supplier quote or an approval chain, &quot;I prepared it&quot; is not completion. Completion means the external system changed, the right person received the output, and the evidence is recorded.</p>
+<h2 class="disp">What harness engineering really means</h2>
+<p>Think of RoboCop.</p>
+<p>The human brain is still the source of judgment. But the capability does not come from the brain alone. It comes from the system around it: armor, sensors, targeting discipline, communications, diagnostics, memory, rules of engagement and command structure.</p>
+<p>The brain matters. But the harness turns the brain into an operator.</p>
+<p>LLMs are moving in the same direction.</p>
+<p>A model by itself can answer a question, summarize a document or draft an email. A model inside a well-engineered harness can work through a process. It can use tools. It can retrieve the right context. It can remember what matters. It can check its own output. It can escalate risky actions. It can recover when something fails. It can leave evidence behind.</p>
+<p>That is not simply better prompting. It is a different category of capability.</p>
+<p>Prompt engineering changes the words the model reads.</p>
+<p>Context engineering changes the information the model sees.</p>
+<p>Harness engineering changes the environment in which the model acts.</p>
+<p>Context engineering was an important bridge. People like Andrej Karpathy and Tobi Lütke have helped popularize the idea that giving the model the right context may matter more than crafting clever prompts. Anthropic has also treated context management, memory and long-running agent behavior as production concerns rather than small implementation details.</p>
+<p>But harness engineering is wider still. It includes context, but also tools, permissions, task state, observability, failure attribution, verification and human intervention.</p>
+<p>In other words: context helps the model think. The harness helps the model operate.</p>
+<h2 class="disp">From chatbots to operators</h2>
+<p>This is where business leaders need to shift their question.</p>
+<p>The question is no longer only, “Which model should we use?”</p>
+<p>That still matters. But it is incomplete.</p>
+<p>The better questions are:</p>
+<ul><li>What business systems can the model safely access?</li><li>What information does it need before acting?</li><li>What must it verify before claiming success?</li><li>Where does a human need to approve the next step?</li><li>What evidence is recorded after the task is complete?</li><li>How does the system learn when it fails?</li></ul>
+<p>This is much closer to how real companies work.</p>
+<p>In a real business, work does not happen inside a clean prompt window. It happens across ERP systems, CRM records, WhatsApp messages, email threads, supplier quotations, dashboards, approvals, invoices, customer exceptions, payment follow-ups and human accountability.</p>
+<p>No serious company wants an AI that confidently says something is done when nothing has actually happened.</p>
+<p>A sales follow-up is not complete because the AI drafted a message. It is complete when the right customer was identified, the right context was checked, the CRM was updated, the next action was recorded and any exception was escalated.</p>
+<p>A finance task is not complete because the AI summarized a ledger. It is complete when the source data was verified, the calculation was checked, the assumptions were visible and the human accountable for the decision had the right evidence.</p>
+<p>That is harness engineering.</p>
+<h2 class="disp">Guides and sensors: the business version</h2>
+<p>Martin Fowler and Birgitta Böckeler describe the system around coding agents in terms of guides and sensors. Guides are feedforward controls: instructions, conventions, examples and constraints that shape the work before the agent acts. Sensors are feedback controls: tests, reviews, logs and checks that reveal whether the work is actually good.</p>
+<p>This vocabulary is useful beyond software.</p>
+<p>Every business process needs guides and sensors.</p>
+<p>The guide might be a pricing rule, a customer policy, a brand tone, a credit limit, a margin threshold or an escalation rule.</p>
+<p>The sensor might be a reconciliation, an approval, a dashboard, a human review, a system log, a test, or a simple check that asks: did the thing actually happen?</p>
+<p>Without guides, the AI improvises.</p>
+<p>Without sensors, the AI performs.</p>
+<p>With both, it starts to operate.</p>
+<p>A good harness usually contains seven layers. These are not the same as the seven SIP steps. The harness layers describe the operating environment; SIP describes how that environment learns safely.</p>
+<p>First, tools: what systems the agent can use.</p>
+<p>Second, permissions: what it is allowed to touch, and what requires approval.</p>
+<p>Third, context: what information is brought into the task, and what noise is deliberately excluded.</p>
+<p>Fourth, memory: what can be remembered across work, and what must be verified because memory can become stale.</p>
+<p>Fifth, workflow: how the agent plans, acts, checks, escalates and recovers.</p>
+<p>Sixth, observability: logs, traces and evidence of what happened.</p>
+<p>Seventh, feedback loops: the mechanism by which repeated failures become permanent improvements.</p>
+<p>The seventh layer is where the discussion becomes more than automation. It becomes discipline.</p>
+<p>A harness should not only help an AI act. It should help the AI improve safely from experience.</p>
+<h2 class="disp">What a Self-Improvement Protocol looks like</h2>
+<p>In my own work with AI agents, I use the phrase Self-Improvement Protocol, or SIP, for the operating discipline around improvement.</p>
+<p>I do not mean it as a public standard or a claim that every company needs to use the same vocabulary. Most companies will never call it SIP. But every serious company using agents will need something like it.</p>
+<p>A self-improvement protocol answers one practical question:</p>
+<p>When an AI system fails, how does it improve without becoming dangerous?</p>
+<p>That question matters because the wrong kind of improvement is not improvement. It is drift.</p>
+<p>An agent can accumulate stale memory. It can promote a bad rule. It can hide uncertainty. It can overfit to one incident. It can gain more freedom than its judgment deserves. It can become more confident without becoming more reliable.</p>
+<p>A practical SIP prevents that by turning experience into disciplined improvement.</p>
+<p><strong>Capture:</strong> every important action leaves evidence. What was the task? What source was used? What decision was made? What changed? What failed? Without capture, every mistake disappears into chat history.</p>
+<p><strong>Classify:</strong> not every failure means the model was wrong. Was it a prompt issue, a context issue, a tool issue, a permission issue, a memory issue, a workflow issue or a verification issue? Good operators diagnose the system, not just the answer.</p>
+<p><strong>Verify:</strong> before the AI says something is done, there must be evidence. A test passed. A source was checked. A record was updated. A message was actually sent. A human approved the step. The system must prove completion, not perform confidence.</p>
+<p><strong>Promote:</strong> repeated lessons become durable controls. A checklist. A better tool. A stricter permission. A clearer workflow. A test that runs automatically. A rule that prevents the same mistake from returning.</p>
+<p><strong>Govern:</strong> the agent does not get unlimited freedom. External messages, money, privacy, credentials, destructive actions and sensitive decisions need approval gates. Improvement should increase reliability, not remove accountability.</p>
+<p><strong>Retrospect:</strong> hard tasks should be reviewed. This is where Retrospective Harness Optimization, or RHO, fits. RHO looks back at difficult trajectories, compares attempts, identifies failure patterns and proposes updates to the harness. It is one retrospective method inside SIP.</p>
+<p><strong>Clean entropy:</strong> the harness itself must be maintained. Memories become stale. Rules conflict. Tools change. Processes drift. If the harness is never cleaned, yesterday&#x27;s intelligence becomes tomorrow&#x27;s confusion.</p>
+<p>This is why SIP matters for business. It connects learning with governance. It lets the system improve, but only through evidence, verification and human-defined boundaries.</p>
+<p>A harness gives the model a body. SIP gives the body discipline.</p>
+<h2 class="disp">Why RHO matters</h2>
+<p>This is why the research around RHO is important. The paper on Retrospective Harness Optimization explores how agents can improve their own harness from past trajectories, without relying on externally labelled validation data. It selects hard and diverse tasks, compares different attempts, identifies patterns of failure and proposes updates to the harness.</p>
+<p>The reported result is striking: a single RHO round improved SWE-Bench Pro pass rate from 59 percent to 78 percent.</p>
+<p>Benchmarks should always be treated with care. But the direction is hard to ignore.</p>
+<p>The model did not become smarter in isolation. The system around the model became better at helping intelligence turn into work.</p>
+<p>RHO is retrospective. SIP is operational.</p>
+<p>RHO looks backward at what happened. SIP defines what should be captured, verified, promoted, governed and cleaned so the system can improve safely after every serious task.</p>
+<h2 class="disp">The management question leaders should ask</h2>
+<p>A simpler way for leaders to think about it is this: the model provides capability, the harness provides operating discipline, and the business process defines where that capability should be applied.</p>
+<p>If the surrounding system is badly designed, even a powerful model will fail in real work. If there is no verification, no audit trail and no approval discipline, speed becomes risk.</p>
+<p>The next generation of AI leadership will not be about who can write the cleverest prompt. That skill will still matter, but it will not be the moat.</p>
+<p>The moat will be in the operating system around intelligence.</p>
+<p>What can the agent see? What can it do? What must it prove? What must it never touch without approval? What does it remember? What does it forget? How does it learn from failure? How do humans stay in the loop where judgment matters?</p>
+<p>That is the work.</p>
+<p>Prompt engineering helped us talk to AI.</p>
+<p>Context engineering helped us give AI the right information.</p>
+<p>Harness engineering is how we make AI work.</p>
+<p>But work is not enough. If AI is going to operate inside real companies, it also needs a disciplined way to improve from experience.</p>
+<p>That is the role of a Self-Improvement Protocol.</p>
+<p>The winners will not be the companies that treat AI as a smarter chatbot. They will be the companies that build the best systems around intelligence, and the best disciplines for making those systems better after every serious task.</p>
+<h2 class="disp">Frequently asked questions</h2>
+<h3>What is harness engineering?</h3>
+<p>Harness engineering is the discipline of designing the operating system around an AI model: the tools it can use, the context it can see, the memory it can trust, the permissions it must respect, the checks it must pass, and the feedback loops that help it improve.</p>
+<h3>How is harness engineering different from prompt engineering?</h3>
+<p>Prompt engineering improves a single interaction with a model. Harness engineering improves the operating environment that lets the model work across real processes, systems and decisions.</p>
+<h3>How is context engineering different from harness engineering?</h3>
+<p>Context engineering focuses on what information the model sees. Harness engineering is broader. It includes context, but also tools, permissions, verification, observability, feedback loops and governance.</p>
+<h3>Why does harness engineering matter for business?</h3>
+<p>Businesses do not need AI that only gives clever answers. They need AI that can operate safely across ERP systems, CRM records, email, dashboards, approvals, follow-ups and accountability.</p>
+<h3>What is a Self-Improvement Protocol?</h3>
+<p>A Self-Improvement Protocol, or SIP, is a practical operating discipline for AI agents. It captures mistakes, classifies failures, verifies outcomes, promotes repeated lessons into durable controls, governs risk, reviews hard tasks and cleans entropy over time.</p>
+<h3>What is RHO?</h3>
+<p>RHO stands for Retrospective Harness Optimization. It is a method for improving an AI agent&#x27;s harness by reviewing past trajectories, comparing attempts, identifying failure patterns and updating the system around the model. In this article, RHO is treated as one retrospective method inside the broader SIP idea.</p>
+<h2 class="disp">Source notes</h2>
+<ol class="src"><li>OpenAI, “Harness engineering: leveraging Codex in an agent-first world”, 2026. Key reference: “Humans steer. Agents execute.” URL: <a href="https://openai.com/index/harness-engineering/" target="_blank" rel="noopener">https://openai.com/index/harness-engineering/</a></li><li>Martin Fowler / Birgitta Böckeler, “Harness engineering for coding agent users”, 2026. Useful framing: guides as feedforward controls, sensors as feedback controls. URL: <a href="https://martinfowler.com/articles/harness-engineering.html" target="_blank" rel="noopener">https://martinfowler.com/articles/harness-engineering.html</a></li><li>Wenbo Pan et al., “Retrospective Harness Optimization: Improving LLM Agents via Self-Preference over Trajectory Rollouts”, arXiv:2606.05922. Key claim used carefully: reported SWE-Bench Pro improvement from 59 percent to 78 percent in one round. URL: <a href="https://arxiv.org/abs/2606.05922" target="_blank" rel="noopener">https://arxiv.org/abs/2606.05922</a></li><li>Hailin Zhong and Shengxin Zhu, “AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents”, arXiv:2605.13357. URL: <a href="https://arxiv.org/abs/2605.13357" target="_blank" rel="noopener">https://arxiv.org/abs/2605.13357</a></li><li>Adjacent context engineering references: Andrej Karpathy, Tobi Lütke and Anthropic are used as support for the move beyond prompt engineering, not as direct endorsements of the phrase “harness engineering”.</li></ol>
+</div>
+</article></main>
+<footer><div class="wrap"><div class="frow"><div>© 2026 Prateek Saxena</div><div><a href="/journal">Journal</a><a href="/">Home</a><a href="https://www.linkedin.com/in/prateeksaxena-uae">LinkedIn</a></div></div>
+<div class="disc">Third-party names and logos are trademarks of their respective owners. External research is cited in the source notes; this essay is the author’s original synthesis and views.</div></div></footer>
+<script src="/lenis.min.js" defer></script>
+<script src="/ux.js" defer></script>
+</body></html>
