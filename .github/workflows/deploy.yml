@@ -5,7 +5,7 @@ name: Deploy to Cloudflare Pages
 # with --branch=main to publish to production.
 # - push to master -> production (prateeksaxena.pages.dev)
 # - push to dev     -> preview   (dev.prateeksaxena.pages.dev)
-# Requires repo secret CLOUDFLARE_API_TOKEN (Account > Cloudflare Pages > Edit).
+# Requires repo secret CLOUDFLARE_NEW (Account > Cloudflare Pages > Edit).
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_NEW }}
           accountId: 89f078613042c984a12a174f10b2611f
           command: >-
             pages deploy .
