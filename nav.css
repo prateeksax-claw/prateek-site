@@ -1,0 +1,29 @@
+/* Shared global header + mobile menu — used on all standalone pages.
+   The homepage carries equivalent inline styles; this keeps subpages identical. */
+.nav{z-index:50}
+.brand{text-decoration:none;color:var(--ink)}
+.nlinks{display:flex;gap:26px}
+.nlinks a{font-family:'Space';font-size:13px;color:var(--mut);text-decoration:none;font-weight:500;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:3px}
+.nlinks a:hover{color:var(--accent-ink);background-size:100% 1.5px}
+.nacts{display:flex;align-items:center;gap:10px}
+.nbtn{font-family:'Space';font-size:12.5px;font-weight:600;padding:9px 17px;border-radius:30px;background:var(--ink);color:#fff !important;text-decoration:none;white-space:nowrap;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.nbtn:hover{box-shadow:0 10px 22px rgba(20,40,38,.22)}
+.mbtn{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(251,250,245,.85);cursor:pointer;position:relative;padding:0}
+.mbtn span{position:absolute;left:12px;right:12px;height:1.6px;background:var(--ink);transition:transform .35s cubic-bezier(.2,.7,.2,1),top .35s cubic-bezier(.2,.7,.2,1)}
+.mbtn span:first-child{top:16px}
+.mbtn span:last-child{top:24px}
+.mbtn.open span:first-child{top:20px;transform:rotate(45deg)}
+.mbtn.open span:last-child{top:20px;transform:rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:40;background:rgba(243,241,234,.96);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);display:flex;align-items:center;opacity:0;pointer-events:none;transition:opacity .35s}
+.mmenu.open{opacity:1;pointer-events:auto}
+.mlinks{display:flex;flex-direction:column;width:100%;padding:0 34px;margin-top:10px}
+.mlinks a{font-family:'Fraunces',serif;font-variation-settings:'opsz' 90;font-weight:430;font-size:clamp(32px,8.6vw,42px);color:var(--ink);text-decoration:none;letter-spacing:-.015em;padding:13px 0;border-bottom:1px solid var(--line2);display:flex;justify-content:space-between;align-items:baseline;opacity:0;transform:translateY(14px);transition:opacity .45s cubic-bezier(.2,.7,.2,1),transform .45s cubic-bezier(.2,.7,.2,1)}
+.mlinks a .no{font-family:'Space';font-size:13px;color:var(--accent);letter-spacing:.2em;font-weight:600}
+.mmenu.open .mlinks a{opacity:1;transform:none}
+.mmenu.open .mlinks a:nth-child(1){transition-delay:.05s}
+.mmenu.open .mlinks a:nth-child(2){transition-delay:.1s}
+.mmenu.open .mlinks a:nth-child(3){transition-delay:.15s}
+.mmenu.open .mlinks a:nth-child(4){transition-delay:.2s}
+html.menulock,html.menulock body{overflow:hidden}
+@media(max-width:820px){.mbtn{display:block}.nlinks{display:none}}
+@media (prefers-reduced-motion:reduce){.mmenu,.mlinks a,.mbtn span{transition:none}}

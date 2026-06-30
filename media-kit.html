@@ -76,10 +76,12 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-si
 .frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}.frow a{color:var(--mut);text-decoration:none;margin-left:22px;padding-bottom:2px;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%}.frow a:first-child{margin-left:0}.frow a:hover{color:var(--accent-ink);background-size:100% 1.5px}
 .fnav{margin-bottom:18px}
 </style>
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<nav class="nav" aria-label="Primary"><a class="brand" href="/"><span class="dot"></span>Prateek Saxena</a><a class="back" href="/">Home</a></nav>
+<nav class="nav" id="nav" aria-label="Primary"><a class="brand" href="/"><span class="dot"></span>Prateek Saxena</a><div class="nlinks"><a href="/journal">Journal</a><a href="/about-prateek-saxena">About</a><a href="/media-kit">Media kit</a></div><div class="nacts"><a class="nbtn" href="/#engage">Get in touch</a><button class="mbtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button></div></nav>
+<div class="mmenu" id="mmenu" aria-hidden="true"><nav class="mlinks" aria-label="Menu"><a href="/journal"><span>Journal</span><span class="no">&#8594;</span></a><a href="/about-prateek-saxena"><span>About</span><span class="no">&#8594;</span></a><a href="/media-kit"><span>Media kit</span><span class="no">&#8594;</span></a><a href="/#engage"><span>Get in touch</span><span class="no">&#8594;</span></a></nav></div>
 <main id="main"><article>
 <header class="h"><div class="wrap">
 <div class="k">Media kit</div>
