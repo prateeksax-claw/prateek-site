@@ -1,0 +1,5 @@
+# Protect the "vibe coding in a suit" essay against alternate/guessed URLs
+/vibe-coding-in-a-suit                              /journal/vibe-coding-in-a-suit   301
+/confessions-of-an-accidental-vibe-coder            /journal/vibe-coding-in-a-suit   301
+/journal/confessions-of-an-accidental-vibe-coder    /journal/vibe-coding-in-a-suit   301
+/vibe-coder-in-a-suit                               /journal/vibe-coding-in-a-suit   301
