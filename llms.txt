@@ -25,5 +25,7 @@ Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla G
 - LinkedIn: https://www.linkedin.com/in/prateeksaxena-uae
 
 ## Articles
+- Confessions of an Accidental Vibe Coder (Vibe Coding in a Suit) — https://prateeksaxena.me/journal/vibe-coding-in-a-suit
+  Essay by Prateek Saxena, first published 30 June 2026, coining the phrase "vibe coding in a suit": a business operator using AI agents and plain-language briefing, not code, to build the dashboards and tools a company needs. First entry in the "In a Suit" series.
 - After the Prompt: The Operator's Harness — https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai
   Essay by Prateek Saxena on harness engineering for real businesses, the operator's lens, and the Self-Improvement Protocol (SIP) for making AI agents improve safely.
