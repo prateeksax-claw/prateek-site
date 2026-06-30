@@ -1,16 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Vibe Coding in a Suit, an essay by Prateek Saxena">
   <rect width="1200" height="675" fill="#F3F1EA"/>
   <rect x="28" y="28" width="1144" height="619" fill="none" stroke="rgba(20,40,38,0.14)" stroke-width="1.5" rx="10"/>
-  <g font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif">
-    <circle cx="76" cy="96" r="7" fill="#177A6B"/>
-    <text x="96" y="101" font-size="20" letter-spacing="3" fill="#0E5A50" font-weight="600">IN A SUIT &#183; NO. 1</text>
+  <g text-anchor="middle" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif">
+    <text x="600" y="150" font-size="21" letter-spacing="4" fill="#0E5A50" font-weight="600">IN A SUIT &#183; NO. 1</text>
   </g>
-  <g font-family="Georgia, 'Times New Roman', serif" fill="#14211F">
-    <text x="74" y="320" font-size="118" font-weight="500" letter-spacing="-2">Vibe Coding</text>
-    <text x="74" y="452" font-size="118" font-weight="500" letter-spacing="-2">in a <tspan font-style="italic" fill="#177A6B">Suit</tspan></text>
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" fill="#14211F">
+    <text x="600" y="350" font-size="112" font-weight="500" letter-spacing="-2">Vibe Coding</text>
+    <text x="600" y="478" font-size="112" font-weight="500" letter-spacing="-2">in a <tspan font-style="italic" fill="#177A6B">Suit</tspan></text>
   </g>
-  <g font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif" fill="#586461">
-    <text x="76" y="588" font-size="24" font-style="normal">Confessions of an accidental vibe coder</text>
-    <text x="76" y="624" font-size="19" fill="#69736E">Prateek Saxena &#183; prateeksaxena.me</text>
+  <g text-anchor="middle" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif">
+    <text x="600" y="566" font-size="23" fill="#586461">Confessions of an accidental vibe coder</text>
+    <text x="600" y="602" font-size="18" fill="#69736E">Prateek Saxena &#183; prateeksaxena.me</text>
   </g>
 </svg>
