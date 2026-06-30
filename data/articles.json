@@ -1,0 +1,27 @@
+{
+  "_comment": "Single source of truth for long-form Journal articles, newest first. Edit this, then run: node build.mjs. It regenerates the article cards on the homepage and Journal page, the article URLs in sitemap.xml, and the Articles section of llms.txt. LinkedIn/partnership cards are managed separately in the HTML.",
+  "articles": [
+    {
+      "url": "/journal/vibe-coding-in-a-suit",
+      "title": "Confessions of an Accidental Vibe Coder",
+      "tag": "In a Suit · No. 1 · Jun 2026",
+      "thumb": "journal-media/vibe-coding-in-a-suit-43.svg",
+      "alt": "Vibe Coding in a Suit, an essay by Prateek Saxena",
+      "excerpt": "How a UAE business operator started building software by briefing AI agents instead of writing code. I call it vibe coding in a suit.",
+      "lastmod": "2026-06-30",
+      "llmsTitle": "Confessions of an Accidental Vibe Coder (Vibe Coding in a Suit)",
+      "llmsDesc": "Essay by Prateek Saxena on \"vibe coding in a suit\": a business operator using AI agents and plain-language briefing, not code, to build the dashboards and tools a company needs. First entry in the \"In a Suit\" series."
+    },
+    {
+      "url": "/journal/after-the-prompt-operator-harness-ai",
+      "title": "After the Prompt: The Operator’s Harness",
+      "tag": "Operator Notes · Jun 2026",
+      "thumb": "journal-media/after-the-prompt-43.svg",
+      "alt": "After the Prompt: The Operator’s Harness",
+      "excerpt": "Prompt engineering helped us talk to AI. Harness engineering is how we make AI work — and why every serious AI agent needs a Self-Improvement Protocol.",
+      "lastmod": "2026-06-08",
+      "llmsTitle": "After the Prompt: The Operator's Harness",
+      "llmsDesc": "Essay by Prateek Saxena on harness engineering for real businesses, the operator's lens, and the Self-Improvement Protocol (SIP) for making AI agents improve safely."
+    }
+  ]
+}

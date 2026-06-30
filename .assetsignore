@@ -1,3 +1,7 @@
 .github
 .git
 SEO-AI-STRATEGY.md
+src
+data
+build.mjs
+BUILD.md

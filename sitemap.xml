@@ -5,6 +5,8 @@
   <url><loc>https://prateeksaxena.me/prateek-saxena-al-zaabi-group</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://prateeksaxena.me/media-kit</loc><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://prateeksaxena.me/journal</loc><lastmod>2026-06-09</lastmod></url>
+  <!-- BUILD:ARTICLES:START (generated from data/articles.json by build.mjs) -->
   <url><loc>https://prateeksaxena.me/journal/vibe-coding-in-a-suit</loc><lastmod>2026-06-30</lastmod></url>
   <url><loc>https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai</loc><lastmod>2026-06-08</lastmod></url>
+<!-- BUILD:ARTICLES:END -->
 </urlset>
