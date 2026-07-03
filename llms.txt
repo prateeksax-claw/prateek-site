@@ -25,6 +25,8 @@ Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla G
 - LinkedIn: https://www.linkedin.com/in/prateeksaxena-uae
 
 ## Articles
+- I Don't Code. I Brief Agents. (In a Suit, No. 2) — https://prateeksaxena.me/journal/i-dont-code-i-brief-agents
+  Essay by Prateek Saxena on agentic AI from the operator's chair: briefing AI agents to turn business intent into dashboards, tools and working software inside real company processes. Second entry in the "In a Suit" series.
 - Confessions of an Accidental Vibe Coder (Vibe Coding in a Suit) — https://prateeksaxena.me/journal/vibe-coding-in-a-suit
   Essay by Prateek Saxena on "vibe coding in a suit": a business operator using AI agents and plain-language briefing, not code, to build the dashboards and tools a company needs. First entry in the "In a Suit" series.
 - After the Prompt: The Operator's Harness — https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai

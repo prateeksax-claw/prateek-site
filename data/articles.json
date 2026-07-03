@@ -2,6 +2,17 @@
   "_comment": "Single source of truth for long-form Journal articles, newest first. Edit this, then run: node build.mjs. It regenerates the article cards on the homepage and Journal page, the article URLs in sitemap.xml, and the Articles section of llms.txt. LinkedIn/partnership cards are managed separately in the HTML.",
   "articles": [
     {
+      "url": "/journal/i-dont-code-i-brief-agents",
+      "title": "I Don't Code. I Brief Agents.",
+      "tag": "In a Suit · No. 2 · Jul 2026",
+      "thumb": "journal-media/i-dont-code-i-brief-agents-43.svg",
+      "alt": "I Don't Code. I Brief Agents. An essay by Prateek Saxena",
+      "excerpt": "Agentic AI from the operator's chair: how business operators and teams turn intent into working software by briefing AI agents, not writing code.",
+      "lastmod": "2026-07-03",
+      "llmsTitle": "I Don't Code. I Brief Agents. (In a Suit, No. 2)",
+      "llmsDesc": "Essay by Prateek Saxena on agentic AI from the operator's chair: briefing AI agents to turn business intent into dashboards, tools and working software inside real company processes. Second entry in the \"In a Suit\" series."
+    },
+    {
       "url": "/journal/vibe-coding-in-a-suit",
       "title": "Confessions of an Accidental Vibe Coder",
       "tag": "In a Suit · No. 1 · Jun 2026",

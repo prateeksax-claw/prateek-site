@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="I Don't Code. I Brief Agents. An essay by Prateek Saxena">
+  <rect width="1200" height="900" fill="#F3F1EA"/>
+  <rect x="34" y="34" width="1132" height="832" fill="none" stroke="rgba(20,40,38,0.14)" stroke-width="1.5" rx="12"/>
+  <g text-anchor="middle" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif">
+    <text x="600" y="300" font-size="23" letter-spacing="4" fill="#0E5A50" font-weight="600">IN A SUIT &#183; NO. 2</text>
+  </g>
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" fill="#14211F">
+    <text x="600" y="480" font-size="104" font-weight="500" letter-spacing="-2">I Don&#8217;t Code.</text>
+    <text x="600" y="600" font-size="104" font-weight="500" letter-spacing="-2">I Brief <tspan font-style="italic" fill="#177A6B">Agents.</tspan></text>
+  </g>
+  <g text-anchor="middle" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif">
+    <text x="600" y="712" font-size="24" fill="#586461">Agentic AI from the operator&#8217;s chair</text>
+    <text x="600" y="750" font-size="19" fill="#69736E">Prateek Saxena &#183; prateeksaxena.me</text>
+  </g>
+</svg>
