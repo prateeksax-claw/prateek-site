@@ -1,5 +1,12 @@
-# Protect the "vibe coding in a suit" essay against alternate/guessed URLs
+# Root shorthands for articles (people guess the non-/journal path)
+/i-dont-code-i-brief-agents                         /journal/i-dont-code-i-brief-agents            301
+/after-the-prompt-operator-harness-ai               /journal/after-the-prompt-operator-harness-ai  301
+
+# Protect the "vibe coding in a suit" essay against alternate / guessed / mis-transcribed URLs
 /vibe-coding-in-a-suit                              /journal/vibe-coding-in-a-suit   301
 /confessions-of-an-accidental-vibe-coder            /journal/vibe-coding-in-a-suit   301
 /journal/confessions-of-an-accidental-vibe-coder    /journal/vibe-coding-in-a-suit   301
 /vibe-coder-in-a-suit                               /journal/vibe-coding-in-a-suit   301
+/journal/vibe-coder-in-a-suit                       /journal/vibe-coding-in-a-suit   301
+/wire-coder-in-a-suit                               /journal/vibe-coding-in-a-suit   301
+/journal/wire-coder-in-a-suit                       /journal/vibe-coding-in-a-suit   301
