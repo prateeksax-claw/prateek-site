@@ -26,6 +26,8 @@ Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla G
 - Wikidata: https://www.wikidata.org/wiki/Q140421400
 
 ## Reference pages
+- AI agents for business operators, the topic hub — https://prateeksaxena.me/ai-agents-for-business-operators
+- UAE business partnerships hub (Saint-Gobain, Bosch, Henkel, Birla White, Asian Paints, Jaquar) — https://prateeksaxena.me/uae-business-partnerships
 - Definitions of Prateek Saxena's terms (vibe coding in a suit, briefing agents, SIP, harness engineering) — https://prateeksaxena.me/definitions
 - What is AI harness engineering? Short reference with definition and the seven harness layers — https://prateeksaxena.me/what-is-ai-harness-engineering
 
