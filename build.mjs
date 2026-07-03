@@ -47,12 +47,12 @@ const llmsRow = (a) =>
 `- ${a.llmsTitle} — ${SITE}${a.url}\n  ${a.llmsDesc}`;
 
 /* Replace the text between BUILD markers (keeping the marker lines). */
-function injectBetweenMarkers(file, body) {
+function injectBetweenMarkers(file, body, m1 = M1, m2 = M2) {
   const s = readFileSync(file, 'utf8');
-  const startLine = s.indexOf(M1);
+  const startLine = s.indexOf(m1);
   if (startLine < 0) throw new Error(`start marker not found in ${file}`);
   const startEol = s.indexOf('\n', startLine);
-  const endIdx = s.indexOf(M2, startEol);
+  const endIdx = s.indexOf(m2, startEol);
   if (endIdx < 0) throw new Error(`end marker not found in ${file}`);
   const out = s.slice(0, startEol + 1) + body + '\n' + s.slice(endIdx);
   writeFileSync(file, out);
@@ -62,6 +62,22 @@ function injectBetweenMarkers(file, body) {
 // 1 + 2: article cards into the homepage source and the Journal page
 injectBetweenMarkers('src/home.html', articles.map(homeCard).join('\n'));
 injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
+
+// 2b: regenerate the Journal ItemList schema from the cards actually on the page,
+// so it can never go stale again (it previously omitted the articles).
+{
+  const s = readFileSync('journal.html', 'utf8');
+  const decode = (t) => t.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ')
+    .replaceAll('&amp;', '&').replaceAll('&#x27;', "'").replaceAll('&quot;', '"').replaceAll('&#39;', "'").trim();
+  const cards = [...s.matchAll(/<(?:a|div) class="jcard rv"(?:[^>]*?href="([^"]+)")?[^>]*>[\s\S]*?<h3>([\s\S]*?)<\/h3>/g)];
+  const items = cards.map((m, i) => {
+    const url = m[1] ? (m[1].startsWith('http') ? m[1] : SITE + m[1]) : SITE + '/journal';
+    return `{"@type":"ListItem","position":${i + 1},"name":${JSON.stringify(decode(m[2]))},"url":${JSON.stringify(url)}}`;
+  });
+  const block = `<script type="application/ld+json">\n{"@context":"https://schema.org","@type":"ItemList","name":"Journal entries by Prateek Saxena","itemListElement":[\n${items.join(',\n')}]}\n</${'script'}>`;
+  injectBetweenMarkers('journal.html', block, '<!-- BUILD:JLIST:START', '<!-- BUILD:JLIST:END -->');
+  console.log(`build.mjs: journal ItemList regenerated with ${items.length} entries`);
+}
 
 // 3: article URLs into the sitemap
 injectBetweenMarkers('sitemap.xml', articles.map(sitemapRow).join('\n'));
