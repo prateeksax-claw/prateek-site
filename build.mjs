@@ -96,4 +96,30 @@ const llms = readFileSync('llms.txt', 'utf8');
 const head = llms.slice(0, llms.indexOf('## Articles'));
 writeFileSync('llms.txt', head + '## Articles\n' + articles.map(llmsRow).join('\n') + '\n');
 
+
+// 6: RSS feed (feed.xml) from the same article registry
+{
+  const escXml = (t) => t.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+  const rfc = (d) => new Date(d + 'T08:00:00+04:00').toUTCString();
+  const items = articles.map((a) =>
+`  <item>
+    <title>${escXml(a.title)}</title>
+    <link>${SITE}${a.url}</link>
+    <guid isPermaLink="true">${SITE}${a.url}</guid>
+    <pubDate>${rfc(a.lastmod)}</pubDate>
+    <description>${escXml(a.llmsDesc)}</description>
+  </item>`).join('\n');
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>Prateek Saxena — Journal</title>
+  <link>${SITE}/journal</link>
+  <description>Essays on agentic AI, vibe coding in a suit and business operations from the UAE real economy.</description>
+  <language>en</language>
+  <lastBuildDate>${rfc(articles[0].lastmod)}</lastBuildDate>
+${items}
+</channel></rss>\n`;
+  writeFileSync('feed.xml', feed);
+  console.log('build.mjs: feed.xml generated with ' + articles.length + ' items');
+}
+
 console.log(`build.mjs: regenerated ${articles.length} articles across index.html, journal.html, sitemap.xml, llms.txt`);

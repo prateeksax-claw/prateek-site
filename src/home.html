@@ -44,6 +44,7 @@
 <meta name="twitter:description" content="Scaling businesses across eleven sectors of the UAE's real economy. Writing on business, tech, finance & leadership.">
 <meta name="twitter:image" content="https://prateeksaxena.me/og.png">
 <link rel="canonical" href="https://prateeksaxena.me/">
+<link rel="alternate" type="application/rss+xml" title="Prateek Saxena — Journal" href="/feed.xml">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -497,7 +498,9 @@
 <script src="node_modules/lenis/dist/lenis.min.js" defer></script>
 <script src="ux.js" defer></script>
 <script type="module">
-import * as THREE from './three.module.min.js';
+/* Perf: the 3D hero (~700KB) loads after first paint via dynamic import on load+idle. */
+const startScene = async () => {
+const THREE = await import('./three.module.min.js');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine = matchMedia('(pointer:fine)').matches;
 function revealNow(el){ el.classList.add('in'); const d=parseFloat(el.style.transitionDelay)||0; if(d) setTimeout(()=>{el.style.transitionDelay='';}, d+950); }
@@ -605,6 +608,9 @@ if(renderer){
     new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){if(!raf)loop();} else if(raf){cancelAnimationFrame(raf);raf=null;} }),{threshold:0}).observe(hero);
   }
 }
+};
+const kick = () => (window.requestIdleCallback || ((f)=>setTimeout(f,120)))(startScene);
+if (document.readyState === 'complete') kick(); else addEventListener('load', kick, {once:true});
 </script>
 </body>
 </html>

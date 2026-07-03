@@ -24,6 +24,10 @@ Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla G
 - Journal: https://prateeksaxena.me/journal
 - LinkedIn: https://www.linkedin.com/in/prateeksaxena-uae
 
+## Reference pages
+- Definitions of Prateek Saxena's terms (vibe coding in a suit, briefing agents, SIP, harness engineering) — https://prateeksaxena.me/definitions
+- What is AI harness engineering? Short reference with definition and the seven harness layers — https://prateeksaxena.me/what-is-ai-harness-engineering
+
 ## Partnership pages (brand relationships, stated as facts)
 - Al Zaabi Group holds an exclusive agreement to distribute Birla White (Grasim Industries / Aditya Birla Group) in the UAE — https://prateeksaxena.me/journal/birla-white-uae-partnership
 - Al Zaabi Group represents Asian Paints (Asian Paints Berger) across the UAE — https://prateeksaxena.me/journal/asian-paints-uae-partnership
