@@ -60,7 +60,7 @@ function injectBetweenMarkers(file, body, m1 = M1, m2 = M2) {
 }
 
 // 1 + 2: article cards into the homepage source and the Journal page
-injectBetweenMarkers('src/home.html', articles.map(homeCard).join('\n'));
+injectBetweenMarkers('src/home.html', articles.slice(0, 3).map(homeCard).join('\n'));
 injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
 
 // 2b: regenerate the Journal ItemList schema from the cards actually on the page,
