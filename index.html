@@ -290,12 +290,12 @@
 
   /* 2026 design layer: stats, bento chips, grain, blooms, staged hero, scroll motion */
   .statbar{border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:rgba(251,250,245,.5)}
-  .statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:36px 0}
+  .statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-top:36px;padding-bottom:36px}
   .stat{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
   .stat .sn{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144;font-weight:430;font-size:clamp(36px,4.6vw,58px);letter-spacing:-.02em;line-height:1;color:var(--ink)}
   .stat .sn em{font-style:normal;color:var(--accent)}
   .stat .sl{font-family:'Space';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
-  @media(max-width:640px){.statgrid{grid-template-columns:repeat(3,1fr);gap:10px;padding:26px 0}.stat .sl{font-size:10px;letter-spacing:.08em}}
+  @media(max-width:640px){.statgrid{gap:10px;padding-top:26px;padding-bottom:26px}.stat .sl{font-size:10px;letter-spacing:.08em}}
   .chiprow{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;margin-top:2px}
   .chip{display:inline-flex;align-items:baseline;gap:9px;padding:13px 20px;border:1px solid var(--line2);border-radius:999px;background:var(--card);transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
   .chip:hover{transform:translateY(-3px);border-color:rgba(23,122,107,.35);box-shadow:0 10px 24px rgba(20,50,46,.08)}
