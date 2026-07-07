@@ -222,7 +222,9 @@
   .feature .big em{font-style:normal;color:#67D2BB}
   .feature p{color:#A9C7BF;font-size:14px;max-width:32ch;line-height:1.55}
   .arts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-  .subh{font-family:'Space';font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);font-weight:600;margin-top:42px}
+  .subh{font-family:'Space';font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);font-weight:600;margin-top:42px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .subh a{font-family:'Space';font-size:12px;letter-spacing:.08em;text-transform:none;color:var(--mut);text-decoration:none;font-weight:600}
+  .subh a:hover{color:var(--accent-ink)}
   .art{background:var(--card);border:1px solid var(--line2);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s;text-decoration:none}
   .art:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(20,50,46,.10);border-color:rgba(23,122,107,.32)}
   .art .tag{font-family:'Space';font-size:11.5px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
@@ -405,7 +407,7 @@
       <div><div class="kicker rv">Journal &amp; News</div><h2 class="disp rv">Notes on business, technology <em>&amp; the bigger picture.</em></h2></div>
     </div>
     <p class="lead rv" style="margin-top:26px">A record of milestones, partnerships and lessons from sixteen years of operating across the UAE — and writing on business, leadership, technology, finance and the trends shaping our region and the world.</p>
-    <div class="subh rv">Essays · In a Suit</div>
+    <div class="subh rv"><span>Essays · In a Suit</span><a href="/journal">All essays →</a></div>
     <div class="arts">
 <!-- BUILD:ARTICLES:START (generated from data/articles.json by build.mjs — do not hand-edit) -->
       <a class="art rv" href="/journal/monday-morning-preflight">
@@ -422,7 +424,7 @@
         <p>How a UAE business operator started building software by briefing AI agents instead of writing code. I call it vibe coding in a suit.</p><span class="more">Read the essay →</span></a>
 <!-- BUILD:ARTICLES:END -->
     </div>
-    <div class="subh rv">The Logbook · partnerships, milestones &amp; moments</div>
+    <div class="subh rv"><span>The Logbook · partnerships, milestones &amp; moments</span><a href="/journal">Full Logbook →</a></div>
     <div class="arts">
       <a class="art rv" href="https://www.linkedin.com/feed/update/urn:li:activity:7457357722779303937/" target="_blank" rel="noopener">
         <span class="thumbwrap"><img class="thumb" src="journal-media/p098.jpg" alt="Visited Make it in the Emirates 2026 (MIITE) at ADNEC with our MD and CEO Amal Vijayakum" loading="lazy"></span>
