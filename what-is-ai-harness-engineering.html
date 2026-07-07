@@ -88,6 +88,12 @@ th,td{border:1px solid var(--line);padding:10px 13px;text-align:left;vertical-al
 th{font-family:'Space';font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:rgba(23,122,107,.05)}
 td:first-child{font-weight:600;color:var(--ink)}
 .tablewrap{overflow-x:auto}
+.checks{margin:26px 0 30px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.55);overflow:hidden}
+.check{display:grid;grid-template-columns:56px 1fr;padding:18px 22px 18px 0;border-bottom:1px solid var(--line2)}
+.check:last-child{border-bottom:none}
+.check .cn{font-family:'Space';font-size:14px;font-weight:600;color:var(--accent);text-align:center;padding-top:6px}
+.check h3{margin:0 0 6px;font-size:20px}
+.check p{margin:0;font-size:16.5px;line-height:1.6}
 </style>
 <link rel="stylesheet" href="/nav.css">
 </head>
@@ -118,15 +124,15 @@ td:first-child{font-weight:600;color:var(--ink)}
 
 <h2 class="disp">The seven layers of a practical harness</h2>
 <p>A useful business harness usually contains seven layers.</p>
-<ul>
-<li><strong>Tools:</strong> what systems the agent can use.</li>
-<li><strong>Permissions:</strong> what it may touch, and what needs approval.</li>
-<li><strong>Context:</strong> what information is brought into the task, and what noise is excluded.</li>
-<li><strong>Memory:</strong> what can be remembered across work, and what must be re-verified.</li>
-<li><strong>Workflow:</strong> how the agent plans, acts, checks, escalates and recovers.</li>
-<li><strong>Observability:</strong> logs, traces and evidence of what happened.</li>
-<li><strong>Feedback loops:</strong> how repeated failures become permanent improvements.</li>
-</ul>
+<div class="checks">
+<div class="check"><span class="cn">1</span><p><strong>Tools:</strong> what systems the agent can use.</p></div>
+<div class="check"><span class="cn">2</span><p><strong>Permissions:</strong> what it may touch, and what needs approval.</p></div>
+<div class="check"><span class="cn">3</span><p><strong>Context:</strong> what information is brought into the task, and what noise is excluded.</p></div>
+<div class="check"><span class="cn">4</span><p><strong>Memory:</strong> what can be remembered across work, and what must be re-verified.</p></div>
+<div class="check"><span class="cn">5</span><p><strong>Workflow:</strong> how the agent plans, acts, checks, escalates and recovers.</p></div>
+<div class="check"><span class="cn">6</span><p><strong>Observability:</strong> logs, traces and evidence of what happened.</p></div>
+<div class="check"><span class="cn">7</span><p><strong>Feedback loops:</strong> how repeated failures become permanent improvements.</p></div>
+</div>
 <p>The seventh layer is where a <strong>Self-Improvement Protocol</strong>, or SIP, lives: when an agent makes a mistake, the correction becomes a standing rule instead of a one-time fix. Retrospective methods such as RHO (Retrospective Harness Optimization) work at this layer too.</p>
 
 <h2 class="disp">Why it matters for business</h2>

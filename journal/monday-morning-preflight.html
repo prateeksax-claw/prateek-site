@@ -92,6 +92,14 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-si
 .frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}.frow a{color:var(--mut);text-decoration:none;margin-left:22px;padding-bottom:2px;transition:color .2s,background-size .35s cubic-bezier(.2,.7,.2,1);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%}.frow a:first-child{margin-left:0}.frow a:hover{color:var(--accent-ink);background-size:100% 1.5px}
 .disc{margin-top:14px;font-size:11px;line-height:1.55;max-width:80ch}
 
+.pullq{margin:38px 0;padding:6px 0 6px 26px;border-left:3px solid var(--accent)}
+.pullq p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(22px,2.6vw,27px);line-height:1.4;color:var(--ink);margin:0}
+.checks{margin:26px 0 30px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.55);overflow:hidden}
+.check{display:grid;grid-template-columns:56px 1fr;padding:18px 22px 18px 0;border-bottom:1px solid var(--line2)}
+.check:last-child{border-bottom:none}
+.check .cn{font-family:'Space';font-size:14px;font-weight:600;color:var(--accent);text-align:center;padding-top:6px}
+.check h3{margin:0 0 6px;font-size:20px}
+.check p{margin:0;font-size:16.5px;line-height:1.6}
 </style>
 <link rel="stylesheet" href="/nav.css">
 </head>
@@ -166,17 +174,20 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-si
 
 <h2 class="disp">The five checks every business agent must pass</h2>
 <p>The Monday Morning Preflight also gives us a way to separate impressive AI from useful AI. For an agent to be trusted inside a business workflow, it should pass five checks.</p>
-<h3>1. Data truth</h3>
-<p>Is the agent using current and approved sources, or is it guessing? If it is preparing a stock view, it must use the latest available data. If it is preparing a receivables follow-up, it must use the correct customer, amount, ageing and context. If it is comparing suppliers, it must work from actual quotes and terms, not assumptions.</p>
-<h3>2. Context and constraints</h3>
-<p>Does the agent understand the rules of the business? A useful agent needs to know what requires approval, which exceptions matter, which reports are sensitive, what should not be sent directly and where human judgment must come in. Without constraints, speed becomes risk.</p>
-<h3>3. Handoffs</h3>
-<p>Can the agent move work across people and departments without losing accountability? A stock issue may touch sales, procurement and operations. A receivables issue may touch finance, sales and management. A good agent helps route work clearly instead of creating more noise.</p>
-<h3>4. Human judgment</h3>
-<p>Does the agent know when to stop and ask? Pricing decisions, legal wording, unusual financial exposure, customer escalations and sensitive communication all need human review. The agent should support judgment, not bypass it.</p>
-<h3>5. Audit and improvement</h3>
-<p>Can we see what the agent did, what data it used, what it recommended, who approved it and how it improved after correction? This connects directly to the <a href="/journal/after-the-prompt-operator-harness-ai">Self-Improvement Protocol</a>: a serious agent should not keep making the same mistake. It should leave a trail, learn from reviewed outcomes and improve safely inside defined boundaries.</p>
+<div class="checks">
+<div class="check"><span class="cn">1</span><div><h3>Data truth</h3>
+<p>Is the agent using current and approved sources, or is it guessing? If it is preparing a stock view, it must use the latest available data. If it is preparing a receivables follow-up, it must use the correct customer, amount, ageing and context. If it is comparing suppliers, it must work from actual quotes and terms, not assumptions.</p></div></div>
+<div class="check"><span class="cn">2</span><div><h3>Context and constraints</h3>
+<p>Does the agent understand the rules of the business? A useful agent needs to know what requires approval, which exceptions matter, which reports are sensitive, what should not be sent directly and where human judgment must come in. Without constraints, speed becomes risk.</p></div></div>
+<div class="check"><span class="cn">3</span><div><h3>Handoffs</h3>
+<p>Can the agent move work across people and departments without losing accountability? A stock issue may touch sales, procurement and operations. A receivables issue may touch finance, sales and management. A good agent helps route work clearly instead of creating more noise.</p></div></div>
+<div class="check"><span class="cn">4</span><div><h3>Human judgment</h3>
+<p>Does the agent know when to stop and ask? Pricing decisions, legal wording, unusual financial exposure, customer escalations and sensitive communication all need human review. The agent should support judgment, not bypass it.</p></div></div>
+<div class="check"><span class="cn">5</span><div><h3>Audit and improvement</h3>
+<p>Can we see what the agent did, what data it used, what it recommended, who approved it and how it improved after correction? This connects directly to the <a href="/journal/after-the-prompt-operator-harness-ai">Self-Improvement Protocol</a>: a serious agent should not keep making the same mistake. It should leave a trail, learn from reviewed outcomes and improve safely inside defined boundaries.</p></div></div>
+</div>
 
+<div class="pullq" aria-hidden="true"><p>Demos are easy. Monday morning is where agents prove themselves.</p></div>
 <h2 class="disp">Why this is different from ordinary automation</h2>
 <p>Traditional automation follows a fixed path: if this happens, do that. It works well when the process is stable and predictable. Business is often neither. The agent has to interpret context, pull information, identify exceptions, ask for help when needed and coordinate work across systems and people.</p>
 <p>That is why governance matters. An agent without discipline is just another risk. An agent inside a good <a href="/what-is-ai-harness-engineering">operating harness</a> becomes useful. The aim is not blind autonomy. The aim is controlled momentum.</p>
