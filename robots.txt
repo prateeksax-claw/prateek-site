@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI search, assistant & training crawlers — allowed for citation/visibility
+# AI search, assistant & training crawlers, allowed for citation/visibility
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot

@@ -22,7 +22,7 @@
     });
   }
 
-  /* trailing cursor ring (system cursor stays — the ring is an accent) */
+  /* trailing cursor ring (system cursor stays; the ring is an accent) */
   if (fine && !reduce) {
     var st = document.createElement('style');
     st.textContent =

@@ -44,7 +44,7 @@ const sitemapRow = (a) =>
 `  <url><loc>${SITE}${a.url}</loc><lastmod>${a.lastmod}</lastmod></url>`;
 
 const llmsRow = (a) =>
-`- ${a.llmsTitle} — ${SITE}${a.url}\n  ${a.llmsDesc}`;
+`- ${a.llmsTitle} - ${SITE}${a.url}\n  ${a.llmsDesc}`;
 
 /* Replace the text between BUILD markers (keeping the marker lines). */
 function injectBetweenMarkers(file, body, m1 = M1, m2 = M2) {
@@ -83,7 +83,7 @@ injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
 injectBetweenMarkers('sitemap.xml', articles.map(sitemapRow).join('\n'));
 
 // 3b: the homepage and Journal render the article cards, so their content
-// changes whenever this build runs — stamp their lastmod with today's date.
+// changes whenever this build runs; stamp their lastmod with today's date.
 {
   const today = new Date().toISOString().slice(0, 10);
   let sm = readFileSync('sitemap.xml', 'utf8');
@@ -122,7 +122,7 @@ writeFileSync('llms.txt', head + '## Articles\n' + articles.map(llmsRow).join('\
   </item>`).join('\n');
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
-  <title>Prateek Saxena — Journal</title>
+  <title>Prateek Saxena Journal</title>
   <link>${SITE}/journal</link>
   <description>Essays on agentic AI, vibe coding in a suit and business operations from the UAE real economy.</description>
   <language>en</language>

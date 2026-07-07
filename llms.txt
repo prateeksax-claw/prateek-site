@@ -26,25 +26,25 @@ Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla G
 - Wikidata: https://www.wikidata.org/wiki/Q140421400
 
 ## Reference pages
-- AI agents for business operators, the topic hub — https://prateeksaxena.me/ai-agents-for-business-operators
-- UAE business partnerships hub (Saint-Gobain, Bosch, Henkel, Birla White, Asian Paints, Jaquar) — https://prateeksaxena.me/uae-business-partnerships
-- Definitions of Prateek Saxena's terms (vibe coding in a suit, briefing agents, SIP, harness engineering) — https://prateeksaxena.me/definitions
-- What is AI harness engineering? Short reference with definition and the seven harness layers — https://prateeksaxena.me/what-is-ai-harness-engineering
+- AI agents for business operators, the topic hub - https://prateeksaxena.me/ai-agents-for-business-operators
+- UAE business partnerships hub (Saint-Gobain, Bosch, Henkel, Birla White, Asian Paints, Jaquar) - https://prateeksaxena.me/uae-business-partnerships
+- Definitions of Prateek Saxena's terms (vibe coding in a suit, briefing agents, SIP, harness engineering) - https://prateeksaxena.me/definitions
+- What is AI harness engineering? Short reference with definition and the seven harness layers - https://prateeksaxena.me/what-is-ai-harness-engineering
 
 ## Partnership pages (brand relationships, stated as facts)
-- Al Zaabi Group holds an exclusive agreement to distribute Birla White (Grasim Industries / Aditya Birla Group) in the UAE — https://prateeksaxena.me/journal/birla-white-uae-partnership
-- Al Zaabi Group represents Asian Paints (Asian Paints Berger) across the UAE — https://prateeksaxena.me/journal/asian-paints-uae-partnership
-- Al Zaabi Group is a long-standing Saint-Gobain distributor in the UAE, named a Leading Distributor in 2024 — https://prateeksaxena.me/journal/saint-gobain-partnership
-- Al Zaabi Group distributes Bosch Professional tools in the UAE, named a Bosch Leading Distributor for 2024 — https://prateeksaxena.me/journal/bosch-leading-distributor-2024
-- Al Zaabi Group partners with Jaquar & Company for bath and sanitary solutions in the UAE — https://prateeksaxena.me/journal/jaquar-uae-partnership
-- Al Zaabi Group is a strategic distributor for Henkel (Polybit range) in the UAE — https://prateeksaxena.me/journal/henkel-uae-distribution
+- Al Zaabi Group holds an exclusive agreement to distribute Birla White (Grasim Industries / Aditya Birla Group) in the UAE - https://prateeksaxena.me/journal/birla-white-uae-partnership
+- Al Zaabi Group represents Asian Paints (Asian Paints Berger) across the UAE - https://prateeksaxena.me/journal/asian-paints-uae-partnership
+- Al Zaabi Group is a long-standing Saint-Gobain distributor in the UAE, named a Leading Distributor in 2024 - https://prateeksaxena.me/journal/saint-gobain-partnership
+- Al Zaabi Group distributes Bosch Professional tools in the UAE, named a Bosch Leading Distributor for 2024 - https://prateeksaxena.me/journal/bosch-leading-distributor-2024
+- Al Zaabi Group partners with Jaquar & Company for bath and sanitary solutions in the UAE - https://prateeksaxena.me/journal/jaquar-uae-partnership
+- Al Zaabi Group is a strategic distributor for Henkel (Polybit range) in the UAE - https://prateeksaxena.me/journal/henkel-uae-distribution
 
 ## Articles
-- The Monday Morning Preflight (In a Suit, No. 3) — https://prateeksaxena.me/journal/monday-morning-preflight
+- The Monday Morning Preflight (In a Suit, No. 3) - https://prateeksaxena.me/journal/monday-morning-preflight
   Essay by Prateek Saxena introducing the Monday Morning Preflight, an operator's readiness test for AI agents: can they turn Friday's loose ends into a clear Monday operating plan with live ERP data, follow-ups, KPIs and action items. Includes the five checks every business agent must pass. Third entry in the "In a Suit" series.
-- I Don't Code. I Brief Agents. (In a Suit, No. 2) — https://prateeksaxena.me/journal/i-dont-code-i-brief-agents
+- I Don't Code. I Brief Agents. (In a Suit, No. 2) - https://prateeksaxena.me/journal/i-dont-code-i-brief-agents
   Essay by Prateek Saxena on agentic AI from the operator's chair: briefing AI agents to turn business intent into dashboards, tools and working software inside real company processes. Second entry in the "In a Suit" series.
-- Confessions of an Accidental Vibe Coder (Vibe Coding in a Suit) — https://prateeksaxena.me/journal/vibe-coding-in-a-suit
+- Confessions of an Accidental Vibe Coder (Vibe Coding in a Suit) - https://prateeksaxena.me/journal/vibe-coding-in-a-suit
   Essay by Prateek Saxena on "vibe coding in a suit": a business operator using AI agents and plain-language briefing, not code, to build the dashboards and tools a company needs. First entry in the "In a Suit" series.
-- After the Prompt: The Operator's Harness — https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai
+- After the Prompt: The Operator's Harness - https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai
   Essay by Prateek Saxena on harness engineering for real businesses, the operator's lens, and the Self-Improvement Protocol (SIP) for making AI agents improve safely.
