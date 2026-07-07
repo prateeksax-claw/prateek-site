@@ -287,6 +287,41 @@
   }
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.scrollcue .ln::after{animation:none}.art .thumbwrap .thumb,.art .more,.tile,.art{transition:none}.sector-tip{display:none}}
   .arts.logbook .thumb{filter:sepia(.13) saturate(1.06) contrast(1.02)}
+
+  /* 2026 design layer: stats, bento chips, grain, blooms, staged hero, scroll motion */
+  .statbar{border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:rgba(251,250,245,.5)}
+  .statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:36px 0}
+  .stat{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+  .stat .sn{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144;font-weight:430;font-size:clamp(36px,4.6vw,58px);letter-spacing:-.02em;line-height:1;color:var(--ink)}
+  .stat .sn em{font-style:normal;color:var(--accent)}
+  .stat .sl{font-family:'Space';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
+  @media(max-width:640px){.statgrid{grid-template-columns:repeat(3,1fr);gap:10px;padding:26px 0}.stat .sl{font-size:10px;letter-spacing:.08em}}
+  .chiprow{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;margin-top:2px}
+  .chip{display:inline-flex;align-items:baseline;gap:9px;padding:13px 20px;border:1px solid var(--line2);border-radius:999px;background:var(--card);transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+  .chip:hover{transform:translateY(-3px);border-color:rgba(23,122,107,.35);box-shadow:0 10px 24px rgba(20,50,46,.08)}
+  .chip b{font-family:'Fraunces',serif;font-weight:500;font-size:16.5px;letter-spacing:-.01em;color:var(--ink)}
+  .chip i{font-style:normal;font-family:'Space';font-size:11px;color:var(--mut);letter-spacing:.02em}
+  body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.045;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .hero::after{content:"";position:absolute;left:-12%;top:-18%;width:64%;height:70%;background:radial-gradient(50% 50% at 40% 40%,rgba(23,122,107,.10),transparent 70%);pointer-events:none;z-index:1}
+  .cta-block{position:relative;overflow:hidden}
+  .cta-block::before{content:"";position:absolute;left:50%;bottom:-45%;width:80%;height:90%;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(23,122,107,.09),transparent 72%);pointer-events:none}
+  @media (prefers-reduced-motion: no-preference){
+    .hsplit .hw{display:inline-block;opacity:0;transform:translateY(.55em);animation:hwup 1s cubic-bezier(.2,.7,.2,1) forwards}
+    .hsplit .hw:nth-child(1){animation-delay:.06s}.hsplit .hw:nth-child(2){animation-delay:.14s}.hsplit .hw:nth-child(3){animation-delay:.22s}.hsplit .hw:nth-child(4){animation-delay:.30s}.hsplit .hw:nth-child(5){animation-delay:.42s}
+  }
+  @keyframes hwup{0%{opacity:0;transform:translateY(.55em);font-variation-settings:'opsz' 40}100%{opacity:1;transform:none;font-variation-settings:'opsz' 144}}
+  @supports (animation-timeline: view()){
+    @media (prefers-reduced-motion: no-preference){
+      .portrait img{animation:ppar linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+      .shead .snum{animation:snumin linear both;animation-timeline:view();animation-range:entry 0% cover 32%}
+    }
+  }
+  @keyframes ppar{from{transform:translateY(16px)}to{transform:translateY(-16px)}}
+  @keyframes snumin{from{opacity:.15;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @view-transition{navigation:auto}
+  ::view-transition-old(root){animation-duration:.16s}
+  ::view-transition-new(root){animation-duration:.26s}
+  @media (prefers-reduced-motion: reduce){@view-transition{navigation:none}}
 </style>
 </head>
 <body>
@@ -317,12 +352,20 @@
   <div class="sector-tip" id="stip" aria-hidden="true"></div>
   <div class="hero-c"><div class="wrap">
     <div class="heyebrow rv in"><span class="rule"></span><span class="kicker">Operator · Builder · Strategist</span></div>
-    <h1 class="disp rv in">The operating system behind <em>ambition.</em></h1>
+    <h1 class="disp rv in hsplit"><span class="hw">The</span> <span class="hw">operating</span> <span class="hw">system</span> <span class="hw">behind</span> <em class="hw">ambition.</em></h1>
     <p class="hero-sub rv in">I’m Prateek Saxena, an operator who builds and scales businesses across the UAE’s real economy. An industrial engineer (Purdue) and INSEAD-educated leader, I blend engineering discipline, financial rigour and technology across eleven sectors, currently as Group General Manager of Al Zaabi Group. I write the In a Suit essays on putting AI agents to work in real business, plus notes on leadership, finance and the trends shaping our region.</p>
     <div class="hero-meta rv in"><span><b>Abu Dhabi</b>, UAE</span><span><b>Purdue</b> · <b>INSEAD</b></span><span><b>16+</b> years operating</span></div>
     <div class="cta-row rv in" style="justify-content:flex-start;margin-top:34px"><a class="btn btn1" href="#engage">Advisory · Speaking · Board</a><a class="btn btn2" href="/journal">Read the Journal</a></div>
   </div></div>
   <div class="scrollcue"><span class="ln"></span>Scroll</div>
+</section>
+
+<section class="statbar" aria-label="Key numbers">
+  <div class="wrap statgrid">
+    <div class="stat rv"><span class="sn" data-target="16" data-suffix="+">16<em>+</em></span><span class="sl">Years operating</span></div>
+    <div class="stat rv"><span class="sn" data-target="11">11</span><span class="sl">Sectors of the real economy</span></div>
+    <div class="stat rv"><span class="sn" data-target="6">6</span><span class="sl">Global brand partnerships</span></div>
+  </div>
 </section>
 
 <!-- 01 ABOUT -->
@@ -393,13 +436,15 @@
       <div class="tile rv"><div class="tlabel">Sector</div><h3>Automotive</h3><div class="meta">Vehicles &amp; tyres</div></div>
       <div class="tile rv"><div class="tlabel">Sector</div><h3>Real Estate</h3><div class="meta">Development &amp; assets</div></div>
       <div class="tile rv"><div class="tlabel">Sector</div><h3>Building Materials</h3><div class="meta">Wholesale &amp; retail</div></div>
-      <div class="tile rv"><div class="tlabel">Sector</div><h3>Contracting</h3><div class="meta">Across the UAE</div></div>
-      <div class="tile rv"><div class="tlabel">Sector</div><h3>Manufacturing</h3><div class="meta">Industrial production</div></div>
-      <div class="tile rv"><div class="tlabel">Sector</div><h3>Trading</h3><div class="meta">Distribution</div></div>
-      <div class="tile rv"><div class="tlabel">Sector</div><h3>Retail</h3><div class="meta">Brands &amp; stores</div></div>
-      <div class="tile rv"><div class="tlabel">Sector</div><h3>E-commerce</h3><div class="meta">Digital retail</div></div>
-      <div class="tile rv"><div class="tlabel">Sector</div><h3>Food &amp; Beverage</h3><div class="meta">Outlets &amp; brands</div></div>
-      <div class="tile rv"><div class="tlabel">Sector</div><h3>Education</h3><div class="meta">Training &amp; learning</div></div>
+      <div class="chiprow rv">
+        <span class="chip"><b>Contracting</b><i>Across the UAE</i></span>
+        <span class="chip"><b>Manufacturing</b><i>Industrial production</i></span>
+        <span class="chip"><b>Trading</b><i>Distribution</i></span>
+        <span class="chip"><b>Retail</b><i>Brands &amp; stores</i></span>
+        <span class="chip"><b>E-commerce</b><i>Digital retail</i></span>
+        <span class="chip"><b>Food &amp; Beverage</b><i>Outlets &amp; brands</i></span>
+        <span class="chip"><b>Education</b><i>Training &amp; learning</i></span>
+      </div>
     </div>
   </div>
 </section>
@@ -622,6 +667,28 @@ if(renderer){
 };
 const kick = () => (window.requestIdleCallback || ((f)=>setTimeout(f,120)))(startScene);
 if (document.readyState === 'complete') kick(); else addEventListener('load', kick, {once:true});
+</script>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=[].slice.call(document.querySelectorAll('.sn[data-target]'));
+  if(!('IntersectionObserver' in window)||!els.length) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var el=e.target,t=parseInt(el.getAttribute('data-target'),10),suf=el.getAttribute('data-suffix')||'',st=null;
+      function step(ts){
+        if(st===null)st=ts;
+        var p=Math.min((ts-st)/1100,1),ease=1-Math.pow(1-p,3),v=Math.round(ease*t);
+        el.innerHTML=v+(suf?'<em>'+suf+'</em>':'');
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  },{threshold:.5});
+  els.forEach(function(el){io.observe(el);});
+})();
 </script>
 </body>
 </html>

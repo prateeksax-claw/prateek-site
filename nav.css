@@ -27,3 +27,9 @@
 html.menulock,html.menulock body{overflow:hidden}
 @media(max-width:820px){.mbtn{display:block}.nlinks{display:none}}
 @media (prefers-reduced-motion:reduce){.mmenu,.mlinks a,.mbtn span{transition:none}}
+
+/* cross-document view transitions (progressive enhancement) */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation-duration:.16s}
+::view-transition-new(root){animation-duration:.26s}
+@media (prefers-reduced-motion: reduce){@view-transition{navigation:none}}
