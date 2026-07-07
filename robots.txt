@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /cdn-cgi/
 
 # AI search, assistant & training crawlers, allowed for citation/visibility
 User-agent: GPTBot
