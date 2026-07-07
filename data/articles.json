@@ -2,6 +2,17 @@
   "_comment": "Single source of truth for long-form Journal articles, newest first. Edit this, then run: node build.mjs. It regenerates the article cards on the homepage and Journal page, the article URLs in sitemap.xml, and the Articles section of llms.txt. LinkedIn/partnership cards are managed separately in the HTML.",
   "articles": [
     {
+      "url": "/journal/monday-morning-preflight",
+      "title": "The Monday Morning Preflight",
+      "tag": "In a Suit · No. 3 · Jul 2026",
+      "thumb": "journal-media/monday-morning-preflight-43.svg",
+      "alt": "The Monday Morning Preflight, an essay by Prateek Saxena",
+      "excerpt": "How AI agents turn Friday's loose ends into Monday's operating rhythm. Demos are easy. Monday morning is the test.",
+      "lastmod": "2026-07-07",
+      "llmsTitle": "The Monday Morning Preflight (In a Suit, No. 3)",
+      "llmsDesc": "Essay by Prateek Saxena introducing the Monday Morning Preflight, an operator's readiness test for AI agents: can they turn Friday's loose ends into a clear Monday operating plan with live ERP data, follow-ups, KPIs and action items. Includes the five checks every business agent must pass. Third entry in the \"In a Suit\" series."
+    },
+    {
       "url": "/journal/i-dont-code-i-brief-agents",
       "title": "I Don't Code. I Brief Agents.",
       "tag": "In a Suit · No. 2 · Jul 2026",
