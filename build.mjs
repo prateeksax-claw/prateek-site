@@ -82,6 +82,17 @@ injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
 // 3: article URLs into the sitemap
 injectBetweenMarkers('sitemap.xml', articles.map(sitemapRow).join('\n'));
 
+// 3b: the homepage and Journal render the article cards, so their content
+// changes whenever this build runs — stamp their lastmod with today's date.
+{
+  const today = new Date().toISOString().slice(0, 10);
+  let sm = readFileSync('sitemap.xml', 'utf8');
+  for (const loc of [`${SITE}/`, `${SITE}/journal`]) {
+    sm = sm.replace(new RegExp(`(<loc>${loc.replaceAll('/', '\\/')}<\\/loc><lastmod>)[^<]+`), `$1${today}`);
+  }
+  writeFileSync('sitemap.xml', sm);
+}
+
 // 4: rebuild index.html from the homepage source (deployed asset paths)
 let home = readFileSync('src/home.html', 'utf8')
   .replaceAll('node_modules/@fontsource-variable/fraunces/files/fraunces-latin-full-normal.woff2', 'fonts/fraunces.woff2')
