@@ -91,3 +91,14 @@
     });
   }
 })();
+
+/* GA4 outcome events; mark these as key events in the GA4 UI */
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if (!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if (h.indexOf('mailto:') === 0) gtag('event', 'email_click', { link_url: h, from: location.pathname });
+  else if (h.indexOf('linkedin.com') > -1) gtag('event', 'linkedin_click', { from: location.pathname });
+  else if (h.indexOf('/media-kit') === 0) gtag('event', 'media_kit_click', { from: location.pathname });
+  else if (h.indexOf('#engage') > -1) gtag('event', 'cta_engage_click', { from: location.pathname });
+});

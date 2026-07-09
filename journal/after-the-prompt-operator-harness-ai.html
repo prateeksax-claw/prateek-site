@@ -21,13 +21,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>After the Prompt: AI Harness Engineering for Real Businesses</title>
-<meta name="description" content="Harness engineering turns AI agents from smart answers into reliable work: tools, memory, permissions, verification and a Self-Improvement Protocol.">
+<meta name="description" content="AI agents impress in demos and fail at work. Harness engineering fixes that: the tools, permissions, memory and checks that make agents reliable in real business.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="Prateek Saxena">
 <meta name="theme-color" content="#F3F1EA">
 <link rel="canonical" href="https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23177A6B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='13'%20fill='%23177A6B'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta property="og:type" content="article">
@@ -93,6 +93,8 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-si
 .relrow{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 4px}
 .relrow a{font-family:'Space';font-size:13px;font-weight:600;color:var(--accent-ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:10px 16px;transition:border-color .25s,transform .3s}
 .relrow a:hover{border-color:rgba(23,122,107,.4);transform:translateY(-2px)}
+.answer{margin:26px 0 4px;padding:20px 24px;border-left:3px solid var(--accent);background:rgba(23,122,107,.06);border-radius:0 12px 12px 0}
+.answer p{font-size:18px;line-height:1.6;color:var(--ink);margin:0;font-family:'Fraunces',serif}
 </style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://prateeksaxena.me/"},{"@type":"ListItem","position":2,"name":"Journal","item":"https://prateeksaxena.me/journal"},{"@type":"ListItem","position":3,"name":"After the Prompt: The Operator's Harness","item":"https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai"}]}</script>
 <link rel="stylesheet" href="/nav.css">
 </head>
@@ -108,6 +110,8 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-si
 <div class="ameta">By <b>Prateek Saxena</b> · 8 June 2026 · 12 min read · Originally published at prateeksaxena.me</div>
 </div></header>
 <div class="wrap article-body">
+<div class="answer"><p><strong>Why do AI agents need a harness?</strong> Because a model on its own can only answer. Inside a harness, the operating system of tools, permissions, memory, verification and feedback loops around it, an agent can work: use systems, check its own output, escalate risk and improve after mistakes.</p></div>
+
 <h2 class="disp">The simple version</h2>
 <p>Prompt engineering helped us talk to AI. Harness engineering is how we make AI work.</p>
 <p>The model is the brain. The harness is the body around it: tools, memory, permissions, verification, workflows, audit trails and feedback loops. But if that body is going to operate inside a real business, it needs discipline. That is where I think every serious AI agent needs something like a Self-Improvement Protocol, or SIP.</p>
@@ -230,6 +234,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--soft);font-si
 </div>
 
 <h2 class="disp">Related reading</h2>
+<p>Practical guidance on this topic is collected on the <a href="/ai-agents-for-business-operators">AI agents for business operators</a> hub.</p>
 <p>If you want the personal version of this argument, read <a href="/journal/vibe-coding-in-a-suit">Confessions of an Accidental Vibe Coder</a>, on building software by briefing AI agents from the operator's chair. For a short reference version of the core idea, see <a href="/what-is-ai-harness-engineering">What is AI harness engineering?</a> and the <a href="/definitions">definitions page</a>. More about the author is on the <a href="/about-prateek-saxena">About</a> page and in the <a href="/media-kit">media kit</a>.</p>
 <h2 class="disp">Source notes</h2>
 <ol class="src"><li>OpenAI, "Harness engineering: leveraging Codex in an agent-first world", 2026. Key reference: "Humans steer. Agents execute." URL: <a href="https://openai.com/index/harness-engineering/" target="_blank" rel="noopener">https://openai.com/index/harness-engineering/</a></li><li>Martin Fowler / Birgitta Böckeler, "Harness engineering for coding agent users", 2026. Useful framing: guides as feedforward controls, sensors as feedback controls. URL: <a href="https://martinfowler.com/articles/harness-engineering.html" target="_blank" rel="noopener">https://martinfowler.com/articles/harness-engineering.html</a></li><li>Wenbo Pan et al., "Retrospective Harness Optimization: Improving LLM Agents via Self-Preference over Trajectory Rollouts", arXiv:2606.05922. Key claim used carefully: reported SWE-Bench Pro improvement from 59 percent to 78 percent in one round. URL: <a href="https://arxiv.org/abs/2606.05922" target="_blank" rel="noopener">https://arxiv.org/abs/2606.05922</a></li><li>Hailin Zhong and Shengxin Zhu, "AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents", arXiv:2605.13357. URL: <a href="https://arxiv.org/abs/2605.13357" target="_blank" rel="noopener">https://arxiv.org/abs/2605.13357</a></li><li>Adjacent context engineering references: Andrej Karpathy, Tobi Lütke and Anthropic are used as support for the move beyond prompt engineering, not as direct endorsements of the phrase "harness engineering".</li></ol>

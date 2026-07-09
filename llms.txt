@@ -23,7 +23,6 @@ Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla G
 - Media kit: https://prateeksaxena.me/media-kit
 - Journal: https://prateeksaxena.me/journal
 - LinkedIn: https://www.linkedin.com/in/prateeksaxena-uae
-- Wikidata: https://www.wikidata.org/wiki/Q140421400
 
 ## Reference pages
 - AI agents for business operators, the topic hub - https://prateeksaxena.me/ai-agents-for-business-operators
