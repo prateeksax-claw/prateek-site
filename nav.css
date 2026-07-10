@@ -14,8 +14,8 @@
 .mbtn span:last-child{top:24px}
 .mbtn.open span:first-child{top:20px;transform:rotate(45deg)}
 .mbtn.open span:last-child{top:20px;transform:rotate(-45deg)}
-.mmenu{position:fixed;inset:0;z-index:40;background:rgba(243,241,234,.96);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);display:flex;align-items:center;opacity:0;pointer-events:none;transition:opacity .35s}
-.mmenu.open{opacity:1;pointer-events:auto}
+.mmenu{position:fixed;inset:0;z-index:40;background:rgba(243,241,234,.96);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);display:flex;align-items:center;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .35s,visibility .35s}
+.mmenu.open{opacity:1;pointer-events:auto;visibility:visible}
 .mlinks{display:flex;flex-direction:column;width:100%;padding:0 34px;margin-top:10px}
 .mlinks a{font-family:'Fraunces',serif;font-variation-settings:'opsz' 90;font-weight:430;font-size:clamp(32px,8.6vw,42px);color:var(--ink);text-decoration:none;letter-spacing:-.015em;padding:13px 0;border-bottom:1px solid var(--line2);display:flex;justify-content:space-between;align-items:baseline;opacity:0;transform:translateY(14px);transition:opacity .45s cubic-bezier(.2,.7,.2,1),transform .45s cubic-bezier(.2,.7,.2,1)}
 .mlinks a .no{font-family:'Space';font-size:13px;color:var(--accent);letter-spacing:.2em;font-weight:600}

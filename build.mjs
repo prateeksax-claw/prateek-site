@@ -117,7 +117,7 @@ writeFileSync('llms.txt', head + '## Articles\n' + articles.map(llmsRow).join('\
     <title>${escXml(a.title)}</title>
     <link>${SITE}${a.url}</link>
     <guid isPermaLink="true">${SITE}${a.url}</guid>
-    <pubDate>${rfc(a.lastmod)}</pubDate>
+    <pubDate>${rfc(a.published || a.lastmod)}</pubDate>
     <description>${escXml(a.llmsDesc)}</description>
   </item>`).join('\n');
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
@@ -126,7 +126,7 @@ writeFileSync('llms.txt', head + '## Articles\n' + articles.map(llmsRow).join('\
   <link>${SITE}/journal</link>
   <description>Essays on agentic AI, vibe coding in a suit and business operations from the UAE real economy.</description>
   <language>en</language>
-  <lastBuildDate>${rfc(articles[0].lastmod)}</lastBuildDate>
+  <lastBuildDate>${rfc(articles[0].published || articles[0].lastmod)}</lastBuildDate>
 ${items}
 </channel></rss>\n`;
   writeFileSync('feed.xml', feed);
