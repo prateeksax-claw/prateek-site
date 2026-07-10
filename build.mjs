@@ -30,13 +30,13 @@ const esc = (s) => s; // content is authored trusted copy; keep verbatim
 // --- card templates (indentation matches the surrounding grids exactly) ---
 const homeCard = (a) =>
 `      <a class="art rv" href="${a.url}">
-        <span class="thumbwrap"><img class="thumb" src="${a.thumb}" alt="${esc(a.alt)}" loading="lazy"></span>
+        <span class="thumbwrap"><img class="thumb" src="${a.thumb}" alt="${esc(a.alt)}" loading="lazy" width="1200" height="900"></span>
         <span class="tag">${esc(a.tag)}</span><h3>${esc(a.title)}</h3>
         <p>${esc(a.excerpt)}</p><span class="more">Read the essay →</span></a>`;
 
 const journalCard = (a) =>
 `    <a class="jcard rv" href="${a.url}">
-      <img class="jthumb" src="${a.thumb}" alt="${esc(a.alt)}" loading="lazy">
+      <img class="jthumb" src="${a.thumb}" alt="${esc(a.alt)}" loading="lazy" width="1200" height="900">
       <div class="jbody"><span class="jdate">${esc(a.tag)}</span><h3>${esc(a.title)}</h3>
       <p>${esc(a.excerpt)}</p><span class="jmore">Read the essay →</span></div></a>`;
 
