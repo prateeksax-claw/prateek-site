@@ -108,7 +108,9 @@ let home = readFileSync('src/home.html', 'utf8')
 // This small static homepage benefits from eliminating four blocking stylesheet
 // round trips. Keep the editable sources separate and preserve cascade order.
 const homeStyles=['home.css','nav.css','refinements.css','perspective/v1/site.css']
-  .map(file=>readFileSync(file,'utf8').replaceAll('\r\n','\n')).join('\n');
+  .map(file=>readFileSync(file,'utf8').replace(/\/\*[\s\S]*?\*\//g,'')
+    .split(/\r?\n/).map(line=>line.trim()).filter(Boolean).join(' ')
+    .replace(/\s*([{};])\s*/g,'$1')).join('\n');
 if(!home.includes('<!-- BUILD:HOME_STYLES -->'))throw new Error('Missing homepage style build marker');
 home=home.replace('<!-- BUILD:HOME_STYLES -->',`<style id="home-design">\n${homeStyles}\n</style>`);
 writeFileSync('index.html', home);

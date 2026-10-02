@@ -9,7 +9,10 @@ const html=readFileSync('index.html','utf8');
 assert.match(html,/<style id="home-design">/);
 assert.ok(!/<link[^>]*rel="stylesheet"/.test(html),'Homepage has no render-blocking stylesheet requests');
 assert.ok(Buffer.byteLength(html)<75000,'Keep the complete homepage under 75 KB before compression');
-for(const source of ['home.css','nav.css','refinements.css','perspective/v1/site.css'])assert.ok(html.includes(readFileSync(source,'utf8').replaceAll('\r\n','\n')),'Built styles match '+source);
+for(const source of ['home.css','nav.css','refinements.css','perspective/v1/site.css']){
+ const compact=readFileSync(source,'utf8').replace(/\/\*[\s\S]*?\*\//g,'').split(/\r?\n/).map(line=>line.trim()).filter(Boolean).join(' ').replace(/\s*([{};])\s*/g,'$1');
+ assert.ok(html.includes(compact),'Built styles match '+source);
+}
 const video=html.match(/<video\b[^>]*id="hero-film"[^>]*>/)[0];
 assert.ok(!/\bsrc=|\bautoplay\b|\bloop\b/.test(video),'No eager video URL, autoplay attribute or looping');
 assert.match(video,/preload="none"/);

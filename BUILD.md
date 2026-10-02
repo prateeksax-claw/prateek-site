@@ -99,3 +99,7 @@ The site owner confirmed on 2 October 2026 that the INSEAD Certificate in Global
 `journal-filters.js` combines reading format and topic filters while retaining all 32 entries in ordinary HTML. Switching format resets the topic, reports counts, and handles empty combinations. Without JavaScript all content remains visible. The original experience and education sections are unchanged; both are now reachable through every page's navigation.
 
 The optional native disclosure at `/frameworks#preflight-tool` contains a five-check worksheet based on the published essay. `preflight.js` updates the reviewed count and prints a worksheet with text values expanded. It never sends or persists form entries, does not attach analytics to input, and the complete tool is masked from Clarity recording. Completion is explicitly a discussion aid, not a certification of workflow readiness. The owner-authored case-study article remains pending; no personal outcomes were invented.
+
+## Featured brand stories
+
+The six photo-led cards in `src/home.html` at `#work` are selected for brand prominence, recency and the owner’s event photography, not a traffic ranking. Desktop uses two rows of three; narrower screens use two or one columns. Brand marks follow descriptions; the Birla White card uses Aditya Birla Group. Existing event photos have full-frame WebP copies for delivery, with crops handled in CSS and original files retained. Home CSS comments and boundary whitespace are removed during the build to keep the complete HTML below the existing 75 KB budget.
