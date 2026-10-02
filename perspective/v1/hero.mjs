@@ -57,7 +57,6 @@ replay.addEventListener('click',()=>moveTo(0,true,{restart:true}));
 skip.addEventListener('click',()=>moveTo(END_FRAME,false));
 document.querySelector('#retry-cube').addEventListener('click',()=>{loadPromise=null;video.removeAttribute('src');video.load();moveTo(0,true,{restart:true});});
 faceButtons.forEach(b=>b.addEventListener('click',()=>inspect(Number(b.dataset.face))));
-document.querySelectorAll('.meaning-card [data-face]').forEach(b=>b.addEventListener('click',()=>{inspect(Number(b.dataset.face));document.querySelector('#cube-title').scrollIntoView({behavior:'instant',block:'center'});faceButtons[Number(b.dataset.face)].focus({preventScroll:true});}));
 seek.addEventListener('input',()=>{const target=Number(seek.value);pause();sync(target);});
 seek.addEventListener('change',()=>moveTo(Number(seek.value),false));
 video.addEventListener('timeupdate',()=>{if(mode==='playing')sync(video.currentTime);});

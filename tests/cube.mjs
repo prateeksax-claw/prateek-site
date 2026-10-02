@@ -26,8 +26,8 @@ assert.ok(END_FRAME<DURATION&&DURATION-END_FRAME<.04);
 for(const [index,face] of FACES.entries()){
  assert.equal(chapterAt(face.seek).id,face.id);
  assert.equal(chapterAt(face.start).index,index);
- assert.match(html,new RegExp('<h3>'+face.name+'</h3>'),'Meaning available without animation or JavaScript');
- assert.ok(html.includes(face.detail));
+ assert.match(html,new RegExp('<dt>'+face.name+'</dt>'),'Meaning available without animation or JavaScript');
+ assert.ok(html.includes(face.line));
  assert.ok(existsSync(`.pages-output/perspective/v1/${face.id}.webp`));
 }
 for(const file of ['hero.mjs','loading-policy.mjs','cube-timeline.mjs','site.css','opening.webp','ending.webp','cube-480.mp4','cube-768.mp4'])assert.ok(existsSync(`.pages-output/perspective/v1/${file}`),`Published: ${file}`);

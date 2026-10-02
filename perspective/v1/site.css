@@ -215,3 +215,14 @@
 .perspective-design .object-window img{max-width:none}.perspective-design .copy{min-width:0}
 @media(max-width:800px){.perspective-design .composition{grid-template-columns:minmax(0,1fr)}.perspective-design .cube-caption{min-height:118px}}
 @media(max-width:350px){.perspective-design h1{font-size:42px}.perspective-design .proof strong{font-size:15px}.perspective-design .proof span{font-size:11px}}
+.perspective-design .cube-explanation{margin:0 6px;color:#bfc5ba;font-size:13px}
+.perspective-design .cube-explanation summary{min-height:44px;padding:12px 4px;text-align:center;cursor:pointer;color:#d8c7a9;list-style:none;text-decoration:underline;text-underline-offset:4px}
+.perspective-design .cube-explanation summary::-webkit-details-marker{display:none}
+.perspective-design .cube-explanation summary::after{content:' +';display:inline-block;margin-left:5px;text-decoration:none}
+.perspective-design .cube-explanation[open] summary::after{content:' −'}
+.perspective-design .cube-explanation-copy{padding:15px 18px 18px;border:1px solid #ffffff20;border-radius:4px}
+.perspective-design .cube-explanation-copy>p{line-height:1.6;margin:0 0 14px}
+.perspective-design .cube-explanation dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;line-height:1.5}
+.perspective-design .cube-explanation dt{color:#e5d2b1;font-weight:500}
+.perspective-design .cube-explanation dd{margin:0}
+@media(max-width:350px){.perspective-design .cube-explanation-copy{padding:14px 12px}.perspective-design .cube-explanation dl{gap:8px 12px}}
