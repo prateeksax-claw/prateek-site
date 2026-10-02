@@ -127,27 +127,39 @@ body a{color:#315346}.disp em,.series em{color:#75603e}.nav{border-color:#d5d3c9
 .answer,.article-body .reading-guide{background:#ebe8df;border-color:#d5d3c9}.answer{border-left-color:#a18b65}.reading-guide .guide-label,.kicker,.ref,.fwlinks a{color:#75603e}.framework-steps li{background:#faf9f5;border-color:#d5d3c9}.ftab{min-height:44px}.ftab.on,.ftab[aria-pressed=true]{background:#202a25;border-color:#202a25;color:#fff}.consent{background:#202a25}.consent a{color:#e7ddc7}.consent button{border-radius:4px}.filter-label{font:500 12px 'Space',sans-serif;display:block;margin:18px 0 8px;color:#566057}.format-tabs{margin-bottom:20px}.filter-status{font-size:14px;color:#566057;margin:12px 0}.filter-empty{padding:28px;background:#ebe8df;border:1px solid #d5d3c9}.journal-index .grid{gap:24px}.journal-index header.h{padding-top:55px}.journal-index .sub{max-width:65ch}.journal-index .jcard[hidden]{display:none}.source-note{font-size:13px;color:#566057;margin-top:12px}.framework-tool-link{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border:1px solid #b8ab91;border-radius:4px;font:500 13px 'Space',sans-serif;text-decoration:none;margin:12px 0 22px}
 @media(min-width:600px) and (max-width:1000px){.journal-index .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:599px){.journal-index .grid{grid-template-columns:1fr}.jbody{padding:22px}.jcard h3{font-size:24px}}@media(max-width:1100px){.nav .nlinks{display:none}.nav .mbtn{display:block}}
 
+/* Match the homepage frame while keeping long-form reading calm. */
+.nav{background:#090e12;border-color:#343b3b;backdrop-filter:none}.nav .brand,.nav .nlinks a{color:#f3f1ea}.nav .nlinks a:hover,.nav .nlinks a[aria-current=page]{color:#dcc49b}.nav .dot{background:#c3a778}.nav .nbtn{background:transparent;border:1px solid #8e7a59}.nav .nbtn:hover{background:#28362f}.nav .mbtn{border-color:#80735c;border-radius:4px}.nav .mbtn span{background:#f3f1ea}.nav a:focus-visible,.nav button:focus-visible{outline-color:#dcc49b}
+header.h{padding:38px 0 34px}header.h .wrap{max-width:880px}header.h h1{font-size:clamp(38px,5.4vw,64px);line-height:1.08;letter-spacing:-.035em;text-wrap:balance;max-width:18ch}header.h .deck{font-family:'Hanken',system-ui,sans-serif;font-style:normal;font-size:clamp(18px,2vw,21px);line-height:1.6;max-width:62ch;margin-top:22px}.k,.kicker{color:#75603e;letter-spacing:.15em;font-size:11px}header.h .ameta{font-size:12px;line-height:1.7;margin-top:25px;padding-top:18px;border-color:#cec9bc}.ameta a{color:inherit;text-underline-offset:4px}
+.breadcrumbs{font:12px/1.5 'Space',sans-serif;margin-bottom:32px;color:#5b655c}.breadcrumbs ol{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;list-style:none;margin:0;padding:0}.breadcrumbs li{display:flex;align-items:center;gap:10px}.breadcrumbs li+li:before{content:'/';color:#75603e}.breadcrumbs a{display:inline-flex;align-items:center;min-height:32px;color:#315346;text-decoration:none}.breadcrumbs a:hover{text-decoration:underline}.breadcrumbs [aria-current=page]{max-width:55ch}
+.article-body{max-width:760px;padding-bottom:58px}.article-body>h2{margin-top:52px;padding-top:25px;border-top:1px solid #d5d3c9;line-height:1.2;text-wrap:balance}.article-body p{line-height:1.78}.article-body a{text-decoration-thickness:1px;text-underline-offset:4px}.article-body .reading-guide,.answer{border-left:3px solid #a18b65}.article-body .reading-guide{margin-top:10px}.reading-guide summary::after{content:'+';margin-left:auto;font-family:'Space',sans-serif}.reading-guide details[open]>summary::after{content:'−'}.article-body .reading-guide .guide-label{font-size:11px!important;margin-bottom:10px!important;letter-spacing:.12em}.article-body .reading-guide ol{margin-left:0}.article-body .reading-guide li{font:14px/1.5 'Hanken',sans-serif;margin:8px 0}
+.page-map{border-top:1px solid #d5d3c9;border-bottom:1px solid #d5d3c9;margin:0 auto 30px;padding:0 24px;max-width:832px}.page-map summary{min-height:56px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font:500 13px 'Space',sans-serif;color:#315346}.page-map summary:after{content:'+'}.page-map[open] summary:after{content:'−'}.page-map ol{columns:2;column-gap:32px;padding:0 0 18px 20px;list-style:decimal-leading-zero}.page-map li{break-inside:avoid;font-size:15px;line-height:1.5;padding:4px 0 4px 6px}.page-map a{display:inline-block;padding:5px 0;text-underline-offset:4px}.article-body .facts{margin-left:0}.article-body .aportrait{margin-top:5px}.article-body .quote{border-color:#a18b65}.article-body .define{border-left-color:#a18b65}.article-body .nextrow a,.article-body .relrow a{min-height:44px;align-content:center}
+footer{background:#090e12;color:#c4cbc5;border-top:1px solid #343b3b;margin-top:0;padding:42px 0}footer .wrap{max-width:1100px}footer a,footer .frow a{color:#eee8dc}footer a:hover,footer .frow a:hover{color:#dcc49b}footer .disc{color:#b9c1ba;line-height:1.7}footer .privacy-links{margin-top:16px;padding-top:14px;border-top:1px solid #343b3b}footer a:focus-visible,footer button:focus-visible{outline-color:#dcc49b}.privacy-copy .breadcrumbs{margin-bottom:24px}.journal-index header.h{padding-top:38px}.journal-index header.h .wrap{max-width:1200px}.journal-index header.h h1{font-size:clamp(42px,6vw,80px)}
+@media(max-width:640px){header.h{padding:24px 0 25px}.breadcrumbs{margin-bottom:24px}.breadcrumbs [aria-current=page]{max-width:28ch}header.h h1{font-size:38px}.page-map{margin:0 24px 24px;padding:0}.page-map ol{columns:1}.article-body>h2{margin-top:38px;padding-top:22px}.article-body .aportrait{float:none;width:100%;max-width:280px;margin:0 0 26px}.article-body p{font-size:18px}.journal-index header.h{padding-top:24px}footer{padding:30px 0}}
+@media print{header.h{padding-top:0}.breadcrumbs,.page-map,footer{display:none}.article-body{max-width:none;padding-bottom:0}}
+
 </style>
 <!-- BUILD:READING_STYLES:END --><noscript><style>.nav{flex-wrap:wrap}.nav .nlinks{display:flex;flex-wrap:wrap;width:100%;gap:8px 20px}.mbtn{display:none!important}</style></noscript></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<nav aria-label="Primary" class="nav" id="nav"><a aria-label="Prateek Saxena home" class="brand" href="/"><span class="dot"></span>Prateek Saxena</a><div class="nlinks"><a href="/start-here">Start here</a><a href="/#experience">Experience</a><a href="/#education">Education</a><a href="/journal">Journal</a><a href="/frameworks">Frameworks</a><a href="/about-prateek-saxena">About</a><a href="/media-kit">Media kit</a></div><div class="nacts"><a class="nbtn" href="/#engage">Get in touch</a><button aria-controls="mmenu" aria-expanded="false" aria-label="Open menu" class="mbtn" id="menuBtn" type="button"><span></span><span></span></button></div></nav>
+<nav aria-label="Primary" class="nav" id="nav"><a aria-label="Prateek Saxena home" class="brand" href="/"><span class="dot"></span>Prateek Saxena</a><div class="nlinks"><a href="/start-here">Start here</a><a href="/#experience">Experience</a><a href="/#education">Education</a><a href="/journal">Journal</a><a href="/frameworks">Frameworks</a><a href="/about-prateek-saxena" aria-current="page">About</a><a href="/media-kit">Media kit</a></div><div class="nacts"><a class="nbtn" href="/#engage">Get in touch</a><button aria-controls="mmenu" aria-expanded="false" aria-label="Open menu" class="mbtn" id="menuBtn" type="button"><span></span><span></span></button></div></nav>
 <dialog aria-hidden="true" aria-labelledby="menu-heading" aria-modal="true" class="mmenu" id="mmenu" inert=""><button class="menu-close" data-menu-close="" type="button">Close <span aria-hidden="true">×</span></button><nav aria-label="Menu" class="mlinks"><a href="/start-here"><span>Start here</span><span aria-hidden="true" class="no">→</span></a><a href="/#experience"><span>Experience</span><span aria-hidden="true" class="no">→</span></a><a href="/#education"><span>Education</span><span aria-hidden="true" class="no">→</span></a><a href="/journal"><span>Journal</span><span aria-hidden="true" class="no">→</span></a><a href="/frameworks"><span>Frameworks</span><span aria-hidden="true" class="no">→</span></a><a href="/about-prateek-saxena"><span>About</span><span aria-hidden="true" class="no">→</span></a><a href="/media-kit"><span>Media kit</span><span aria-hidden="true" class="no">→</span></a><a href="/#engage"><span>Get in touch</span><span aria-hidden="true" class="no">→</span></a></nav><h2 class="sr-only" id="menu-heading">Site navigation</h2></dialog>
 <main id="main" tabindex="-1"><article>
 <header class="h"><div class="wrap">
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">About</span></li></ol></nav>
 <div class="k">About</div>
 <h1>About Prateek Saxena</h1>
 <p class="deck">Abu Dhabi-based business operator, builder and strategist, working where strategy meets execution across the UAE real economy.</p>
 </div></header>
+<details class="page-map"><summary>On this page</summary><ol><li><a href="#guide-short-bio">Short bio</a></li><li><a href="#guide-what-prateek-works-on">What Prateek works on</a></li><li><a href="#guide-career-path">Career path</a></li><li><a href="#guide-education">Education</a></li><li><a href="#guide-sectors">Sectors</a></li><li><a href="#guide-ai-and-technology">AI and technology</a></li><li><a href="#guide-writing">Writing</a></li><li><a href="#guide-quick-facts">Quick facts</a></li><li><a href="#guide-contact">Contact</a></li><li><a href="#guide-frequently-asked-questions">Frequently asked questions</a></li></ol></details>
 <div class="wrap article-body">
 <figure class="aportrait"><img alt="Prateek Saxena, Group General Manager of Al Zaabi Group, Abu Dhabi" height="700" src="/portrait.jpg" width="700"/>
 <figcaption>Prateek Saxena, Abu Dhabi. Approved photos and bios are in the <a href="/media-kit">media kit</a>.</figcaption></figure>
 <div class="answer"><p><strong>Who is Prateek Saxena?</strong> Prateek Saxena is an Abu Dhabi-based business operator, builder and strategist. He serves as Group General Manager of Al Zaabi Group and works across the UAE's real economy, including healthcare, automotive, real estate, manufacturing, trading, e-commerce and education.</p></div>
 <p>This page refers to Prateek Saxena, the Abu Dhabi-based Group General Manager of Al Zaabi Group, and not to other public figures who share the name.</p>
 <p>His work sits between strategy and execution. The focus is practical: turn business direction into operating rhythm, financial discipline, technology adoption and repeatable scale.</p>
-<h2 class="disp">Short bio</h2>
+<h2 class="disp" id="guide-short-bio">Short bio</h2>
 <p>Prateek Saxena is a business operator based in Abu Dhabi, UAE. He is Group General Manager of Al Zaabi Group, a diversified UAE business group with interests across multiple real-economy sectors. A Purdue-trained industrial engineer with INSEAD executive education, Prateek writes about business operations, leadership, finance, technology and practical AI adoption in operating companies.</p>
-<h2 class="disp">What Prateek works on</h2>
+<h2 class="disp" id="guide-what-prateek-works-on">What Prateek works on</h2>
 <p>Prateek works on the operating layer of business: how companies actually run, scale and improve. His work includes:</p>
 <ul>
 <li>business strategy and execution</li>
@@ -158,14 +170,14 @@ body a{color:#315346}.disp em,.series em{color:#75603e}.nav{border-color:#d5d3c9
 <li>practical ways to improve decision making across teams</li>
 </ul>
 <p>The recurring question is simple: how does ambition become execution? A strategy only matters if teams can turn it into routines, numbers, decisions and follow-through.</p>
-<h2 class="disp">Career path</h2>
+<h2 class="disp" id="guide-career-path">Career path</h2>
 <p>Prateek began his career close to the operating floor, with early roles at John Deere and Bose Corporation in the United States. Those roles shaped his engineering-led view of work: understand the system, measure what matters, remove friction and improve the process.</p>
 <p>He later worked in corporate strategy at Delma Emirates Group before joining Al Zaabi Group in Abu Dhabi. At Al Zaabi Group, his roles have included Operations and Strategy Manager, Group Deputy General Manager and Group General Manager.</p>
 <p>That path, from manufacturing and operations into diversified group leadership, shapes the way he writes and works. The point of strategy is not the document. The point is what changes in the business after the document is written.</p>
-<h2 class="disp">Education</h2>
+<h2 class="disp" id="guide-education">Education</h2>
 <p>Prateek studied Industrial Engineering at Purdue University and completed the Certificate in Global Management at INSEAD, alongside executive education on transforming businesses with AI. His studies toward the Certified Management Accountant (CMA) credential with the Institute of Management Accountants are in progress.</p>
 <p>The combination is practical: engineering discipline, financial rigour and a management lens for scaling businesses.</p>
-<h2 class="disp">Sectors</h2>
+<h2 class="disp" id="guide-sectors">Sectors</h2>
 <p>Prateek's work spans the UAE real economy, including:</p>
 <ul>
 <li>healthcare</li>
@@ -181,10 +193,10 @@ body a{color:#315346}.disp em,.series em{color:#75603e}.nav{border-color:#d5d3c9
 <li>education</li>
 </ul>
 <p>The common thread is operations. Every sector has its own economics, but every operating business still needs clear ownership, reliable reporting, disciplined execution and leaders who can connect the numbers to the work.</p>
-<h2 class="disp">AI and technology</h2>
+<h2 class="disp" id="guide-ai-and-technology">AI and technology</h2>
 <p>Prateek writes about AI from an operator's point of view, not as a slogan. His current writing looks at how real businesses can use AI safely and usefully. The model is only one part of the system. Businesses also need context, tools, permissions, verification, memory, audit trails and human judgment. He refers to this operating layer as harness engineering: the system around an AI model that lets it act inside real work.</p>
 <p>He also writes about Self-Improvement Protocols, or SIPs, for AI agents. A SIP is a disciplined loop for learning from outcomes, correcting mistakes and improving the system without removing human oversight. You can read the full argument in <a href="/journal/after-the-prompt-operator-harness-ai">After the Prompt: The Operator's Harness</a>.</p>
-<h2 class="disp">Writing</h2>
+<h2 class="disp" id="guide-writing">Writing</h2>
 <p>Prateek writes on:</p>
 <ul>
 <li>business operations</li>
@@ -196,7 +208,7 @@ body a{color:#315346}.disp em,.series em{color:#75603e}.nav{border-color:#d5d3c9
 <li>finance and management discipline</li>
 </ul>
 <p>Selected articles: <a href="/journal/vibe-coding-in-a-suit">Confessions of an Accidental Vibe Coder</a>, on vibe coding in a suit, and <a href="/journal/after-the-prompt-operator-harness-ai">After the Prompt: The Operator's Harness</a>. More on the <a href="/journal">Journal</a>, and key terms defined on the <a href="/definitions">definitions page</a>.</p>
-<h2 class="disp">Quick facts</h2>
+<h2 class="disp" id="guide-quick-facts">Quick facts</h2>
 <ul class="facts">
 <li><b>Name</b> Prateek Saxena</li>
 <li><b>Location</b> Abu Dhabi, United Arab Emirates</li>
@@ -206,9 +218,9 @@ body a{color:#315346}.disp em,.series em{color:#75603e}.nav{border-color:#d5d3c9
 <li><b>Website</b> https://prateeksaxena.me/</li>
 <li><b>LinkedIn</b> https://www.linkedin.com/in/prateeksaxena-uae</li>
 </ul>
-<h2 class="disp">Contact</h2>
+<h2 class="disp" id="guide-contact">Contact</h2>
 <p>For advisory, speaking, board or business conversations, use the contact route on the <a href="/">homepage</a> or connect through <a href="https://www.linkedin.com/in/prateeksaxena-uae" rel="me">LinkedIn</a>.</p>
-<h2 class="disp">Frequently asked questions</h2>
+<h2 class="disp" id="guide-frequently-asked-questions">Frequently asked questions</h2>
 <h3>Who is Prateek Saxena?</h3>
 <p>Prateek Saxena is an Abu Dhabi-based business operator, builder and strategist. He serves as Group General Manager of Al Zaabi Group and works across multiple sectors of the UAE real economy.</p>
 <h3>What is Prateek Saxena known for?</h3>

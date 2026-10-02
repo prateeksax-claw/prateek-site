@@ -28,7 +28,7 @@
 .perspective-design .role strong{color:#c3c9bf;font-weight:400}
 .perspective-design .object{position:relative;align-self:stretch;margin:0 -42px 0 3px;display:flex;flex-direction:column;justify-content:center;min-width:0}
 .perspective-design .object-meta{position:absolute;z-index:2;left:70px;top:12px;right:16px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#a5a38f;pointer-events:none}
-.perspective-design .object-meta:after{content:'01 — 06';color:#d0b990}
+.perspective-design .object-meta:after{content:'01 to 06';color:#d0b990}
 .perspective-design .object-window{position:relative;height:480px;isolation:isolate;overflow:hidden;background:var(--bg)}
 .perspective-design .object-window img,.perspective-design .object-window video{position:absolute;width:100%;height:116%;left:0;top:-6%;mix-blend-mode:lighten;object-fit:cover;object-position:50% 50%}
 .perspective-design .object-window video{visibility:hidden}
