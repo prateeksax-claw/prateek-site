@@ -36,6 +36,7 @@ jobs:
           node build.mjs
           node tests/analytics.mjs
           node tests/site.mjs
+          node tests/cube.mjs
 
       - name: Prevent preview indexing
         if: github.ref_name != 'master'

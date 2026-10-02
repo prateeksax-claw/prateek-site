@@ -11,8 +11,8 @@ if(existsSync(output)) {
   rmSync(output,{recursive:true});
 }
 mkdirSync(output);
-const folders=new Set(['fonts','logos','journal-media','journal']);
-const extensions=new Set(['.html','.css','.js','.png','.jpg','.jpeg','.webp','.svg','.ico','.woff2']);
+const folders=new Set(['fonts','logos','journal-media','journal','perspective']);
+const extensions=new Set(['.html','.css','.js','.png','.jpg','.jpeg','.webp','.svg','.ico','.woff2','.mp4','.mjs']);
 const named=new Set(['_headers','_redirects','robots.txt','llms.txt','sitemap.xml','feed.xml','manifest.json','7e4a4aded28b22d590da634a8050a22c.txt','77754d1da1ad06f524236bf31f988c96.txt']);
 const unused=new Set(['lenis.min.js','three.core.min.js','three.module.min.js']);
 let count=0;
@@ -26,7 +26,7 @@ function copyFolder(source,destination){
 }
 for(const entry of readdirSync(root,{withFileTypes:true})){
   if(entry.isDirectory()&&folders.has(entry.name)) copyFolder(join(root,entry.name),join(output,entry.name));
-  else if(entry.isFile()&&!unused.has(entry.name)&&(extensions.has(extname(entry.name))||named.has(entry.name))) {
+  else if(entry.isFile()&&!unused.has(entry.name)&&((extensions.has(extname(entry.name))&&extname(entry.name)!=='.mjs')||named.has(entry.name))) {
     copyFileSync(join(root,entry.name),join(output,entry.name));count++;
   }
 }

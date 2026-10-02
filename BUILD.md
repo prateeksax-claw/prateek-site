@@ -66,7 +66,7 @@ Workers-style `.assetsignore` file in the verified October 2026 preview.
 
 ## Validation and release
 
-Run `node build.mjs`, `node tests/analytics.mjs`, and `node tests/site.mjs`. These commands have no third-party runtime dependencies. The site checks also prepare and validate `.pages-output`; `node prepare-deploy.mjs` can regenerate it independently. GitHub Actions runs the same checks before deploying that public folder. An unchanged build preserves the sitemap freshness dates.
+Run `node build.mjs`, `node tests/analytics.mjs`, `node tests/site.mjs`, and `node tests/cube.mjs`, in that order. These commands have no third-party runtime dependencies. The site checks also prepare and validate `.pages-output`; `node prepare-deploy.mjs` can regenerate it independently. GitHub Actions runs the same checks before deploying that public folder. An unchanged build preserves the sitemap freshness dates.
 
 Push `dev` for the Cloudflare preview at `https://dev.prateeksaxena.pages.dev`. The workflow adds `X-Robots-Tag: noindex, nofollow` to preview responses. Production publishes only from `master` (mapped to Cloudflare's `main` production branch). Do not copy local audit reports or private analytics into the repository.
 
@@ -74,6 +74,16 @@ Push `dev` for the Cloudflare preview at `https://dev.prateeksaxena.pages.dev`. 
 
 The 404 page uses the shared consent and navigation layer and is included in site validation. Consent preferences show the saved choice and restore focus to the opening control. On narrow screens, Frameworks renders equivalent HTML steps instead of shrinking diagram text. Copy-email intent is `email_copy`; it is not a confirmed enquiry. Long-lived fonts, logos and portrait assets now revalidate daily; use a new filename or URL version when replacing a previously immutable asset.
 
-The owner will write the evidence-based case-study article. Do not infer personal responsibility or quantitative outcomes from group partnership announcements. The signature cube remains a separate creative asset awaiting an explicitly reviewed integration; this release does not replace its approved images.
+The owner will write the evidence-based case-study article. Do not infer personal responsibility or quantitative outcomes from group partnership announcements.
+
+## Approved perspective hero
+
+The approved R9 cube is integrated into `src/home.html`. `perspective/v1/` contains the exact approved films and face stills, scoped styles, playback controller and a pure loading-policy module. Do not redraw, recolor or replace the approved face artwork. Media is immutable: future media revisions need a new versioned directory. Styles and module files revalidate normally.
+
+The opening WebP (60 KB) has explicit dimensions and high fetch priority. Video has no initial source, no preload and no loop. Desktop autoplay requires page load, decoded opening image, settled fonts, a 750 ms delay and an idle callback. It additionally requires a visible cube, visible document, viewport over 900 px, fine pointer, no reduced-motion preference, no data-saving preference and no known 3G-or-slower connection. Other visitors can explicitly play. Phones at 600 px or below use the 1.64 MB film; larger screens use the 4.07 MB film. Playback pauses offscreen and when the tab is hidden. Face selection uses stills without requesting video. End, replay, scrubber and face captions use the same 30-second timeline.
+
+Six meanings, the biography, work and journal remain ordinary HTML. The cube controller has no dependency on navigation, consent, contact links or search metadata. JavaScript unavailable: still artwork and all content remain readable, with inactive animation controls hidden. There are no extra animation libraries or third-party media players.
+
+Local browser measurements are development evidence, not a production Core Web Vitals pass. Validate the hosted release and monitor real-user field data before claiming ranking or performance outcomes.
 
 The site owner confirmed on 2 October 2026 that the INSEAD Certificate in Global Management is completed and CMA studies are in progress. Before production, review the privacy notice against account configuration and validate the enquiry event in GA4. `email_click` can be treated as contact intent; confirmed and qualified enquiries require separate evidence. Public outcome claims must be supported, not inferred from partnership announcements.

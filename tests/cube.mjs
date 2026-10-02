@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import {readFileSync,statSync,existsSync} from 'node:fs';
+import {allowAutoplay} from '../perspective/v1/loading-policy.mjs';
+import {FACES,chapterAt,DURATION,END_FRAME} from '../perspective/v1/cube-timeline.mjs';
+const desktop={contentReady:true,inView:true,hidden:false,width:1440,finePointer:true,reduced:false,saveData:false,effectiveType:'4g'};
+assert.equal(allowAutoplay(desktop),true);
+for(const override of [{contentReady:false},{inView:false},{hidden:true},{width:390},{width:900},{finePointer:false},{reduced:true},{saveData:true},{effectiveType:'3g'},{effectiveType:'2g'},{effectiveType:'slow-2g'}])assert.equal(allowAutoplay({...desktop,...override}),false,JSON.stringify(override));
+const html=readFileSync('index.html','utf8');
+const video=html.match(/<video\b[^>]*id="hero-film"[^>]*>/)[0];
+assert.ok(!/\bsrc=|\bautoplay\b|\bloop\b/.test(video),'No eager video URL, autoplay attribute or looping');
+assert.match(video,/preload="none"/);
+assert.match(html,/<img[^>]*id="cube-poster"[^>]*fetchpriority="high"[^>]*width="768"[^>]*height="768"/);
+assert.match(html,/<h1 id="hero-title">Different sides\./);
+assert.match(html,/<link href="https:\/\/prateeksaxena.me\/" rel="canonical"/);
+assert.match(html,/name="robots"/);
+assert.ok(!/<meta[^>]*noindex/.test(html),'Production HTML remains indexable');
+assert.match(html,/"@type": "ProfilePage"/);
+assert.match(html,/"@type": "Person"/);
+assert.equal(chapterAt(0).id,'solve');assert.equal(chapterAt(7).id,'solved');
+assert.equal(chapterAt(26).id,'complete');assert.equal(chapterAt(DURATION).id,'complete');
+assert.ok(END_FRAME<DURATION&&DURATION-END_FRAME<.04);
+for(const [index,face] of FACES.entries()){
+ assert.equal(chapterAt(face.seek).id,face.id);
+ assert.equal(chapterAt(face.start).index,index);
+ assert.match(html,new RegExp('<h3>'+face.name+'</h3>'),'Meaning available without animation or JavaScript');
+ assert.ok(html.includes(face.detail));
+ assert.ok(existsSync(`.pages-output/perspective/v1/${face.id}.webp`));
+}
+for(const file of ['hero.mjs','loading-policy.mjs','cube-timeline.mjs','site.css','opening.webp','ending.webp','cube-480.mp4','cube-768.mp4'])assert.ok(existsSync(`.pages-output/perspective/v1/${file}`),`Published: ${file}`);
+assert.ok(statSync('perspective/v1/opening.webp').size<70000);
+assert.ok(statSync('perspective/v1/cube-480.mp4').size<1700000);
+assert.ok(statSync('perspective/v1/cube-768.mp4').size<4200000);
+assert.ok(!existsSync('.pages-output/build.mjs'));
+console.log('Cube loading policy, timeline, crawlable content, asset budgets and deployment checks passed.');
