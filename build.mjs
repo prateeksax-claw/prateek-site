@@ -27,20 +27,22 @@ const previousHome = readFileSync('index.html', 'utf8');
 const previousJournal = readFileSync('journal.html', 'utf8');
 
 const { articles } = JSON.parse(readFileSync('data/articles.json', 'utf8'));
+// Display ranking is a reviewed snapshot; preserve chronological source order for RSS.
+const rankedArticles = [...articles].sort((a, b) => (a.readerRank ?? Infinity) - (b.readerRank ?? Infinity));
 
 const esc = (s) => s; // content is authored trusted copy; keep verbatim
 
 // --- card templates (indentation matches the surrounding grids exactly) ---
 const homeCard = (a, i) =>
 `      <article><span class="essay-index">${String(i + 1).padStart(2, '0')}</span>
-        <div><p class="eyebrow">${esc(a.tag)}</p><h3><a href="${a.url}">${esc(a.title)}</a></h3>
+        <div><p class="eyebrow">${esc(a.featured ? 'Featured · Most read' : a.tag)}</p><h3><a href="${a.url}">${esc(a.displayTitle || a.title)}</a></h3>
         <p>${esc(a.excerpt)}</p></div>
-        <a class="essay-open" href="${a.url}" aria-label="Read ${a.title.replaceAll('&', '&amp;').replaceAll('"', '&quot;')}">↗</a></article>`;
+        <a class="essay-open" href="${a.url}" tabindex="-1" aria-hidden="true">↗</a></article>`;
 
 const journalCard = (a) =>
 `    <a class="jcard rv" href="${a.url}">
       <img class="jthumb" src="${a.thumb}" alt="${esc(a.alt)}" loading="lazy" width="1200" height="900">
-      <div class="jbody"><span class="jdate">${esc(a.tag)}</span><h3>${esc(a.title)}</h3>
+      <div class="jbody"><span class="jdate">${esc(a.featured ? 'Featured · Most read · Jun 2026' : a.tag)}</span><h3>${esc(a.displayTitle || a.title)}</h3>
       <p>${esc(a.excerpt)}</p><span class="jmore">Read the essay →</span></div></a>`;
 
 const sitemapRow = (a) =>
@@ -63,8 +65,8 @@ function injectBetweenMarkers(file, body, m1 = M1, m2 = M2) {
 }
 
 // 1 + 2: article cards into the homepage source and the Journal page
-injectBetweenMarkers('src/home.html', articles.filter(a => a.homeFeature !== false).slice(0, 3).map(homeCard).join('\n'));
-injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
+injectBetweenMarkers('src/home.html', rankedArticles.filter(a => a.homeFeature !== false).slice(0, 3).map(homeCard).join('\n'));
+injectBetweenMarkers('journal.html', rankedArticles.map(journalCard).join('\n'));
 
 // 2b: regenerate the Journal ItemList schema from the cards actually on the page,
 // so it can never go stale again (it previously omitted the articles).

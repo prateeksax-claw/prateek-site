@@ -69,3 +69,5 @@
 @media(max-width:700px){.work-content h3{min-height:0}}
 
 .work-card-link{display:flex;flex:1;flex-direction:column;text-decoration:none;color:inherit}.work-card-link:hover h3{text-decoration:underline;text-underline-offset:4px}
+
+.essay-list article:first-child{border-top:2px solid #9a8156}

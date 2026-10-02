@@ -61,7 +61,7 @@ Workers-style `.assetsignore` file in the verified October 2026 preview.
 - `analytics.js` loads GA4 and Clarity only on the production hostname after optional analytics are accepted. Local and Cloudflare preview hosts never send production visits. Existing custom event names remain unchanged; `engagement_type` distinguishes advisory, speaking and board email links. An email click is an intent signal, not a confirmed lead.
 - `/privacy` and the footer preferences control explain and manage that choice. Consent changes reduce observable traffic compared with the previous unconditional tracking, so annotate the eventual production release in reporting.
 - The home page uses `home.css`. Other page improvements live in `refinements.css`.
-- The homepage displays the first three eligible entries from `data/articles.json`. Set `homeFeature: false` to omit a featured elsewhere article from that selection. Journal, feed and sitemap still include every entry.
+- The homepage displays the three highest-ranked eligible entries from `data/articles.json`. `readerRank` controls homepage and Journal essay order, reviewed against GA4 page views (4 September–1 October 2026 for the current snapshot); refresh it after reviewing a new reporting window. `featured` adds a most-read label and `displayTitle` can show a signature phrase while preserving the full article title. Keep the source array chronological for RSS. Set `homeFeature: false` to omit a featured elsewhere article from that selection. Journal, feed and sitemap still include every entry.
 - Keep the cache version on `ux.js` and `nav.css` references current when changing the shared layer, to bypass earlier immutable caches.
 
 ## Validation and release
