@@ -6,6 +6,10 @@ const desktop={contentReady:true,inView:true,hidden:false,width:1440,finePointer
 assert.equal(allowAutoplay(desktop),true);
 for(const override of [{contentReady:false},{inView:false},{hidden:true},{width:390},{width:900},{finePointer:false},{reduced:true},{saveData:true},{effectiveType:'3g'},{effectiveType:'2g'},{effectiveType:'slow-2g'}])assert.equal(allowAutoplay({...desktop,...override}),false,JSON.stringify(override));
 const html=readFileSync('index.html','utf8');
+assert.match(html,/<style id="home-design">/);
+assert.ok(!/<link[^>]*rel="stylesheet"/.test(html),'Homepage has no render-blocking stylesheet requests');
+assert.ok(Buffer.byteLength(html)<75000,'Keep the complete homepage under 75 KB before compression');
+for(const source of ['home.css','nav.css','refinements.css','perspective/v1/site.css'])assert.ok(html.includes(readFileSync(source,'utf8').replaceAll('\r\n','\n')),'Built styles match '+source);
 const video=html.match(/<video\b[^>]*id="hero-film"[^>]*>/)[0];
 assert.ok(!/\bsrc=|\bautoplay\b|\bloop\b/.test(video),'No eager video URL, autoplay attribute or looping');
 assert.match(video,/preload="none"/);

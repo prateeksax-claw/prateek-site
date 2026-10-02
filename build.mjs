@@ -92,6 +92,12 @@ let home = readFileSync('src/home.html', 'utf8')
   .replaceAll('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2', 'fonts/space-grotesk.woff2')
   .replaceAll('node_modules/@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2', 'fonts/hanken.woff2')
   .replaceAll('node_modules/lenis/dist/lenis.min.js', 'lenis.min.js');
+// This small static homepage benefits from eliminating four blocking stylesheet
+// round trips. Keep the editable sources separate and preserve cascade order.
+const homeStyles=['home.css','nav.css','refinements.css','perspective/v1/site.css']
+  .map(file=>readFileSync(file,'utf8').replaceAll('\r\n','\n')).join('\n');
+if(!home.includes('<!-- BUILD:HOME_STYLES -->'))throw new Error('Missing homepage style build marker');
+home=home.replace('<!-- BUILD:HOME_STYLES -->',`<style id="home-design">\n${homeStyles}\n</style>`);
 writeFileSync('index.html', home);
 
 // Stamp only when generated content has changed, not merely when a build ran.

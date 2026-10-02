@@ -208,6 +208,7 @@
 .perspective-design .object-controls button,.perspective-design .cube-progress output{font-size:12px}
 .perspective-design .proof span{font-size:12px}.perspective-design .study-label,.perspective-design .meaning-card .number{font-size:12px;letter-spacing:.08em}
 .perspective-design .meaning-card button{font-size:13px}.perspective-design .shell{max-width:1280px}
+.perspective-design .meaning-card .number{color:#4d5d45}
 .perspective-design .composition{grid-template-columns:minmax(0,48fr) minmax(0,52fr)}
 .perspective-design .cube-progress input{min-height:44px}.perspective-design .legend-link{min-height:44px}
 .perspective-design [data-cube-interactive]{visibility:hidden}.home-perspective.cube-ready [data-cube-interactive]{visibility:visible}
