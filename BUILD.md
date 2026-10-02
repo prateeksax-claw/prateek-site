@@ -124,3 +124,13 @@ Editorial review sources and unresolved owner facts are recorded in `data/editor
 ### Search exposure release, 2 October 2026
 
 Brand stories retain their canonical URLs and original publication dates. Event dates are separate from review dates. Captions describe the actual photographs; the six brand stories include their existing photo URLs in the sitemap. Keep one substantial page per topic, with linked related reading, not separate pages for keyword variants. Search titles identify the brand/topic and Prateek Saxena. Original owner-authored outcome evidence is still pending.
+
+### Independent release audit follow-up, 2 October 2026
+
+The owner confirmed CMA studies only, with no IMA membership. The homepage omits `memberOf` and unconfirmed `knowsLanguage`; `data/editorial-review.json` records the decision. Site validation prevents these assertions being reintroduced without an explicit review. The education card and original career record remain unchanged.
+
+The hero picture and mutually exclusive media preloads select the approved ending still for reduced-motion readers directly from HTML. The video no longer loads a redundant poster. Explicit playback, seeking or face selection releases the initial picture source so it cannot override a visitor's choice. No approved images or films changed. The critical italic face is preloaded alongside the existing normal and body faces; fonts retain their original glyph coverage and variable axes. Mobile CTA grid geometry is explicit rather than dependent on font-driven flex wrapping.
+
+On narrow Journal layouts, essay titles and summaries precede decorative thumbnails. All entries, filters and the readership ordering period remain available. About covers personal perspective, the role page covers responsibilities and dated progression, and Media Kit prioritises reusable biographies and assets. Existing section anchors and complete homepage experience/education are retained. The owner's new article is deferred.
+
+Analytics configuration and release evidence are kept privately outside this public repository. Email clicks represent contact intent only; email receipt and qualification require a separate enquiry record. Never present key-event counts as confirmed leads.

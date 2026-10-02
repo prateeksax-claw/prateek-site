@@ -13,14 +13,14 @@
   },
   "pendingOwnerConfirmation": [
     "Original July 2025 announcement to support the existing Birla White agreement geography and exclusivity",
-    "Language and IMA membership claims in homepage schema",
     "Original outcome evidence for the new case article"
   ],
   "correctionToAudit": "Official Birla Opus leadership biography also identifies Himanshu Kapania as Business Head for Birla White. The prior suspicion about this title is withdrawn; corporate parent changed from Grasim to UltraTech.",
   "ownerConfirmed": {
     "date": "2026-10-02",
     "brand": "Birla White, part of Aditya Birla Group",
-    "credentials": "INSEAD completed; CMA in progress"
+    "credentials": "INSEAD completed; CMA in progress",
+    "IMA": "Not an IMA member; CMA studies only, in progress. Confirmed by owner on 2 October 2026."
   },
   "searchExposureReview": {
     "date": "2026-10-02",
@@ -31,5 +31,9 @@
     ],
     "territory": "Jaquar and Artize: Abu Dhabi region. Other stories retain their documented scope.",
     "pending": "Owner-authored case evidence and external corroboration for new outcome or agreement claims."
+  },
+  "personalSchemaPolicy": {
+    "languages": "Omitted until explicitly confirmed; do not infer from residence.",
+    "memberships": "No IMA membership claim. CMA studies are not membership or an awarded credential."
   }
 }

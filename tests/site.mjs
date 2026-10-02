@@ -9,6 +9,7 @@ const decode=s=>s.replaceAll('&amp;','&').replaceAll('&#39;',"'").replaceAll('&q
 let checks=0;
 function check(value,message){assert.ok(value,message);checks++;}
 for(const [file,text] of html){
+ check(!/<div\b(?![^>]*\brole=)[^>]*\baria-label=/.test(text),`${file}: generic containers have no unsupported accessible name`);
  check((text.match(/<h1\b/g)||[]).length===1,`${file}: one H1`);
  check(/<dialog\b[^>]*id="mmenu"[^>]*inert/.test(text),`${file}: closed native dialog`);
  check(/<script[^>]*src="\/analytics.js(?:\?[^" ]+)?"/.test(text),`${file}: centralized analytics, including error pages`);
@@ -20,7 +21,17 @@ for(const [file,text] of html){
  const ids=[...text.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  check(ids.length===new Set(ids).size,`${file}: unique IDs`);
  for(const m of text.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)){
-  JSON.parse(m[1]);checks++;
+  const schema=JSON.parse(m[1]);checks++;
+  const review=JSON.parse(readFileSync('data/editorial-review.json','utf8'));
+  const visit=node=>{
+   if(!node||typeof node!=='object')return;
+   if(node['@type']==='Person'&&node['@id']==='https://prateeksaxena.me/#person'){
+    check(!node.memberOf,`${file}: no unapproved membership assertion (${review.ownerConfirmed.IMA})`);
+    check(!node.knowsLanguage,`${file}: languages await explicit confirmation`);
+   }
+   Object.values(node).forEach(visit);
+  };
+  visit(schema);
   for(const selector of m[1].matchAll(/"cssSelector"\s*:\s*\[\s*"\.([\w-]+)"/g)) check(new RegExp(`class="[^"]*\\b${selector[1]}\\b`).test(text),`${file}: schema references visible class ${selector[1]}`);
  }
  for(const m of text.matchAll(/\b(?:src|href)="([^"]+)"/g)){

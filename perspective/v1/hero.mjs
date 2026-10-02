@@ -7,6 +7,8 @@ const video=document.querySelector('#hero-film'),stage=document.querySelector('#
 let mode='idle',position=0,chapter='',loadPromise=null,action=0,autoAttempted=false,inView=false,frameCallback=null,contentReady=false;
 const assets=new URL('./',import.meta.url);
 const asset=name=>new URL(name,assets).href;
+// Explicit controls take precedence over the initial reduced-motion picture source.
+function releasePicture(){poster.closest('picture')?.querySelector('source')?.remove();}
 const staticMode=()=>reduced.matches||Boolean(navigator.connection?.saveData);
 function setMode(next){mode=next;document.querySelector('.object').dataset.state=mode;label.textContent=labelFor(mode);play.querySelector('.play-icon').textContent=mode==='playing'?'Ⅱ':'▶';play.setAttribute('aria-label',labelFor(mode));replay.hidden=mode==='idle'||mode==='error'||mode==='ended';skip.hidden=mode==='ended'||mode==='error';buffer.hidden=mode!=='loading';}
 function sync(t){
@@ -33,7 +35,7 @@ function load(){
  });return loadPromise;
 }
 async function moveTo(t,run=false,{restart=false}={}){
- const token=++action;autoAttempted=true;video.pause();stopFrames();error.hidden=true;const target=restart?0:Math.min(clampTime(t),END_FRAME);
+ releasePicture();const token=++action;autoAttempted=true;video.pause();stopFrames();error.hidden=true;const target=restart?0:Math.min(clampTime(t),END_FRAME);
  sync(target);setMode('loading');
  if(restart){poster.src=asset('opening.webp');poster.alt='The perspective cube, with six abstract artworks waiting to align.';stage.dataset.visual='poster';}
  try{
@@ -51,7 +53,7 @@ async function moveTo(t,run=false,{restart=false}={}){
  }catch(e){if(token!==action)return;if(e?.name==='NotAllowedError'){setMode(position===0?'idle':'paused');status.textContent=`Select ${labelFor(mode)} to play.`;}else fallback();}
 }
 function inspect(index){
- const f=FACES[index];if(!f)return;action++;autoAttempted=true;video.pause();stopFrames();poster.src=asset(`${f.id}.webp`);poster.alt=`${f.name}: ${f.symbol}. ${f.line}`;stage.dataset.visual='poster';sync(f.seek);setMode('face');error.hidden=true;announce();
+ const f=FACES[index];if(!f)return;releasePicture();action++;autoAttempted=true;video.pause();stopFrames();poster.src=asset(`${f.id}.webp`);poster.alt=`${f.name}: ${f.symbol}. ${f.line}`;stage.dataset.visual='poster';sync(f.seek);setMode('face');error.hidden=true;announce();
 }
 play.addEventListener('click',()=>{if(mode==='playing'||mode==='loading'){pause();return;}const restart=mode==='ended'||mode==='error';if(mode==='error'){loadPromise=null;video.removeAttribute('src');video.load();}moveTo(restart?0:position,true,{restart});});
 replay.addEventListener('click',()=>moveTo(0,true,{restart:true}));

@@ -20,6 +20,9 @@ for(const source of ['home.css','nav.css','consent.css','perspective/v1/site.css
 const video=html.match(/<video\b[^>]*id="hero-film"[^>]*>/)[0];
 assert.ok(!/\bsrc=|\bautoplay\b|\bloop\b/.test(video),'No eager video URL, autoplay attribute or looping');
 assert.match(video,/preload="none"/);
+assert.ok(!/\bposter=/.test(video),'The video does not request a second poster behind the accessible picture');
+assert.match(html,/<source media="\(prefers-reduced-motion: reduce\)" srcset="\/perspective\/v1\/ending.webp">/,'Static artwork is discoverable before JavaScript');
+assert.match(html,/<link[^>]*href="\/perspective\/v1\/ending.webp"[^>]*media="\(prefers-reduced-motion: reduce\)"/);
 assert.match(html,/<img[^>]*id="cube-poster"[^>]*fetchpriority="high"[^>]*width="768"[^>]*height="768"/);
 assert.match(html,/<h1 id="hero-title">Different sides\./);
 assert.match(html,/<link href="https:\/\/prateeksaxena.me\/" rel="canonical"/);
