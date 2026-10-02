@@ -10,7 +10,7 @@
     <link>https://prateeksaxena.me/journal/monday-morning-preflight</link>
     <guid isPermaLink="true">https://prateeksaxena.me/journal/monday-morning-preflight</guid>
     <pubDate>Tue, 07 Jul 2026 04:00:00 GMT</pubDate>
-    <description>Essay by Prateek Saxena introducing the Monday Morning Preflight, an operator's readiness test for AI agents: can they turn Friday's loose ends into a clear Monday operating plan with live ERP data, follow-ups, KPIs and action items. Includes the five checks every business agent must pass. Third entry in the "In a Suit" series.</description>
+    <description>Essay by Prateek Saxena introducing the Monday Morning Preflight, a five-check readiness review for business AI agents. Passing the review is a starting point for workflow-specific testing, access controls, monitoring and human approval, not a guarantee of reliable behaviour. Third entry in the "In a Suit" series.</description>
   </item>
   <item>
     <title>I Don't Code. I Brief Agents.</title>
@@ -31,6 +31,6 @@
     <link>https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai</link>
     <guid isPermaLink="true">https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai</guid>
     <pubDate>Mon, 08 Jun 2026 04:00:00 GMT</pubDate>
-    <description>Essay by Prateek Saxena on harness engineering for real businesses, the operator's lens, and the Self-Improvement Protocol (SIP) for making AI agents improve safely.</description>
+    <description>Essay by Prateek Saxena on harness engineering for real businesses and the Self-Improvement Protocol (SIP): record a failure, review its cause, test a correction and approve a versioned rule for reuse. Each result still needs verification; this process does not automatically retrain the model.</description>
   </item>
 </channel></rss>

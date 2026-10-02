@@ -58,6 +58,8 @@ check(readFileSync('journal/vibe-coding-in-a-suit.html','utf8').includes('<h1>Vi
 execFileSync(process.execPath,['build.mjs']);
 check(generated.every((f,i)=>readFileSync(f,'utf8')===before[i]),'Build is repeatable without spurious freshness changes');
 check(readFileSync('llms.txt','utf8').includes(']('),'llms.txt uses actual Markdown links');
+check(readFileSync('llms.txt','utf8').includes('Birla White (UltraTech Cement, part of Aditya Birla Group)'),'Search-readable brand attribution matches the verified parent');
+check(!readFileSync('llms.txt','utf8').includes('Grasim Industries'),'Search-readable brand summary does not restore the superseded attribution');
 check(readFileSync('sitemap.xml','utf8').includes('/privacy</loc>'),'Privacy is in the sitemap');
 execFileSync(process.execPath,['prepare-deploy.mjs']);
 for(const privatePath of ['src','tests','data','.git','.github','BUILD.md','SEO-AI-STRATEGY.md','build.mjs','prepare-deploy.mjs','preview-headers.mjs']){
