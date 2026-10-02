@@ -66,7 +66,8 @@ Workers-style `.assetsignore` file in the verified October 2026 preview.
 
 ## Validation and release
 
-Run `node build.mjs`, `node tests/analytics.mjs`, `node tests/site.mjs`, and `node tests/cube.mjs`, in that order. These commands have no third-party runtime dependencies. The site checks also prepare and validate `.pages-output`; `node prepare-deploy.mjs` can regenerate it independently. GitHub Actions runs the same checks before deploying that public folder. An unchanged build preserves the sitemap freshness dates.
+Run `node build.mjs`, `node tests/analytics.mjs
+node tests/journal.mjs`, `node tests/site.mjs`, and `node tests/cube.mjs`, in that order. These commands have no third-party runtime dependencies. The site checks also prepare and validate `.pages-output`; `node prepare-deploy.mjs` can regenerate it independently. GitHub Actions runs the same checks before deploying that public folder. An unchanged build preserves the sitemap freshness dates.
 
 Push `dev` for the Cloudflare preview at `https://dev.prateeksaxena.pages.dev`. The workflow adds `X-Robots-Tag: noindex, nofollow` to preview responses. Production publishes only from `master` (mapped to Cloudflare's `main` production branch). Do not copy local audit reports or private analytics into the repository.
 
@@ -105,3 +106,15 @@ The optional native disclosure at `/frameworks#preflight-tool` contains a five-c
 The six photo-led cards in `src/home.html` at `#work` are selected for brand prominence, recency and the owner’s event photography, not a traffic ranking. Desktop uses two rows of three; narrower screens use two or one columns. Brand marks follow descriptions; the Birla White card uses Aditya Birla Group. Existing event photos have full-frame WebP copies for delivery, with crops handled in CSS and original files retained. Home CSS comments and boundary whitespace are removed during the build to keep the complete HTML below the existing 75 KB budget.
 
 Inner pages use the same charcoal navigation and footer as the homepage, with warm ivory reading surfaces. Keep breadcrumbs, author links and native contents disclosures in HTML. Existing publication dates are preserved when the presentation changes. Em dashes are excluded from public copy and CSS-generated labels.
+
+### Audit refinements, 2 October 2026
+
+The primary navigation is Work, Writing, Frameworks, About and Contact. Full Experience and Education links remain in the menu, footer and contextual links; the five career entries and four education records remain on the homepage.
+
+Privacy controls use `consent.css` on every page. The homepage omits article/tool-only `refinements.css`; retain its small accessibility rules in `home.css`.
+
+`data/image-variants.json` maps the original photographs to committed WebP sizes. `build.mjs` applies responsive image markup deterministically. To add a photo, use `scripts/optimize-images.py` with Python and Pillow, review the result, then build. Originals stay intact; no approved cube artwork or movie is processed. The script and manifest are not deployed.
+
+The Journal retains every entry in HTML. Its progressive enhancement shows eight logbook entries per page with shareable format/topic/page parameters. Without JavaScript all entries remain available; filtered views retain the canonical Journal URL. Test deep links, reload, back/forward, empty combinations and page resets with `tests/journal.mjs` and browser checks.
+
+Editorial review sources and unresolved owner facts are recorded in `data/editorial-review.json`. Do not infer new partnership scope or outcomes.

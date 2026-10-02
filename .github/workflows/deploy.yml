@@ -35,6 +35,7 @@ jobs:
         run: |
           node build.mjs
           node tests/analytics.mjs
+          node tests/journal.mjs
           node tests/site.mjs
           node tests/cube.mjs
 

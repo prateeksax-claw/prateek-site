@@ -1,0 +1,23 @@
+{
+  "reviewed": "2026-10-02",
+  "sipDefinition": "A structured feedback loop for AI agents: record a failure, review the cause, test a correction and approve a versioned rule for reuse. It can reduce repeated errors, but each result still needs verification; it does not automatically retrain the model.",
+  "harnessModel": "Seven layers, with verification across every layer. A practical model by Prateek Saxena, not a universal technical standard.",
+  "sources": {
+    "RHO": "https://arxiv.org/abs/2606.05922",
+    "Jaquar": "https://www.linkedin.com/feed/update/urn:li:activity:7167685253694787584/",
+    "Birla White": "https://www.birlawhite.com/en/about-us",
+    "Himanshu Kapania at Grasim": "https://www.grasim.com/about-us/leadership",
+    "Concurrent Birla White role": "https://www.birlaopus.com/about-us/our-leadership"
+  },
+  "pendingOwnerConfirmation": [
+    "Original July 2025 announcement to support the existing Birla White agreement geography and exclusivity",
+    "Language and IMA membership claims in homepage schema",
+    "Original outcome evidence for the new case article"
+  ],
+  "correctionToAudit": "Official Birla Opus leadership biography also identifies Himanshu Kapania as Business Head for Birla White. The prior suspicion about this title is withdrawn; corporate parent changed from Grasim to UltraTech.",
+  "ownerConfirmed": {
+    "date": "2026-10-02",
+    "brand": "Birla White, part of Aditya Birla Group",
+    "credentials": "INSEAD completed; CMA in progress"
+  }
+}

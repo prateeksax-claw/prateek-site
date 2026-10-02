@@ -1,0 +1,736 @@
+{
+  "/journal-media/asian-paints-uae-feature.webp": {
+    "originalWidth": 1200,
+    "originalHeight": 900,
+    "variants": [
+      {
+        "src": "/journal-media/asian-paints-uae-feature.w180.webp",
+        "width": 180,
+        "bytes": 5658
+      },
+      {
+        "src": "/journal-media/asian-paints-uae-feature.w360.webp",
+        "width": 360,
+        "bytes": 15566
+      },
+      {
+        "src": "/journal-media/asian-paints-uae-feature.w960.webp",
+        "width": 960,
+        "bytes": 63860
+      },
+      {
+        "src": "/journal-media/asian-paints-uae-feature.w1200.webp",
+        "width": 1200,
+        "bytes": 84960
+      }
+    ]
+  },
+  "/journal-media/asian-paints-uae.jpeg": {
+    "originalWidth": 1200,
+    "originalHeight": 900,
+    "variants": [
+      {
+        "src": "/journal-media/asian-paints-uae.w180.webp",
+        "width": 180,
+        "bytes": 5696
+      },
+      {
+        "src": "/journal-media/asian-paints-uae.w360.webp",
+        "width": 360,
+        "bytes": 15840
+      },
+      {
+        "src": "/journal-media/asian-paints-uae.w960.webp",
+        "width": 960,
+        "bytes": 67660
+      },
+      {
+        "src": "/journal-media/asian-paints-uae.w1200.webp",
+        "width": 1200,
+        "bytes": 93660
+      }
+    ]
+  },
+  "/journal-media/birla-white-uae.webp": {
+    "originalWidth": 960,
+    "originalHeight": 1280,
+    "variants": [
+      {
+        "src": "/journal-media/birla-white-uae.w180.webp",
+        "width": 180,
+        "bytes": 8354
+      },
+      {
+        "src": "/journal-media/birla-white-uae.w360.webp",
+        "width": 360,
+        "bytes": 24286
+      },
+      {
+        "src": "/journal-media/birla-white-uae.w960.webp",
+        "width": 960,
+        "bytes": 95464
+      }
+    ]
+  },
+  "/journal-media/ev-azpl.jpg": {
+    "originalWidth": 1080,
+    "originalHeight": 608,
+    "variants": [
+      {
+        "src": "/journal-media/ev-azpl.w180.webp",
+        "width": 180,
+        "bytes": 4110
+      },
+      {
+        "src": "/journal-media/ev-azpl.w360.webp",
+        "width": 360,
+        "bytes": 11862
+      },
+      {
+        "src": "/journal-media/ev-azpl.w960.webp",
+        "width": 960,
+        "bytes": 52592
+      },
+      {
+        "src": "/journal-media/ev-azpl.w1080.webp",
+        "width": 1080,
+        "bytes": 64330
+      }
+    ]
+  },
+  "/journal-media/ev-henkel.jpg": {
+    "originalWidth": 640,
+    "originalHeight": 360,
+    "variants": [
+      {
+        "src": "/journal-media/ev-henkel.w180.webp",
+        "width": 180,
+        "bytes": 4516
+      },
+      {
+        "src": "/journal-media/ev-henkel.w360.webp",
+        "width": 360,
+        "bytes": 12312
+      },
+      {
+        "src": "/journal-media/ev-henkel.w640.webp",
+        "width": 640,
+        "bytes": 27494
+      }
+    ]
+  },
+  "/journal-media/ev-iftar.jpg": {
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "variants": [
+      {
+        "src": "/journal-media/ev-iftar.w180.webp",
+        "width": 180,
+        "bytes": 4224
+      },
+      {
+        "src": "/journal-media/ev-iftar.w360.webp",
+        "width": 360,
+        "bytes": 11366
+      },
+      {
+        "src": "/journal-media/ev-iftar.w960.webp",
+        "width": 960,
+        "bytes": 41046
+      },
+      {
+        "src": "/journal-media/ev-iftar.w1280.webp",
+        "width": 1280,
+        "bytes": 58372
+      }
+    ]
+  },
+  "/journal-media/ev-indiafest.jpg": {
+    "originalWidth": 640,
+    "originalHeight": 360,
+    "variants": [
+      {
+        "src": "/journal-media/ev-indiafest.w180.webp",
+        "width": 180,
+        "bytes": 6434
+      },
+      {
+        "src": "/journal-media/ev-indiafest.w360.webp",
+        "width": 360,
+        "bytes": 20314
+      },
+      {
+        "src": "/journal-media/ev-indiafest.w640.webp",
+        "width": 640,
+        "bytes": 50282
+      }
+    ]
+  },
+  "/journal-media/ev-isc2026.jpg": {
+    "originalWidth": 405,
+    "originalHeight": 720,
+    "variants": [
+      {
+        "src": "/journal-media/ev-isc2026.w180.webp",
+        "width": 180,
+        "bytes": 9812
+      },
+      {
+        "src": "/journal-media/ev-isc2026.w360.webp",
+        "width": 360,
+        "bytes": 29540
+      },
+      {
+        "src": "/journal-media/ev-isc2026.w405.webp",
+        "width": 405,
+        "bytes": 35888
+      }
+    ]
+  },
+  "/journal-media/ev-nh47-sheikh.jpg": {
+    "originalWidth": 480,
+    "originalHeight": 720,
+    "variants": [
+      {
+        "src": "/journal-media/ev-nh47-sheikh.w180.webp",
+        "width": 180,
+        "bytes": 11490
+      },
+      {
+        "src": "/journal-media/ev-nh47-sheikh.w360.webp",
+        "width": 360,
+        "bytes": 31962
+      },
+      {
+        "src": "/journal-media/ev-nh47-sheikh.w480.webp",
+        "width": 480,
+        "bytes": 51684
+      }
+    ]
+  },
+  "/journal-media/p002.jpg": {
+    "originalWidth": 480,
+    "originalHeight": 270,
+    "variants": [
+      {
+        "src": "/journal-media/p002.w180.webp",
+        "width": 180,
+        "bytes": 3420
+      },
+      {
+        "src": "/journal-media/p002.w360.webp",
+        "width": 360,
+        "bytes": 14990
+      },
+      {
+        "src": "/journal-media/p002.w480.webp",
+        "width": 480,
+        "bytes": 29214
+      }
+    ]
+  },
+  "/journal-media/p003.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 600,
+    "variants": [
+      {
+        "src": "/journal-media/p003.w180.webp",
+        "width": 180,
+        "bytes": 6006
+      },
+      {
+        "src": "/journal-media/p003.w360.webp",
+        "width": 360,
+        "bytes": 15848
+      },
+      {
+        "src": "/journal-media/p003.w800.webp",
+        "width": 800,
+        "bytes": 49904
+      }
+    ]
+  },
+  "/journal-media/p004.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 554,
+    "variants": [
+      {
+        "src": "/journal-media/p004.w180.webp",
+        "width": 180,
+        "bytes": 7392
+      },
+      {
+        "src": "/journal-media/p004.w360.webp",
+        "width": 360,
+        "bytes": 19212
+      },
+      {
+        "src": "/journal-media/p004.w800.webp",
+        "width": 800,
+        "bytes": 51688
+      }
+    ]
+  },
+  "/journal-media/p006.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 533,
+    "variants": [
+      {
+        "src": "/journal-media/p006.w180.webp",
+        "width": 180,
+        "bytes": 3806
+      },
+      {
+        "src": "/journal-media/p006.w360.webp",
+        "width": 360,
+        "bytes": 9866
+      },
+      {
+        "src": "/journal-media/p006.w800.webp",
+        "width": 800,
+        "bytes": 27910
+      }
+    ]
+  },
+  "/journal-media/p008.jpg": {
+    "originalWidth": 480,
+    "originalHeight": 252,
+    "variants": [
+      {
+        "src": "/journal-media/p008.w180.webp",
+        "width": 180,
+        "bytes": 2682
+      },
+      {
+        "src": "/journal-media/p008.w360.webp",
+        "width": 360,
+        "bytes": 7106
+      },
+      {
+        "src": "/journal-media/p008.w480.webp",
+        "width": 480,
+        "bytes": 9734
+      }
+    ]
+  },
+  "/journal-media/p012.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 632,
+    "variants": [
+      {
+        "src": "/journal-media/p012.w180.webp",
+        "width": 180,
+        "bytes": 5088
+      },
+      {
+        "src": "/journal-media/p012.w360.webp",
+        "width": 360,
+        "bytes": 12808
+      },
+      {
+        "src": "/journal-media/p012.w800.webp",
+        "width": 800,
+        "bytes": 35448
+      }
+    ]
+  },
+  "/journal-media/p039.jpg": {
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "variants": [
+      {
+        "src": "/journal-media/p039.w180.webp",
+        "width": 180,
+        "bytes": 8516
+      },
+      {
+        "src": "/journal-media/p039.w360.webp",
+        "width": 360,
+        "bytes": 25668
+      },
+      {
+        "src": "/journal-media/p039.w768.webp",
+        "width": 768,
+        "bytes": 84928
+      }
+    ]
+  },
+  "/journal-media/p046.jpg": {
+    "originalWidth": 768,
+    "originalHeight": 1024,
+    "variants": [
+      {
+        "src": "/journal-media/p046.w180.webp",
+        "width": 180,
+        "bytes": 10142
+      },
+      {
+        "src": "/journal-media/p046.w360.webp",
+        "width": 360,
+        "bytes": 32420
+      },
+      {
+        "src": "/journal-media/p046.w768.webp",
+        "width": 768,
+        "bytes": 113198
+      }
+    ]
+  },
+  "/journal-media/p048.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 1131,
+    "variants": [
+      {
+        "src": "/journal-media/p048.w180.webp",
+        "width": 180,
+        "bytes": 8762
+      },
+      {
+        "src": "/journal-media/p048.w360.webp",
+        "width": 360,
+        "bytes": 22508
+      },
+      {
+        "src": "/journal-media/p048.w800.webp",
+        "width": 800,
+        "bytes": 57690
+      }
+    ]
+  },
+  "/journal-media/p054.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 1067,
+    "variants": [
+      {
+        "src": "/journal-media/p054.w180.webp",
+        "width": 180,
+        "bytes": 10504
+      },
+      {
+        "src": "/journal-media/p054.w360.webp",
+        "width": 360,
+        "bytes": 32346
+      },
+      {
+        "src": "/journal-media/p054.w800.webp",
+        "width": 800,
+        "bytes": 109496
+      }
+    ]
+  },
+  "/journal-media/p056.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 800,
+    "variants": [
+      {
+        "src": "/journal-media/p056.w180.webp",
+        "width": 180,
+        "bytes": 6102
+      },
+      {
+        "src": "/journal-media/p056.w360.webp",
+        "width": 360,
+        "bytes": 17364
+      },
+      {
+        "src": "/journal-media/p056.w800.webp",
+        "width": 800,
+        "bytes": 51140
+      }
+    ]
+  },
+  "/journal-media/p062.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 565,
+    "variants": [
+      {
+        "src": "/journal-media/p062.w180.webp",
+        "width": 180,
+        "bytes": 2266
+      },
+      {
+        "src": "/journal-media/p062.w360.webp",
+        "width": 360,
+        "bytes": 6566
+      },
+      {
+        "src": "/journal-media/p062.w800.webp",
+        "width": 800,
+        "bytes": 19834
+      }
+    ]
+  },
+  "/journal-media/p064.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 600,
+    "variants": [
+      {
+        "src": "/journal-media/p064.w180.webp",
+        "width": 180,
+        "bytes": 3408
+      },
+      {
+        "src": "/journal-media/p064.w360.webp",
+        "width": 360,
+        "bytes": 8466
+      },
+      {
+        "src": "/journal-media/p064.w800.webp",
+        "width": 800,
+        "bytes": 26234
+      }
+    ]
+  },
+  "/journal-media/p066-feature.webp": {
+    "originalWidth": 800,
+    "originalHeight": 600,
+    "variants": [
+      {
+        "src": "/journal-media/p066-feature.w180.webp",
+        "width": 180,
+        "bytes": 6272
+      },
+      {
+        "src": "/journal-media/p066-feature.w360.webp",
+        "width": 360,
+        "bytes": 19814
+      },
+      {
+        "src": "/journal-media/p066-feature.w800.webp",
+        "width": 800,
+        "bytes": 76344
+      }
+    ]
+  },
+  "/journal-media/p066.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 600,
+    "variants": [
+      {
+        "src": "/journal-media/p066.w180.webp",
+        "width": 180,
+        "bytes": 6318
+      },
+      {
+        "src": "/journal-media/p066.w360.webp",
+        "width": 360,
+        "bytes": 20352
+      },
+      {
+        "src": "/journal-media/p066.w800.webp",
+        "width": 800,
+        "bytes": 83952
+      }
+    ]
+  },
+  "/journal-media/p072.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 565,
+    "variants": [
+      {
+        "src": "/journal-media/p072.w180.webp",
+        "width": 180,
+        "bytes": 2910
+      },
+      {
+        "src": "/journal-media/p072.w360.webp",
+        "width": 360,
+        "bytes": 8852
+      },
+      {
+        "src": "/journal-media/p072.w800.webp",
+        "width": 800,
+        "bytes": 27596
+      }
+    ]
+  },
+  "/journal-media/p076.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 565,
+    "variants": [
+      {
+        "src": "/journal-media/p076.w180.webp",
+        "width": 180,
+        "bytes": 2678
+      },
+      {
+        "src": "/journal-media/p076.w360.webp",
+        "width": 360,
+        "bytes": 7952
+      },
+      {
+        "src": "/journal-media/p076.w800.webp",
+        "width": 800,
+        "bytes": 23476
+      }
+    ]
+  },
+  "/journal-media/p080.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 450,
+    "variants": [
+      {
+        "src": "/journal-media/p080.w180.webp",
+        "width": 180,
+        "bytes": 5296
+      },
+      {
+        "src": "/journal-media/p080.w360.webp",
+        "width": 360,
+        "bytes": 15860
+      },
+      {
+        "src": "/journal-media/p080.w800.webp",
+        "width": 800,
+        "bytes": 52540
+      }
+    ]
+  },
+  "/journal-media/p084-feature.webp": {
+    "originalWidth": 800,
+    "originalHeight": 650,
+    "variants": [
+      {
+        "src": "/journal-media/p084-feature.w180.webp",
+        "width": 180,
+        "bytes": 6680
+      },
+      {
+        "src": "/journal-media/p084-feature.w360.webp",
+        "width": 360,
+        "bytes": 19148
+      },
+      {
+        "src": "/journal-media/p084-feature.w800.webp",
+        "width": 800,
+        "bytes": 65082
+      }
+    ]
+  },
+  "/journal-media/p084.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 650,
+    "variants": [
+      {
+        "src": "/journal-media/p084.w180.webp",
+        "width": 180,
+        "bytes": 6624
+      },
+      {
+        "src": "/journal-media/p084.w360.webp",
+        "width": 360,
+        "bytes": 19328
+      },
+      {
+        "src": "/journal-media/p084.w800.webp",
+        "width": 800,
+        "bytes": 70210
+      }
+    ]
+  },
+  "/journal-media/p086-feature.webp": {
+    "originalWidth": 800,
+    "originalHeight": 449,
+    "variants": [
+      {
+        "src": "/journal-media/p086-feature.w180.webp",
+        "width": 180,
+        "bytes": 5922
+      },
+      {
+        "src": "/journal-media/p086-feature.w360.webp",
+        "width": 360,
+        "bytes": 17736
+      },
+      {
+        "src": "/journal-media/p086-feature.w800.webp",
+        "width": 800,
+        "bytes": 56862
+      }
+    ]
+  },
+  "/journal-media/p086.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 449,
+    "variants": [
+      {
+        "src": "/journal-media/p086.w180.webp",
+        "width": 180,
+        "bytes": 5970
+      },
+      {
+        "src": "/journal-media/p086.w360.webp",
+        "width": 360,
+        "bytes": 17790
+      },
+      {
+        "src": "/journal-media/p086.w800.webp",
+        "width": 800,
+        "bytes": 61108
+      }
+    ]
+  },
+  "/journal-media/p098-feature.webp": {
+    "originalWidth": 800,
+    "originalHeight": 1066,
+    "variants": [
+      {
+        "src": "/journal-media/p098-feature.w180.webp",
+        "width": 180,
+        "bytes": 7028
+      },
+      {
+        "src": "/journal-media/p098-feature.w360.webp",
+        "width": 360,
+        "bytes": 16926
+      },
+      {
+        "src": "/journal-media/p098-feature.w800.webp",
+        "width": 800,
+        "bytes": 46348
+      }
+    ]
+  },
+  "/journal-media/p098.jpg": {
+    "originalWidth": 800,
+    "originalHeight": 1066,
+    "variants": [
+      {
+        "src": "/journal-media/p098.w180.webp",
+        "width": 180,
+        "bytes": 7116
+      },
+      {
+        "src": "/journal-media/p098.w360.webp",
+        "width": 360,
+        "bytes": 17364
+      },
+      {
+        "src": "/journal-media/p098.w800.webp",
+        "width": 800,
+        "bytes": 52374
+      }
+    ]
+  },
+  "/portrait.jpg": {
+    "originalWidth": 700,
+    "originalHeight": 700,
+    "variants": [
+      {
+        "src": "/portrait-180.webp",
+        "width": 180,
+        "bytes": 3496
+      },
+      {
+        "src": "/portrait-360.webp",
+        "width": 360,
+        "bytes": 8836
+      },
+      {
+        "src": "/portrait-700.webp",
+        "width": 700,
+        "bytes": 24754
+      }
+    ]
+  }
+}

@@ -227,3 +227,6 @@
 .perspective-design .cube-explanation dd{margin:0}
 @media(max-width:350px){.perspective-design .cube-explanation-copy{padding:14px 12px}.perspective-design .cube-explanation dl{gap:8px 12px}}
 .perspective-design .proof-link{text-decoration:underline;text-decoration-color:#73664e;text-underline-offset:5px}.perspective-design .proof-link:hover{text-decoration-color:#e2c494}
+
+.home-perspective>.nav .mbtn{border-radius:4px}
+@media(max-width:420px){.home-perspective>.nav .brand{font-size:18px}}

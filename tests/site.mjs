@@ -35,6 +35,26 @@ for(const [file,text] of html){
 }
 const generated=['index.html','src/home.html','journal.html','sitemap.xml','llms.txt','feed.xml'];
 const before=generated.map(f=>readFileSync(f,'utf8'));
+for(const file of files){
+ const html=readFileSync(file,'utf8');
+ for(const tag of html.matchAll(/<img\b[^>]*>/g)){
+  const srcset=tag[0].match(/srcset="([^"]+)"/)?.[1];
+  if(!srcset)continue;
+  for(const candidate of srcset.split(',')){
+   const [url,width]=candidate.trim().split(/\s+/);
+   check(url.startsWith('/')&&!url.includes('\\'),`${file}: portable responsive image URL`);
+   check(/^\d+w$/.test(width)&&existsSync(resolve('.'+url)),`${file}: responsive image candidate exists`);
+  }
+ }
+ check(!html.includes('An agent that passes all five can be trusted'),`${file}: no universal readiness guarantee`);
+ check(!html.includes('a mistake is corrected once'),`${file}: no guaranteed one-time correction`);
+}
+const homeSource=readFileSync('src/home.html','utf8');
+check((homeSource.match(/class="career-entry(?: career-current)?"/g)||[]).length===5,'All five original career entries retained');
+check((homeSource.match(/class="credential-card"/g)||[]).length===4,'All four original education records retained');
+check(homeSource.includes('Operations &amp; Strategy Manager → Dy. General Manager'),'Promotion runs in chronological direction');
+check(readFileSync('frameworks.html','utf8').includes('Verification across all seven layers'),'Verification remains explicit across the seven-layer model');
+check(readFileSync('journal/vibe-coding-in-a-suit.html','utf8').includes('<h1>Vibe Coding in a Suit</h1>'),'Signature phrase is the canonical essay heading');
 execFileSync(process.execPath,['build.mjs']);
 check(generated.every((f,i)=>readFileSync(f,'utf8')===before[i]),'Build is repeatable without spurious freshness changes');
 check(readFileSync('llms.txt','utf8').includes(']('),'llms.txt uses actual Markdown links');

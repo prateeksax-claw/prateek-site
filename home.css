@@ -71,3 +71,10 @@
 .work-card-link{display:flex;flex:1;flex-direction:column;text-decoration:none;color:inherit}.work-card-link:hover h3{text-decoration:underline;text-underline-offset:4px}
 
 .essay-list article:first-child{border-top:2px solid #9a8156}
+
+/* Compact phone cards keep all six stories and their original photographs. */
+@media(max-width:700px){.home-perspective .work-content{padding:20px}.home-perspective .work-content .eyebrow{margin-bottom:10px}.home-perspective .work-content h3{font-size:26px;margin-bottom:12px}.home-perspective .work-content>p:not(.eyebrow){margin-bottom:12px}.home-perspective .work-brand{min-height:50px}.home-perspective .work-brand-mark img{max-height:32px}.home-perspective .image-link{aspect-ratio:3/2}}
+
+/* Homepage accessibility without loading unused article, tool and error styles. */
+html{scroll-padding-top:96px;scroll-behavior:smooth}body{overflow-x:clip}[hidden]{display:none!important}.rv{opacity:1!important;transform:none!important}main:focus{outline:none}footer a{display:inline-flex;align-items:center;min-height:44px;margin:0 10px 0 0}footer .frow>div:last-child{display:flex;align-items:center;flex-wrap:wrap;gap:0 8px}.nav .nbtn{border-radius:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

@@ -11,7 +11,7 @@
  const current=panel?.querySelector('[data-consent-current]');
  const status=document.getElementById('analytics-status');
  function describeChoice(){
-   if(current) current.textContent=choice==='accepted' ? 'Current choice: optional analytics allowed.' : choice==='declined' ? 'Current choice: essential only.' : 'Current choice: optional analytics are off until you allow them.';
+   if(current) current.textContent=choice==='accepted' ? 'Current choice: optional analytics allowed.' : choice==='declined' ? 'Current choice: essential only.' : 'Optional analytics are off until you allow them.';
  }
  const readChoice=()=>choice==='accepted';
  window.siteAnalytics={allowed:()=>production && readChoice()};

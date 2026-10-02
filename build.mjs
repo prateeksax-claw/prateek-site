@@ -27,6 +27,25 @@ const previousHome = readFileSync('index.html', 'utf8');
 const previousJournal = readFileSync('journal.html', 'utf8');
 
 const { articles } = JSON.parse(readFileSync('data/articles.json', 'utf8'));
+const imageVariants = JSON.parse(readFileSync('data/image-variants.json', 'utf8'));
+const imageLookup = new Map();
+for(const [original,record] of Object.entries(imageVariants)){
+  imageLookup.set(original,record);
+  for(const variant of record.variants)imageLookup.set(variant.src,record);
+}
+function responsiveImages(html,homePage=false){
+  return html.replace(/<img\b[^>]*>/g,tag=>{
+    const src=tag.match(/\bsrc="([^"]+)"/)?.[1]?.replaceAll('\\','/');
+    const record=imageLookup.get(src?.startsWith('/')?src:'/'+src);
+    if(!record)return tag;
+    const portrait=record.variants[0].src.startsWith('/portrait-');
+    const sizes=portrait?(homePage?'(max-width:700px) 88px, 180px':'(max-width:640px) 280px, 300px'):
+      tag.includes('jthumb')?'(max-width:599px) 84px, 120px':
+      homePage?'(max-width:700px) calc(100vw - 44px), (max-width:950px) 44vw, 380px':'(max-width:800px) calc(100vw - 48px), 960px';
+    const clean=tag.replace(/\s(?:src|srcset|sizes)="[^"]*"/g,'');
+    return clean.replace(/\/?\s*>$/,` src="${record.variants.at(-1).src}" srcset="${record.variants.map(v=>v.src+' '+v.width+'w').join(', ')}" sizes="${sizes}">`);
+  });
+}
 // Display ranking is a reviewed snapshot; preserve chronological source order for RSS.
 const rankedArticles = [...articles].sort((a, b) => (a.readerRank ?? Infinity) - (b.readerRank ?? Infinity));
 
@@ -91,13 +110,13 @@ injectBetweenMarkers('journal.html', rankedArticles.map(journalCard).join('\n'))
 injectBetweenMarkers('sitemap.xml', articles.map(sitemapRow).join('\n'));
 
 // Reading pages share the same critical styles without extra blocking requests.
-const readingStyles=['nav.css','refinements.css','reading.css'].map(file=>readFileSync(file,'utf8').replaceAll('\r\n','\n')).join('\n');
+const readingStyles=['nav.css','consent.css','refinements.css','reading.css'].map(file=>readFileSync(file,'utf8').replaceAll('\r\n','\n')).join('\n');
 const readingPages=[...readdirSync('.').filter(f=>f.endsWith('.html')&&f!=='index.html'),...readdirSync('journal').filter(f=>f.endsWith('.html')).map(f=>'journal/'+f)];
 for(const file of readingPages){
   const text=readFileSync(file,'utf8');
   const marker=/<!-- BUILD:READING_STYLES:START -->[\s\S]*?<!-- BUILD:READING_STYLES:END -->/;
   if(!marker.test(text))throw new Error('Missing reading style marker: '+file);
-  writeFileSync(file,text.replace(marker,`<!-- BUILD:READING_STYLES:START -->\n<style id="reading-design">\n${readingStyles}\n</style>\n<!-- BUILD:READING_STYLES:END -->`));
+  writeFileSync(file,responsiveImages(text.replace(marker,`<!-- BUILD:READING_STYLES:START -->\n<style id="reading-design">\n${readingStyles}\n</style>\n<!-- BUILD:READING_STYLES:END -->`)));
 }
 
 // 4: rebuild index.html from the homepage source (deployed asset paths)
@@ -109,12 +128,13 @@ let home = readFileSync('src/home.html', 'utf8')
   .replaceAll('node_modules/lenis/dist/lenis.min.js', 'lenis.min.js');
 // This small static homepage benefits from eliminating four blocking stylesheet
 // round trips. Keep the editable sources separate and preserve cascade order.
-const homeStyles=['home.css','nav.css','refinements.css','perspective/v1/site.css']
+const homeStyles=['home.css','nav.css','consent.css','perspective/v1/site.css']
   .map(file=>readFileSync(file,'utf8').replace(/\/\*[\s\S]*?\*\//g,'')
     .split(/\r?\n/).map(line=>line.trim()).filter(Boolean).join(' ')
     .replace(/\s*([{};])\s*/g,'$1')).join('\n');
 if(!home.includes('<!-- BUILD:HOME_STYLES -->'))throw new Error('Missing homepage style build marker');
 home=home.replace('<!-- BUILD:HOME_STYLES -->',`<style id="home-design">\n${homeStyles}\n</style>`);
+home=responsiveImages(home,true);
 writeFileSync('index.html', home);
 
 // Stamp only when generated content has changed, not merely when a build ran.
