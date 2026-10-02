@@ -109,7 +109,9 @@ Inner pages use the same charcoal navigation and footer as the homepage, with wa
 
 ### Audit refinements, 2 October 2026
 
-The primary navigation is Work, Writing, Frameworks, About and Contact. Full Experience and Education links remain in the menu, footer and contextual links; the five career entries and four education records remain on the homepage.
+The primary navigation is Home, Work, Writing, Frameworks, About and Contact. Home links to the homepage hero. Full Experience and Education links remain in the menu, footer and contextual links; the five career entries and four education records remain on the homepage.
+
+`nav.css` is the only source for header/menu typography, colours, geometry and responsive breakpoints. Do not override its header selectors in page-specific styles. Desktop links and Contact use 14px Hanken; the name uses 24px Fraunces (18px on narrow phones). The menu switches at 1100px, matching the close-on-resize condition in `ux.js`.
 
 Privacy controls use `consent.css` on every page. The homepage omits article/tool-only `refinements.css`; retain its small accessibility rules in `home.css`.
 

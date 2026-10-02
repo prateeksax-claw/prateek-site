@@ -196,12 +196,6 @@
 .perspective-design .meaning-card{grid-template-columns:88px 1fr}}
 @media(prefers-reduced-motion:reduce){.perspective-design .object:before{filter:none;background:transparent}}
 /* Integrate with the site's accessible header and its readable supporting type. */
-.home-perspective>.nav{background:#080c10;border-color:#ffffff20}
-.home-perspective>.nav .brand{color:#f0ece1;font-weight:400;font-size:24px}
-.home-perspective>.nav .dot{background:#cbb18b;box-shadow:none}
-.home-perspective>.nav .nlinks a{color:#c7c8c0;font-family:Hanken,system-ui,sans-serif;font-size:14px}
-.home-perspective>.nav .nbtn{background:transparent;border:1px solid #73664e;border-radius:4px;color:#f0ece1!important;font-family:Hanken,system-ui,sans-serif;font-size:14px}
-.home-perspective>.nav .mbtn{border-color:#73664e}.home-perspective>.nav .mbtn span{background:#e3d7c0}
 .perspective-design .eyebrow{font-family:Hanken,system-ui,sans-serif;font-size:12px;letter-spacing:.16em}
 .perspective-design .role{font-size:13px}.perspective-design .cube-kicker{font-size:11px}
 .perspective-design .cube-faces button{font-size:12px}.perspective-design .cube-faces button:before{font-size:10px}
@@ -227,6 +221,3 @@
 .perspective-design .cube-explanation dd{margin:0}
 @media(max-width:350px){.perspective-design .cube-explanation-copy{padding:14px 12px}.perspective-design .cube-explanation dl{gap:8px 12px}}
 .perspective-design .proof-link{text-decoration:underline;text-decoration-color:#73664e;text-underline-offset:5px}.perspective-design .proof-link:hover{text-decoration-color:#e2c494}
-
-.home-perspective>.nav .mbtn{border-radius:4px}
-@media(max-width:420px){.home-perspective>.nav .brand{font-size:18px}}

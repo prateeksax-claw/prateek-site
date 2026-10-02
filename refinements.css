@@ -9,4 +9,4 @@ html{scroll-padding-top:96px;scroll-behavior:smooth}body{overflow-x:clip}.rv{opa
 .series em{color:#116253}
 
 /* Shared controls follow the same geometry on the homepage and reading pages. */
-.nav .nbtn,.copy-bio{border-radius:4px}.nav .nbtn{background:#202a25}.nav .nbtn:hover{background:#315346}.nav .dot{background:#9c8256;box-shadow:none}.nav .brand{color:#202a25}
+.copy-bio{border-radius:4px}

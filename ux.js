@@ -63,7 +63,7 @@
         e.preventDefault(); first?.focus();
       }
     });
-    matchMedia('(min-width:901px)').addEventListener('change', e => { if(e.matches) closeMenu(false); });
+    matchMedia('(min-width:1101px)').addEventListener('change', e => { if(e.matches) closeMenu(false); });
   }
   document.querySelectorAll('.nlinks a,.mlinks a').forEach(link => {
     if (new URL(link.href).pathname === location.pathname && !link.hash) link.setAttribute('aria-current','page');

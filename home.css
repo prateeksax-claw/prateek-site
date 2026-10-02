@@ -51,7 +51,7 @@
 .home-perspective .home-contact .text-link>span{color:#cbb18b}
 .home-perspective .copy-email{border-radius:4px;border-color:#827357}
 .home-perspective footer{border-top:1px solid #d5d3c9}
-@media(max-width:1100px){.home-perspective>.nav .nlinks{display:none}.home-perspective>.nav .mbtn{display:block}}
+
 @media(max-width:950px){.career-entry{grid-template-columns:125px 105px minmax(0,1fr);gap:20px;padding-inline:16px}.career-brand img{max-width:100px}.career-copy h3{font-size:26px}.credential-card{padding:24px}.credential-brand{width:145px}.credential-top{gap:14px}.credential-card h3{font-size:26px}.home-perspective .work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.home-perspective .home-section{padding-block:54px}.career-entry{grid-template-columns:124px minmax(0,1fr);gap:16px 18px;padding:24px 0}.career-current{padding:24px 14px;margin-inline:-14px}.career-date{grid-column:2;grid-row:1;align-self:center;text-align:right;margin:0;font-size:13px}.career-brand{grid-column:1;grid-row:1;height:64px}.career-brand img{max-width:100%;max-height:56px}.career-wordmark{font-size:16px;line-height:1.25}.career-copy{grid-column:1/-1}.career-copy h3{font-size:25px;margin-bottom:12px}.career-copy p{font-size:15px}.credential-grid{grid-template-columns:minmax(0,1fr);gap:18px}.credential-top{margin-bottom:22px}.credential-card h3{font-size:27px}.home-perspective .work-grid{grid-template-columns:1fr}}
 @media(max-width:370px){.career-entry{grid-template-columns:112px minmax(0,1fr);column-gap:14px}.career-wordmark{font-size:14px}.career-copy h3{font-size:23px}.credential-card{padding:20px}.credential-brand{width:115px}.credential-meta{font-size:12px}.credential-card h3{font-size:25px}}
@@ -76,5 +76,5 @@
 @media(max-width:700px){.home-perspective .work-content{padding:20px}.home-perspective .work-content .eyebrow{margin-bottom:10px}.home-perspective .work-content h3{font-size:26px;margin-bottom:12px}.home-perspective .work-content>p:not(.eyebrow){margin-bottom:12px}.home-perspective .work-brand{min-height:50px}.home-perspective .work-brand-mark img{max-height:32px}.home-perspective .image-link{aspect-ratio:3/2}}
 
 /* Homepage accessibility without loading unused article, tool and error styles. */
-html{scroll-padding-top:96px;scroll-behavior:smooth}body{overflow-x:clip}[hidden]{display:none!important}.rv{opacity:1!important;transform:none!important}main:focus{outline:none}footer a{display:inline-flex;align-items:center;min-height:44px;margin:0 10px 0 0}footer .frow>div:last-child{display:flex;align-items:center;flex-wrap:wrap;gap:0 8px}.nav .nbtn{border-radius:4px}
+html{scroll-padding-top:96px;scroll-behavior:smooth}body{overflow-x:clip}[hidden]{display:none!important}.rv{opacity:1!important;transform:none!important}main:focus{outline:none}footer a{display:inline-flex;align-items:center;min-height:44px;margin:0 10px 0 0}footer .frow>div:last-child{display:flex;align-items:center;flex-wrap:wrap;gap:0 8px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
