@@ -4,7 +4,11 @@ import {allowAutoplay} from '../perspective/v1/loading-policy.mjs';
 import {FACES,chapterAt,DURATION,END_FRAME} from '../perspective/v1/cube-timeline.mjs';
 const desktop={contentReady:true,inView:true,hidden:false,width:1440,finePointer:true,reduced:false,saveData:false,effectiveType:'4g'};
 assert.equal(allowAutoplay(desktop),true);
-for(const override of [{contentReady:false},{inView:false},{hidden:true},{width:390},{width:900},{finePointer:false},{reduced:true},{saveData:true},{effectiveType:'3g'},{effectiveType:'2g'},{effectiveType:'slow-2g'}])assert.equal(allowAutoplay({...desktop,...override}),false,JSON.stringify(override));
+for(const device of [desktop,{...desktop,width:390,finePointer:false},{...desktop,width:768,finePointer:false}]){
+ assert.equal(allowAutoplay(device),true,'Ready desktop, phone and tablet can autoplay');
+ for(const override of [{contentReady:false},{inView:false},{hidden:true},{reduced:true},{saveData:true},{effectiveType:'3g'},{effectiveType:'2g'},{effectiveType:'slow-2g'}])assert.equal(allowAutoplay({...device,...override}),false,JSON.stringify(override));
+ assert.equal(allowAutoplay({...device,effectiveType:undefined}),true,'Unknown connection is allowed, including Safari');
+}
 const html=readFileSync('index.html','utf8');
 assert.match(html,/<style id="home-design">/);
 assert.ok(!/<link[^>]*rel="stylesheet"/.test(html),'Homepage has no render-blocking stylesheet requests');

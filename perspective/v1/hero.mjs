@@ -1,5 +1,5 @@
 import {DURATION,END_FRAME,FACES,chapterAt,labelFor,timeLabel,clampTime} from './cube-timeline.mjs';
-import {allowAutoplay} from './loading-policy.mjs';
+import {allowAutoplay} from './loading-policy.mjs?v=20261002-mobile';
 const video=document.querySelector('#hero-film'),stage=document.querySelector('#object-window'),poster=document.querySelector('#cube-poster'),
  play=document.querySelector('#play-solve'),label=document.querySelector('#play-label'),replay=document.querySelector('#replay-cube'),skip=document.querySelector('#skip-cube'),
  seek=document.querySelector('#cube-seek'),time=document.querySelector('#cube-time'),error=document.querySelector('#film-error'),buffer=document.querySelector('#buffering'),
@@ -28,6 +28,7 @@ function load(){
    const clear=()=>{clearTimeout(timer);video.removeEventListener('loadedmetadata',ok);video.removeEventListener('error',bad);};
    const ok=()=>{clear();resolve();};const bad=()=>{clear();loadPromise=null;reject(new Error('Media unavailable'));};const timer=setTimeout(bad,12000);
    video.addEventListener('loadedmetadata',ok,{once:true});video.addEventListener('error',bad,{once:true});
+   video.muted=true;video.defaultMuted=true;video.playsInline=true;
    video.src=asset(innerWidth<=600?'cube-480.mp4':'cube-768.mp4');video.load();
  });return loadPromise;
 }
@@ -47,7 +48,7 @@ async function moveTo(t,run=false,{restart=false}={}){
    if(token!==action)return;
    if(run){await video.play();if(token!==action){if(mode!=='playing')video.pause();return;}setMode('playing');stage.dataset.visual='film';followFrames();}
    else{stage.dataset.visual='film';sync(target>=END_FRAME?DURATION:target);setMode(target>=END_FRAME?'ended':'paused');announce();}
- }catch(e){if(token!==action)return;if(e?.name==='NotAllowedError'){setMode('paused');status.textContent='Select Watch animation to play.';}else fallback();}
+ }catch(e){if(token!==action)return;if(e?.name==='NotAllowedError'){setMode(position===0?'idle':'paused');status.textContent=`Select ${labelFor(mode)} to play.`;}else fallback();}
 }
 function inspect(index){
  const f=FACES[index];if(!f)return;action++;autoAttempted=true;video.pause();stopFrames();poster.src=asset(`${f.id}.webp`);poster.alt=`${f.name}: ${f.symbol}. ${f.line}`;stage.dataset.visual='poster';sync(f.seek);setMode('face');error.hidden=true;announce();
@@ -66,12 +67,11 @@ video.addEventListener('playing',()=>{buffer.hidden=true;});
 video.addEventListener('error',()=>{if(video.getAttribute('src'))fallback();});
 function maybeAuto(){
  if(!autoAttempted&&mode==='idle'&&allowAutoplay({
-   contentReady,inView,hidden:document.hidden,width:innerWidth,
-   finePointer:matchMedia('(pointer: fine)').matches,reduced:reduced.matches,
+   contentReady,inView,hidden:document.hidden,reduced:reduced.matches,
    saveData:Boolean(navigator.connection?.saveData),effectiveType:navigator.connection?.effectiveType
  })){autoAttempted=true;moveTo(0,true,{restart:true});}
 }
-if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries.some(e=>e.isIntersecting&&e.intersectionRatio>=.2);if(inView)maybeAuto();else if(mode==='playing'||mode==='loading')pause();},{threshold:[0,.2]}).observe(document.querySelector('.object'));
+if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries.some(e=>e.isIntersecting&&e.intersectionRatio>=.2);if(inView)maybeAuto();else if(mode==='playing'||mode==='loading')pause();},{threshold:[0,.2]}).observe(stage);
 document.addEventListener('visibilitychange',()=>{if(document.hidden){if(mode==='playing'||mode==='loading')pause();}else maybeAuto();});
 function respectMotion(){if(staticMode()){pause();autoAttempted=true;poster.src=asset('ending.webp');poster.alt='The complete perspective cube, with all six artworks aligned.';stage.dataset.visual='poster';sync(DURATION);setMode('ended');document.querySelector('#static-note').hidden=false;}}
 reduced.addEventListener('change',respectMotion);sync(0);setMode('idle');respectMotion();
