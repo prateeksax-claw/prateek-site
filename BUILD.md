@@ -70,4 +70,10 @@ Run `node build.mjs`, `node tests/analytics.mjs`, and `node tests/site.mjs`. The
 
 Push `dev` for the Cloudflare preview at `https://dev.prateeksaxena.pages.dev`. The workflow adds `X-Robots-Tag: noindex, nofollow` to preview responses. Production publishes only from `master` (mapped to Cloudflare's `main` production branch). Do not copy local audit reports or private analytics into the repository.
 
+`preview-headers.mjs` inserts the exclusion into the existing catch-all header rule after preparing `.pages-output`. Never append a second `/*` block. Tests verify header preservation and restore neutral deployment output afterwards.
+
+The 404 page uses the shared consent and navigation layer and is included in site validation. Consent preferences show the saved choice and restore focus to the opening control. On narrow screens, Frameworks renders equivalent HTML steps instead of shrinking diagram text. Copy-email intent is `email_copy`; it is not a confirmed enquiry. Long-lived fonts, logos and portrait assets now revalidate daily; use a new filename or URL version when replacing a previously immutable asset.
+
+The owner will write the evidence-based case-study article. Do not infer personal responsibility or quantitative outcomes from group partnership announcements. The signature cube remains a separate creative asset awaiting an explicitly reviewed integration; this release does not replace its approved images.
+
 The site owner confirmed on 2 October 2026 that the INSEAD Certificate in Global Management is completed and CMA studies are in progress. Before production, review the privacy notice against account configuration and validate the enquiry event in GA4. `email_click` can be treated as contact intent; confirmed and qualified enquiries require separate evidence. Public outcome claims must be supported, not inferred from partnership announcements.

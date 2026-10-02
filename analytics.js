@@ -4,9 +4,15 @@
  'use strict';
  const production=['prateeksaxena.me','www.prateeksaxena.me'].includes(location.hostname);
  const key='ps-analytics-choice-v1';
- let choice=null,started=false;
+ let choice=null,started=false,opener=null;
  try { choice=localStorage.getItem(key); } catch {}
+ if(!['accepted','declined'].includes(choice)) choice=null;
  const panel=document.getElementById('analytics-choice');
+ const current=panel?.querySelector('[data-consent-current]');
+ const status=document.getElementById('analytics-status');
+ function describeChoice(){
+   if(current) current.textContent=choice==='accepted' ? 'Current choice: optional analytics allowed.' : choice==='declined' ? 'Current choice: essential only.' : 'Current choice: optional analytics are off until you allow them.';
+ }
  const readChoice=()=>choice==='accepted';
  window.siteAnalytics={allowed:()=>production && readChoice()};
  function start(){
@@ -34,7 +40,11 @@
  function choose(value){
    choice=value;
    try{localStorage.setItem(key,value);}catch{}
-   panel.hidden=true;
+   if(panel) panel.hidden=true;
+   describeChoice();
+   if(status) status.textContent=value==='accepted' ? 'Preference saved: optional analytics allowed.' : 'Preference saved: essential only.';
+   (opener?.isConnected ? opener : document.getElementById('main'))?.focus({preventScroll:true});
+   opener=null;
    if(value==='accepted') start();
    else {
      window['ga-disable-G-LFFECRD57Q']=true;
@@ -44,8 +54,12 @@
    }
  }
  panel?.querySelectorAll('[data-consent]').forEach(button=>button.addEventListener('click',()=>choose(button.dataset.consent==='accept'?'accepted':'declined')));
- document.querySelectorAll('[data-privacy-settings]').forEach(button=>button.addEventListener('click',()=>{panel.hidden=false;panel.querySelector('button').focus();}));
- if(production && !choice && !navigator.globalPrivacyControl) panel.hidden=false;
+ document.querySelectorAll('[data-privacy-settings]').forEach(button=>button.addEventListener('click',()=>{
+   if(!panel) return;
+   opener=button;describeChoice();panel.hidden=false;panel.querySelector('button')?.focus();
+ }));
+ if(panel && production && !choice && !navigator.globalPrivacyControl) panel.hidden=false;
  if(navigator.globalPrivacyControl) choice='declined';
+ describeChoice();
  if(readChoice()) start();
 })();

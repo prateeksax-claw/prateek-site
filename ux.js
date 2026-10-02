@@ -90,4 +90,14 @@
     try { await navigator.clipboard.writeText(text.trim()); status.textContent='Bio copied.'; }
     catch { status.textContent='Copy is unavailable. Select the biography text to copy it.'; }
   }));
+  document.querySelectorAll('[data-copy-email]').forEach(button => button.addEventListener('click',async () => {
+    const email=document.getElementById(button.dataset.copyEmail)?.textContent.trim();
+    const status=button.parentElement.querySelector('[role="status"]');
+    try {
+      if(!email) throw new Error('Missing contact address');
+      await navigator.clipboard.writeText(email);
+      status.textContent='Email address copied.';
+      if(window.siteAnalytics?.allowed()) window.gtag('event','email_copy',{from:location.pathname,engagement_type:'general',placement:'contact'});
+    } catch { status.textContent='Select the email address above to copy it.'; }
+  }));
 })();

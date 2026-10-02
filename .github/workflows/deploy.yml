@@ -39,8 +39,7 @@ jobs:
 
       - name: Prevent preview indexing
         if: github.ref_name != 'master'
-        run: |
-          printf '\n/*\n  X-Robots-Tag: noindex, nofollow\n' >> .pages-output/_headers
+        run: node preview-headers.mjs
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

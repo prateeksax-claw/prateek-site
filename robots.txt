@@ -2,7 +2,9 @@ User-agent: *
 Allow: /
 Disallow: /cdn-cgi/
 
-# AI search, assistant & training crawlers, allowed for citation/visibility
+# Search and training crawler permissions are separate owner choices.
+# Search access does not require training permission or guarantee citation.
+# Existing permissions below are unchanged.
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot
