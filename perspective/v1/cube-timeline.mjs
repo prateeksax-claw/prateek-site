@@ -16,5 +16,5 @@ export function chapterAt(value){
   if(t>=7)return {id:'solved',index:-1,kicker:'THE PIECES ARE IN PLACE',title:'A different view on every side.',line:'Six perspectives behind how I think.'};
   return {id:'solve',index:-1,kicker:'THE PERSPECTIVE CUBE',title:'Bringing the pieces together.',line:'Six perspectives behind how I think.'};
 }
-export function labelFor(mode){return ({idle:'Watch animation',loading:'Preparing animation…',playing:'Pause animation',paused:'Resume animation',face:'Resume animation',ended:'Replay animation',error:'Try animation again'})[mode]||'Watch animation';}
+export function labelFor(mode){return ({idle:'Watch animation',loading:'Preparing animation…',restarting:'Pause replay transition',playing:'Pause animation',paused:'Resume animation',face:'Resume animation',ended:'Replay animation',error:'Try animation again'})[mode]||'Watch animation';}
 export function timeLabel(t){return `0:${String(Math.floor(clampTime(t))).padStart(2,'0')}`;}

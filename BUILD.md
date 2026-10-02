@@ -134,3 +134,7 @@ The hero picture and mutually exclusive media preloads select the approved endin
 On narrow Journal layouts, essay titles and summaries precede decorative thumbnails. All entries, filters and the readership ordering period remain available. About covers personal perspective, the role page covers responsibilities and dated progression, and Media Kit prioritises reusable biographies and assets. Existing section anchors and complete homepage experience/education are retained. The owner's new article is deferred.
 
 Analytics configuration and release evidence are kept privately outside this public repository. Email clicks represent contact intent only; email receipt and qualification require a separate enquiry record. Never present key-event counts as confirmed leads.
+
+### Replay transition
+
+Replay captures the currently visible film frame or face still into a temporary canvas. That frame remains visible while the existing film seeks to its decoded opening. A one-second eased dissolve with a subtle scale change introduces the opening before playback resumes; captions fade with it. The canvas and animation effects are removed on completion, pause, face selection, seeking, media failure, page hiding or leaving the viewport. Reduced-motion and data-saving modes skip this decorative transition. Initial autoplay creates no canvas, and no film or artwork changes or additional media downloads are required. `tests/replay-transition.mjs`, included by the cube suite, covers completion and interruption cleanup.

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,statSync,existsSync} from 'node:fs';
 import {allowAutoplay} from '../perspective/v1/loading-policy.mjs';
 import {FACES,chapterAt,DURATION,END_FRAME} from '../perspective/v1/cube-timeline.mjs';
+import './replay-transition.mjs';
 const desktop={contentReady:true,inView:true,hidden:false,width:1440,finePointer:true,reduced:false,saveData:false,effectiveType:'4g'};
 assert.equal(allowAutoplay(desktop),true);
 for(const device of [desktop,{...desktop,width:390,finePointer:false},{...desktop,width:768,finePointer:false}]){
@@ -40,7 +41,7 @@ for(const [index,face] of FACES.entries()){
  assert.ok(html.includes(face.line));
  assert.ok(existsSync(`.pages-output/perspective/v1/${face.id}.webp`));
 }
-for(const file of ['hero.mjs','loading-policy.mjs','cube-timeline.mjs','site.css','opening.webp','ending.webp','cube-480.mp4','cube-768.mp4'])assert.ok(existsSync(`.pages-output/perspective/v1/${file}`),`Published: ${file}`);
+for(const file of ['hero.mjs','replay-transition.mjs','loading-policy.mjs','cube-timeline.mjs','site.css','opening.webp','ending.webp','cube-480.mp4','cube-768.mp4'])assert.ok(existsSync(`.pages-output/perspective/v1/${file}`),`Published: ${file}`);
 assert.ok(statSync('perspective/v1/opening.webp').size<70000);
 assert.ok(statSync('perspective/v1/cube-480.mp4').size<1700000);
 assert.ok(statSync('perspective/v1/cube-768.mp4').size<4200000);

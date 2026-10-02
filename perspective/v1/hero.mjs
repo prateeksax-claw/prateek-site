@@ -1,16 +1,17 @@
-import {DURATION,END_FRAME,FACES,chapterAt,labelFor,timeLabel,clampTime} from './cube-timeline.mjs';
+import {DURATION,END_FRAME,FACES,chapterAt,labelFor,timeLabel,clampTime} from './cube-timeline.mjs?v=20261002-replay';
 import {allowAutoplay} from './loading-policy.mjs?v=20261002-mobile';
+import {captureReplay} from './replay-transition.mjs?v=20261002';
 const video=document.querySelector('#hero-film'),stage=document.querySelector('#object-window'),poster=document.querySelector('#cube-poster'),
  play=document.querySelector('#play-solve'),label=document.querySelector('#play-label'),replay=document.querySelector('#replay-cube'),skip=document.querySelector('#skip-cube'),
  seek=document.querySelector('#cube-seek'),time=document.querySelector('#cube-time'),error=document.querySelector('#film-error'),buffer=document.querySelector('#buffering'),
  status=document.querySelector('#motion-status'),reduced=matchMedia('(prefers-reduced-motion: reduce)'),faceButtons=[...document.querySelectorAll('.cube-faces [data-face]')];
-let mode='idle',position=0,chapter='',loadPromise=null,action=0,autoAttempted=false,inView=false,frameCallback=null,contentReady=false;
+let mode='idle',position=0,chapter='',loadPromise=null,action=0,autoAttempted=false,inView=false,frameCallback=null,contentReady=false,replayTransition=null;
 const assets=new URL('./',import.meta.url);
 const asset=name=>new URL(name,assets).href;
 // Explicit controls take precedence over the initial reduced-motion picture source.
 function releasePicture(){poster.closest('picture')?.querySelector('source')?.remove();}
 const staticMode=()=>reduced.matches||Boolean(navigator.connection?.saveData);
-function setMode(next){mode=next;document.querySelector('.object').dataset.state=mode;label.textContent=labelFor(mode);play.querySelector('.play-icon').textContent=mode==='playing'?'Ⅱ':'▶';play.setAttribute('aria-label',labelFor(mode));replay.hidden=mode==='idle'||mode==='error'||mode==='ended';skip.hidden=mode==='ended'||mode==='error';buffer.hidden=mode!=='loading';}
+function setMode(next){mode=next;document.querySelector('.object').dataset.state=mode;label.textContent=labelFor(mode);play.querySelector('.play-icon').textContent=mode==='playing'||mode==='restarting'?'Ⅱ':'▶';play.setAttribute('aria-label',labelFor(mode));replay.hidden=['idle','error','ended','restarting'].includes(mode);skip.hidden=mode==='ended'||mode==='error';buffer.hidden=mode!=='loading';}
 function sync(t){
  position=clampTime(t);stage.dataset.time=position.toFixed(3);seek.value=String(position);time.value=`${timeLabel(position)} / 0:30`;
  const c=chapterAt(position);seek.setAttribute('aria-valuetext',`${timeLabel(position)} of 0:30. ${c.title}`);
@@ -22,8 +23,9 @@ function sync(t){
 function announce(){const c=chapterAt(position);status.textContent=`${c.title} ${c.line}`;}
 function stopFrames(){if(frameCallback!==null&&video.cancelVideoFrameCallback){video.cancelVideoFrameCallback(frameCallback);frameCallback=null;}}
 function followFrames(){if(!video.requestVideoFrameCallback)return;stopFrames();const token=action;const tick=(_,data)=>{frameCallback=null;if(token!==action||mode!=='playing'||video.paused)return;sync(data.mediaTime);if(!video.ended)frameCallback=video.requestVideoFrameCallback(tick);};frameCallback=video.requestVideoFrameCallback(tick);}
-function pause(){action++;video.pause();stopFrames();if(mode==='playing'){sync(video.currentTime);setMode('paused');}else if(mode==='loading'){setMode('paused');}buffer.hidden=true;}
-function fallback(){video.pause();stopFrames();loadPromise=null;setMode('error');error.hidden=false;stage.dataset.visual='poster';const c=chapterAt(position);poster.src=asset(c.index>=0?`${FACES[c.index].id}.webp`:'ending.webp');poster.alt=c.index>=0?`${FACES[c.index].name}. ${FACES[c.index].line}`:'The complete perspective cube, with all six artworks aligned.';if(c.index<0)sync(END_FRAME);}
+function cancelReplay(){replayTransition?.cancel();replayTransition=null;}
+function pause(){action++;video.pause();stopFrames();cancelReplay();if(mode==='playing'||mode==='restarting'){sync(video.currentTime);setMode('paused');}else if(mode==='loading'){setMode('paused');}buffer.hidden=true;}
+function fallback(){action++;cancelReplay();video.pause();stopFrames();loadPromise=null;setMode('error');error.hidden=false;stage.dataset.visual='poster';const c=chapterAt(position);poster.src=asset(c.index>=0?`${FACES[c.index].id}.webp`:'ending.webp');poster.alt=c.index>=0?`${FACES[c.index].name}. ${FACES[c.index].line}`:'The complete perspective cube, with all six artworks aligned.';if(c.index<0)sync(END_FRAME);}
 function load(){
  if(video.readyState>=1)return Promise.resolve();if(loadPromise)return loadPromise;
  loadPromise=new Promise((resolve,reject)=>{
@@ -35,9 +37,10 @@ function load(){
  });return loadPromise;
 }
 async function moveTo(t,run=false,{restart=false}={}){
- releasePicture();const token=++action;autoAttempted=true;video.pause();stopFrames();error.hidden=true;const target=restart?0:Math.min(clampTime(t),END_FRAME);
- sync(target);setMode('loading');
- if(restart){poster.src=asset('opening.webp');poster.alt='The perspective cube, with six abstract artworks waiting to align.';stage.dataset.visual='poster';}
+ cancelReplay();const transition=restart&&position>.1?captureReplay({stage,video,poster,caption:document.querySelector('.cube-caption'),reduced:staticMode()}):null;
+ replayTransition=transition;releasePicture();const token=++action;autoAttempted=true;video.pause();stopFrames();error.hidden=true;const target=restart?0:Math.min(clampTime(t),END_FRAME);
+ if(!transition)sync(target);setMode(transition?'restarting':'loading');
+ if(restart&&!transition){poster.src=asset('opening.webp');poster.alt='The perspective cube, with six abstract artworks waiting to align.';stage.dataset.visual='poster';}
  try{
    await load();if(token!==action)return;
    if(Math.abs(video.currentTime-target)>.008){
@@ -48,14 +51,25 @@ async function moveTo(t,run=false,{restart=false}={}){
      });
    }
    if(token!==action)return;
+   if(transition){
+     // Metadata alone does not guarantee a drawable opening frame on a cold replay.
+     if(video.readyState<2)await new Promise((resolve,reject)=>{
+       const clear=()=>{clearTimeout(timer);video.removeEventListener('loadeddata',ok);video.removeEventListener('error',bad);};
+       const ok=()=>{clear();resolve();};const bad=()=>{clear();reject(new Error('Frame unavailable'));};const timer=setTimeout(bad,10000);
+       video.addEventListener('loadeddata',ok,{once:true});video.addEventListener('error',bad,{once:true});
+     });
+     if(token!==action)return;stage.dataset.visual='film';
+     if(!await transition.reveal(()=>sync(target))||token!==action)return;
+     replayTransition=null;
+   }
    if(run){await video.play();if(token!==action){if(mode!=='playing')video.pause();return;}setMode('playing');stage.dataset.visual='film';followFrames();}
    else{stage.dataset.visual='film';sync(target>=END_FRAME?DURATION:target);setMode(target>=END_FRAME?'ended':'paused');announce();}
- }catch(e){if(token!==action)return;if(e?.name==='NotAllowedError'){setMode(position===0?'idle':'paused');status.textContent=`Select ${labelFor(mode)} to play.`;}else fallback();}
+ }catch(e){if(token!==action)return;cancelReplay();if(e?.name==='NotAllowedError'){setMode(position===0?'idle':'paused');status.textContent=`Select ${labelFor(mode)} to play.`;}else fallback();}
 }
 function inspect(index){
- const f=FACES[index];if(!f)return;releasePicture();action++;autoAttempted=true;video.pause();stopFrames();poster.src=asset(`${f.id}.webp`);poster.alt=`${f.name}: ${f.symbol}. ${f.line}`;stage.dataset.visual='poster';sync(f.seek);setMode('face');error.hidden=true;announce();
+ const f=FACES[index];if(!f)return;cancelReplay();releasePicture();action++;autoAttempted=true;video.pause();stopFrames();poster.src=asset(`${f.id}.webp`);poster.alt=`${f.name}: ${f.symbol}. ${f.line}`;stage.dataset.visual='poster';sync(f.seek);setMode('face');error.hidden=true;announce();
 }
-play.addEventListener('click',()=>{if(mode==='playing'||mode==='loading'){pause();return;}const restart=mode==='ended'||mode==='error';if(mode==='error'){loadPromise=null;video.removeAttribute('src');video.load();}moveTo(restart?0:position,true,{restart});});
+play.addEventListener('click',()=>{if(mode==='playing'||mode==='loading'||mode==='restarting'){pause();return;}const restart=mode==='ended'||mode==='error';if(mode==='error'){loadPromise=null;video.removeAttribute('src');video.load();}moveTo(restart?0:position,true,{restart});});
 replay.addEventListener('click',()=>moveTo(0,true,{restart:true}));
 skip.addEventListener('click',()=>moveTo(END_FRAME,false));
 document.querySelector('#retry-cube').addEventListener('click',()=>{loadPromise=null;video.removeAttribute('src');video.load();moveTo(0,true,{restart:true});});
@@ -73,8 +87,8 @@ function maybeAuto(){
    saveData:Boolean(navigator.connection?.saveData),effectiveType:navigator.connection?.effectiveType
  })){autoAttempted=true;moveTo(0,true,{restart:true});}
 }
-if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries.some(e=>e.isIntersecting&&e.intersectionRatio>=.2);if(inView)maybeAuto();else if(mode==='playing'||mode==='loading')pause();},{threshold:[0,.2]}).observe(stage);
-document.addEventListener('visibilitychange',()=>{if(document.hidden){if(mode==='playing'||mode==='loading')pause();}else maybeAuto();});
+if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries.some(e=>e.isIntersecting&&e.intersectionRatio>=.2);if(inView)maybeAuto();else if(['playing','loading','restarting'].includes(mode))pause();},{threshold:[0,.2]}).observe(stage);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){if(['playing','loading','restarting'].includes(mode))pause();}else maybeAuto();});
 function respectMotion(){if(staticMode()){pause();autoAttempted=true;poster.src=asset('ending.webp');poster.alt='The complete perspective cube, with all six artworks aligned.';stage.dataset.visual='poster';sync(DURATION);setMode('ended');document.querySelector('#static-note').hidden=false;}}
 reduced.addEventListener('change',respectMotion);sync(0);setMode('idle');respectMotion();
 document.body.classList.add('cube-ready');
