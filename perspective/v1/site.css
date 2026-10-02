@@ -226,3 +226,4 @@
 .perspective-design .cube-explanation dt{color:#e5d2b1;font-weight:500}
 .perspective-design .cube-explanation dd{margin:0}
 @media(max-width:350px){.perspective-design .cube-explanation-copy{padding:14px 12px}.perspective-design .cube-explanation dl{gap:8px 12px}}
+.perspective-design .proof-link{text-decoration:underline;text-decoration-color:#73664e;text-underline-offset:5px}.perspective-design .proof-link:hover{text-decoration-color:#e2c494}

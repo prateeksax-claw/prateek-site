@@ -7,3 +7,6 @@ html{scroll-padding-top:100px;scroll-behavior:smooth}body{overflow-x:clip}.rv{op
 @media print{.nav,.mmenu,.consent,.privacy-links,.bio-tools,.copy-email{display:none!important}body{background:#fff!important;color:#14211f!important}.article-body,.wrap{max-width:none!important}.fw,.path{break-inside:avoid}a{color:inherit}.framework-mobile{display:block}.fw .diagram{display:none}}
 
 .series em{color:#116253}
+
+/* Shared controls follow the same geometry on the homepage and reading pages. */
+.nav .nbtn,.copy-bio{border-radius:4px}.nav .nbtn{background:#202a25}.nav .nbtn:hover{background:#315346}.nav .dot{background:#9c8256;box-shadow:none}.nav .brand{color:#202a25}
