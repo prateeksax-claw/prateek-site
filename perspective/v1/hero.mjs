@@ -84,6 +84,6 @@ Promise.allSettled([pageLoaded,document.fonts?.ready,poster.decode?.()]).then(()
    const ready=()=>{contentReady=true;maybeAuto();};
    if('requestIdleCallback' in window)requestIdleCallback(ready,{timeout:4000});
    else setTimeout(ready,250);
- },750);
+ },250);
 });
 navigator.connection?.addEventListener('change',()=>{respectMotion();maybeAuto();});
