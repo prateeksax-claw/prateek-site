@@ -7,7 +7,9 @@
     "Jaquar": "https://www.linkedin.com/feed/update/urn:li:activity:7167685253694787584/",
     "Birla White": "https://www.birlawhite.com/en/about-us",
     "Himanshu Kapania at Grasim": "https://www.grasim.com/about-us/leadership",
-    "Concurrent Birla White role": "https://www.birlaopus.com/about-us/our-leadership"
+    "Concurrent Birla White role": "https://www.birlaopus.com/about-us/our-leadership",
+    "Henkel Polybit product documentation": "https://www.henkelpolybit.com/en/service-and-support/technical-data-sheets.html",
+    "Philips lighting brand relationship": "https://www.lighting.philips.com/about-us"
   },
   "pendingOwnerConfirmation": [
     "Original July 2025 announcement to support the existing Birla White agreement geography and exclusivity",
@@ -19,5 +21,15 @@
     "date": "2026-10-02",
     "brand": "Birla White, part of Aditya Birla Group",
     "credentials": "INSEAD completed; CMA in progress"
+  },
+  "searchExposureReview": {
+    "date": "2026-10-02",
+    "basis": "Existing published site articles, event announcements and photographs. No new personal role or outcome claims.",
+    "sourcesAdded": [
+      "Henkel Polybit technical data sheets",
+      "Philips lighting brand explanation"
+    ],
+    "territory": "Jaquar and Artize: Abu Dhabi region. Other stories retain their documented scope.",
+    "pending": "Owner-authored case evidence and external corroboration for new outcome or agreement claims."
   }
 }

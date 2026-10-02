@@ -150,6 +150,28 @@ writeFileSync('index.html', home);
   writeFileSync('sitemap.xml', sitemap);
 }
 
+// Associate the existing, captioned editorial photos with their canonical pages.
+// Derive URLs from visible HTML so image discovery cannot drift to an old asset.
+{
+  let sitemap = readFileSync('sitemap.xml', 'utf8')
+    .replace(/\s*<image:image>[\s\S]*?<\/image:image>/g, '');
+  if (!sitemap.includes('xmlns:image=')) {
+    sitemap = sitemap.replace('<urlset ', '<urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" ');
+  }
+  sitemap = sitemap.replace(/<url>([\s\S]*?)<\/url>/g, (row, body) => {
+    const loc = body.match(/<loc>([^<]+)<\/loc>/)?.[1];
+    const path = loc && new URL(loc).pathname;
+    const file = path === '/' ? 'index.html' : path?.slice(1) + '.html';
+    if (!file) return row;
+    const html = readFileSync(file, 'utf8');
+    const photos = [...html.matchAll(/<figure class="story-photo">[\s\S]*?<img\b[^>]*\bsrc="([^"]+)"/g)]
+      .map(match => new URL(match[1], SITE).href);
+    const images = [...new Set(photos)].map(url => `<image:image><image:loc>${esc(url)}</image:loc></image:image>`).join('');
+    return `<url>${body}${images}</url>`;
+  });
+  writeFileSync('sitemap.xml', sitemap);
+}
+
 
 // 5: the "## Articles" section of llms.txt (it is the last section in the file)
 const llms = readFileSync('llms.txt', 'utf8');
