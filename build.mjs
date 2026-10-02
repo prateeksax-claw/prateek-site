@@ -17,7 +17,7 @@
  *
  * No dependencies. Node 18+.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 
 const SITE = 'https://prateeksaxena.me';
 const M1 = '<!-- BUILD:ARTICLES:START';   // matched as a prefix (marker line may carry a note)
@@ -84,6 +84,16 @@ injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
 
 // 3: article URLs into the sitemap
 injectBetweenMarkers('sitemap.xml', articles.map(sitemapRow).join('\n'));
+
+// Reading pages share the same critical styles without extra blocking requests.
+const readingStyles=['nav.css','refinements.css','reading.css'].map(file=>readFileSync(file,'utf8').replaceAll('\r\n','\n')).join('\n');
+const readingPages=[...readdirSync('.').filter(f=>f.endsWith('.html')&&f!=='index.html'),...readdirSync('journal').filter(f=>f.endsWith('.html')).map(f=>'journal/'+f)];
+for(const file of readingPages){
+  const text=readFileSync(file,'utf8');
+  const marker=/<!-- BUILD:READING_STYLES:START -->[\s\S]*?<!-- BUILD:READING_STYLES:END -->/;
+  if(!marker.test(text))throw new Error('Missing reading style marker: '+file);
+  writeFileSync(file,text.replace(marker,`<!-- BUILD:READING_STYLES:START -->\n<style id="reading-design">\n${readingStyles}\n</style>\n<!-- BUILD:READING_STYLES:END -->`));
+}
 
 // 4: rebuild index.html from the homepage source (deployed asset paths)
 let home = readFileSync('src/home.html', 'utf8')
