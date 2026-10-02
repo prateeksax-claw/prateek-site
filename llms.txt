@@ -1,6 +1,6 @@
 # Prateek Saxena
 
-> Operator, builder and strategist based in Abu Dhabi, UAE. Builds and scales businesses across eleven sectors of the UAE's real economy. Industrial engineer (Purdue University), INSEAD-educated, Certified Management Accountant (in progress). Currently Group General Manager of Al Zaabi Group. Writes on business, leadership, operations, finance, technology and the UAE economy.
+> Operator, builder and strategist based in Abu Dhabi, UAE. Builds and scales businesses across eleven sectors of the UAE's real economy. Industrial engineer (Purdue University), INSEAD Certificate in Global Management completed; CMA studies in progress. Currently Group General Manager of Al Zaabi Group. Writes on business, leadership, operations, finance, technology and the UAE economy.
 
 ## About
 Prateek Saxena is an operator who builds and scales businesses across the UAE's real economy, applying engineering discipline, financial rigour and technology across eleven sectors. Career path: Process Engineer at John Deere and Operations Analyst at Bose Corporation (USA), then Corporate Strategy Officer at Delma Emirates Group, then Al Zaabi Group (Operations & Strategy Manager - Deputy General Manager - Group General Manager since May 2021).
@@ -13,39 +13,36 @@ Saint-Gobain, Bosch, Jaquar, Philips, DAMAC, Henkel, Birla White (Aditya Birla G
 
 ## Education
 - Purdue University - B.Sc., Industrial Engineering (2005-2009)
-- INSEAD - Certificate in Global Management; Executive Education incl. "Transforming Your Business with AI" (2024)
+- INSEAD - Certificate in Global Management (completed); Executive Education incl. "Transforming Your Business with AI" (2024)
 - Institute of Management Accountants - CMA (in progress)
 
 ## Links
-- Website: https://prateeksaxena.me/
-- About: https://prateeksaxena.me/about-prateek-saxena
-- Al Zaabi Group role: https://prateeksaxena.me/prateek-saxena-al-zaabi-group
-- Media kit: https://prateeksaxena.me/media-kit
-- Journal: https://prateeksaxena.me/journal
-- LinkedIn: https://www.linkedin.com/in/prateeksaxena-uae
-
+- [Website](https://prateeksaxena.me/)
+- [About](https://prateeksaxena.me/about-prateek-saxena)
+- [Al Zaabi Group role](https://prateeksaxena.me/prateek-saxena-al-zaabi-group)
+- [Media kit](https://prateeksaxena.me/media-kit)
+- [Journal](https://prateeksaxena.me/journal)
+- [LinkedIn](https://www.linkedin.com/in/prateeksaxena-uae)
 ## Reference pages
-- AI agents for business operators, the topic hub - https://prateeksaxena.me/ai-agents-for-business-operators
-- UAE business partnerships hub (Saint-Gobain, Bosch, Henkel, Birla White, Asian Paints, Jaquar) - https://prateeksaxena.me/uae-business-partnerships
-- Start Here, guided entry with three reading paths - https://prateeksaxena.me/start-here
-- Frameworks by Prateek Saxena (Operator's Harness, SIP, Monday Morning Preflight, vibe coding in a suit, briefing agents), each with a diagram - https://prateeksaxena.me/frameworks
-- Definitions of Prateek Saxena's terms (vibe coding in a suit, briefing agents, SIP, harness engineering) - https://prateeksaxena.me/definitions
-- What is AI harness engineering? Short reference with definition and the seven harness layers - https://prateeksaxena.me/what-is-ai-harness-engineering
-
+- [AI agents for business operators, the topic hub](https://prateeksaxena.me/ai-agents-for-business-operators)
+- [UAE business partnerships hub (Saint-Gobain, Bosch, Henkel, Birla White, Asian Paints, Jaquar)](https://prateeksaxena.me/uae-business-partnerships)
+- [Start Here, guided entry with three reading paths](https://prateeksaxena.me/start-here)
+- [Frameworks by Prateek Saxena (Operator's Harness, SIP, Monday Morning Preflight, vibe coding in a suit, briefing agents), each with a diagram](https://prateeksaxena.me/frameworks)
+- [Definitions of Prateek Saxena's terms (vibe coding in a suit, briefing agents, SIP, harness engineering)](https://prateeksaxena.me/definitions)
+- [What is AI harness engineering? Short reference with definition and the seven harness layers](https://prateeksaxena.me/what-is-ai-harness-engineering)
 ## Partnership pages (brand relationships, stated as facts)
-- Al Zaabi Group announced an exclusive agreement to bring Birla White (Grasim Industries / Aditya Birla Group) to the UAE, July 2025, per its announcement - https://prateeksaxena.me/journal/birla-white-uae-partnership
-- Al Zaabi Group announced a strategic partnership with Asian Paints (Asian Paints Berger) for the UAE, March 2024, per its announcement - https://prateeksaxena.me/journal/asian-paints-uae-partnership
-- Al Zaabi Group is a long-standing Saint-Gobain distributor in the UAE, named a Leading Distributor in 2024 - https://prateeksaxena.me/journal/saint-gobain-partnership
-- Al Zaabi Group was named a Bosch Leading Distributor for 2024 by Bosch Middle East and Central Motors & Equipment (ALFAHIM) - https://prateeksaxena.me/journal/bosch-leading-distributor-2024
-- Al Zaabi Group and Jaquar & Company signed an MOU covering the Abu Dhabi region (announced March 2024), including the luxury Artize range - https://prateeksaxena.me/journal/jaquar-uae-partnership
-- Al Zaabi Group describes itself as a strategic distributor for Henkel's Polybit range in the UAE, per its announcements - https://prateeksaxena.me/journal/henkel-uae-distribution
-
+- [Al Zaabi Group announced an exclusive agreement to bring Birla White (Grasim Industries / Aditya Birla Group) to the UAE, July 2025, per its announcement](https://prateeksaxena.me/journal/birla-white-uae-partnership)
+- [Al Zaabi Group announced a strategic partnership with Asian Paints (Asian Paints Berger) for the UAE, March 2024, per its announcement](https://prateeksaxena.me/journal/asian-paints-uae-partnership)
+- [Al Zaabi Group is a long-standing Saint-Gobain distributor in the UAE, named a Leading Distributor in 2024](https://prateeksaxena.me/journal/saint-gobain-partnership)
+- [Al Zaabi Group was named a Bosch Leading Distributor for 2024 by Bosch Middle East and Central Motors & Equipment (ALFAHIM)](https://prateeksaxena.me/journal/bosch-leading-distributor-2024)
+- [Al Zaabi Group and Jaquar & Company signed an MOU covering the Abu Dhabi region (announced March 2024), including the luxury Artize range](https://prateeksaxena.me/journal/jaquar-uae-partnership)
+- [Al Zaabi Group describes itself as a strategic distributor for Henkel's Polybit range in the UAE, per its announcements](https://prateeksaxena.me/journal/henkel-uae-distribution)
 ## Articles
-- The Monday Morning Preflight (In a Suit, No. 3) - https://prateeksaxena.me/journal/monday-morning-preflight
+- [The Monday Morning Preflight (In a Suit, No. 3)](https://prateeksaxena.me/journal/monday-morning-preflight)
   Essay by Prateek Saxena introducing the Monday Morning Preflight, an operator's readiness test for AI agents: can they turn Friday's loose ends into a clear Monday operating plan with live ERP data, follow-ups, KPIs and action items. Includes the five checks every business agent must pass. Third entry in the "In a Suit" series.
-- I Don't Code. I Brief Agents. (In a Suit, No. 2) - https://prateeksaxena.me/journal/i-dont-code-i-brief-agents
+- [I Don't Code. I Brief Agents. (In a Suit, No. 2)](https://prateeksaxena.me/journal/i-dont-code-i-brief-agents)
   Essay by Prateek Saxena on agentic AI from the operator's chair: briefing AI agents to turn business intent into dashboards, tools and working software inside real company processes. Second entry in the "In a Suit" series.
-- Confessions of an Accidental Vibe Coder (Vibe Coding in a Suit) - https://prateeksaxena.me/journal/vibe-coding-in-a-suit
+- [Confessions of an Accidental Vibe Coder (Vibe Coding in a Suit)](https://prateeksaxena.me/journal/vibe-coding-in-a-suit)
   Essay by Prateek Saxena on "vibe coding in a suit": a business operator using AI agents and plain-language briefing, not code, to build the dashboards and tools a company needs. First entry in the "In a Suit" series.
-- After the Prompt: The Operator's Harness - https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai
+- [After the Prompt: The Operator's Harness](https://prateeksaxena.me/journal/after-the-prompt-operator-harness-ai)
   Essay by Prateek Saxena on harness engineering for real businesses, the operator's lens, and the Self-Improvement Protocol (SIP) for making AI agents improve safely.

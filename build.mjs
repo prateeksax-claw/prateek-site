@@ -23,16 +23,19 @@ const SITE = 'https://prateeksaxena.me';
 const M1 = '<!-- BUILD:ARTICLES:START';   // matched as a prefix (marker line may carry a note)
 const M2 = '<!-- BUILD:ARTICLES:END -->';
 
+const previousHome = readFileSync('index.html', 'utf8');
+const previousJournal = readFileSync('journal.html', 'utf8');
+
 const { articles } = JSON.parse(readFileSync('data/articles.json', 'utf8'));
 
 const esc = (s) => s; // content is authored trusted copy; keep verbatim
 
 // --- card templates (indentation matches the surrounding grids exactly) ---
-const homeCard = (a) =>
-`      <a class="art rv" href="${a.url}">
-        <span class="thumbwrap"><img class="thumb" src="${a.thumb}" alt="${esc(a.alt)}" loading="lazy" width="1200" height="900"></span>
-        <span class="tag">${esc(a.tag)}</span><h3>${esc(a.title)}</h3>
-        <p>${esc(a.excerpt)}</p><span class="more">Read the essay →</span></a>`;
+const homeCard = (a, i) =>
+`      <article><span class="essay-index">${String(i + 1).padStart(2, '0')}</span>
+        <div><p class="eyebrow">${esc(a.tag)}</p><h3><a href="${a.url}">${esc(a.title)}</a></h3>
+        <p>${esc(a.excerpt)}</p></div>
+        <a class="essay-open" href="${a.url}" aria-label="Read ${a.title.replaceAll('&', '&amp;').replaceAll('"', '&quot;')}">↗</a></article>`;
 
 const journalCard = (a) =>
 `    <a class="jcard rv" href="${a.url}">
@@ -44,7 +47,7 @@ const sitemapRow = (a) =>
 `  <url><loc>${SITE}${a.url}</loc><lastmod>${a.lastmod}</lastmod></url>`;
 
 const llmsRow = (a) =>
-`- ${a.llmsTitle} - ${SITE}${a.url}\n  ${a.llmsDesc}`;
+`- [${a.llmsTitle}](${SITE}${a.url})\n  ${a.llmsDesc}`;
 
 /* Replace the text between BUILD markers (keeping the marker lines). */
 function injectBetweenMarkers(file, body, m1 = M1, m2 = M2) {
@@ -60,7 +63,7 @@ function injectBetweenMarkers(file, body, m1 = M1, m2 = M2) {
 }
 
 // 1 + 2: article cards into the homepage source and the Journal page
-injectBetweenMarkers('src/home.html', articles.slice(0, 3).map(homeCard).join('\n'));
+injectBetweenMarkers('src/home.html', articles.filter(a => a.homeFeature !== false).slice(0, 3).map(homeCard).join('\n'));
 injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
 
 // 2b: regenerate the Journal ItemList schema from the cards actually on the page,
@@ -82,17 +85,6 @@ injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
 // 3: article URLs into the sitemap
 injectBetweenMarkers('sitemap.xml', articles.map(sitemapRow).join('\n'));
 
-// 3b: the homepage and Journal render the article cards, so their content
-// changes whenever this build runs; stamp their lastmod with today's date.
-{
-  const today = new Date().toISOString().slice(0, 10);
-  let sm = readFileSync('sitemap.xml', 'utf8');
-  for (const loc of [`${SITE}/`, `${SITE}/journal`]) {
-    sm = sm.replace(new RegExp(`(<loc>${loc.replaceAll('/', '\\/')}<\\/loc><lastmod>)[^<]+`), `$1${today}`);
-  }
-  writeFileSync('sitemap.xml', sm);
-}
-
 // 4: rebuild index.html from the homepage source (deployed asset paths)
 let home = readFileSync('src/home.html', 'utf8')
   .replaceAll('node_modules/@fontsource-variable/fraunces/files/fraunces-latin-full-normal.woff2', 'fonts/fraunces.woff2')
@@ -101,6 +93,20 @@ let home = readFileSync('src/home.html', 'utf8')
   .replaceAll('node_modules/@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2', 'fonts/hanken.woff2')
   .replaceAll('node_modules/lenis/dist/lenis.min.js', 'lenis.min.js');
 writeFileSync('index.html', home);
+
+// Stamp only when generated content has changed, not merely when a build ran.
+{
+  const changed = [];
+  if (home !== previousHome) changed.push(`${SITE}/`);
+  if (readFileSync('journal.html', 'utf8') !== previousJournal) changed.push(`${SITE}/journal`);
+  let sitemap = readFileSync('sitemap.xml', 'utf8');
+  for (const loc of changed) {
+    const escaped = loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    sitemap = sitemap.replace(new RegExp(`(<loc>${escaped}</loc><lastmod>)[^<]+`), `$1${new Date().toISOString().slice(0,10)}`);
+  }
+  writeFileSync('sitemap.xml', sitemap);
+}
+
 
 // 5: the "## Articles" section of llms.txt (it is the last section in the file)
 const llms = readFileSync('llms.txt', 'utf8');

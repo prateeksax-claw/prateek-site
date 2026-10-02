@@ -26,6 +26,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build and validate
+        run: |
+          node build.mjs
+          node tests/analytics.mjs
+          node tests/site.mjs
+
+      - name: Prevent preview indexing
+        if: github.ref_name != 'master'
+        run: |
+          printf '\n/*\n  X-Robots-Tag: noindex, nofollow\n' >> _headers
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:

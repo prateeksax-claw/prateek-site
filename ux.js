@@ -1,104 +1,93 @@
-/* Shared interaction layer: momentum scroll, cursor ring, magnetic buttons.
-   Everything is gated behind prefers-reduced-motion and pointer:fine. */
-(function () {
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var fine = matchMedia('(pointer:fine)').matches;
-
-  /* momentum smooth-scroll (Lenis) */
-  if (!reduce && window.Lenis) {
-    document.documentElement.style.scrollBehavior = 'auto';
-    var lenis = new Lenis({ duration: 1.1, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); } });
-    (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest && e.target.closest('a[href^="#"]');
-      if (!a || a.classList.contains('skip')) return;
-      var id = a.getAttribute('href');
-      if (id.length < 2) return;
-      var el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      lenis.scrollTo(el, { offset: -64, duration: 1.2 });
-      history.pushState(null, '', id);
-    });
-  }
-
-  /* trailing cursor ring (system cursor stays; the ring is an accent) */
-  if (fine && !reduce) {
-    var st = document.createElement('style');
-    st.textContent =
-      '.cring{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;z-index:80;will-change:transform}' +
-      '.cring i{position:absolute;left:0;top:0;transform:translate(-50%,-50%);width:32px;height:32px;border:1.5px solid rgba(23,122,107,.38);border-radius:50%;opacity:0;transition:width .3s,height .3s,border-color .3s,opacity .3s,background .3s}' +
-      '.cring.on i{opacity:1}' +
-      '.cring.hot i{width:52px;height:52px;border-color:rgba(23,122,107,.7);background:rgba(23,122,107,.05)}';
-    document.head.appendChild(st);
-    var ring = document.createElement('div');
-    ring.className = 'cring'; ring.setAttribute('aria-hidden', 'true');
-    ring.appendChild(document.createElement('i'));
-    document.body.appendChild(ring);
-    var tx = -100, ty = -100, cx = -100, cy = -100, seen = false;
-    addEventListener('pointermove', function (e) {
-      tx = e.clientX; ty = e.clientY;
-      if (!seen) { seen = true; cx = tx; cy = ty; ring.classList.add('on'); }
-      var hot = e.target.closest && e.target.closest('a,button,.btn,.nbtn,.tile,input,textarea');
-      ring.classList.toggle('hot', !!hot);
-    }, { passive: true });
-    document.documentElement.addEventListener('mouseleave', function () { ring.classList.remove('on'); seen = false; });
-    (function loop() {
-      cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
-      ring.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0)';
-      requestAnimationFrame(loop);
-    })();
-  }
-
-  /* mobile menu */
-  var mb = document.getElementById('menuBtn'), mm = document.getElementById('mmenu');
-  if (mb && mm) {
-    var setOpen = function (o) {
-      mb.classList.toggle('open', o); mm.classList.toggle('open', o);
-      mb.setAttribute('aria-expanded', o); mb.setAttribute('aria-label', o ? 'Close menu' : 'Open menu');
-      mm.setAttribute('aria-hidden', !o);
-      document.documentElement.classList.toggle('menulock', o);
-    };
-    mb.addEventListener('click', function () { setOpen(!mm.classList.contains('open')); });
-    mm.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
-    addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
-  }
-
-  /* active-section indicator in the nav */
-  var navLinks = [].slice.call(document.querySelectorAll('.nlinks a[href^="#"]'));
-  if (navLinks.length) {
-    var navMap = navLinks.map(function (a) { return { a: a, el: document.querySelector(a.getAttribute('href')) }; })
-      .filter(function (x) { return x.el; });
-    var updActive = function () {
-      var y = scrollY + innerHeight * 0.38, cur = null;
-      navMap.forEach(function (x) { if (x.el.offsetTop <= y) cur = x; });
-      var inHero = scrollY < innerHeight * 0.45;
-      navMap.forEach(function (x) { x.a.classList.toggle('act', !inHero && x === cur); });
-    };
-    addEventListener('scroll', updActive, { passive: true });
-    updActive();
-  }
-
-  /* magnetic buttons */
-  if (fine && !reduce) {
-    document.querySelectorAll('.btn,.nbtn').forEach(function (b) {
-      b.addEventListener('pointermove', function (e) {
-        var r = b.getBoundingClientRect();
-        var dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
-        b.style.transform = 'translate(' + (dx * 0.16).toFixed(1) + 'px,' + (dy * 0.22).toFixed(1) + 'px)';
+/* Shared interactions. Native scrolling; no perpetual animation loop. */
+(() => {
+  'use strict';
+  const trigger = document.getElementById('menuBtn');
+  const menu = document.getElementById('mmenu');
+  let restoreInert = [];
+  let open = false;
+  const focusable = () => [...menu.querySelectorAll('a[href],button:not([disabled])')].filter(el => el.getClientRects().length);
+  const closeMenu = (restoreFocus = true) => {
+    if (!menu || !open) return;
+    open = false;
+    menu.classList.remove('open');
+    if(menu.open) menu.close();
+    menu.setAttribute('aria-hidden','true');
+    menu.inert = true;
+    trigger.classList.remove('open');
+    trigger.setAttribute('aria-expanded','false');
+    trigger.setAttribute('aria-label','Open menu');
+    document.documentElement.classList.remove('menulock');
+    restoreInert.forEach(([el, original]) => { el.inert = original; });
+    restoreInert = [];
+    if (restoreFocus) trigger.focus({preventScroll:true});
+  };
+  if (trigger && menu) {
+    menu.inert = true;
+    trigger.addEventListener('click', () => {
+      if (open) return closeMenu();
+      open = true;
+      menu.inert = false;
+      menu.classList.add('open');
+      menu.setAttribute('aria-hidden','false');
+      menu.showModal();
+      trigger.classList.add('open');
+      trigger.setAttribute('aria-expanded','true');
+      trigger.setAttribute('aria-label','Close menu');
+      document.documentElement.classList.add('menulock');
+      // The modal is a direct body child on every page; preserve any existing inert state.
+      [...document.body.children].filter(el => el !== menu && !['SCRIPT','STYLE','LINK'].includes(el.tagName)).forEach(el => {
+        restoreInert.push([el,el.inert]); el.inert = true;
       });
-      b.addEventListener('pointerleave', function () { b.style.transform = ''; });
+      focusable()[0]?.focus({preventScroll:true});
     });
+    menu.querySelector('[data-menu-close]').addEventListener('click', () => closeMenu());
+    menu.addEventListener('click', e => {
+      if (e.target === menu) return closeMenu();
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+      closeMenu(false);
+      const destination = new URL(link.href, location.href);
+      if (destination.origin === location.origin && destination.pathname === location.pathname && destination.hash) {
+        const target = document.getElementById(decodeURIComponent(destination.hash.slice(1)));
+        if (target) { target.setAttribute('tabindex','-1'); target.focus({preventScroll:true}); }
+      }
+    });
+    document.addEventListener('keydown', e => {
+      if (!open) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
+      if (e.key !== 'Tab') return;
+      const items=focusable(), first=items[0], last=items.at(-1);
+      if (e.shiftKey && (document.activeElement === first || !menu.contains(document.activeElement))) {
+        e.preventDefault(); last?.focus();
+      } else if (!e.shiftKey && (document.activeElement === last || !menu.contains(document.activeElement))) {
+        e.preventDefault(); first?.focus();
+      }
+    });
+    matchMedia('(min-width:901px)').addEventListener('change', e => { if(e.matches) closeMenu(false); });
   }
+  document.querySelectorAll('.nlinks a,.mlinks a').forEach(link => {
+    if (new URL(link.href).pathname === location.pathname && !link.hash) link.setAttribute('aria-current','page');
+  });
+  // Keep existing event names for continuity; never send email addresses or enquiry text.
+  document.addEventListener('click', e => {
+    const link=e.target.closest('a[href]');
+    if (!link || !window.siteAnalytics?.allowed()) return;
+    const href=link.getAttribute('href');
+    let event;
+    if (href.startsWith('mailto:')) event='email_click';
+    else if (new URL(link.href,location.href).hostname === 'www.linkedin.com') event='linkedin_click';
+    else if (new URL(link.href,location.href).pathname === '/media-kit') event='media_kit_click';
+    else if (new URL(link.href,location.href).hash === '#engage') event='cta_engage_click';
+    if (event) window.gtag('event',event,{
+      from:location.pathname,
+      engagement_type:link.dataset.engagement || 'general',
+      placement:link.closest('footer') ? 'footer' : link.closest('#nav,#mmenu') ? 'navigation' : 'content'
+    });
+  });
+  document.querySelectorAll('[data-copy-bio]').forEach(button => button.addEventListener('click',async () => {
+    const text=document.getElementById(button.dataset.copyBio)?.innerText;
+    const status=button.parentElement.querySelector('[role="status"]');
+    try { await navigator.clipboard.writeText(text.trim()); status.textContent='Bio copied.'; }
+    catch { status.textContent='Copy is unavailable. Select the biography text to copy it.'; }
+  }));
 })();
-
-/* GA4 outcome events; mark these as key events in the GA4 UI */
-document.addEventListener('click', function (e) {
-  var a = e.target && e.target.closest ? e.target.closest('a') : null;
-  if (!a || typeof gtag !== 'function') return;
-  var h = a.getAttribute('href') || '';
-  if (h.indexOf('mailto:') === 0) gtag('event', 'email_click', { link_url: h, from: location.pathname });
-  else if (h.indexOf('linkedin.com') > -1) gtag('event', 'linkedin_click', { from: location.pathname });
-  else if (h.indexOf('/media-kit') === 0) gtag('event', 'media_kit_click', { from: location.pathname });
-  else if (h.indexOf('#engage') > -1) gtag('event', 'cta_engage_click', { from: location.pathname });
-});

@@ -51,3 +51,21 @@ dev `node_modules/...` font + lenis paths to the deployed `fonts/...` and `lenis
 
 `src/`, `data/`, `build.mjs`, and this file are listed in `.assetsignore`, so they
 are kept in the repo but never served by Cloudflare Pages.
+
+## Shared interaction and analytics layer
+
+- `nav.css` owns the complete header and native mobile dialog on every page.
+- `ux.js` handles dialog focus and intent events. Scrolling uses the browser's native behavior; no persistent cursor or scrolling animation loop is needed.
+- `analytics.js` loads GA4 and Clarity only on the production hostname after optional analytics are accepted. Local and Cloudflare preview hosts never send production visits. Existing custom event names remain unchanged; `engagement_type` distinguishes advisory, speaking and board email links. An email click is an intent signal, not a confirmed lead.
+- `/privacy` and the footer preferences control explain and manage that choice. Consent changes reduce observable traffic compared with the previous unconditional tracking, so annotate the eventual production release in reporting.
+- The home page uses `home.css`. Other page improvements live in `refinements.css`.
+- The homepage displays the first three eligible entries from `data/articles.json`. Set `homeFeature: false` to omit a featured elsewhere article from that selection. Journal, feed and sitemap still include every entry.
+- Keep the cache version on `ux.js` and `nav.css` references current when changing the shared layer, to bypass earlier immutable caches.
+
+## Validation and release
+
+Run `node build.mjs`, `node tests/analytics.mjs`, and `node tests/site.mjs`. These commands have no third-party runtime dependencies. GitHub Actions runs the same checks before deploying. An unchanged build preserves the sitemap freshness dates.
+
+Push `dev` for the Cloudflare preview at `https://dev.prateeksaxena.pages.dev`. The workflow adds `X-Robots-Tag: noindex, nofollow` to preview responses. Production publishes only from `master` (mapped to Cloudflare's `main` production branch). Do not copy local audit reports or private analytics into the repository.
+
+The site owner confirmed on 2 October 2026 that the INSEAD Certificate in Global Management is completed and CMA studies are in progress. Before production, review the privacy notice against account configuration and validate the enquiry event in GA4. `email_click` can be treated as contact intent; confirmed and qualified enquiries require separate evidence. Public outcome claims must be supported, not inferred from partnership announcements.
