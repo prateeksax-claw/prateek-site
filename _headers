@@ -23,3 +23,6 @@
 
 /perspective/v1/*.mp4
   Cache-Control: public, max-age=31536000, immutable
+
+/perspective/v1/*.woff2
+  Cache-Control: public, max-age=31536000, immutable

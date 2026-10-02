@@ -34,5 +34,7 @@ for(const file of ['hero.mjs','loading-policy.mjs','cube-timeline.mjs','site.css
 assert.ok(statSync('perspective/v1/opening.webp').size<70000);
 assert.ok(statSync('perspective/v1/cube-480.mp4').size<1700000);
 assert.ok(statSync('perspective/v1/cube-768.mp4').size<4200000);
+for(const file of ['fraunces-display.woff2','fraunces-display-italic.woff2'])assert.ok(existsSync(`.pages-output/perspective/v1/${file}`));
+assert.ok(statSync('perspective/v1/fraunces-display.woff2').size+statSync('perspective/v1/fraunces-display-italic.woff2').size<160000,'Display fonts stay within their transfer budget');
 assert.ok(!existsSync('.pages-output/build.mjs'));
 console.log('Cube loading policy, timeline, crawlable content, asset budgets and deployment checks passed.');

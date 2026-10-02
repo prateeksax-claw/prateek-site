@@ -86,4 +86,6 @@ Six meanings, the biography, work and journal remain ordinary HTML. The cube con
 
 Local browser measurements are development evidence, not a production Core Web Vitals pass. Validate the hosted release and monitor real-user field data before claiming ranking or performance outcomes.
 
+The homepage uses optimized copies of Fraunces in `perspective/v1/`. FontTools 4.66.1 pinned the unused `SOFT=0` and `WONK=1` axes at their original defaults; all glyphs, weights and optical sizes remain available. Their combined transfer drops from 270,736 to 149,024 bytes. The original font files remain for other pages. To reproduce with FontTools and Brotli installed: use `fonttools varLib.instancer fonts/fraunces.woff2 SOFT=0 WONK=1 --output=perspective/v1/fraunces-display.woff2`, and the same command for `fonts/fraunces-italic.woff2` with output `perspective/v1/fraunces-display-italic.woff2`.
+
 The site owner confirmed on 2 October 2026 that the INSEAD Certificate in Global Management is completed and CMA studies are in progress. Before production, review the privacy notice against account configuration and validate the enquiry event in GA4. `email_click` can be treated as contact intent; confirmed and qualified enquiries require separate evidence. Public outcome claims must be supported, not inferred from partnership announcements.
