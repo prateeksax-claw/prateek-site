@@ -79,6 +79,9 @@ injectBetweenMarkers('journal.html', articles.map(journalCard).join('\n'));
   });
   const block = `<script type="application/ld+json">\n{"@context":"https://schema.org","@type":"ItemList","name":"Journal entries by Prateek Saxena","itemListElement":[\n${items.join(',\n')}]}\n</${'script'}>`;
   injectBetweenMarkers('journal.html', block, '<!-- BUILD:JLIST:START', '<!-- BUILD:JLIST:END -->');
+  // Render the initial count with the content, so enhancement does not shift cards.
+  const journal=readFileSync('journal.html','utf8');
+  writeFileSync('journal.html',journal.replace(/(<p[^>]*id="reading-status"[^>]*>)[\s\S]*?(<\/p>)/,`$1${articles.length} original essays · ${items.length-articles.length} logbook entries$2`));
   console.log(`build.mjs: journal ItemList regenerated with ${items.length} entries`);
 }
 
