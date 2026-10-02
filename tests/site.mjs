@@ -34,4 +34,11 @@ execFileSync(process.execPath,['build.mjs']);
 check(generated.every((f,i)=>readFileSync(f,'utf8')===before[i]),'Build is repeatable without spurious freshness changes');
 check(readFileSync('llms.txt','utf8').includes(']('),'llms.txt uses actual Markdown links');
 check(readFileSync('sitemap.xml','utf8').includes('/privacy</loc>'),'Privacy is in the sitemap');
+execFileSync(process.execPath,['prepare-deploy.mjs']);
+for(const privatePath of ['src','tests','data','.git','.github','BUILD.md','SEO-AI-STRATEGY.md','build.mjs','prepare-deploy.mjs']){
+ check(!existsSync(resolve('.pages-output',privatePath)),`Deployment excludes ${privatePath}`);
+}
+for(const publicPath of ['index.html','privacy.html','journal/vibe-coding-in-a-suit.html','analytics.js','_headers','_redirects','robots.txt','manifest.json']){
+ check(existsSync(resolve('.pages-output',publicPath)),`Deployment includes ${publicPath}`);
+}
 console.log(JSON.stringify({pages:files.length,checks,result:'passed'}));

@@ -40,7 +40,7 @@ jobs:
       - name: Prevent preview indexing
         if: github.ref_name != 'master'
         run: |
-          printf '\n/*\n  X-Robots-Tag: noindex, nofollow\n' >> _headers
+          printf '\n/*\n  X-Robots-Tag: noindex, nofollow\n' >> .pages-output/_headers
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
@@ -48,7 +48,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_NEW }}
           accountId: 89f078613042c984a12a174f10b2611f
           command: >-
-            pages deploy .
+            pages deploy .pages-output
             --project-name=prateeksaxena
             --branch=${{ github.ref_name == 'master' && 'main' || github.ref_name }}
             --commit-hash=${{ github.sha }}

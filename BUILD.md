@@ -49,8 +49,10 @@ dev `node_modules/...` font + lenis paths to the deployed `fonts/...` and `lenis
 **Edit `src/home.html` for any homepage change, then run `node build.mjs`** — editing
 `index.html` directly will be overwritten on the next build.
 
-`src/`, `data/`, `build.mjs`, and this file are listed in `.assetsignore`, so they
-are kept in the repo but never served by Cloudflare Pages.
+`prepare-deploy.mjs` creates `.pages-output` from an explicit public-file list.
+The deployment publishes that folder, excluding source, tests, build tooling and
+documentation. Do not deploy the repository root: Pages did not honor the existing
+Workers-style `.assetsignore` file in the verified October 2026 preview.
 
 ## Shared interaction and analytics layer
 
@@ -64,7 +66,7 @@ are kept in the repo but never served by Cloudflare Pages.
 
 ## Validation and release
 
-Run `node build.mjs`, `node tests/analytics.mjs`, and `node tests/site.mjs`. These commands have no third-party runtime dependencies. GitHub Actions runs the same checks before deploying. An unchanged build preserves the sitemap freshness dates.
+Run `node build.mjs`, `node tests/analytics.mjs`, and `node tests/site.mjs`. These commands have no third-party runtime dependencies. The site checks also prepare and validate `.pages-output`; `node prepare-deploy.mjs` can regenerate it independently. GitHub Actions runs the same checks before deploying that public folder. An unchanged build preserves the sitemap freshness dates.
 
 Push `dev` for the Cloudflare preview at `https://dev.prateeksaxena.pages.dev`. The workflow adds `X-Robots-Tag: noindex, nofollow` to preview responses. Production publishes only from `master` (mapped to Cloudflare's `main` production branch). Do not copy local audit reports or private analytics into the repository.
 
