@@ -11,6 +11,8 @@ function check(value,message){assert.ok(value,message);checks++;}
 for(const [file,text] of html){
  check(!/<div\b(?![^>]*\brole=)[^>]*\baria-label=/.test(text),`${file}: generic containers have no unsupported accessible name`);
  check((text.match(/<h1\b/g)||[]).length===1,`${file}: one H1`);
+ check(/<body\b[^>]*>\s*<a[^>]*href="#main"/.test(text),`${file}: skip link is first in the body`);
+ check(text.includes('data-consent-close'),`${file}: reopened analytics settings can close unchanged`);
  check(/<dialog\b[^>]*id="mmenu"[^>]*inert/.test(text),`${file}: closed native dialog`);
  check(/<script[^>]*src="\/analytics.js(?:\?[^" ]+)?"/.test(text),`${file}: centralized analytics, including error pages`);
  check(!/<script[^>]*src="https?:\/\//.test(text),`${file}: no eager third-party scripts`);
@@ -25,6 +27,7 @@ for(const [file,text] of html){
   const review=JSON.parse(readFileSync('data/editorial-review.json','utf8'));
   const visit=node=>{
    if(!node||typeof node!=='object')return;
+   if(node['@type']==='Article'&&node.mainEntityOfPage)check(node.publisher?.['@id']==='https://prateeksaxena.me/#person',`${file}: articles share the personal publisher`);
    if(node['@type']==='Person'&&node['@id']==='https://prateeksaxena.me/#person'){
     check(!node.memberOf,`${file}: no unapproved membership assertion (${review.ownerConfirmed.IMA})`);
     check(!node.knowsLanguage,`${file}: languages await explicit confirmation`);
@@ -64,6 +67,12 @@ const homeSource=readFileSync('src/home.html','utf8');
 check((homeSource.match(/class="career-entry(?: career-current)?"/g)||[]).length===5,'All five original career entries retained');
 check((homeSource.match(/class="credential-card"/g)||[]).length===4,'All four original education records retained');
 check(homeSource.includes('Operations &amp; Strategy Manager → Dy. General Manager'),'Promotion runs in chronological direction');
+const feed=readFileSync('feed.xml','utf8');
+const registry=JSON.parse(readFileSync('data/articles.json','utf8')).articles;
+check(new Date(feed.match(/<lastBuildDate>([^<]+)/)[1]).toISOString().slice(0,10)===registry.map(a=>a.lastmod||a.published).sort().at(-1),'Feed freshness reflects the newest genuine revision');
+const homeSchema=JSON.parse(homeSource.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+const homeDate=homeSchema['@graph'].find(n=>n['@type']==='ProfilePage').dateModified.slice(0,10);
+check(readFileSync('sitemap.xml','utf8').includes(`<loc>https://prateeksaxena.me/</loc><lastmod>${homeDate}</lastmod>`),'Homepage schema and sitemap agree on its revision');
 check(readFileSync('frameworks.html','utf8').includes('Verification across all seven layers'),'Verification remains explicit across the seven-layer model');
 check(readFileSync('journal/vibe-coding-in-a-suit.html','utf8').includes('<h1>Vibe Coding in a Suit</h1>'),'Signature phrase is the canonical essay heading');
 execFileSync(process.execPath,['build.mjs']);

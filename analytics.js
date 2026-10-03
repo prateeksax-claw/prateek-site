@@ -16,6 +16,7 @@
  if(!['accepted','declined'].includes(choice)) choice=null;
  const panel=document.getElementById('analytics-choice');
  const current=panel?.querySelector('[data-consent-current]');
+ const close=panel?.querySelector('[data-consent-close]');
  const status=document.getElementById('analytics-status');
  function describeChoice(){
    if(current) current.textContent=choice==='accepted' ? 'Current choice: optional analytics allowed.' : choice==='declined' ? 'Current choice: analytics rejected.' : 'Analytics stay off unless you allow them. You can use the full site either way.';
@@ -65,9 +66,20 @@
    }
  }
  panel?.querySelectorAll('[data-consent]').forEach(button=>button.addEventListener('click',()=>choose(button.dataset.consent==='accept'?'accepted':'declined')));
+ function dismiss(){
+   if(!opener || !panel) return;
+   panel.hidden=true;
+   if(status) status.textContent='Analytics settings closed. Your preference has not changed.';
+   (opener.isConnected ? opener : document.getElementById('main'))?.focus({preventScroll:true});
+   opener=null;
+ }
+ close?.addEventListener('click',dismiss);
+ panel?.addEventListener('keydown',event=>{
+   if(event.key==='Escape' && opener){event.preventDefault();dismiss();}
+ });
  document.querySelectorAll('[data-privacy-settings]').forEach(button=>button.addEventListener('click',()=>{
    if(!panel) return;
-   opener=button;describeChoice();panel.hidden=false;panel.querySelector('button')?.focus();
+   opener=button;describeChoice();if(close)close.hidden=false;panel.hidden=false;panel.querySelector('[data-consent="decline"]')?.focus();
  }));
  if(panel && production && !choice && !navigator.globalPrivacyControl) panel.hidden=false;
  if(navigator.globalPrivacyControl) choice='declined';

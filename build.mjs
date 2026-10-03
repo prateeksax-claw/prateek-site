@@ -23,7 +23,6 @@ const SITE = 'https://prateeksaxena.me';
 const M1 = '<!-- BUILD:ARTICLES:START';   // matched as a prefix (marker line may carry a note)
 const M2 = '<!-- BUILD:ARTICLES:END -->';
 
-const previousHome = readFileSync('index.html', 'utf8');
 const previousJournal = readFileSync('journal.html', 'utf8');
 
 const { articles } = JSON.parse(readFileSync('data/articles.json', 'utf8'));
@@ -140,9 +139,11 @@ writeFileSync('index.html', home);
 // Stamp only when generated content has changed, not merely when a build ran.
 {
   const changed = [];
-  if (home !== previousHome) changed.push(`${SITE}/`);
+  // Keep the authored homepage revision and sitemap date in agreement.
+  const homeGraph=JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  const homeModified=homeGraph['@graph'].find(n=>n['@type']==='ProfilePage').dateModified;
   if (readFileSync('journal.html', 'utf8') !== previousJournal) changed.push(`${SITE}/journal`);
-  let sitemap = readFileSync('sitemap.xml', 'utf8');
+  let sitemap = readFileSync('sitemap.xml', 'utf8').replace(/(<loc>https:\/\/prateeksaxena\.me\/<\/loc><lastmod>)[^<]+/,`$1${homeModified.slice(0,10)}`);
   for (const loc of changed) {
     const escaped = loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     sitemap = sitemap.replace(new RegExp(`(<loc>${escaped}</loc><lastmod>)[^<]+`), `$1${new Date().toISOString().slice(0,10)}`);
@@ -197,7 +198,7 @@ writeFileSync('llms.txt', head + '## Articles\n' + articles.map(llmsRow).join('\
   <link>${SITE}/journal</link>
   <description>Essays on agentic AI, vibe coding in a suit and business operations from the UAE real economy.</description>
   <language>en</language>
-  <lastBuildDate>${rfc(articles[0].published || articles[0].lastmod)}</lastBuildDate>
+  <lastBuildDate>${rfc(articles.map(a => a.lastmod || a.published).sort().at(-1))}</lastBuildDate>
 ${items}
 </channel></rss>\n`;
   writeFileSync('feed.xml', feed);
