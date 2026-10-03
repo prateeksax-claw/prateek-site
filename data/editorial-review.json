@@ -35,5 +35,16 @@
   "personalSchemaPolicy": {
     "languages": "Omitted until explicitly confirmed; do not infer from residence.",
     "memberships": "No IMA membership claim. CMA studies are not membership or an awarded credential."
+  },
+  "workedExamplesReview": {
+    "date": "2026-10-03",
+    "basis": "Existing published essays on dashboards, reporting, collections, agent briefing and the five-check preflight.",
+    "status": "Clearly labelled illustrative examples. No live company data, invented performance results or new claims of actual incidents.",
+    "pages": [
+      "vibe-coding-in-a-suit",
+      "i-dont-code-i-brief-agents",
+      "monday-morning-preflight"
+    ],
+    "pending": "Owner-authored case article and evidence of real outcomes remain deferred."
   }
 }
