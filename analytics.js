@@ -3,15 +3,22 @@
 (() => {
  'use strict';
  const production=['prateeksaxena.me','www.prateeksaxena.me'].includes(location.hostname);
- const key='ps-analytics-choice-v1';
+ const key='ps-analytics-choice-v2';
  let choice=null,started=false,opener=null;
- try { choice=localStorage.getItem(key); } catch {}
+ try {
+   choice=localStorage.getItem(key);
+   // Preserve refusals. An earlier opt-in did not name all three providers,
+   // so ask again before loading the expanded, unified analytics choice.
+   if(!choice && localStorage.getItem('ps-analytics-choice-v1')==='declined'){
+     choice='declined';localStorage.setItem(key,choice);
+   }
+ } catch {}
  if(!['accepted','declined'].includes(choice)) choice=null;
  const panel=document.getElementById('analytics-choice');
  const current=panel?.querySelector('[data-consent-current]');
  const status=document.getElementById('analytics-status');
  function describeChoice(){
-   if(current) current.textContent=choice==='accepted' ? 'Current choice: optional analytics allowed.' : choice==='declined' ? 'Current choice: essential only.' : 'Optional analytics are off until you allow them.';
+   if(current) current.textContent=choice==='accepted' ? 'Current choice: optional analytics allowed.' : choice==='declined' ? 'Current choice: analytics rejected.' : 'Analytics stay off unless you allow them. You can use the full site either way.';
  }
  const readChoice=()=>choice==='accepted';
  window.siteAnalytics={allowed:()=>production && readChoice()};
@@ -29,6 +36,10 @@
    // Explicitly communicate consent to Clarity before its first page capture.
    window.clarity('consentv2',{ad_Storage:'denied',analytics_Storage:'granted'});
    const clarity=document.createElement('script');clarity.async=true;clarity.src='https://www.clarity.ms/tag/xf7w1d6iro';document.head.append(clarity);
+   // Public beacon identifier supplied by this site's Cloudflare JS snippet.
+   // Cloudflare automatic injection must stay off to preserve this consent gate.
+   const performance=document.createElement('script');performance.type='module';performance.src='https://static.cloudflareinsights.com/beacon.min.js';
+   performance.setAttribute('data-cf-beacon',JSON.stringify({token:'0bb6c8de182546c5b5b5cc70a694b49f'}));document.head.append(performance);
  }
  function forgetCookies(){
    ['_ga','_ga_LFFECRD57Q','_clck','_clsk'].forEach(name=>{
@@ -42,7 +53,7 @@
    try{localStorage.setItem(key,value);}catch{}
    if(panel) panel.hidden=true;
    describeChoice();
-   if(status) status.textContent=value==='accepted' ? 'Preference saved: optional analytics allowed.' : 'Preference saved: essential only.';
+   if(status) status.textContent=value==='accepted' ? 'Preference saved: optional analytics allowed.' : 'Preference saved: analytics rejected.';
    (opener?.isConnected ? opener : document.getElementById('main'))?.focus({preventScroll:true});
    opener=null;
    if(value==='accepted') start();
